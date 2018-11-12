@@ -8,11 +8,11 @@ class Navbar extends Component {
       <header>
         <h2>Brian Falasz</h2>
         <nav className="navbar">
-          <li><a>About</a></li>
-          <li><a>Projects</a></li>
-          <li><a>Music</a></li>
-          <li><a>Blog</a></li>
-          <li><a>Contact</a></li>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Music</li>
+          <li>Blog</li>
+          <li>Contact</li>
         </nav>
       </header>
     );

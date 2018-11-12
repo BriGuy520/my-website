@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import CoverImage from './components/CoverImage';
+import Footer from './components/Footer';
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <Navbar />
         <CoverImage />
+        <Footer />
       </div>
     );
   }

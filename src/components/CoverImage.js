@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/CoverImage.css';
 
-class CoverImage extends Component {
+
+export default class CoverImage extends Component {
   render(){
-    return (
-      <div className="cover">
-      </div>
-    );
+
+    return <h1>Hello Big Awesome World</h1>
   }
 }
-
-export default CoverImage;
