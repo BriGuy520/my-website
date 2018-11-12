@@ -1,0 +1,16 @@
+.goals {
+  padding: 12px;
+  background-color: #e6b3ff;
+}
+
+.goals h1 {
+  margin: 0;
+  color: #99ff99;
+  padding: 8px 10px;
+  font-size: 4em;
+}
+
+.goals p {
+  padding-left: 20px;
+  font-size: 1.4em;
+}
