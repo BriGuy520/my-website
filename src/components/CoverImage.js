@@ -7,6 +7,7 @@ export default class CoverImage extends Component {
 
     return (
       <div className="cover">
+        <h1>Hi Everybody!</h1>
       </div>
     );
   }

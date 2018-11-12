@@ -4,5 +4,11 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 900px;
+  height: 100vh;
+}
+
+.cover h1 {
+  color: #ccffcc;
+  margin: 0;
+  font-size: 20em;
 }
