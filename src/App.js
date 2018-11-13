@@ -12,10 +12,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      goals: [
+      goalList: [
         {
           id: 0,
-          goal: ['']
+          goals: ['Get a Job in Web Development']
         }
       ],
       nextGoalId: 1,
@@ -51,7 +51,7 @@ class App extends Component {
       <div>
         <Navbar />
         <CoverImage />
-        <GoalList />
+        <GoalList goals={this.state.goalList} />
         <Footer />
       </div>
     );
