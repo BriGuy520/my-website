@@ -1,4 +1,6 @@
 header {
+  position: relative;
+  z-index: 100;
   background-color: #33ffad;
   display: flex;
   justify-content: space-between;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import CoverImage from './components/CoverImage';
-import GoalList from './components/GoalList';
-import GoalInput from './components/GoalInput';
+import Goals from './components/Goals';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -12,12 +11,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      goalList: [
-        {
-          id: 0,
-          goals: ['Get a Job in Web Development']
-        }
-      ],
+      goals: ['Get a Web Development Gig'],
       nextGoalId: 1,
       showForm: false
     }
@@ -51,7 +45,7 @@ class App extends Component {
       <div>
         <Navbar />
         <CoverImage />
-        <GoalList goals={this.state.goalList} />
+        <Goals goals={this.state.goals} />
         <Footer />
       </div>
     );

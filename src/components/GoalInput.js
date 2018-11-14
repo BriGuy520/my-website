@@ -23,7 +23,7 @@ class GoalInput extends Component {
   handleChangeGoal(event){
     const index = Number(event.target.name.split('-')[1]);
     const goals = this.state.goals.map((goal, idx) => {
-      return idx === index ? event.target : goal;
+      return idx === index ? event.target.value : goal;
     });
     this.setState({goals});
   }
@@ -38,7 +38,7 @@ class GoalInput extends Component {
 
   render(){
     const {goals} = this.state;
-    let inputs = goals.map((goal, idx) => (
+    let input = goals.map((goal, idx) => (
       <div key={`goal-${idx}`}>
         <label>{idx + 1}
           <input
@@ -57,7 +57,7 @@ class GoalInput extends Component {
     return (
       <div>
         <form className="goal-form" onSubmit={this.handleSubmit}>
-          {inputs}
+          {input}
           <button
             type='type'
             className='buttons'

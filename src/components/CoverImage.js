@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/CoverImage.css';
 
 
-export default class CoverImage extends Component {
-  render(){
+const CoverImage = () => {
 
     return (
       <div className="cover">
         <h1>Hi Everybody!</h1>
       </div>
     );
-  }
 }
+
+export default CoverImage;
