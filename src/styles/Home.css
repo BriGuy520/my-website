@@ -1,3 +1,5 @@
+/* Home Page Cover Image */
+
 .cover {
   background-image: url('https://spooniom.com/wp-content/uploads/all-your-base-are-belong-to-us-825x510.jpg');
   background-size: cover;
@@ -13,3 +15,23 @@
   padding: 0;
   font-size: 18em;
 }
+
+/* Goals Section */
+
+.goals {
+  padding: 12px;
+  background-color: #d5e0f2;
+}
+
+.goals h1 {
+  margin: 0;
+  color: #f7f731;
+  padding: 8px 10px;
+  font-size: 4em;
+}
+
+.goals p {
+  padding-left: 20px;
+  font-size: 1.4em;
+}
+

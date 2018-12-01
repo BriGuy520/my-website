@@ -1,16 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import CoverImage from './components/CoverImage';
-import Goals from './components/Goals';
+import Home from './components/Home';
+import About from './components/About';
 import './App.css';
 
 const App = () => {
     return (
       <div>
-        <Navbar />
-        <CoverImage />
-        <Goals />
+        <BrowserRouter>
+          <div>
+            <Navbar />
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+          </div>
+        </BrowserRouter>
       </div>
+
     );
 
 }
