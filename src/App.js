@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import CoverImage from './components/CoverImage';
 import Goals from './components/Goals';
 import './App.css';
 
-class App extends Component {
-
-  render() {
+const App = () => {
     return (
       <div>
         <Navbar />
@@ -14,7 +12,7 @@ class App extends Component {
         <Goals />
       </div>
     );
-  }
+
 }
 
 export default App;
