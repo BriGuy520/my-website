@@ -5,10 +5,6 @@ import '../styles/Goals.css';
 class Goals extends Component {
 
   render(){
-    const goals = this.props.goals.map((goal, index) => (
-      <li key={index}>{goal}</li>
-    ));
-
     return (
 
       <div className='container goals'>
@@ -17,7 +13,7 @@ class Goals extends Component {
         web development career in general:
         </p>
         <ul>
-          {goals}
+          <li>Goal 1</li>
         </ul>
       </div>
 
