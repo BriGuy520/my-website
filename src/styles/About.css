@@ -1,0 +1,30 @@
+.box {
+  margin: auto;
+  width: 75%;
+  padding: 30px;
+}
+
+.box h1 {
+  padding: 16px;
+}
+
+.box p {
+  padding: 0 28px;
+  line-height: 25px;
+}
+
+.section {
+  border-bottom: 3px solid black;
+  width: 80%;
+  padding-top: 20px;
+  margin: auto;
+}
+
+
+
+.books ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
