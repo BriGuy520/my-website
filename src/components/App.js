@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
-import Music from './components/Music';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About';
+import Projects from './Projects';
+import Music from './Music';
+import Blog from './Blog';
+import Contact from './Contact';
 
 const App = () => {
     return (

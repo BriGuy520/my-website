@@ -8,7 +8,7 @@ class Navbar extends Component {
     return (
       <header>
         <h2><Link to="/">Brian Falasz</Link></h2>
-        <nav className="navbar">
+        <nav className="nav">
           <li><Link to="/about">About</Link></li>
           <li><Link to="/projects">Projects</Link></li>
           <li><Link to="/music">Music</Link></li>
