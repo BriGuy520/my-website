@@ -35,3 +35,19 @@
   font-size: 1.4em;
 }
 
+/* goal input */
+
+.goal-section {
+  padding: 5px;
+  align-content: center;
+}
+
+.goal-input {
+  width: 90%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: none;
+  margin: 2px;
+
+}
+

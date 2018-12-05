@@ -4,37 +4,44 @@ import '../styles/Home.css';
 
 class Home extends Component {
 
-  state = { goals: ['Get a development gig'] };
+  state = { 
+    goal: '',
+    goals: ['Get a development gig'] 
+  };
 
 
-  handleNewGoal = (event) => {
-    const { goals } = this.state;
-    this.setState({ goals: [...goals, '']});
+
+  goalInput = (event) => {
+
+    this.setState({ goal: event.target.value});
+
+  }
+ 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      goal: '',
+      goals: [...this.state.goals, this.state.goal]
+    })
   }
 
-  handleGoalChange = (event) => {
-    const index = Number(event.target.name.split('-')[1]);
-    const goals = this.state.goals.map((goal, idx) => {
-      return idx === index ? event.target.value : goal;
-    });
+  handleNewGoal = (event) => {
+    const { goals, goal } = this.state;
 
-    this.setState({goals});
+    this.setState({goals: [...goals, goal]});
+    
+  }
 
-  } 
 
   render(){
-
-    const { goals } = this.state;
-
-    const goalInput = goals.map((goal, idx) => {
+   
+    const goalList = this.state.goals.map((goal, idx) => {
       return (
-        <div className="goal-input" key={idx}>
-          <label>{idx +  1}</label>
-          <input type="text" name={`goal-${idx}`} value={goal} autoComplete="off" onChange={this.handleGoalChange.bind(this)} />
-        </div>
+        <li key={idx}>{goal}</li>
       );
     });
-  
+
     return (
       <div>
         <div className="cover">
@@ -47,12 +54,15 @@ class Home extends Component {
           </p>
           <div className="goal-input">
             <form onSubmit={this.handleSubmit}>
-              <button type='button' onClick={this.handleNewGoal.bind(this)} className="buttons">Add Goal</button>
+              <div className="goal-section">
+                <input className="goal-input" type="text" value={this.state.goal} onChange={this.goalInput} autoComplete="off" />
+                <button type='button' onClick={this.handleNewGoal.bind(this)} className="buttons">Add Goal</button>
+              </div>
             </form>
           </div>
-          <ol>
-            {goalInput}
-          </ol>
+          <ul> 
+            {goalList} 
+          </ul>
         </div>
       </div>
      
