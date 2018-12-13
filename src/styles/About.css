@@ -2,6 +2,7 @@
   margin: auto;
   width: 75%;
   padding: 30px;
+
 }
 
 .box h1 {
@@ -20,11 +21,21 @@
   margin: auto;
 }
 
+/* favorites */
 
-
-.books ul {
+.lists {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
+  justify-content: space-around;
 }
+
+.lists ol { 
+  margin: 10px;
+}
+
+.lists li {
+  margin: 16px;
+  font-size: 1.4rem;
+}
+

@@ -1,10 +1,8 @@
-import React from 'react'; 
-import '../styles/About.css';
+import React from 'react';
 
-const About = () => {
+const Bio = () => {
   return (
-    <div className="box">
-      <div className="bio">
+    <div className="bio">
         <h1>A Lot About Myself...</h1>
         <p>
           I was born Chicago, IL and raised in the northern suburb of Libertyville, IL. I went to Libertyville High School and then to the Southern Illinois University-Carbondale. I fully admit, I was not ready for college at the time. Although I graduated with a degree in Business Management, I was still very immature and unsure of what it is that I truly wanted to do by the time I graduated in 2012. For a few years after college, I have worked for a number of great companies such as Whole Foods, Chipotle, Walgreens and STATS LLC. While I learned a great deal and met a ton of amazing people through these jobs, I've always had the desire to do something bigger, something that would allow me to reach my full potential. That's when I started to take an interest in programming.
@@ -49,30 +47,9 @@ const About = () => {
           This has been my story.
         </p>
         <div className="section"></div>
+        <br />
       </div>
-    <br />
-      <div className="books">
-        <h1>Favorites Lists</h1>
-        <div>
-          <h3>Books: Non-Fiction</h3>
-          <ol>
-            <li>Conflict of Visions by Thomas Sowell</li>
-            <li>The Righteous Mind by Jonathon Haidt</li>
-            <li>When Work Disappears by William Julius Wilson</li>
-          </ol>
-        </div>
-        <div>
-          <h3>Books: Fiction</h3>
-          <ol>
-            <li>Confederacy of Dunces by John Kennedy O'Toole</li>
-            <li>The Electric Kool-Aid Acid Test by Tom Wolfe</li>
-            <li>Ubik by Philip K. Dick</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-    
-  ) 
+  );
 }
 
-export default About;
+export default Bio;

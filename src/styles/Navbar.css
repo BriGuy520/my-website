@@ -1,4 +1,6 @@
 header {
+  overflow: hidden;
+  position: fixed;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   position: relative;
@@ -16,7 +18,7 @@ header h2 {
 
 header h2 a {
   text-decoration: none;
-  color: #33ffad;
+  color: #15ffa1;
 }
 
 nav li {
@@ -33,7 +35,7 @@ nav li a {
 }
 
 nav li a:hover {
-  color: #32d0ff;
+  color: #02b8ef;
   -webkit-transition: all 0.5s ease-in-out 0s;
 
 }

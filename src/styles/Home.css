@@ -21,11 +21,12 @@
 .goals {
   padding: 12px;
   background-color: #d5e0f2;
+  height: 80vh;
 }
 
 .goals h1 {
   margin: 0;
-  color: #f7f731;
+  color: #33ffad;
   padding: 8px 10px;
   font-size: 4em;
   font-family: 'Montserrat', sans-serif;
@@ -38,9 +39,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.goals ul li {
+.goals ol li {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
+  padding: 4px 8px;
 }
 
 /* goal input */
@@ -51,7 +53,7 @@
 }
 
 .goal-input {
-  width: 95%;
+  width: 98%;
   margin-left: 10%;
   padding: 10px;
   border-radius: 5px;
@@ -63,7 +65,7 @@
 .buttons {
   border: 2px solid black;
   background-color: white;
-  margin: 10px 0;
+  margin: 20px 0 0 0;
   font-size: 12px;
   color: black;
   padding: 10px 20px;

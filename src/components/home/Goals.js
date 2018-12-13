@@ -54,9 +54,9 @@ class Goals extends Component {
             </div>
           </form>
         </div>
-        <ul> 
+        <ol> 
           {goalList} 
-        </ul>
+        </ol>
       </div>
     );
   }
