@@ -1,21 +1,6 @@
 import { combineReducers } from 'redux';
-
-const songsReducers = () => {
-  return [
-    {title:  'Timber' }
-  ];
-};
-
-
-const selectedSongReducer = (selectedSong = null, action) => {
-  if(action.type === "SONG_SELECTED"){
-    return action.payload;
-  }
-
-  return selectedSong;
-}
+import photoReducer from './photoReducer';
 
 export default combineReducers({
-  songs: songsReducers,
-  selectedSong: selectedSongReducer
+  photos: photoReducer
 });

@@ -6,7 +6,7 @@ import About from './about/About';
 import Projects from './Projects';
 import Music from './Music';
 import Blog from './Blog';
-import Contact from './Contact';
+import Pictures from './Pictures';
 
 const App = () => {
     return (
@@ -19,7 +19,7 @@ const App = () => {
             <Route path="/projects" exact component={Projects} />
             <Route path="/music" exact component={Music} />
             <Route path="/blog" exact component={Blog} />
-            <Route path="/contact" exact component={Contact} />
+            <Route path="/contact" exact component={Pictures} />
           </div>
         </BrowserRouter>
       </div>

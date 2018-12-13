@@ -13,7 +13,7 @@ class Navbar extends Component {
           <li><Link to="/projects">Projects</Link></li>
           <li><Link to="/music">Music</Link></li>
           <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/pictures">Pictures</Link></li>
         </nav>
       </header>
     );
