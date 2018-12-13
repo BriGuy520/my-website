@@ -7,6 +7,7 @@ import Projects from './Projects';
 import Music from './Music';
 import Blog from './Blog';
 import Pictures from './Pictures';
+import '../styles/App.css';
 
 const App = () => {
     return (

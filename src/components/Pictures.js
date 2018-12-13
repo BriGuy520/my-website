@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getPhotos } from '../actions';
+
+
 
 class Pictures extends Component {
  
-  componentDidMount(){
-    console.log(this.props.getPhotos());
-  }
+
 
   render(){
     return (
@@ -15,8 +13,5 @@ class Pictures extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { photos: state.photos }
-}
+export default Pictures;
 
-export default connect(mapStateToProps, { getPhotos })(Pictures);
