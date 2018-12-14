@@ -1,0 +1,19 @@
+.container {
+  margin: 2%;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+.photos {
+  margin: 60px;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.photos img {
+  margin: 10px;
+}
