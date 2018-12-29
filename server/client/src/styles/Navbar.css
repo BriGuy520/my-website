@@ -40,6 +40,10 @@ nav li a:hover {
 
 }
 
+nav li a:active {
+  color: #02b8ef;
+}
+
 
 /* Link Animation */
 

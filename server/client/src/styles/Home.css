@@ -39,10 +39,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.goals ol {
+  margin: 20px 40px;
+}
+
 .goals ol li {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  padding: 4px 8px;
+  font-size: 1.8rem;
+  padding: 10px 8px;
 }
 
 /* goal input */
