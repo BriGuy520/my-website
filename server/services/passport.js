@@ -1,5 +1,5 @@
 const passport = require('passport');
-const FacebookStrategy = require('passort-facebook');
+const FacebookStrategy = require('passport-facebook');
 const TwitterStrategy = require('passport-twitter');
 const GoogleStrategy = require('passport-google-oauth20');
 const mongoose = require('mongoose');
@@ -20,9 +20,9 @@ passport.deserializeUser((user, done) => {
 
 passport.use(
   new FacebookStrategy({
-    clientID: FACEBOOK_APP_ID,
-    clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    clientID: keys.facebookClientID,
+    clientSecret: keys.facebookClientSecret,
+    callbackURL: "/auth/facebook/callback",
     proxy: true
   },
     (accessToken, refreshToken, profile, cb) => {
@@ -41,8 +41,8 @@ passport.use(
 
 passport.use(
   new TwitterStrategy({
-    clientID: TWITTER_APP_ID,
-    clientSecret: TWITTER_APP_SECRET,
+    consumerKey: keys.twitterClientID,
+    consumerSecret: keys.twitterClientSecret,
     callbackURL: '/auth/twitter/callback',
     proxy: true
   },
@@ -56,10 +56,10 @@ passport.use(
 
 passport.use(
   new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_APP_SECRET,
+    clientID: keys.googleClientID,
+    clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
-    proxy
+    proxy: true
   },
     (accessToken, refreshToken, profile, cb) => {
 
