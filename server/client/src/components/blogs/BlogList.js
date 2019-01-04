@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { fetchBlogs } from '../../actions';
 
 class BlogList extends Component {
+
+  componentDidMount(){
+    this.props.fetchBlogs();
+  }
   render(){
     return (
       <div>
@@ -16,4 +20,4 @@ const mapStateToProps = ({ blogs }) => {
   return { blogs };
 }
 
-export default connect(mapStateToProps)(BlogList);
+export default connect(mapStateToProps, { fetchBlogs })(BlogList);
