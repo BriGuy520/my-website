@@ -47,12 +47,17 @@ passport.use(
     proxy: true
   },
     (accessToken, refreshToken, profile, cb) => {
-      User.findOrCreate({ twitterId: profile.id }, (err, user) => {
-        return cb(err, user)
-      });
+      const existingUser = User.findOne({ twitterId: profile.id });
+
+      if(existingUser){
+        return cb(null, existingUser);
+      }
+
+      const user = new User({ twitterId: profile.id }).save();
+      cb(null, user);
     }
   )
-)
+);
 
 passport.use(
   new GoogleStrategy({
