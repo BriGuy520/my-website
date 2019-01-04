@@ -8,10 +8,15 @@ require('./models/Blog');
 require('./models/User');
 require('./services/passport');
 
-mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI);
-
 const app = express();
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(keys.mongoURI);
+mongoose.connection
+  .once('open', () => console.log('Connected to MongoDB'))
+  .on('error', error => console.log("Error connecting to MongoDB:", error));
+
 
 app.use(
   cookieSession({
@@ -22,8 +27,9 @@ app.use(
 
 app.use(bodyParser.json());
 
+
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); 
 
 require('./routes/authRoutes')(app);
 

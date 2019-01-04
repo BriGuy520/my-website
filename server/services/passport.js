@@ -11,7 +11,7 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-passport.deserializeUser((user, done) => {
+passport.deserializeUser((id, done) => {
   User.findById(id)
     .then((user) => {
       done(null, user);
@@ -22,42 +22,39 @@ passport.use(
   new FacebookStrategy({
     clientID: keys.facebookClientID,
     clientSecret: keys.facebookClientSecret,
-    callbackURL: "/auth/facebook/callback",
-    proxy: true
+    callbackURL: '/auth/facebook/callback',
+    enableProof: true,
+    proxy: true,
   },
-    (accessToken, refreshToken, profile, cb) => {
+  async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ facebookId: profile.id });
 
-      const existingUser = User.findOne({ facebookId: profile.id });
-
-      if(existingUser){
-        return cb(null, existingUser);
-      }
-
-      const user = new User({ facebookId: profile.id }).save();
-      cb(null, user);
+    if(existingUser){
+      return done(null, existingUser);
     }
-  )
+
+    const user = new User({ facebookId: profile.id }).save();
+    done(null, user);
+  })
 );
 
 passport.use(
   new TwitterStrategy({
-    consumerKey: keys.twitterClientID,
-    consumerSecret: keys.twitterClientSecret,
-    callbackURL: '/auth/twitter/callback',
-    proxy: true
-  },
-    (accessToken, refreshToken, profile, cb) => {
-      const existingUser = User.findOne({ twitterId: profile.id });
+    consumerKey: keys.twitterConsumerKey,
+    consumerSecret: keys.twitterConsumerSecret,
+    callbackURL: '/auth/twitter/callback'
+  }, 
+  async (token, tokenSecret, profile, done) => {
+    const existingUser = await User.findOne({ twitterId: profile.id });
 
-      if(existingUser){
-        return cb(null, existingUser);
-      }
-
-      const user = new User({ twitterId: profile.id }).save();
-      cb(null, user);
+    if(existingUser){
+      return done(null, existingUser);
     }
-  )
-);
+
+    const user = new User({ twitterId: profile.id }).save();
+    done(null, user);
+  })
+)
 
 passport.use(
   new GoogleStrategy({
@@ -66,15 +63,17 @@ passport.use(
     callbackURL: '/auth/google/callback',
     proxy: true
   },
-    (accessToken, refreshToken, profile, cb) => {
+  async (accessToken, refreshToken, profile, done) => {
 
-      const existingUser = User.findOne({ googleId: profile.id });
-        if(existingUser){
-          return cb(null, user);
-        }
+    const existingUser = await User.findOne({ googleId: profile.id });
 
-      const user = new User({ googleId: profile.id }).save();
-      cb(null, user);
+    if(existingUser){
+      return done(null, existingUser);
     }
-  )
+
+    const user = new User({ googleId: profile.id }).save();
+
+    done(null, user);
+  })
 );
+

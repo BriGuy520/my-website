@@ -1,5 +1,6 @@
 import unsplash from '../api/unsplash';
-import { FETCH_PHOTOS } from './types';
+import axios from 'axios';
+import { FETCH_PHOTOS, FETCH_USER } from './types';
 
 export const fetchPhotos = () => async dispatch => {
   const response = await unsplash.get('/photos/search', {
@@ -7,4 +8,10 @@ export const fetchPhotos = () => async dispatch => {
   });
 
   dispatch({ type: FETCH_PHOTOS, payload: response.data });
+}
+
+export const fetchUser = () => async dispatch => {
+  const response = await axios.get('/api/current_user');
+
+  dispatch({ type: FETCH_USER, payload: response.data });
 }
