@@ -15,7 +15,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then((user) => {
-      done(null, user);
+      done(null, id);
     });
 });
 
@@ -34,7 +34,7 @@ passport.use(
       return done(null, existingUser);
     }
 
-    const user = new User({ facebookId: profile.id }).save();
+    const user = await new User({ facebookId: profile.id }).save();
     done(null, user);
   })
 );
@@ -52,7 +52,7 @@ passport.use(
       return done(null, existingUser);
     }
 
-    const user = new User({ twitterId: profile.id }).save();
+    const user = await new User({ twitterId: profile.id }).save();
     done(null, user);
   })
 );
@@ -72,7 +72,7 @@ passport.use(
       return done(null, existingUser);
     }
 
-    const user = new User({ googleId: profile.id }).save();
+    const user = await new User({ googleId: profile.id }).save();
 
     done(null, user);
   })
@@ -93,7 +93,7 @@ passport.use(
       return done(null, existingUser);
     }
 
-    const user = new User({ githubId: profile.id }).save();
+    const user = await new User({ githubId: profile.id }).save();
 
     done(null, user);
   })
