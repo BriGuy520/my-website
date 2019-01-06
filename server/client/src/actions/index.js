@@ -16,6 +16,13 @@ export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER, payload: response.data });
 }
 
+export const submitBlog = (values, history) => async dispatch => {
+  const response = await axios.post('/api/blogs', values);
+
+  history.push('/blogs');
+  dispatch({ type: FETCH_USER, payload: response.data });
+}
+
 export const fetchBlogs = () => async dispatch => {
   const response = await axios.get('/api/blogs');
 

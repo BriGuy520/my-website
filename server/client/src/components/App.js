@@ -5,7 +5,8 @@ import Home from './home/Home';
 import About from './about/About';
 import Projects from './Projects';
 import Music from './Music';
-import Blogs from './blogs/BlogList';
+import Dashboard from './Dashboard';
+import NewBlog from './blogs/NewBlog';
 import Pictures from './Pictures';
 import '../styles/App.css';
 
@@ -20,7 +21,8 @@ const App = () => {
               <Route path="/about" exact component={About} />
               <Route path="/projects" exact component={Projects} />
               <Route path="/music" exact component={Music} />
-              <Route path="/blog" exact component={Blogs} />
+              <Route path="/blog" exact component={Dashboard} />
+              <Route path="/blog/new" exact component={NewBlog} />
               <Route path="/pictures" exact component={Pictures} />
             </Switch>
           </div>

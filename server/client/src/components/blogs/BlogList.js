@@ -7,10 +7,23 @@ class BlogList extends Component {
   componentDidMount(){
     this.props.fetchBlogs();
   }
+
+  renderBlogs(){
+    return this.props.blogs.reverse().map(blog => {
+      return (
+        <div>
+          <span>{blog.title}</span>
+          <p>{blog.body}</p>
+          <p>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</p>
+        </div>
+      )
+    })
+  }
+
   render(){
     return (
       <div>
-        Blogs
+        {this.renderBlogs()}
       </div>
     );
   }

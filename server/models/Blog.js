@@ -3,7 +3,6 @@ const { Schema } = mongoose;
 const commentSchema = require('./Comment');
 
 const blogSchema = new Schema({
-  blogId: String,
   title: String,
   body: String,
   author: String,
@@ -13,4 +12,4 @@ const blogSchema = new Schema({
   comments: [commentSchema]
 });
 
-mongoose.model('blogPosts', blogSchema);
+mongoose.model('blogs', blogSchema);
