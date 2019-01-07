@@ -6,8 +6,9 @@ const blogSchema = new Schema({
   title: String,
   image: String,
   body: String,
+  author: String,
   datePosted: { type: Date, default: Date.now },
-  likes: Number,
+  likes: { type: Number, default: 0 },
   comments: [commentSchema]
 });
 
