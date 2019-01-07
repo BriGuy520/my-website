@@ -18,7 +18,8 @@ class BlogForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(this.props.onBlogSubmit)}>
           {this.renderFields()}
-          <Link to="/blogs">Cancel</Link>
+          <Link to="/blog">Cancel</Link>
+          <button type="submit">Submit</button>
         </form> 
       </div>
     )

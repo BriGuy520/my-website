@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 let commentSchema = new Schema({
-  commentBody: String,
+  text: String,
   likes: Number,
+  author: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    },
+    username: String
+  },
   datePosted: Date
 });
 

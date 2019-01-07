@@ -7,7 +7,7 @@ const Dashboard = () => {
     <div>
       <BlogList />
       <div>
-        <Link to="/blogs/new">
+        <Link to="/blog/new">
           Create New Blog
         </Link>
       </div>

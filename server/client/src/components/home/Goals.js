@@ -4,7 +4,7 @@ class Goals extends Component {
  
   state = { 
     goal: '',
-    goals: ['Get a development gig', 'Move to Austin, TX', 'Buy a gun or two', 'Get a dog'] 
+    goals: ['Get a development gig', 'Move to Austin, TX', 'Buy a gun or two', 'Get a dog', 'Eat Some Food'] 
   };
 
 

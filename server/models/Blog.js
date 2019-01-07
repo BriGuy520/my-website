@@ -4,10 +4,9 @@ const commentSchema = require('./Comment');
 
 const blogSchema = new Schema({
   title: String,
+  image: String,
   body: String,
-  author: String,
-  tags: String,
-  datePosted: Date,
+  datePosted: { type: Date, default: Date.now },
   likes: Number,
   comments: [commentSchema]
 });

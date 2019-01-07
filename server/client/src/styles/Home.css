@@ -21,7 +21,8 @@
 .goals {
   padding: 12px;
   background-color: #d5e0f2;
-  height: 80vh;
+  mssrgin-bottom: 20px;
+  height: 80%;
 }
 
 .goals h1 {
@@ -41,6 +42,7 @@
 
 .goals ol {
   margin: 20px 40px;
+  padding: 10px;
 }
 
 .goals ol li {
