@@ -3,7 +3,7 @@ import React from 'react';
 const BlogField = ({ input, label, meta: { error, touched } }) => {
 
   const inputType = () => {
-    if(label === "Title"){
+    if(label === "Title" || label === "Image"){
       return <input {...input}  />
     } 
 

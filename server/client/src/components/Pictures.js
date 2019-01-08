@@ -12,7 +12,7 @@ class Pictures extends Component {
 
   render(){
     const photoList = this.props.photos.map(photo => {
-       return <img alt={photo.description} src={`${photo.urls.small}`} />
+       return <img key={photo.id} alt={photo.description} src={`${photo.urls.small}`} />
     });
     
     return (

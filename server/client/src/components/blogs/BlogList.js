@@ -11,10 +11,14 @@ class BlogList extends Component {
   renderBlogs(){
     return this.props.blogs.reverse().map(blog => {
       return (
-        <div>
+        <div key={blog._id}>
+          <img alt={blog.title} src={blog.image} />
           <span>{blog.title}</span>
+          <span>{blog.author.username}</span>
           <p>{blog.body}</p>
+          <span>{blog.likes}</span>
           <p>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</p>
+          <button>Read More</button>
         </div>
       )
     })
