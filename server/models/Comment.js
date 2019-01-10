@@ -19,4 +19,4 @@ let commentSchema = new Schema({
   datePosted: Date
 });
 
-module.exports = commentSchema;
+mongoose.model('comments', commentSchema);

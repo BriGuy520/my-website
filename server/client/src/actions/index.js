@@ -1,5 +1,4 @@
 import unsplash from '../api/unsplash';
-import blog from '../api/blog';
 import axios from 'axios';
 import { FETCH_PHOTOS, FETCH_USER, FETCH_BLOGS, FETCH_BLOG } from './types';
 

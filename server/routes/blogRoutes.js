@@ -14,21 +14,21 @@ module.exports = (app) => {
     res.send(blogs);
   });
 
-  app.post('/api/blog/new', requireLogin, async (req, res) => {
-    const { title, body, likes, comments } = req.body;
+  app.post('/api/blog', requireLogin, async (req, res) => {
+    const { title, body, image, likes, comments } = req.body;
 
     const blog = new Blog({
       title,
       image,
       body,
-      author: {
-        id: req.user._id,
-        username: req.user.username
-      },
+      _author: req.user.id,
       likes,
       datePosted: Date.now(),
-      comments: comments.map(comment => comment)
-    });
+      comments
+    })
+    
+    blog.save();
+
 
     res.send(blog);
   });
@@ -38,7 +38,7 @@ module.exports = (app) => {
       if(err){
         console.log(err);
       } else {
-        res.render("blogs/:id", {blog: foundBlog });
+        res.render("blog/:id", {blog: foundBlog });
       }
     })
   })
