@@ -21,7 +21,7 @@ module.exports = (app) => {
       title,
       image,
       body,
-      _author: req.user.id,
+      author: req.user.id,
       likes,
       datePosted: Date.now(),
       comments
@@ -33,7 +33,7 @@ module.exports = (app) => {
     res.send(blog);
   });
 
-  app.get('blog/:id', (req, res) => {
+  app.get('/api/blog/:id', (req, res) => {
     Blog.findById(req.params.id).populate("comments").exec((err, foundBlog) => {
       if(err){
         console.log(err);

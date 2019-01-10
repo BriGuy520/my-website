@@ -9,7 +9,7 @@ const blogSchema = new Schema({
   _author: {
     id: {
       type: Schema.Types.ObjectId,
-      ref: "User"
+      ref: "users"
     },
     username: String
   },
@@ -17,7 +17,7 @@ const blogSchema = new Schema({
   likes: {
     id: {
       type: Schema.Types.ObjectId,
-      ref: "likes"
+      ref: "Like"
     }
   },
   comments: [commentSchema]

@@ -5,13 +5,13 @@ let commentSchema = new Schema({
   content: String,
   likes: {
     id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Like"
     }
   },
   author: {
     id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "User"
     },
     username: String

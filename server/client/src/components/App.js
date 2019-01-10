@@ -7,6 +7,7 @@ import Projects from './Projects';
 import Music from './Music';
 import Dashboard from './Dashboard';
 import NewBlog from './blogs/NewBlog';
+import ShowBlog from './blogs/ShowBlog';
 import Pictures from './Pictures';
 import '../styles/App.css';
 
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="/music" exact component={Music} />
               <Route path="/blog" exact component={Dashboard} />
               <Route path="/blog/new" exact component={NewBlog} />
+              <Route path="/blog/:id" exact component={ShowBlog} />
               <Route path="/pictures" exact component={Pictures} />
             </Switch>
           </div>

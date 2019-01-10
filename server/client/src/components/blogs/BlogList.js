@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchBlogs } from '../../actions';
 
 class BlogList extends Component {
@@ -11,20 +12,21 @@ class BlogList extends Component {
   renderBlogs(){
     return this.props.blogs.reverse().map(blog => {
       return (
-        <div key={blog.title}>
+        <div key={blog._id}>
+          <h1>{blog.title}</h1>
           <img alt={blog.title} src={blog.image} />
-          <span>{blog.title}</span>
           <p>{blog.body}</p>
           <h3>{blog.author}</h3>
           <span>{blog.likes}</span>
           <p>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</p>
-          <button>Read More</button>
+          <button><Link to={`/blog/${blog._id}`}>Read More</Link></button>
         </div>
       )
     })
   }
 
   render(){
+    console.log(this.props.blogs);
     return (
       <div>
         {this.renderBlogs()}
