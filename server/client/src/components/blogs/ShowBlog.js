@@ -6,20 +6,39 @@ import { fetchBlog } from '../../actions';
 class ShowBlog extends Component {
 
   componentDidMount(){
-    this.props.fetchBlog();
+    this.props.fetchBlog(this.props.match.params.id);
   }
+  
+  renderBlog(){
+    let { title, image, body } = this.props.blog;
 
-  render(){
     return (
       <div>
-        ShowBlog
+        <h1>{title}</h1>
+        <img src={image} alt={title} />
+        <p>{body}</p>
+      </div>
+    )
+  }
+
+  render(){  
+    
+    if(!this.props.blog){
+      return (
+        <div>Loading...</div>
+      )
+    }
+
+    return (
+      <div>
+        {this.renderBlog()}
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
- console.log(state);
+const mapStateToProps = (state, ownProps) => {
+ return { blog: state.blogs[ownProps.match.params.id] };
 }
 
 export default connect(mapStateToProps, { fetchBlog })(ShowBlog);

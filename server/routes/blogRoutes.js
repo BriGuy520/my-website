@@ -34,12 +34,13 @@ module.exports = (app) => {
   });
 
   app.get('/api/blog/:id', (req, res) => {
-    Blog.findById(req.params.id).populate("comments").exec((err, foundBlog) => {
-      if(err){
-        console.log(err);
-      } else {
-        res.render("blog/:id", {blog: foundBlog });
-      }
-    })
-  })
+    Blog.findById(req.params.id)
+      .exec()
+      .then(data => {
+        console.log(data);
+        res.status(200).json(data);
+      }).catch(err => {
+        res.status(400).json({ error: err})
+      });
+  });
 }

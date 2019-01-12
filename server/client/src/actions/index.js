@@ -29,8 +29,8 @@ export const fetchBlogs = () => async dispatch => {
   dispatch({ type: FETCH_BLOGS, payload: response.data });
 }
 
-export const fetchBlog = () => async dispatch => {
-  const response = await axios.get('/api/blog/:id');
+export const fetchBlog = (id) => async dispatch => {
+  const response = await axios.get(`/api/blog/${id}`);
 
   dispatch({ type: FETCH_BLOG, payload: response.data });
 }

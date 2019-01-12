@@ -26,7 +26,6 @@ class BlogList extends Component {
   }
 
   render(){
-    console.log(this.props.blogs);
     return (
       <div>
         {this.renderBlogs()}
@@ -36,7 +35,7 @@ class BlogList extends Component {
 }
 
 const mapStateToProps = ({ blogs }) => {
-  return { blogs };
+  return { blogs: Object.values(blogs) };
 }
 
 export default connect(mapStateToProps, { fetchBlogs })(BlogList);

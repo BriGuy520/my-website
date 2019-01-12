@@ -6,6 +6,10 @@ module.exports = function(app){
     target: 'http://localhost:5000'
   }))
 
+  app.use(proxy('/api/blog/*', {
+    target: 'http://localhost:5000'
+  }))
+
   app.use(proxy('/auth/google', {
     target: 'http://localhost:5000'
   }))
