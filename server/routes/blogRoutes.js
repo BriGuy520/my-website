@@ -3,7 +3,7 @@ const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 
-const Blog = mongoose.model('blogs');
+const Blog = mongoose.model('Blog');
 
 module.exports = (app) => {
 
@@ -35,6 +35,7 @@ module.exports = (app) => {
 
   app.get('/api/blog/:id', (req, res) => {
     Blog.findById(req.params.id)
+      .populate("comments")
       .exec()
       .then(data => {
         console.log(data);

@@ -5,7 +5,8 @@ let userSchema = new Schema({
   twitterId: String,
   facebookId: String,
   googleId: String,
-  githubId: String
+  githubId: String,
+  username: String
 });
 
-mongoose.model('users', userSchema);
+mongoose.model('User', userSchema);

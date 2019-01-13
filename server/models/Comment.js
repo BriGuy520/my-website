@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
+const likeSchema = require('./Like');
 const { Schema } = mongoose;
 
 let commentSchema = new Schema({
   content: String,
-  likes: {
-    id: {
-      type: Schema.Types.ObjectId,
-      ref: "Like"
-    }
-  },
+  likes: likeSchema,
   author: {
     id: {
       type: Schema.Types.ObjectId,
@@ -19,4 +15,4 @@ let commentSchema = new Schema({
   datePosted: Date
 });
 
-mongoose.model('comments', commentSchema);
+mongoose.model('Comment', commentSchema);

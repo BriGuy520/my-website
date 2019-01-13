@@ -5,4 +5,4 @@ let likeSchema = new Schema({
   likes: { type: Number, default: 0 }
 });
 
-mongoose.model('likes', likeSchema);
+mongoose.model('Like', likeSchema);
