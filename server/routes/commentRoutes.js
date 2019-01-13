@@ -7,7 +7,7 @@ module.exports = (app) => {
       if(err){
         console.log(err);
       } else {
-        Comment.create(req.body.commment, (err, comment) => {
+        Comment.create(req.body.commments, (err, comment) => {
           if(err){
             console.log(err);
           } else {

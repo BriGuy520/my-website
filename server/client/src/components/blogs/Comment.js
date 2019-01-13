@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form'
 import { submitComment } from '../../actions';
 
-class Comment extends Component {
-  render(){
-    return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.props.onCommentSubmit)}>
-         <Field key={name} component="textarea" type="text" label="Comment" />
-         <button onClick={() => submitComment(commentFormValues, history, id)}>
-          Submit
-         </button>
-        </form>
-      </div>
-    )
-  }
+const Comment = ({ blogId, commentFormValues, submitComment, history, handleSubmit }) => {
+  return (
+    <div>
+      <label>Leave a Comment:</label>
+      <form onSubmit={handleSubmit}>
+        <Field key={blogId} component="textarea" value={commentFormValues} type="text" label="Comment" />
+        <button onClick={() => submitComment(commentFormValues, history, blogId)}>
+        Submit
+        </button>
+      </form>
+    </div>
+  )
 }
 
-export default reduxForm({
-  commentForm: 'commentForm'
+const mapStateToProps = (state) => {
+  console.log(state.form);
+  return { commmentFormValues: state.form.commentForm }
+}
+
+const CommentForm = reduxForm({
+  form: 'commentForm'
 })(Comment);
+
+export default connect(mapStateToProps, { submitComment })(CommentForm);

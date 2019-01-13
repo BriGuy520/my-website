@@ -1,6 +1,6 @@
 import unsplash from '../api/unsplash';
 import axios from 'axios';
-import { FETCH_PHOTOS, FETCH_USER, FETCH_BLOGS, FETCH_BLOG } from './types';
+import { FETCH_PHOTOS, FETCH_USER, FETCH_BLOGS, FETCH_BLOG, FETCH_COMMENTS } from './types';
 
 export const fetchPhotos = () => async dispatch => {
   const response = await unsplash.get('/photos/search', {
@@ -45,5 +45,5 @@ export const submitComment = (values, history, id) => async dispatch => {
 export const fetchComments = () => async dispatch => {
   const response = await axios.get('/api/comment');
 
-  dispatch({ type: FETCH_COMMETNTS, payload: response.data })
+  dispatch({ type: FETCH_COMMENTS, payload: response.data })
 }

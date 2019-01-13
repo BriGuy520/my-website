@@ -9,4 +9,4 @@ let userSchema = new Schema({
   username: String
 });
 
-mongoose.model('User', userSchema);
+mongoose.model('users', userSchema);
