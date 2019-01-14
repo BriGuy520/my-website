@@ -25,7 +25,7 @@ module.exports = (app) => {
       likes,
       datePosted: Date.now(),
       comments
-    })
+    });
     
     blog.save();
 
@@ -40,7 +40,7 @@ module.exports = (app) => {
       .then(data => {
         res.status(200).json(data);
       }).catch(err => {
-        res.status(400).json({ error: err})
+        res.status(400).json({ error: err });
       });
   });
 }

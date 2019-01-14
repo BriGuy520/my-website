@@ -10,7 +10,7 @@ module.exports = function(app){
     target: 'http://localhost:5000'
   }))
 
-  app.use(proxy('/api/comment/*', {
+  app.use(proxy('/api/blog/*/comment', {
     target: 'http://localhost:5000'
   }))
 

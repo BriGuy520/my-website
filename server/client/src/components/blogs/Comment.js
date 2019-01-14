@@ -18,7 +18,7 @@ const Comment = ({ blogId, commentFormValues, submitComment, history, handleSubm
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.form);
+  console.log(state.form.commentForm);
   return { commmentFormValues: state.form.commentForm }
 }
 
