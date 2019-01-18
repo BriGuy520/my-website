@@ -1,4 +1,4 @@
-import { FETCH_BLOGS, FETCH_BLOG } from '../actions/types';
+import { FETCH_BLOGS, FETCH_BLOG, FETCH_COMMENTS } from '../actions/types';
 
 export default (state = {}, action) => {
   switch(action.type){
@@ -6,6 +6,8 @@ export default (state = {}, action) => {
       return action.payload;
     case FETCH_BLOG:
       return { ...state, [action.payload._id]: action.payload};
+    case FETCH_COMMENTS: 
+      return action.payload;
     default:
       return state;
   }

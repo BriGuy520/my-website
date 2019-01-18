@@ -1,6 +1,6 @@
 import unsplash from '../api/unsplash';
 import axios from 'axios';
-import { FETCH_PHOTOS, FETCH_USER, FETCH_BLOGS, FETCH_BLOG, FETCH_COMMENTS } from './types';
+import { FETCH_PHOTOS, FETCH_USER, FETCH_BLOGS, FETCH_BLOG } from './types';
 
 export const fetchPhotos = () => async dispatch => {
   const response = await unsplash.get('/photos/search', {
@@ -17,6 +17,7 @@ export const fetchUser = () => async dispatch => {
 }
 
 export const submitBlog = (values, history) => async dispatch => {
+  console.log(values);
   const response = await axios.post('/api/blog', values);
 
   history.push('/blog');
@@ -35,15 +36,15 @@ export const fetchBlog = (id) => async dispatch => {
   dispatch({ type: FETCH_BLOG, payload: response.data });
 }
 
-export const submitComment = (values, history, id) => async dispatch => {
-  const response = await axios.post('/api/comment', values);
+export const submitComment = (comment, history, id) => async dispatch => {
+  const response = await axios.post(`/api/blog/${id}/comment`, comment);
 
   history.push(`/blog/${id}`)
   dispatch({ type: FETCH_USER, payload: response.data });
 } 
 
-export const fetchComments = () => async dispatch => {
-  const response = await axios.get('/api/comment');
+export const fetchComments = (id) => async dispatch => {
+  const response = await axios.get(`/api/blog/${id}`);
 
-  dispatch({ type: FETCH_COMMENTS, payload: response.data })
+  dispatch({ type: FETCH_BLOGS, payload: response.data })
 }

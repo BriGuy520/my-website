@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
-import Comment from './Comment';
+import CommentList from './CommentList';
 
 
 class ShowBlog extends Component {
@@ -33,7 +33,7 @@ class ShowBlog extends Component {
     return (
       <div>
         {this.renderBlog()}
-        <Comment blogId={this.props.match.params.id} />
+        
       </div>
     )
   }

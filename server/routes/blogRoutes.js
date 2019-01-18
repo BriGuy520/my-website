@@ -9,8 +9,9 @@ module.exports = (app) => {
 
   // Show all blogs
   app.get('/api/blog', async (req, res) => {
-    const blogs = await Blog.find({ _user: req.user.id });
+    const blogs = await Blog.find({ user: req.user.id });
 
+    console.log(blogs);
     res.send(blogs);
   });
 
@@ -21,7 +22,7 @@ module.exports = (app) => {
       title,
       image,
       body,
-      author: req.user.id,
+      author: req.body.author.id,
       likes,
       datePosted: Date.now(),
       comments
