@@ -25,4 +25,8 @@ module.exports = function(app){
   app.use(proxy('/auth/facebook', {
     target: 'http://localhost:5000'
   }))
+
+  app.use(proxy('/auth/github', {
+    target: 'http://localhost:5000'
+  }))
 }

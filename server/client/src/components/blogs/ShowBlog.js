@@ -33,7 +33,7 @@ class ShowBlog extends Component {
     return (
       <div>
         {this.renderBlog()}
-        
+        <CommentList />
       </div>
     )
   }

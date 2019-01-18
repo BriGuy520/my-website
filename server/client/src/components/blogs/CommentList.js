@@ -12,7 +12,7 @@ class CommentList extends Component {
     return this.props.blogs.map(blog => {
       return (
         <div key={blog.title}>
-          <p>{blog.body}</p>
+          <p>{blog.comments[0]}</p>
         </div>
       )
     });
@@ -29,7 +29,7 @@ class CommentList extends Component {
 }
 
 const mapStateToProps = ({ blogs }) => {
-  return { blogs };
+  return { blogs: Object.values(blogs) };
 }
 
 export default connect(mapStateToProps, { fetchComments })(CommentList);

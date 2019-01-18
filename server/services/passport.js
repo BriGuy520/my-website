@@ -30,13 +30,15 @@ passport.use(
   async (accessToken, refreshToken, profile, done) => {
 
 
-    const existingUser = await User.findOne({ facebookId: profile.id });
+    const existingUser = await User.findOne({ facebook: { id: profile.id }});
 
     if(existingUser){
       return done(null, existingUser);
     }
 
-    const user = await new User({ facebookId: profile.id }).save();
+
+    const user = await new User({ facebook: { id: profile.id, username: profile.displayName} })
+      .save();
     done(null, user);
   })
 );
@@ -48,13 +50,14 @@ passport.use(
     callbackURL: '/auth/twitter/callback'
   }, 
   async (token, tokenSecret, profile, done) => {
-    const existingUser = await User.findOne({ twitterId: profile.id });
+    const existingUser = await User.findOne({ twitter: { id: profile.id }});
 
+    console.log(profile)
     if(existingUser){
       return done(null, existingUser);
     }
 
-    const user = await new User({ twitterId: profile.id }).save();
+    const user = await new User({ twitter: { id: profile.id, username: profile.displayName } }).save();
     done(null, user);
   })
 );
@@ -68,13 +71,13 @@ passport.use(
   },
   async (accessToken, refreshToken, profile, done) => {
 
-    const existingUser = await User.findOne({ googleId: profile.id });
+    const existingUser = await User.findOne({ google: { id: profile.id } });
 
     if(existingUser){
       return done(null, existingUser);
     }
 
-    const user = await new User({ googleId: profile.id }).save();
+    const user = await new User({ google: { id: profile.id, username: profile.displayName } }).save();
 
     done(null, user);
   })
@@ -89,13 +92,13 @@ passport.use(
   }, 
   async (accessToken, refreshToken, profile, done) => {
     
-    const existingUser = await User.findOne({ githubId: profile.id });
+    const existingUser = await User.findOne({ github: profile.id });
 
     if(existingUser){
       return done(null, existingUser);
     }
 
-    const user = await new User({ githubId: profile.id }).save();
+    const user = await new User({ github: { id: profile.id, username: profile.displayName } }).save();
 
     done(null, user);
   })
