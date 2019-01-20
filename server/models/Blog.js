@@ -1,22 +1,16 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const commentSchema = require('./Comment');
-const likeSchema = require('./Like');
+const userSchema = require('./User');
+
 
 const blogSchema = new Schema({
   title: String,
   image: String,
   body: String,
-  author: {
-    id: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    },
-    username: String
-  },
+  author: [userSchema] ,
   datePosted: { type: Date, default: Date.now },
-  likes: likeSchema,
-  comments: [commentSchema]
+  likes: { type: Schema.Types.ObjectId, ref: "Like"},
+  comments: { type: Schema.Types.ObjectId, ref: "Comment" }
 });
 
 mongoose.model('Blog', blogSchema);

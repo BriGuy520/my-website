@@ -30,7 +30,7 @@ passport.use(
   async (accessToken, refreshToken, profile, done) => {
 
 
-    const existingUser = await User.findOne({ facebook: { id: profile.id }});
+    const existingUser = await User.findOne({ facebook: profile.id });
 
     if(existingUser){
       return done(null, existingUser);
@@ -71,7 +71,8 @@ passport.use(
   },
   async (accessToken, refreshToken, profile, done) => {
 
-    const existingUser = await User.findOne({ google: { id: profile.id } });
+
+    const existingUser = await User.findOne({ google: profile.id });
 
     if(existingUser){
       return done(null, existingUser);
@@ -92,7 +93,7 @@ passport.use(
   }, 
   async (accessToken, refreshToken, profile, done) => {
     
-    const existingUser = await User.findOne({ github: profile.id });
+    const existingUser = await User.findOne({ github: { id: profile.id } });
 
     if(existingUser){
       return done(null, existingUser);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
+import Comment from './Comment';
 import CommentList from './CommentList';
 
 
@@ -11,18 +12,21 @@ class ShowBlog extends Component {
   }
   
   renderBlog(){
-    let { title, image, body } = this.props.blog;
+    let { title, image, body, author } = this.props.blog;
 
     return (
       <div>
         <h1>{title}</h1>
+        <h4>By {author}</h4>
         <img src={image} alt={title} />
         <p>{body}</p>
+        
       </div>
     )
   }
 
   render(){  
+    
     
     if(!this.props.blog){
       return (
@@ -30,10 +34,14 @@ class ShowBlog extends Component {
       )
     }
 
+    console.log(this.props.blog);
+
     return (
       <div>
         {this.renderBlog()}
+        <Comment newComment={this.props.blog}/>
         <CommentList />
+
       </div>
     )
   }

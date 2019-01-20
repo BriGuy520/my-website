@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 require('./models/Blog');
 require('./models/Like');
 require('./models/User');
+require('./models/Comment');
 require('./services/passport');
 
 const app = express();

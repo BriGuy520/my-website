@@ -11,8 +11,8 @@ class CommentList extends Component {
   renderComment(){
     return this.props.blogs.map(blog => {
       return (
-        <div key={blog.title}>
-          <p>{blog.comments[0]}</p>
+        <div>
+          <p>{blog.comment}</p>
         </div>
       )
     });
@@ -21,7 +21,6 @@ class CommentList extends Component {
   render(){
     return (
       <div>
-        <div>Comment List</div>
         {this.renderComment()}
       </div>
     )

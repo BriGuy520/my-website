@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 
 const Blog = mongoose.model('Blog');
+const User = mongoose.model('User');
 
 module.exports = (app) => {
 
@@ -11,27 +12,31 @@ module.exports = (app) => {
   app.get('/api/blog', async (req, res) => {
     const blogs = await Blog.find({ user: req.user.id });
 
-    console.log(blogs);
     res.send(blogs);
   });
 
-  app.post('/api/blog', requireLogin, async (req, res) => {
+  app.post('/api/blog', requireLogin, (req, res) => {
     const { title, body, image, likes, comments } = req.body;
 
-    const blog = new Blog({
-      title,
-      image,
-      body,
-      author: req.body.author.id,
-      likes,
-      datePosted: Date.now(),
-      comments
-    });
+     User.findOne({ _id: req.user})
+      .then(data => {
+        console.log(data);
+        const blog = new Blog({
+          title,
+          image,
+          body,
+          author: data.google.username,
+          likes,
+          datePosted: Date.now(),
+          comments
+        });
     
-    blog.save();
-
-
-    res.send(blog);
+        blog.save();
+        res.send(blog);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   });
 
   app.get('/api/blog/:id', (req, res) => {
