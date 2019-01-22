@@ -36,13 +36,6 @@ export const fetchBlog = (id) => async dispatch => {
   dispatch({ type: FETCH_BLOG, payload: response.data });
 }
 
-export const submitComment = (comment, id) => async dispatch => {
-  const response = await axios.post(`/api/blog/${id}/comment`, comment);
-
-  // history.push(`/blog/${id}`)
-  dispatch({ type: FETCH_USER, payload: response.data });
-} 
-
 export const fetchComments = (id) => async dispatch => {
   const response = await axios.get(`/api/blog/${id}/comment`);
 

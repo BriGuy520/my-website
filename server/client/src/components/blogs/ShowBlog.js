@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
-import Comment from './Comment';
+import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 
 
@@ -33,12 +33,10 @@ class ShowBlog extends Component {
       )
     }
 
-    console.log(this.props.blog);
-
     return (
       <div>
         {this.renderBlog()}
-        <Comment newComment={this.props.blog}/>
+        <CommentForm newComment={this.props.blog}/>
         <CommentList />
 
       </div>

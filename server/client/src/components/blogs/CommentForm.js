@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { submitComment } from '../../actions';
 import axios from 'axios';
 
-class Comment extends Component {
+class CommentForm extends Component {
 
   state = { content: '', author: '', likes: null };
 
@@ -15,9 +14,10 @@ class Comment extends Component {
       event.preventDefault();
 
       const { content } = this.state;
+      console.log(content);
       axios.post(`/api/blog/${comment._id}/comment`, { content })
       .then(res => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -52,4 +52,4 @@ class Comment extends Component {
 
 
 
-export default Comment;
+export default CommentForm;
