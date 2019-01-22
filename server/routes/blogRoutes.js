@@ -20,7 +20,7 @@ module.exports = (app) => {
    
      User.findOne({ _id: req.user})
       .then(data => {
-        const { username } = data.google || data.twitter || data.facebook || data.github;
+        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
         const blog = new Blog({
           title,
