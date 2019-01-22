@@ -6,10 +6,7 @@ let commentSchema = new Schema({
   content: String,
   likes: likeSchema,
   author: {
-    id: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    },
+    id: { type: Schema.Types.ObjectId, ref: "User" },
     username: String
   },
   datePosted: Date

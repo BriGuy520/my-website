@@ -17,15 +17,21 @@ module.exports = (app) => {
       });
   });
 
-  app.post('/api/blog/:id/comment', requireLogin, async (req, res) => {
+  app.post('/api/blog/:id/comment', async (req, res) => {
 
     const { content, author } = req.body;
+    const comment = new Comment({ content, author });
 
-    const comment = new Comment({ content });
+    Blog.findById(req.params.id)
+      .exec((err, blog) => {
+        if(err){
+          console.log(err);
+        } else {
+          blog.comments.push(comment);
+          blog.save();
 
-    Blog.findOne({_id: req.body._id})
-      .then(data => {
-        console.log(data);
+          res.send(blog);
+        }
       });
   });
 }

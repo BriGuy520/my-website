@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { submitComment } from '../../actions';
+import axios from 'axios';
 
 class Comment extends Component {
 
@@ -12,20 +13,26 @@ class Comment extends Component {
   handleSubmit(event){
     event.preventDefault();
 
-    this.setState({ content: '' });
+   // this.setState({ content: '' });
+  }
+
+  submitComment(id){
+    axios.post(`/api/blog/${id}/comment`, {
+      content: this.state.content
+    });
   }
 
   render(){
 
     const { newComment } = this.props;
     const { content } = this.state;
-
+    console.log(newComment);
     return (
       <div>
         <label>Leave a Comment:</label>
         <form onSubmit={this.handleSubmit}>
           <textarea onChange={this.newComment.bind(this)} type="text" value={content} />
-          <button  onClick={() => submitComment(newComment._id, content)}>
+          <button  onClick={() => submitComment(newComment._id)}>
           Submit
           </button>
         </form>
