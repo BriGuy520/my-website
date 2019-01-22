@@ -8,11 +8,11 @@ class CommentList extends Component {
     this.props.fetchComments();
   }
 
-  renderComment(){
-    return this.props.blogs.map(blog => {
+  renderComments(){
+    return this.props.blogs.map((blog, idx) => {
       return (
-        <div>
-          <p>{blog.comment}</p>
+        <div key={blog._id}>
+          <p>{blog.comments[idx]}</p>
         </div>
       )
     });
@@ -21,7 +21,7 @@ class CommentList extends Component {
   render(){
     return (
       <div>
-        {this.renderComment()}
+        {this.renderComments()}
       </div>
     )
   }

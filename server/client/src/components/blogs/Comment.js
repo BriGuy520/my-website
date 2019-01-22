@@ -4,35 +4,43 @@ import axios from 'axios';
 
 class Comment extends Component {
 
-  state = { content: '' };
+  state = { content: '', author: '', likes: null };
 
   newComment = (event) => {
-    this.setState({ content: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   }
   
-  handleSubmit(event){
-    event.preventDefault();
+  handleSubmit(comment){
+    return (event) => {
+      event.preventDefault();
 
-   // this.setState({ content: '' });
+      const { content } = this.state;
+      axios.post(`/api/blog/${comment._id}/comment`, { content })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+
   }
 
-  submitComment(id){
-    axios.post(`/api/blog/${id}/comment`, {
-      content: this.state.content
-    });
-  }
 
   render(){
 
-    const { newComment } = this.props;
     const { content } = this.state;
-    console.log(newComment);
+    const { newComment } = this.props;
     return (
       <div>
         <label>Leave a Comment:</label>
-        <form onSubmit={this.handleSubmit}>
-          <textarea onChange={this.newComment.bind(this)} type="text" value={content} />
-          <button  onClick={() => submitComment(newComment._id)}>
+        <form onSubmit={this.handleSubmit(newComment)}>
+          <textarea onChange={this.newComment.bind(this)} 
+            name="content" 
+            type="text" 
+            value={content} 
+          />
+          <button>
           Submit
           </button>
         </form>

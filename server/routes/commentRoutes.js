@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
+
 const Blog = mongoose.model('Blog');
 const Comment = mongoose.model('Comment');
+const User = mongoose.model('User');
 
 module.exports = (app) => {
 
@@ -19,22 +21,25 @@ module.exports = (app) => {
 
   app.post('/api/blog/:id/comment', async (req, res) => {
 
-    const { content, author } = req.body;
+    const { content, author, likes } = req.body;
+    const user = User.findOne({ _id: req.user });
 
     Blog.findById(req.params.id)
       .exec((err, blog) => {
         if(err){
           console.log(err);
         } else {
+
           const comment = new Comment({ 
-            content, 
+            content,
+            likes, 
             author
           });
 
           blog.comments.push(comment);
           blog.save();
 
-          res.send(blog);
+          res.json(blog);
         }
       });
   });

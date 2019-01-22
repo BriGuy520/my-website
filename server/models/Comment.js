@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const likeSchema = require('./Like');
 const { Schema } = mongoose;
 
 let commentSchema = new Schema({
