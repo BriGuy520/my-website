@@ -9,7 +9,7 @@ const blogSchema = new Schema({
   body: String,
   author: [userSchema] ,
   datePosted: { type: Date, default: Date.now },
-  likes: { type: Schema.Types.ObjectId, ref: "Like"},
+  likes: { type: Number, default: 0 },
   comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }]
 });
 

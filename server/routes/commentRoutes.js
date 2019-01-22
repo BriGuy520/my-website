@@ -20,13 +20,17 @@ module.exports = (app) => {
   app.post('/api/blog/:id/comment', async (req, res) => {
 
     const { content, author } = req.body;
-    const comment = new Comment({ content, author });
 
     Blog.findById(req.params.id)
       .exec((err, blog) => {
         if(err){
           console.log(err);
         } else {
+          const comment = new Comment({ 
+            content, 
+            author
+          });
+
           blog.comments.push(comment);
           blog.save();
 
