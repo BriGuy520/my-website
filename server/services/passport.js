@@ -30,7 +30,7 @@ passport.use(
   async (accessToken, refreshToken, profile, done) => {
 
 
-    const existingUser = await User.findOne({ facebook: profile.id });
+    const existingUser = await User.findOne({ "facebook.id": profile.id });
 
     if(existingUser){
       return done(null, existingUser);
@@ -50,9 +50,8 @@ passport.use(
     callbackURL: '/auth/twitter/callback'
   }, 
   async (token, tokenSecret, profile, done) => {
-    const existingUser = await User.findOne({ twitter: { id: profile.id }});
-
-    console.log(profile)
+    const existingUser = await User.findOne({ "twitter.id": profile.id });
+    
     if(existingUser){
       return done(null, existingUser);
     }
@@ -71,8 +70,8 @@ passport.use(
   },
   async (accessToken, refreshToken, profile, done) => {
 
-
-    const existingUser = await User.findOne({ google: profile.id });
+    console.log(profile.id);
+    const existingUser = await User.findOne({ "google.id": profile.id });
 
     if(existingUser){
       return done(null, existingUser);
@@ -93,7 +92,7 @@ passport.use(
   }, 
   async (accessToken, refreshToken, profile, done) => {
     
-    const existingUser = await User.findOne({ github: { id: profile.id } });
+    const existingUser = await User.findOne({ "github.id": profile.id });
 
     if(existingUser){
       return done(null, existingUser);

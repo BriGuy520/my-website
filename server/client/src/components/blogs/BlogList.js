@@ -14,9 +14,9 @@ class BlogList extends Component {
       return (
         <div key={blog._id}>
           <h1>{blog.title}</h1>
+          <h3>By {blog.author}</h3>
           <img alt={blog.title} src={blog.image} />
           <p>{blog.body}</p>
-          <h3>{blog.author}</h3>
           <span>{blog.likes}</span>
           <p>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</p>
           <button><Link to={`/blog/${blog._id}`}>Read More</Link></button>

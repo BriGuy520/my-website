@@ -17,15 +17,16 @@ module.exports = (app) => {
 
   app.post('/api/blog', requireLogin, (req, res) => {
     const { title, body, image, likes, comments } = req.body;
-
+   
      User.findOne({ _id: req.user})
       .then(data => {
-        console.log(data);
+        const { username } = data.google || data.twitter || data.facebook || data.github;
+
         const blog = new Blog({
           title,
           image,
           body,
-          author: data.google.username,
+          author: username,
           likes,
           datePosted: Date.now(),
           comments

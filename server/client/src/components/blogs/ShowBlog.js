@@ -20,7 +20,6 @@ class ShowBlog extends Component {
         <h4>By {author}</h4>
         <img src={image} alt={title} />
         <p>{body}</p>
-        
       </div>
     )
   }

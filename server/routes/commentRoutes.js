@@ -23,7 +23,7 @@ module.exports = (app) => {
 
     const comment = new Comment({ content });
 
-    Blog.findById(req.body._id)
+    Blog.findOne({_id: req.body._id})
       .then(data => {
         console.log(data);
       });
