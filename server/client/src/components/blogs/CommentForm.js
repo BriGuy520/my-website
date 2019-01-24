@@ -14,14 +14,16 @@ class CommentForm extends Component {
       event.preventDefault();
 
       const { content } = this.state;
-      console.log(content);
-       axios.post(`/api/blog/${comment._id}/comment`, { content })
+
+      axios.post(`/api/blog/${comment._id}/comment`, { content })
       .then(res => {
         return res.data;
       })
       .catch(err => {
         console.log(err);
       });
+
+      this.setState({ content: '' });
     }
   }
 

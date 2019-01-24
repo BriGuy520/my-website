@@ -8,10 +8,13 @@ class CommentList extends Component {
     this.props.fetchComments();
   }
 
+  componentDidUpdate(){
+    this.props.fetchComments();
+  }
+
   renderComments(){
     return this.props.comments.reverse().map((comment) => {
-      console.log(comment.blog[0]);
-      if(comment.blog[0] === this.props.blogOwnership._id){
+      if(comment.blog === this.props.blogOwnership._id){
         return (
           <div key={comment._id}>
             <h3>By {comment.author}</h3>
@@ -19,7 +22,7 @@ class CommentList extends Component {
             <span>{comment.likes}</span>
             <p>Posted On: {new Date(comment.datePosted).toLocaleDateString()}</p>
           </div>
-        )
+        );
       }
     });
   }
@@ -34,7 +37,6 @@ class CommentList extends Component {
 }
 
 const mapStateToProps = ({ comments, blogs }) => {
-  console.log(comments);
   return { 
     comments: Object.values(comments),
     blogs: Object.values(blogs)

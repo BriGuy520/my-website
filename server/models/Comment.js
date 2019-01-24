@@ -7,7 +7,7 @@ let commentSchema = new Schema({
   likes: { type: Number, default: 0 },
   author: [userSchema],
   datePosted: { type: Date, default: Date.now },
-  blog: [{ type: Schema.Types.ObjectId, ref: "Blog" }]
+  blog: { type: Schema.Types.ObjectId, ref: "Blog" }
 });
 
 mongoose.model('Comment', commentSchema);
