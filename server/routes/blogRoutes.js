@@ -10,7 +10,7 @@ module.exports = (app) => {
 
   // Show all blogs
   app.get('/api/blog', async (req, res) => {
-    const blogs = await Blog.find({ user: req.user.id });
+    const blogs = await Blog.find({ id: req.params.id });
 
     res.send(blogs);
   });

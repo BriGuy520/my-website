@@ -9,12 +9,12 @@ module.exports = (app) => {
 
   app.get('/api/blog/:id/comment', async (req, res) => {
     // fetch comments from a blog
-   const comments = await Comment.find({ user: req.user.id });
+   const comments = await Comment.find({ id: req.params._id });
 
    res.send(comments);
   });
 
-  app.post('/api/blog/:id/comment', async (req, res) => {
+  app.post('/api/blog/:id/comment', requireLogin, async (req, res) => {
 
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
