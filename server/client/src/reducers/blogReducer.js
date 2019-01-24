@@ -6,8 +6,6 @@ export default (state = {}, action) => {
       return action.payload;
     case FETCH_BLOG:
       return { ...state, [action.payload._id]: action.payload};
-    case FETCH_COMMENTS: 
-      return action.payload;
     default:
       return state;
   }

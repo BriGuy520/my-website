@@ -37,7 +37,7 @@ class ShowBlog extends Component {
       <div>
         {this.renderBlog()}
         <CommentForm newComment={this.props.blog}/>
-      
+        <CommentList />
 
       </div>
     )

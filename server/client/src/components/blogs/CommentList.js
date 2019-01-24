@@ -9,10 +9,11 @@ class CommentList extends Component {
   }
 
   renderComments(){
-    return this.props.blogs.map((blog, idx) => {
+    return this.props.comments.map((comment, idx) => {
       return (
-        <div key={blog._id}>
-          <p>{blog.comments[idx]}</p>
+        <div key={comment._id}>
+          <h3>By {comment.author}</h3>
+          <p>{comment.content}</p>
         </div>
       )
     });
@@ -27,8 +28,9 @@ class CommentList extends Component {
   }
 }
 
-const mapStateToProps = ({ blogs }) => {
-  return { blogs: Object.values(blogs) };
+const mapStateToProps = ({ comments }) => {
+  console.log(comments);
+  return { comments: Object.values(comments) };
 }
 
 export default connect(mapStateToProps, { fetchComments })(CommentList);
