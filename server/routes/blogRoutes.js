@@ -16,7 +16,7 @@ module.exports = (app) => {
   });
 
   app.post('/api/blog', requireLogin, (req, res) => {
-    const { title, body, image, likes, comments } = req.body;
+    const { title, body, image, likes } = req.body;
    
      User.findOne({ _id: req.user})
       .then(data => {
@@ -28,8 +28,7 @@ module.exports = (app) => {
           body,
           author: username,
           likes,
-          datePosted: Date.now(),
-          comments
+          datePosted: Date.now()
         });
     
         blog.save();
@@ -42,7 +41,6 @@ module.exports = (app) => {
 
   app.get('/api/blog/:id', (req, res) => {
     Blog.findById(req.params.id)
-      .populate("comments")
       .exec()
       .then(data => {
         res.status(200).json(data);

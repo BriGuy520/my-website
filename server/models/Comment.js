@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const userSchema = require('./User');
 
 let commentSchema = new Schema({
   content: String,
   likes: { type: Number, default: 0 },
-  author: {
-    id: { type: Schema.Types.ObjectId, ref: "User" },
-    username: String
-  },
+  author: [userSchema],
   datePosted: Date
 });
 

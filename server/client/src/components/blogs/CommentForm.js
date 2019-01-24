@@ -15,9 +15,9 @@ class CommentForm extends Component {
 
       const { content } = this.state;
       console.log(content);
-      axios.post(`/api/blog/${comment._id}/comment`, { content })
+       axios.post(`/api/blog/${comment._id}/comment`, { content })
       .then(res => {
-        console.log(res.data);
+        return res.data;
       })
       .catch(err => {
         console.log(err);

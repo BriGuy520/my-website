@@ -1,46 +1,41 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 
-const Blog = mongoose.model('Blog');
 const Comment = mongoose.model('Comment');
 const User = mongoose.model('User');
+const Blog = mongoose.model('Blog');
 
 module.exports = (app) => {
 
   app.get('/api/blog/:id/comment', async (req, res) => {
     // fetch comments from a blog
-    Blog.findById(req.params.id)
-      .populate("comments")
-      .exec()
-      .then(data => {
-        res.status(200).json(data);
-      }).catch(err => {
-        res.status(400).json({ error: err })
-      });
+   const comments = await Comment.find({ user: req.user.id })
+
+   res.send(comments);
   });
 
   app.post('/api/blog/:id/comment', async (req, res) => {
 
-    const { content, author, likes } = req.body;
-    const user = User.findOne({ _id: req.user });
+    const { content, likes } = req.body;
+    
+    await User.findOne({ _id: req.user })
+      .then(data => {
+        console.log(data.github.username);
 
-    Blog.findById(req.params.id)
-      .exec((err, blog) => {
-        if(err){
-          console.log(err);
-        } else {
+        username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
-          const comment = new Comment({ 
-            content,
-            likes, 
-            author
-          });
+        const comment = new Comment({ 
+          content,
+          author: username,
+          likes
+        });
 
-          blog.comments.push(comment);
-          blog.save();
-
-          res.json(blog);
-        }
+        comment.save();
+        console.log(comment);
+        res.send(comment);
+      })
+      .catch(err => {
+        console.log(err);
       });
   });
 }
