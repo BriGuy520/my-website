@@ -29,11 +29,11 @@ class CommentForm extends Component {
   render(){
 
     const { content } = this.state;
-    const { newComment } = this.props;
+    const { comment } = this.props;
     return (
       <div>
         <label>Leave a Comment:</label>
-        <form onSubmit={this.handleSubmit(newComment)}>
+        <form onSubmit={this.handleSubmit(comment)}>
           <textarea onChange={this.newComment.bind(this)} 
             name="content" 
             type="text" 

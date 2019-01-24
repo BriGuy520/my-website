@@ -10,14 +10,17 @@ class CommentList extends Component {
 
   renderComments(){
     return this.props.comments.reverse().map((comment) => {
-      return (
-        <div key={comment._id}>
-          <h3>By {comment.author}</h3>
-          <p>{comment.content}</p>
-          <span>{comment.likes}</span>
-          <p>Posted On: {new Date(comment.datePosted).toLocaleDateString()}</p>
-        </div>
-      )
+      console.log(comment.blog[0]);
+      if(comment.blog[0] === this.props.blogOwnership._id){
+        return (
+          <div key={comment._id}>
+            <h3>By {comment.author}</h3>
+            <p>{comment.content}</p>
+            <span>{comment.likes}</span>
+            <p>Posted On: {new Date(comment.datePosted).toLocaleDateString()}</p>
+          </div>
+        )
+      }
     });
   }
   
@@ -30,9 +33,12 @@ class CommentList extends Component {
   }
 }
 
-const mapStateToProps = ({ comments }) => {
+const mapStateToProps = ({ comments, blogs }) => {
   console.log(comments);
-  return { comments: Object.values(comments) };
+  return { 
+    comments: Object.values(comments),
+    blogs: Object.values(blogs)
+  };
 }
 
 export default connect(mapStateToProps, { fetchComments })(CommentList);

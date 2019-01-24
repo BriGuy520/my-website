@@ -21,9 +21,8 @@ module.exports = (app) => {
   
     await User.findOne({ _id: req.user })
       .then(data => {
-        console.log(data.github.username);
 
-        username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
+        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
         const comment = new Comment({ 
           content,
@@ -35,7 +34,6 @@ module.exports = (app) => {
         });
 
         comment.save();
-        console.log(comment);
         res.send(comment);
       })
       .catch(err => {
