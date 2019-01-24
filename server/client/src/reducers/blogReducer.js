@@ -1,4 +1,4 @@
-import { FETCH_BLOGS, FETCH_BLOG, FETCH_COMMENTS } from '../actions/types';
+import { FETCH_BLOGS, FETCH_BLOG } from '../actions/types';
 
 export default (state = {}, action) => {
   switch(action.type){

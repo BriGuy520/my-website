@@ -8,7 +8,7 @@ class CommentForm extends Component {
   newComment = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   }
-  
+
   handleSubmit(comment){
     return (event) => {
       event.preventDefault();
@@ -21,9 +21,8 @@ class CommentForm extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
     }
-
   }
 
 

@@ -9,7 +9,7 @@ module.exports = (app) => {
 
   app.get('/api/blog/:id/comment', async (req, res) => {
     // fetch comments from a blog
-   const comments = await Comment.find({ user: req.user.id })
+   const comments = await Comment.find({ user: req.user.id });
 
    res.send(comments);
   });
@@ -17,7 +17,8 @@ module.exports = (app) => {
   app.post('/api/blog/:id/comment', async (req, res) => {
 
     const { content, likes } = req.body;
-    
+    const blogId = await Blog.findById(req.params.id);
+  
     await User.findOne({ _id: req.user })
       .then(data => {
         console.log(data.github.username);
@@ -27,7 +28,10 @@ module.exports = (app) => {
         const comment = new Comment({ 
           content,
           author: username,
-          likes
+          likes, 
+          datePosted: Date.now(),
+          blog: blogId
+          
         });
 
         comment.save();

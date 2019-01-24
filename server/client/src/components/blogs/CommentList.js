@@ -9,11 +9,13 @@ class CommentList extends Component {
   }
 
   renderComments(){
-    return this.props.comments.map((comment, idx) => {
+    return this.props.comments.reverse().map((comment) => {
       return (
         <div key={comment._id}>
           <h3>By {comment.author}</h3>
           <p>{comment.content}</p>
+          <span>{comment.likes}</span>
+          <p>Posted On: {new Date(comment.datePosted).toLocaleDateString()}</p>
         </div>
       )
     });
