@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cover from './Cover';
 import Goals from './Goals';
 import Skills from './Skills';
+import Tweets from './Tweets';
 import '../../styles/Home.css';
 
 
@@ -15,6 +16,7 @@ class Home extends Component {
       <div>
         <Cover />
         <Goals />
+        <Tweets />
         <Skills />
       </div>
      
