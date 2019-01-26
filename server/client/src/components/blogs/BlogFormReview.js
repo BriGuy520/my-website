@@ -9,7 +9,7 @@ const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
 
   const reviewFields = _.map(formFields, ({ name, label }) => {
     return (
-      <div key={name}>
+      <div className="ui form" key={name}>
         <label>{label}</label>
         <div>
           {formValues[name]}
@@ -22,8 +22,8 @@ const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
     <div>
       <h5>Please confirm your entries</h5>
       {reviewFields}
-      <button onClick={onCancel}>Back</button>
-      <button onClick={() => submitBlog(formValues, history)}>
+      <button className="ui button red" onClick={onCancel}>Back</button>
+      <button className="ui primary button" onClick={() => submitBlog(formValues, history)}>
         Confirm
       </button>
     </div>

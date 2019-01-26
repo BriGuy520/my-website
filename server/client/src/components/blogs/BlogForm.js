@@ -15,11 +15,11 @@ class BlogForm extends Component {
   
   render(){
     return (
-      <div>
+      <div className="ui form">
         <form onSubmit={this.props.handleSubmit(this.props.onBlogSubmit)}>
           {this.renderFields()}
-          <Link to="/blog">Cancel</Link>
-          <button type="submit">Submit</button>
+          <Link className="ui button red" to="/blog">Cancel</Link>
+          <button className="ui primary button" type="submit">Submit</button>
         </form> 
       </div>
     )
