@@ -1,13 +1,11 @@
 import unsplash from '../api/unsplash';
-import twitter from '../api/twitter';
 import axios from 'axios';
 import { 
   FETCH_PHOTOS, 
   FETCH_USER, 
   FETCH_BLOGS, 
   FETCH_BLOG, 
-  FETCH_COMMENTS, 
-  FETCH_TWEETS 
+  FETCH_COMMENTS
 } from './types';
 
 export const fetchPhotos = () => async dispatch => {
@@ -16,12 +14,6 @@ export const fetchPhotos = () => async dispatch => {
   });
 
   dispatch({ type: FETCH_PHOTOS, payload: response.data });
-}
-
-export const fetchTweets = () => async dispatch => {
-  const response = await twitter.get(`?screen_name=briTheDevGuy&count=5`);
-
-  dispatch({ type: FETCH_TWEETS, payload: response.data });
 }
 
 export const fetchUser = () => async dispatch => {

@@ -8,9 +8,6 @@ import '../../styles/Home.css';
 
 class Home extends Component {
 
-  
-
-
   render(){
     return (
       <div>
@@ -18,8 +15,7 @@ class Home extends Component {
         <Goals />
         <Tweets />
         <Skills />
-      </div>
-     
+      </div>   
     );
   }
 }

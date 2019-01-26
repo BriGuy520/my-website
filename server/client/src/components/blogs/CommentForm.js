@@ -33,7 +33,7 @@ class CommentForm extends Component {
     const { content } = this.state;
     const { comment } = this.props;
     return (
-      <div>
+      <div className="ui form">
         <label>Leave a Comment:</label>
         <form onSubmit={this.handleSubmit(comment)}>
           <textarea onChange={this.newComment.bind(this)} 
@@ -41,7 +41,7 @@ class CommentForm extends Component {
             type="text" 
             value={content} 
           />
-          <button>
+          <button className="ui primary button">
           Submit
           </button>
         </form>

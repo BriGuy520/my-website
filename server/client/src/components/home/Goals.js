@@ -48,8 +48,8 @@ class Goals extends Component {
         </p>
         <div className="goal-input">
           <form onSubmit={this.handleSubmit}>
-            <div className="goal-section">
-              <input className="goal-input" type="text" value={this.state.goal} onChange={this.goalInput} autoComplete="off" />
+            <div className="ui form">
+              <input className="field" type="text" value={this.state.goal} onChange={this.goalInput} autoComplete="off" />
               <button type='button' onClick={this.handleNewGoal.bind(this)} className="buttons info">Add Goal</button>
             </div>
           </form>

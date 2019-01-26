@@ -2,7 +2,9 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <h1>Languages</h1>
+    <div className="skills"> 
+      <h1>Languages</h1>
+    </div>
   );
 }
 

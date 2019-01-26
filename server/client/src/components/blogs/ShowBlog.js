@@ -34,11 +34,10 @@ class ShowBlog extends Component {
     }
 
     return (
-      <div>
+      <div className="container">
         {this.renderBlog()}
         <CommentForm comment={this.props.blog}/>
         <CommentList blogOwnership={this.props.blog}/>
-
       </div>
     )
   }

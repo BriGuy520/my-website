@@ -17,10 +17,18 @@ class CommentList extends Component {
       if(comment.blog === this.props.blogOwnership._id){
         return (
           <div key={comment._id}>
-            <h3>By {comment.author}</h3>
-            <p>{comment.content}</p>
-            <span>{comment.likes}</span>
-            <p>Posted On: {new Date(comment.datePosted).toLocaleDateString()}</p>
+            <div className="comment">
+              <div className="content">
+                <h5>By {comment.author}</h5>
+              </div>
+              <div className="text">
+                <p>{comment.content}</p>
+              </div>
+              <span><i class="thumbs up outline icon"></i>{comment.likes}</span>
+              <div className="date">
+                Posted On: {new Date(comment.datePosted).toLocaleDateString()}
+              </div>
+            </div>
           </div>
         );
       }
@@ -29,7 +37,7 @@ class CommentList extends Component {
   
   render(){
     return (
-      <div>
+      <div className="ui comments">
         {this.renderComments()}
       </div>
     )

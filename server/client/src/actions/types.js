@@ -4,3 +4,4 @@ export const FETCH_BLOGS = 'fetch_blogs';
 export const FETCH_BLOG = 'fetch_blog';
 export const FETCH_COMMENTS = 'fetch_comments';
 export const FETCH_TWEETS = 'fetch_tweets';
+export const TWITTER_AUTH = 'twitter_auth';
