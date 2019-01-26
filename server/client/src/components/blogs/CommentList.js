@@ -19,14 +19,14 @@ class CommentList extends Component {
           <div className="comment-spacing" key={comment._id}>
             <div className="comment">
               <div className="content">
-                <h5>{comment.author}</h5>
+                <h4>{comment.author}</h4>
+                 {new Date(comment.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}
               </div>
               <div className="text">
                 <p>{comment.content}</p>
               </div>
-              <span><i class="thumbs up outline icon"></i>{comment.likes}</span>
-              <div className="date">
-                Posted On: {new Date(comment.datePosted).toLocaleDateString()}
+              <div className="extra content">
+                <span><i class="thumbs up outline icon"></i>{comment.likes}</span>
               </div>
             </div>
           </div>

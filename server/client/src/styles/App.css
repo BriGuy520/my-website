@@ -111,6 +111,18 @@ button:focus, input:focus {
   padding: 40px;
 }
 
+.comment-spacing p {
+  line-height: 25px;
+  padding: 5px;
+}
+
 .comment-spacing {
   padding: 10px;
+  width: 100%;
+}
+
+/* blog */
+
+.image-sizing {
+  width: 80%;
 }
