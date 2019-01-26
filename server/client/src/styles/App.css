@@ -103,3 +103,14 @@ button:focus, input:focus {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
 }
+
+
+/* comment form */
+
+.comments {
+  padding: 40px;
+}
+
+.comment-spacing {
+  padding: 10px;
+}

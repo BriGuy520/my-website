@@ -16,10 +16,10 @@ class CommentList extends Component {
     return this.props.comments.reverse().map((comment) => {
       if(comment.blog === this.props.blogOwnership._id){
         return (
-          <div key={comment._id}>
+          <div className="comment-spacing" key={comment._id}>
             <div className="comment">
               <div className="content">
-                <h5>By {comment.author}</h5>
+                <h5>{comment.author}</h5>
               </div>
               <div className="text">
                 <p>{comment.content}</p>

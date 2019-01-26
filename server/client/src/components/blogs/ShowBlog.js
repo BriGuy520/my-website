@@ -15,10 +15,10 @@ class ShowBlog extends Component {
     let { title, image, body, author } = this.props.blog;
 
     return (
-      <div>
+      <div className="ui raised segment">
         <h1>{title}</h1>
-        <h4>By {author}</h4>
         <img src={image} alt={title} />
+        <h4>By {author}</h4>
         <p>{body}</p>
       </div>
     )

@@ -12,21 +12,20 @@ class BlogList extends Component {
   renderBlogs(){
     return this.props.blogs.reverse().map(blog => {
       return (
-        <div className="container">
-          <div className="card" key={blog._id}>
-            <div className="content">
-              <div className="header">
-                <h1>{blog.title}</h1>
-                <h4>By {blog.author}</h4>
-                <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
-              </div>
-              <div className="image">
-                <img alt={blog.title} src={blog.image} />
-              </div>
-              <p>{blog.body}</p>
-              <span><i class="thumbs up outline icon"></i>{blog.likes}</span>
-              <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
+        <div className="ui raised segment" key={blog._id}>
+          <div className="content">
+            <div className="header">
+              <h1>{blog.title}</h1>
+              <h4>By {blog.author}</h4>
             </div>
+            <div className="image">
+              <img alt={blog.title} src={blog.image} />
+            </div>
+            <p>{blog.body}</p>
+            
+            <span><i class="thumbs up outline icon"></i>{blog.likes}</span>
+            <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
+            <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
           </div>
         </div>
       )
@@ -35,7 +34,7 @@ class BlogList extends Component {
 
   render(){
     return (
-      <div>
+      <div className="container">
         {this.renderBlogs()}
       </div>
     );
