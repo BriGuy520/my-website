@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchComments, updateComments } from '../../actions';
+import { fetchComments } from '../../actions';
 
 class CommentList extends Component { 
   
   componentDidMount(){
     this.props.fetchComments();
+  }
+
+  componentDidUpdate(prevProps){
+    console.log(this.props)
+    console.log(prevProps);
+    if(this.props.blogOwnership.comments !== prevProps.comments){
+     
+    }
   }
 
   renderComments(){

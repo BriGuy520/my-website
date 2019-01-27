@@ -132,9 +132,20 @@ button:focus, input:focus {
 .footer {
   background-color: #747773;
   padding: 10px;
+  
 }
 
 .icons {
   align-content: center;
   font-size: 1.2em;
+}
+
+/* Model Login Buttons */
+
+.login-buttons a {
+  color: white;
+}
+
+.login-buttons button {
+  width: 58vw;
 }

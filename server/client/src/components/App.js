@@ -8,6 +8,7 @@ import Projects from './Projects';
 import Music from './Music';
 import Dashboard from './Dashboard';
 import NewBlog from './blogs/NewBlog';
+import LoginModal from './modals/LoginModal';
 import ShowBlog from './blogs/ShowBlog';
 import Pictures from './Pictures';
 import '../styles/App.css';
@@ -18,6 +19,7 @@ const App = () => {
         <BrowserRouter>
           <div>
             <Navbar />
+            <LoginModal />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />
