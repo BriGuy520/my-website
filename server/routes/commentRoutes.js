@@ -29,7 +29,6 @@ module.exports = (app) => {
 
         comment.save();
         res.send(comment);
-        next();
       })
       .catch(err => {
         console.log(err);

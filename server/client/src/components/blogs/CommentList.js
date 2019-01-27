@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { fetchComments } from '../../actions';
+import { fetchComments, updateComments } from '../../actions';
 
 class CommentList extends Component { 
   
   componentDidMount(){
     this.props.fetchComments();
-  }
-
-  componentDidUpdate(){
-    axios.get(`/api/blog/${this.props.blogOwnership._id}/comment`)
-      .then(response => {
-        return response.data
-      })
-      .catch(err => {
-        console.log(err);
-      })
   }
 
   renderComments(){

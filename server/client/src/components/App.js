@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './home/Home';
+import Footer from './Footer';
 import About from './about/About';
 import Projects from './Projects';
 import Music from './Music';
@@ -27,6 +28,7 @@ const App = () => {
               <Route path="/blog/:id" exact component={ShowBlog} />
               <Route path="/pictures" exact component={Pictures} />
             </Switch>
+            <Footer />
           </div>
         </BrowserRouter>
       </div>

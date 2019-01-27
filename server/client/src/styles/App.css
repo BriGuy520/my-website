@@ -126,3 +126,15 @@ button:focus, input:focus {
 .image-sizing {
   width: 80%;
 }
+
+/* Footer */
+
+.footer {
+  background-color: #747773;
+  padding: 10px;
+}
+
+.icons {
+  align-content: center;
+  font-size: 1.2em;
+}
