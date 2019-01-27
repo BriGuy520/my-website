@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchComments } from '../../actions';
 
@@ -9,7 +10,13 @@ class CommentList extends Component {
   }
 
   componentDidUpdate(){
-    this.props.fetchComments();
+    axios.get(`/api/blog/${this.props.blogOwnership._id}/comment`)
+      .then(response => {
+        return response.data
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   renderComments(){
@@ -26,12 +33,14 @@ class CommentList extends Component {
                 <p>{comment.content}</p>
               </div>
               <div className="extra content">
-                <span><i class="thumbs up outline icon"></i>{comment.likes}</span>
+                <span><i className="thumbs up outline icon"></i>{comment.likes}</span>
               </div>
             </div>
           </div>
         );
-      }
+        } else {
+          return null;
+        }
     });
   }
   
@@ -44,10 +53,10 @@ class CommentList extends Component {
   }
 }
 
-const mapStateToProps = ({ comments, blogs }) => {
+const mapStateToProps = ({ comments }) => {
+
   return { 
-    comments: Object.values(comments),
-    blogs: Object.values(blogs)
+    comments: Object.values(comments)
   };
 }
 

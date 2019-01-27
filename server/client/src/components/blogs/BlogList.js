@@ -23,7 +23,7 @@ class BlogList extends Component {
             </div>
             <p>{blog.body}</p>
 
-            <span><i class="thumbs up outline icon"></i>{blog.likes}</span>
+            <span><i className="thumbs up outline icon"></i>{blog.likes}</span>
             <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
             <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
           </div>

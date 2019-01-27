@@ -7,12 +7,6 @@ const Blog = mongoose.model('Blog');
 
 module.exports = (app) => {
 
-  app.get('/api/blog/:id/comment', async (req, res) => {
-    // fetch comments from a blog
-   const comments = await Comment.find({ id: req.params._id });
-
-   res.send(comments);
-  });
 
   app.post('/api/blog/:id/comment', requireLogin, async (req, res) => {
 
@@ -35,9 +29,18 @@ module.exports = (app) => {
 
         comment.save();
         res.send(comment);
+        next();
       })
       .catch(err => {
         console.log(err);
       });
+  });
+
+  app.get('/api/blog/:id/comment', async (req, res, next) => {
+    // fetch comments from a blog
+   const comments = await Comment.find({ id: req.params._id });
+
+   res.send(comments);
+   next();
   });
 }
