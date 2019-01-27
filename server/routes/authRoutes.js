@@ -12,19 +12,27 @@ module.exports = (app) => {
       res.redirect('/blog')
     });
 
-  app.get('/auth/twitter', passport.authenticate('twitter'));
+  app.get('/auth/twitter', passport.authenticate('twitter'), (req, res) => {
+    res.redirect('/blog')
+  });
 
   app.get('/auth/twitter/callback', 
-    passport.authenticate('twitter'));
+    passport.authenticate('twitter'), (req, res) => {
+      res.redirect('/blog')
+    });
 
   app.get('/auth/facebook', passport.authenticate('facebook'));
 
   app.get('/auth/facebook/callback', 
-    passport.authenticate('facebook'));
+    passport.authenticate('facebook'), (req, res) => {
+      res.redirect('/blog')
+    });
 
   app.get('/auth/github', passport.authenticate('github'));
 
-  app.get('/auth/github/callback', passport.authenticate('github'));
+  app.get('/auth/github/callback', passport.authenticate('github'), (req, res) => {
+    res.redirect('/blog')
+  });
 
   app.get('/api/logout', (req, res) => {
     req.logout();

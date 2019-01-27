@@ -142,6 +142,10 @@ button:focus, input:focus {
 
 /* Model Login Buttons */
 
+.login-buttons {
+  padding: 10px;
+}
+
 .login-buttons a {
   color: white;
 }
@@ -149,3 +153,16 @@ button:focus, input:focus {
 .login-buttons button {
   width: 58vw;
 }
+
+.column {
+  padding: 20px;
+}
+
+.form {
+  padding-top: 30px;
+}
+
+.button {
+  padding: 10px;
+}
+

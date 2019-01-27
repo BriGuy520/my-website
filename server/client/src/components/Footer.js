@@ -8,7 +8,6 @@ const Footer = () => {
       <div className="icons">
         <i className="github square icon"></i>
         <i className="twitter square icon"></i>
-        <i className="facebook square icon"></i>
       </div>
     </div>
   )
