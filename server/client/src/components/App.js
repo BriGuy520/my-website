@@ -19,7 +19,6 @@ const App = () => {
         <BrowserRouter>
           <div>
             <Navbar />
-            <LoginModal />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />

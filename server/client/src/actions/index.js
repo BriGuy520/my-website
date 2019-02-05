@@ -5,7 +5,8 @@ import {
   FETCH_USER, 
   FETCH_BLOGS, 
   FETCH_BLOG, 
-  FETCH_COMMENTS
+  FETCH_COMMENTS,
+  UPDATE_COMMENTS
 } from './types';
 
 export const fetchPhotos = () => async dispatch => {
@@ -46,4 +47,10 @@ export const fetchComments = (id) => async dispatch => {
   const response = await axios.get(`/api/blog/${id}/comment`);
 
   dispatch({ type: FETCH_COMMENTS, payload: response.data });
+}
+
+export const updateComments = (id) => async dispatch => {
+  const response = await axios.get(`/api/blog/${id}/comment`);
+
+  dispatch({ type: UPDATE_COMMENTS, payload: response.data });
 }
