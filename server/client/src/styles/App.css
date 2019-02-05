@@ -107,8 +107,12 @@ button:focus, input:focus {
 
 /* comment form */
 
-.comments {
-  padding: 40px;
+#comment-form {
+  padding: 20px;
+}
+
+#comment-form textarea {
+  margin-bottom: 15px;
 }
 
 .comment-spacing p {

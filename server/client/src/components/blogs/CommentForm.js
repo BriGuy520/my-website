@@ -35,7 +35,7 @@ class CommentForm extends Component {
 
         <div className="ui form" id="comments">
           <label>Leave a Comment:</label>
-          <form onSubmit={this.handleSubmit(comment)}>
+          <form onSubmit={this.handleSubmit(comment)} id="comment-form">
             <textarea rows="3" onChange={this.newComment.bind(this)} 
               name="content" 
               type="text" 
