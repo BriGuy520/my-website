@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchComments, updateComments } from '../../actions';
+import { fetchComments } from '../../actions';
 
 class CommentList extends Component { 
   
   componentDidMount(){
     this.props.fetchComments();
-    this.props.updateComments();
   }
 
   renderComments(){
@@ -23,7 +22,8 @@ class CommentList extends Component {
                 <p>{comment.content}</p>
               </div>
               <div className="extra content">
-                <span><i className="thumbs up outline icon"></i>              {comment.likes}
+                <span><i className="thumbs up outline icon"></i>              
+                  {comment.likes}
                 </span>
               </div>
             </div>
@@ -34,15 +34,10 @@ class CommentList extends Component {
         }
     });
   }
-
-  renderNewComment(){
-    console.log(this.props.comments);
-  }
   
   render(){
     return (
       <div className="ui comments">
-        {this.renderNewComment()}
         {this.renderComments()}
       </div>
     )
@@ -56,4 +51,4 @@ const mapStateToProps = ({ comments }) => {
   };
 }
 
-export default connect(mapStateToProps, { fetchComments, updateComments })(CommentList);
+export default connect(mapStateToProps, { fetchComments })(CommentList);

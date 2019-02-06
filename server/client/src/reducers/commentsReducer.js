@@ -1,11 +1,9 @@
-import { FETCH_COMMENTS, UPDATE_COMMENTS } from '../actions/types';
+import { FETCH_COMMENTS } from '../actions/types';
 
 export default (state = [], action) => {
   switch(action.type){
     case FETCH_COMMENTS:
       return action.payload;
-    case UPDATE_COMMENTS: 
-      return { ...state, content: action.payload }
     default:
       return state;
   }

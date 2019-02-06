@@ -9,6 +9,7 @@ import Music from './Music';
 import Dashboard from './Dashboard';
 import NewBlog from './blogs/NewBlog';
 import ShowBlog from './blogs/ShowBlog';
+import LoginModal from './modals/LoginModal';
 import Pictures from './Pictures';
 import '../styles/App.css';
 
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/blog" exact component={Dashboard} />
               <Route path="/blog/new" exact component={NewBlog} />
               <Route path="/blog/:id" exact component={ShowBlog} />
+              <Route path="/login" component={LoginModal} />
               <Route path="/pictures" exact component={Pictures} />
             </Switch>
             <Footer />

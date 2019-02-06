@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 const LoginModal = (props) => {
   return ReactDOM.createPortal(
     <div className="ui dimmer modals visible active">
-      <div onClick={(event) => event.stopPropigation()} className="ui standard modal visible active">
+      <div onClick={(event) => event.stopPropagation()} className="ui standard modal visible active">
       <div className="modal">
         <div className="ui placeholder segment">
             <div className="ui two column very relaxed stackable grid">
