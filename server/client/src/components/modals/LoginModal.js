@@ -61,7 +61,7 @@ const LoginModal = (props) => {
                 </div>
               </div>
             </div>
-            <div class="ui vertical divider">
+            <div className="ui vertical divider">
               Or
             </div>
           </div>

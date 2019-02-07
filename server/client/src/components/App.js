@@ -27,7 +27,7 @@ const App = () => {
               <Route path="/blog" exact component={Dashboard} />
               <Route path="/blog/new" exact component={NewBlog} />
               <Route path="/blog/:id" exact component={ShowBlog} />
-              <Route path="/login" component={LoginModal} />
+              <Route path="/login" exact component={LoginModal} />
               <Route path="/pictures" exact component={Pictures} />
             </Switch>
             <Footer />

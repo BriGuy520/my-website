@@ -21,6 +21,7 @@ class CommentForm extends Component {
       })
       .catch(err => {
         console.log(err);
+        return window.location.replace('/login');
       });
 
       this.setState({ content: '' });
@@ -31,6 +32,7 @@ class CommentForm extends Component {
 
     const { content } = this.state;
     const { comment } = this.props;
+    
     return (
 
         <div className="ui form" id="comments">
