@@ -11,9 +11,11 @@ const BlogField = ({ input, label, meta: { error, touched } }) => {
   }
   
   return (
-    <div>
+    <div className="blog-inputs">
       <label>{label}</label>
-      {inputType()}
+      <div>
+        {inputType()}
+      </div>
       <div>
         {touched && error}
       </div>

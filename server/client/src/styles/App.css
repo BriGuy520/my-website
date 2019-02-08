@@ -183,3 +183,11 @@ button:focus, input:focus {
   justify-content: space-between;
   padding: 10px;
 }
+
+.blog-inputs {
+  padding: 8px;
+}
+
+.form-buttons {
+  padding-top: 20px;
+}
