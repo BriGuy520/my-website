@@ -32,7 +32,7 @@ class CommentForm extends Component {
 
     const { content } = this.state;
     const { comment } = this.props;
-    
+
     return (
 
         <div className="ui form" id="comments">

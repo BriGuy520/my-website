@@ -8,6 +8,14 @@ class CommentList extends Component {
     this.props.fetchComments();
   }
 
+  // componentDidUpdate(prevProps, prevState){
+  //   console.log(prevProps.comments);
+  //   console.log(this.props.comments);
+  //   if(prevProps.comments !== this.props.comments){
+  //     this.props.fetchComments();
+  //   };
+  // }
+
   renderComments(){
     return this.props.comments.reverse().map((comment) => {
       if(comment.blog === this.props.blogOwnership._id){
@@ -29,9 +37,9 @@ class CommentList extends Component {
             </div>
           </div>
         );
-        } else {
-          return null;
-        }
+      } else {
+        return null;
+      }
     });
   }
   

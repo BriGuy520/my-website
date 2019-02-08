@@ -170,3 +170,16 @@ button:focus, input:focus {
   padding: 10px;
 }
 
+/* Blog Posts */
+
+.blog-image {
+  width: 100%;
+  padding: 20px;
+}
+
+.post-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}

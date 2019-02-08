@@ -19,12 +19,13 @@ class BlogList extends Component {
               <h4>By {blog.author}</h4>
             </div>
             <div className="image">
-              <img className="image-size" alt={blog.title} src={blog.image} />
+              <img className="blog-image" alt={blog.title} src={blog.image} />
             </div>
-            <p>{blog.body}</p>
-
-            <span><i className="thumbs up outline icon"></i>{blog.likes}</span>
-            <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
+              <p>{blog.body}</p>
+            <div className="post-details">
+              <span><i className="thumbs up outline icon"></i>{blog.likes}</span>
+              <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
+            </div>
             <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
           </div>
         </div>
