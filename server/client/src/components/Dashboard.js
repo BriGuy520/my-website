@@ -6,9 +6,9 @@ const Dashboard = () => {
   return (
     <div>
       <BlogList />
-      <div>
-        <Link to="/blog/new">
-          Create New Blog
+      <div className="add-blog">
+        <Link to="/blog/new" className="circular ui icon button large blue">
+          <i className="plus icon"></i>
         </Link>
       </div>
     </div>

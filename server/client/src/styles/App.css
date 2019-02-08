@@ -191,3 +191,7 @@ button:focus, input:focus {
 .form-buttons {
   padding-top: 20px;
 }
+
+.add-blog {
+  padding: 8px;
+}

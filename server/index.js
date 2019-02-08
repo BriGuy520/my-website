@@ -35,6 +35,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/blogRoutes')(app);
 require('./routes/commentRoutes')(app);
+require('./routes/likeRoutes')(app);
 
 if(process.env.NODE_ENV === 'production'){
 

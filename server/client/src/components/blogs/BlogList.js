@@ -23,10 +23,12 @@ class BlogList extends Component {
             </div>
               <p>{blog.body}</p>
             <div className="post-details">
-              <span><i className="thumbs up outline icon"></i>{blog.likes}</span>
-              <span>Posted On: {new Date(blog.datePosted).toLocaleDateString()}</span>
+              <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
+              <span>
+                <i className="thumbs up outline icon"></i>{blog.likes}
+              </span>
             </div>
-            <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
+              <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
           </div>
         </div>
       )
