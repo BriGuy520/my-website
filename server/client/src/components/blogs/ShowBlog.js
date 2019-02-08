@@ -1,28 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
+import Likes from './Likes';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
-import axios from 'axios';
 
 
 class ShowBlog extends Component {
 
-  state = { likes: null };
-
   componentDidMount(){
     this.props.fetchBlog(this.props.match.params.id);
-  }
-
-  handleSubmit(){
-
-    axios.post(`/api/blog/${this.props.blog._id}/like`)
-      .then(res => {
-        return res.data;
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
   
   renderBlog(){
@@ -37,14 +24,8 @@ class ShowBlog extends Component {
           <p>{body}</p>
         </div>
         <div>
-          <form onSubmit={this.handleSubmit()}>
-            <span>
-              <button className="like-buttons">
-                <i className="thumbs up outline icon"></i>
-              </button>
-              {likes}
-            </span>
-          </form>
+          <Likes blog={this.props.blog} />
+          {likes}
         </div>
       </div>
     )
