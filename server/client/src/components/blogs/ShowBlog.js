@@ -14,12 +14,11 @@ class ShowBlog extends Component {
     this.props.fetchBlog(this.props.match.params.id);
   }
 
-  handleSubmit(event){
-    event.PreventDefault();
+  handleSubmit(){
 
-    axios.post(`/api/blog/${this.props.blog.id}/like`)
+    axios.post(`/api/blog/${this.props.blog._id}/like`)
       .then(res => {
-        console.log(res);
+        return res.data;
       })
       .catch(err => {
         console.log(err);
@@ -38,9 +37,9 @@ class ShowBlog extends Component {
           <p>{body}</p>
         </div>
         <div>
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form onSubmit={this.handleSubmit()}>
             <span>
-              <button>
+              <button className="like-buttons">
                 <i className="thumbs up outline icon"></i>
               </button>
               {likes}

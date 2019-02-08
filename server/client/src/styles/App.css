@@ -195,3 +195,12 @@ button:focus, input:focus {
 .add-blog {
   padding: 8px;
 }
+
+/* Like Buttons */
+
+.like-buttons {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
