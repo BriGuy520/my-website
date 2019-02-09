@@ -104,6 +104,16 @@ button:focus, input:focus {
   font-weight: 800;
 }
 
+.twitter-timeline {
+  width: 100% !important;
+  margin: 50px auto;
+  display: block;
+}
+
+.follow-button {
+  padding: 20px;
+}
+
 
 /* comment form */
 

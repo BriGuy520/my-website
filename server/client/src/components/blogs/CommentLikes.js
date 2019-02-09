@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class CommentLikes extends Component {
 
-  state = { likes: this.props.comment.likes }
+  state = { updated: false };
 
   handleClick(comment){
     axios.post(`/api/comment/${comment._id}/like`)
@@ -15,13 +15,13 @@ class CommentLikes extends Component {
         return window.location.replace('/login');
       });
 
-      this.setState({ likes: comment.likes + 1 });
+      
   }
   
   render(){
 
     const { comment } = this.props;
-
+    
     return (
       <button onClick={() => this.handleClick(comment)} className="like-buttons">
         <i className="thumbs up outline icon"></i>

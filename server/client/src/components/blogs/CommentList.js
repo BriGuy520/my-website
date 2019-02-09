@@ -3,19 +3,14 @@ import { connect } from 'react-redux';
 import { fetchComments } from '../../actions';
 import CommentLikes from './CommentLikes';
 
-class CommentList extends Component { 
+class CommentList extends Component {
+  
   
   componentDidMount(){
     this.props.fetchComments();
   }
 
-  // componentDidUpdate(prevProps, prevState){
-  //   console.log(prevProps.comments);
-  //   console.log(this.props.comments);
-  //   if(prevProps.comments !== this.props.comments){
-  //     this.props.fetchComments();
-  //   };
-  // }
+
 
   renderComments(){
     return this.props.comments.reverse().map((comment, idx) => {
@@ -54,6 +49,7 @@ class CommentList extends Component {
 
 const mapStateToProps = ({ comments }) => {
 
+  console.log(comments);
   return { 
     comments: Object.values(comments)
   };

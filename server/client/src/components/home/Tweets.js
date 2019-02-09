@@ -9,14 +9,22 @@ class Tweets extends Component {
       <div className="tweets">
         <h1>Tweets</h1>
         <p>Yes, it is true. I am a member of the virtue signaling cess pool that is twitter. Follow me! Please, no politics.</p>
-        <TwitterFollowButton
-          screenName={'briTheDevGuy'}
-        />
-        <TwitterTimelineEmbed
-          sourceType="profile"
-          screenName="briTheDevGuy"
-          options={{height: 500}}
-        />
+        
+        <div className="follow-button">
+          <TwitterFollowButton
+              screenName={'briTheDevGuy'}
+              options={{ size: 'large'}}
+          />
+        </div>
+        <div className="twitter-timeline">
+          <TwitterTimelineEmbed
+            sourceType="profile"
+            screenName="briTheDevGuy"
+            noHeader
+            options={{height: 500 }}
+            autoWidth
+          />
+        </div>
       </div>
     )
   }
