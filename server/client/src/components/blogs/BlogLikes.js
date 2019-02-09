@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Likes extends Component {
+class BlogLikes extends Component {
 
   state = { likes: this.props.blog.likes }
 
@@ -13,7 +13,10 @@ class Likes extends Component {
       })
       .catch(err => {
         console.log(err);
+        return window.location.replace('/login');
       });
+
+      this.setState({likes: this.props.blog.likes + 1 })
   }
   
   render(){
@@ -27,4 +30,4 @@ class Likes extends Component {
   }
 }
 
-export default Likes
+export default BlogLikes;

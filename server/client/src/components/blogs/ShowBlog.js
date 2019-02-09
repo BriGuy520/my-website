@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
-import Likes from './Likes';
+import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 
@@ -24,7 +24,7 @@ class ShowBlog extends Component {
           <p>{body}</p>
         </div>
         <div>
-          <Likes blog={this.props.blog} />
+          <BlogLikes blog={this.props.blog} />
           {likes}
         </div>
       </div>

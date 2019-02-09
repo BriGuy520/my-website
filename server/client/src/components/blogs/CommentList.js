@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchComments } from '../../actions';
+import CommentLikes from './CommentLikes';
 
 class CommentList extends Component { 
   
@@ -17,7 +18,7 @@ class CommentList extends Component {
   // }
 
   renderComments(){
-    return this.props.comments.reverse().map((comment) => {
+    return this.props.comments.reverse().map((comment, idx) => {
       if(comment.blog === this.props.blogOwnership._id){
         return (
           <div className="comment-spacing" key={comment._id}>
@@ -30,9 +31,8 @@ class CommentList extends Component {
                 <p>{comment.content}</p>
               </div>
               <div className="extra content">
-                <span><i className="thumbs up outline icon"></i>              
-                  {comment.likes}
-                </span>
+                <CommentLikes comment={this.props.comments[idx]} />
+                {comment.likes}
               </div>
             </div>
           </div>
