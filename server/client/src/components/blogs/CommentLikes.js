@@ -12,7 +12,7 @@ class CommentLikes extends Component {
       })
       .catch(err => {
         console.log(err);
-        // return window.location.replace('/login');
+        return window.location.replace('/login');
       });
 
       this.setState({ likes: comment.likes + 1 });
