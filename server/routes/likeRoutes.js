@@ -14,14 +14,15 @@ module.exports = (app) => {
     });
 
     const comment = await Comment.findOneAndUpdate({_id: req.params.id}, {
-      $inc:{ 'likes': 1 }
+      $inc:{ 'likes': 1 },
+      $push:{ userLikes: [req.user] }
     }).exec();
       
     res.send(comment);
   });
 
   app.post('/api/blog/:id/like', requireLogin, async (req, res) => {
-
+    
     await User.findOneAndUpdate({ _id: req.user }, {
       $push: { blogLikes: [req.params.id] }
     });
@@ -29,7 +30,8 @@ module.exports = (app) => {
     
 
     const blog = await Blog.findOneAndUpdate({_id: req.params.id}, {
-      $inc:{ 'likes': 1 }
+      $inc:{ 'likes': 1 },
+      $push:{ userLikes: [req.user] }
     }).exec();
     
     res.send(blog);

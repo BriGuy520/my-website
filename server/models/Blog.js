@@ -8,9 +8,9 @@ const blogSchema = new Schema({
   image: String,
   body: String,
   author: [userSchema],
-  userLikes: [],
   datePosted: { type: Date, default: Date.now },
-  likes: { type: Number, default: 0 }
+  likes: { type: Number, default: 0 },
+  userLikes: [{ type: Schema.Types.ObjectId, ref: "User" }]
 });
 
 mongoose.model('Blog', blogSchema);
