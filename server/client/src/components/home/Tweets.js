@@ -16,14 +16,16 @@ class Tweets extends Component {
               options={{ size: 'large'}}
           />
         </div>
-        <div className="twitter-timeline">
-          <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName="briTheDevGuy"
-            noHeader
-            options={{height: 500 }}
-            autoWidth
-          />
+        <div className="centerContent">
+          <div className="selfCenter standardWidth">
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="briTheDevGuy"
+              noHeader
+              options={{height: 500 }}
+              autoWidth
+            />
+          </div>
         </div>
       </div>
     )

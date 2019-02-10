@@ -21,7 +21,7 @@ body {
 }
 
 .goals p {
-  padding-left: 20px;
+  padding: 20px 0 0 20px;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
 }
@@ -102,6 +102,13 @@ button:focus, input:focus {
   font-size: 4em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+}
+
+.tweets p {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 1.4em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .twitter-timeline {

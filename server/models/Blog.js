@@ -7,7 +7,8 @@ const blogSchema = new Schema({
   title: String,
   image: String,
   body: String,
-  author: [userSchema] ,
+  author: [userSchema],
+  userLikes: [],
   datePosted: { type: Date, default: Date.now },
   likes: { type: Number, default: 0 }
 });

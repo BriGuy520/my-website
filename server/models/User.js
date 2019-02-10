@@ -15,7 +15,9 @@ let userSchema = new Schema({
     username: String, 
     email: String,
     password: String
-  }
+  }, 
+  blogLikes: [{ type: Schema.Types.ObjectId, ref: "Blog" }],
+  commentLikes: [{ type: Schema.Types.ObjectId, ref: "Comment" }]
 });
 
 mongoose.model('User', userSchema);
