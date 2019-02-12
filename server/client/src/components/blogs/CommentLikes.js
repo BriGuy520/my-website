@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchUser } from '../../actions/index';
 import axios from 'axios';
 
 class CommentLikes extends Component {
 
 
+  componentDidMount(){
+    this.props.fetchUser();
+  }
+
   handleClick(comment){ 
-    axios.post(`/api/comment/${comment._id}/like`)
+    if(comment.userLikes.indexOf(this.props.auth) === -1){
+      axios.post(`/api/comment/${comment._id}/like`)
       .then(res => {
         return res.data;
       })
       .catch(err => {
         console.log(err);
+        return window.location.replace('/login');
       });
+    } else {
+      console.log('You already liked that post');
+    }
   }
   
   render(){
@@ -24,4 +35,8 @@ class CommentLikes extends Component {
   }
 }
 
-export default CommentLikes;
+const mapStateToProps = ({ auth }) => {
+  return { auth };
+}
+
+export default connect(mapStateToProps, { fetchUser })(CommentLikes);
