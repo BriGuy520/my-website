@@ -10,8 +10,6 @@ class CommentList extends Component {
     this.props.fetchComments();
   }
 
-
-
   renderComments(){
     return this.props.comments.reverse().map((comment, idx) => {
       if(comment.blog === this.props.blogOwnership._id){
@@ -48,8 +46,6 @@ class CommentList extends Component {
 }
 
 const mapStateToProps = ({ comments }) => {
-
-  console.log(comments);
   return { 
     comments: Object.values(comments)
   };
