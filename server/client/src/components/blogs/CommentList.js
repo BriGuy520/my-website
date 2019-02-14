@@ -25,7 +25,6 @@ class CommentList extends Component {
               </div>
               <div className="extra content">
                 <CommentLikes comment={this.props.comments[idx]} />
-                {comment.likes}
               </div>
             </div>
           </div>

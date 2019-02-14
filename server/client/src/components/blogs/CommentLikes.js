@@ -5,6 +5,8 @@ import axios from 'axios';
 
 class CommentLikes extends Component {
 
+  state = { likes: this.props.comment.likes };
+
 
   componentDidMount(){
     this.props.fetchUser();
@@ -23,14 +25,20 @@ class CommentLikes extends Component {
     } else {
       console.log('You already liked that post');
     }
+
+    this.setState({ likes: this.props.comment.likes + 1 });
   }
   
   render(){
     const { comment } = this.props;
+    const { likes } = this.state;
     return (
-      <button onClick={() => this.handleClick(comment)} className="like-buttons">
-        <i className="thumbs up outline icon"></i>
-      </button>
+      <div>
+        <button onClick={() => this.handleClick(comment)} className="like-buttons">
+          <i className="thumbs up outline icon"></i>
+        </button>
+        {likes}
+      </div>  
     )
   }
 }
