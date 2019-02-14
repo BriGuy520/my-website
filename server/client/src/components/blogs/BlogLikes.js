@@ -5,6 +5,8 @@ import axios from 'axios';
 
 class BlogLikes extends Component {
 
+  state = { likes: this.props.blog.likes }
+
   componentDidMount(){
     this.props.fetchUser();
   }
@@ -13,7 +15,8 @@ class BlogLikes extends Component {
     if(blog.userLikes.indexOf(this.props.auth) === -1){
       axios.post(`/api/blog/${blog._id}/like`)
         .then(res => {
-          return res.data;
+          let newBlogLike = blog.likes + 1;
+          return newBlogLike;
         })
         .catch(err => {
           console.log(err);
@@ -22,16 +25,24 @@ class BlogLikes extends Component {
     } else {
       console.log('You already liked that post silly, hehehe');
     }
+
+    this.setState({ likes: this.props.blog.likes + 1 });
   }
   
   render(){
 
     const { blog } = this.props;
+    const { likes } = this.state;
+
+    console.log(likes);
 
     return (
-      <button onClick={() => this.handleClick(blog)} className="like-buttons">
-        <i className="thumbs up outline icon"></i>
-      </button>
+      <div> 
+        <button onClick={() => this.handleClick(blog)} className="like-buttons">
+          <i className="thumbs up outline icon"></i>
+        </button>
+        {likes}
+      </div>
     )
   }
 }

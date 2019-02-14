@@ -39,6 +39,7 @@ module.exports = (app) => {
     // fetch comments from a blog
    const comments = await Comment.find({ id: req.params._id });
 
+  
    res.send(comments);
    next();
   });

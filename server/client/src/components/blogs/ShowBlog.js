@@ -13,7 +13,7 @@ class ShowBlog extends Component {
   }
   
   renderBlog(){
-    let { title, image, body, author, likes } = this.props.blog;
+    let { title, image, body, author } = this.props.blog;
 
     return (
       <div className="ui raised segment container">
@@ -25,7 +25,6 @@ class ShowBlog extends Component {
         </div>
         <div>
           <BlogLikes blog={this.props.blog} />
-          {likes}
         </div>
       </div>
     )
