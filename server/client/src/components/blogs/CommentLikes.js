@@ -4,9 +4,9 @@ import { fetchUser } from '../../actions/index';
 import axios from 'axios';
 
 class CommentLikes extends Component {
+  
 
-  state = { likes: this.props.comment.likes };
-
+  state = { likes: this.props.comment.likes, isDisabled: false };
 
   componentDidMount(){
     this.props.fetchUser();
@@ -16,25 +16,25 @@ class CommentLikes extends Component {
     if(comment.userLikes.indexOf(this.props.auth) === -1){
       axios.post(`/api/comment/${comment._id}/like`)
       .then(res => {
-        return res.data;
+        this.setState({ likes: this.props.comment.likes + 1, isDisabled: true });
       })
       .catch(err => {
         console.log(err);
         return window.location.replace('/login');
       });
     } else {
-      console.log('You already liked that post');
+      this.setState({ likes: this.props.comment.likes });
     }
 
-    this.setState({ likes: this.props.comment.likes + 1 });
+    
   }
   
   render(){
     const { comment } = this.props;
-    const { likes } = this.state;
+    const { likes, isDisabled } = this.state;
     return (
       <div>
-        <button onClick={() => this.handleClick(comment)} className="like-buttons">
+        <button disabled={isDisabled} onClick={() => this.handleClick(comment)} className="like-buttons">
           <i className="thumbs up outline icon"></i>
         </button>
         {likes}
