@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import CommentList from './CommentList';
 import axios from 'axios';
 
 class CommentForm extends Component {
 
-  state = { content: '', author: '', likes: null };
+  state = { content: '', newComment: null };
 
   newComment = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -14,19 +15,24 @@ class CommentForm extends Component {
       event.preventDefault();
 
       const { content } = this.state;
-
-      axios.post(`/api/blog/${comment._id}/comment`, { content })
-      .then(res => {
-        return res.data;
-      })
-      .catch(err => {
-        console.log(err);
-        return window.location.replace('/login');
-      });
+      if(content !== ''){
+        axios.post(`/api/blog/${comment._id}/comment`, { content })
+          .then(res => {
+            return res.data;
+          })
+          .catch(err => {
+            console.log(err);
+            return window.location.replace('/login');
+          });
+      } else {
+        console.log("You didn't put in anything");
+      }
+      
 
       this.setState({ content: '' });
     }
   }
+
 
   render(){
 
@@ -46,10 +52,11 @@ class CommentForm extends Component {
           Submit
           </button>
         </form>
+        <CommentList blogOwnership={comment} />
       </div>
+      
     )
   }
 }
-
 
 export default CommentForm;

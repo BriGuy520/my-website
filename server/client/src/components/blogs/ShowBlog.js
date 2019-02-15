@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
 import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
-import CommentList from './CommentList';
 
 
 class ShowBlog extends Component {
@@ -43,7 +42,6 @@ class ShowBlog extends Component {
       <div className="container">
         {this.renderBlog()}
         <CommentForm comment={this.props.blog}/>
-        <CommentList blogOwnership={this.props.blog}/>
       </div>
     )
   }

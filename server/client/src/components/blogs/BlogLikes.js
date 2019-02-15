@@ -32,9 +32,7 @@ class BlogLikes extends Component {
 
     const { blog } = this.props;
     const { likes, isDisabled } = this.state;
-
-    console.log(likes);
-
+    
     return (
       <div> 
         <button disabled={isDisabled} onClick={() => this.handleClick(blog)} className="like-buttons">

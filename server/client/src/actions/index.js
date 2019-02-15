@@ -45,5 +45,6 @@ export const fetchBlog = (id) => async dispatch => {
 export const fetchComments = (id) => async dispatch => {
   const response = await axios.get(`/api/blog/${id}/comment`);
 
+
   dispatch({ type: FETCH_COMMENTS, payload: response.data });
 }

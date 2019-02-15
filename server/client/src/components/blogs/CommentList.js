@@ -5,9 +5,12 @@ import CommentLikes from './CommentLikes';
 
 class CommentList extends Component {
 
-  
   componentDidMount(){
     this.props.fetchComments();
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps);
   }
 
   renderComments(){
@@ -45,10 +48,11 @@ class CommentList extends Component {
 }
 
 const mapStateToProps = ({ comments }) => {
-  
   return { 
     comments: Object.values(comments)
   };
 }
 
 export default connect(mapStateToProps, { fetchComments })(CommentList);
+
+
