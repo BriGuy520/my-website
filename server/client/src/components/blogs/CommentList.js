@@ -35,8 +35,6 @@ class CommentList extends Component {
   }
   
   render(){
-
-    console.log(this.props.posts)
     return (
       <div className="ui comments">
         {this.renderComments()}

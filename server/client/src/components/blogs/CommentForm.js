@@ -25,7 +25,7 @@ class CommentForm extends Component {
           })
           .catch(err => {
             console.log(err);
-           // return window.location.replace('/login');
+            return window.location.replace('/login');
           });
       } else {
         console.log("You didn't put in anything");
@@ -49,7 +49,7 @@ class CommentForm extends Component {
               <p>{post.content}</p>
             </div>
             <div className="extra content">
-              <CommentLikes comment={this.props.comment}/>
+              <CommentLikes comment={post}/>
             </div>
           </div>
         </div>
@@ -63,8 +63,6 @@ class CommentForm extends Component {
     const { content, posts } = this.state;
     const { comment } = this.props;
     
-    console.log(comment);
-    console.log(posts);
     return (
       <div className="ui form" id="comments">
         <label>Leave a Comment:</label>
@@ -87,8 +85,5 @@ class CommentForm extends Component {
     )
   }
 }
-
-
-
 
 export default CommentForm;
