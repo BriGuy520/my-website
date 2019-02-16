@@ -9,10 +9,6 @@ class CommentList extends Component {
     this.props.fetchComments();
   }
 
-  componentWillReceiveProps(nextProps){
-    console.log(nextProps);
-  }
-
   renderComments(){
     return this.props.comments.reverse().map((comment, idx) => {
       if(comment.blog === this.props.blogOwnership._id){
@@ -39,6 +35,8 @@ class CommentList extends Component {
   }
   
   render(){
+
+    console.log(this.props.posts)
     return (
       <div className="ui comments">
         {this.renderComments()}
