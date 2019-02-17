@@ -4,9 +4,9 @@ body {
 
 /* Goals Section */
 
-.goals, .skills {
+.goals {
   padding: 12px;
-  background-color: #747773;
+  background-color: #fafd5a;
   margin-bottom: 20px;
   height: 80%;
 }
@@ -22,6 +22,7 @@ body {
 
 .goals p {
   padding: 20px 0 0 20px;
+  color: #2196F3;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
 }
@@ -33,6 +34,7 @@ body {
 
 .goals ol li {
   font-family: 'Montserrat', sans-serif;
+  color: #2196F3;
   font-size: 1.8rem;
   padding: 10px 8px;
 }
@@ -93,6 +95,51 @@ button:focus, input:focus {
   font-size: 4em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+}
+
+.tweets {
+  background: #b78cdf;
+}
+
+.tweets p {
+  color: #fafd5a;
+}
+
+/* Skills */
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #fafd5a;
+  margin-bottom: 20px;
+  height: 80%;
+}
+
+.skill-section {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.4em;
+}
+
+.skill-section ul li {
+  line-height: 1.4em;
+}
+
+.skill-section ol li {
+  line-height: 1.4em;
+}
+
+.skills i {
+  color: #33ffad;
+  font-size: 2em;
+  
+}
+
+.section-headers {
+  display: flex;
+  align-content: center;
 }
 
 .skills h1 {

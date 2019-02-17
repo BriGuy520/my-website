@@ -3,9 +3,11 @@ import React from 'react';
 const Skills = () => {
   return (
     <div className="skills"> 
-      <h1>Skills</h1>
-      <div className="section">
-        <h3>Frontend</h3>
+      <div className="skill-section">
+        <div className="section-headers">
+          <i className="desktop icon"></i>
+          <h3>Frontend</h3>
+        </div>
         <ul>
           <li>HTML/CSS</li>
           <li>Javascript</li>
@@ -13,9 +15,12 @@ const Skills = () => {
           <li>Redux</li>
         </ul>
       </div>
-      <div className="section">
+      <div className="skill-section">
         <div>
-          <h3>Languages/Frameworks I want to Learn in the Near Future:</h3>
+          <div className="section-headers">
+            <i className="road icon"></i>
+            <h3>Languages/Frameworks I want to Learn in the Near Future:</h3> 
+          </div>
           <ol>
             <li>Angular</li>
             <li>Ember</li>
@@ -26,15 +31,21 @@ const Skills = () => {
           </ol>
         </div>
         <div>
-          <h3>Languages/Frameworks I want to Learn in the Distant Future:</h3>
+          <div className="section-headers">
+            <i className="rocket icon"></i>
+            <h3>Languages/Frameworks I want to Learn in the Distant Future:</h3>
+          </div>
           <ol>
             <li>C++</li>
           </ol>
         </div>
         
       </div>
-      <div className="section">
-        <h3>Backend</h3>
+      <div className="skill-section">
+        <div className="section-headers">
+          <i class="sitemap icon"></i>
+          <h3>Backend</h3>
+        </div>
         <ul>
           <li>MongoDB</li>
           <li>NodeJS</li>
