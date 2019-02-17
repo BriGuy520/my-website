@@ -18,6 +18,10 @@ header h2 {
   margin: 0;
 }
 
+header h2 a:hover {
+  color: #15ffa1;
+}
+
 header h2 a {
   text-decoration: none;
   color: #15ffa1;
