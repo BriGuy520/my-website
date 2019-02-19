@@ -75,8 +75,46 @@ a:hover:before {
   transform: scaleX(1);
 }
 
+@media only screen and (max-width: 768px){
 
-@media only screen and (max-width: 670px){
+  body {
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .dropdown-menu i {
+    font-size: 2em;
+    border-radius: 10%;
+    cursor: pointer;
+    margin: 18px;
+    padding-top: 3px;
+  }
+
+  nav li {
+    padding: 10px;
+  }
+
+  .dropdown-menu h2 {
+    padding-right: 30%;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 400px){
 
   body {
     margin: 0;
@@ -94,7 +132,7 @@ a:hover:before {
     font-size: 2em;
     border-radius: 10%;
     cursor: pointer;
-    margin: 15px;
+    margin: 18px;
     padding-top: 3px;
   }
 
