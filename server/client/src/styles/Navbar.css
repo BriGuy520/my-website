@@ -76,3 +76,41 @@ a:hover:before {
 }
 
 
+@media only screen and (max-width: 670px){
+
+  body {
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dropdown-menu i {
+    font-size: 2em;
+    border: 2px solid white;
+    border-radius: 10%;
+    cursor: pointer;
+    margin: 15px 0 0 50px;
+    padding: 5px;
+
+
+  }
+
+  .nav li {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+

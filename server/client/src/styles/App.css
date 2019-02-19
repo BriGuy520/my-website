@@ -9,6 +9,7 @@ body {
   background-color: #fafd5a;
   margin-bottom: 20px;
   height: 80%;
+  margin: 0;
 }
 
 .goals h1 {
@@ -36,6 +37,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #2196F3;
   font-size: 1.8rem;
+  line-height: 1.4em;
   padding: 10px 8px;
 }
 
@@ -105,41 +107,72 @@ button:focus, input:focus {
   color: #fafd5a;
 }
 
+.timeline-Body {
+  padding: 0 50px;
+}
+
 /* Skills */
 
 .skills {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
-  background-color: #fafd5a;
+  background-color: #60c2f0;
   margin-bottom: 20px;
   height: 80%;
+  margin: 0;
 }
 
 .skill-section {
-  width: 100%;
+  width: 70%;
   padding: 20px;
   font-size: 1.4em;
+  margin: 0 auto;
+}
+
+.section-border {
+  border-bottom: 2px solid #fafd5a;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.skill-list {
+  margin: 0 auto;
 }
 
 .skill-section ul li {
-  line-height: 1.4em;
+  line-height: 2em;
 }
 
 .skill-section ol li {
-  line-height: 1.4em;
+  line-height: 2em;
+}
+
+.section-icon {
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .skills i {
   color: #33ffad;
   font-size: 2em;
-  
+}
+
+.top-section {
+  width: 100%;
+  padding: 20px;
+}
+
+.top-section p {
+  font-size: 1.4em;
+
 }
 
 .section-headers {
   display: flex;
+  flex-direction: column;
   align-content: center;
+  padding: 15px;
 }
 
 .skills h1 {
@@ -167,7 +200,6 @@ button:focus, input:focus {
 .follow-button {
   padding: 20px;
 }
-
 
 /* comment form */
 
