@@ -230,14 +230,28 @@ button:focus, input:focus {
 /* Footer */
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: #747773;
   padding: 10px;
   
 }
 
-.icons {
-  align-content: center;
+.footer p {
   font-size: 1.2em;
+  margin: 0 auto;
+  font-weight: 800;
+}
+
+.icons {
+  font-size: 1.8em;
+  margin: 0 auto;
+}
+
+.icons i {
+  padding: 10px;
+  margin: 5px;
 }
 
 /* Model Login Buttons */
