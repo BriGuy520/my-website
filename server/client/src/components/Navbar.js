@@ -3,25 +3,60 @@ import { Link } from 'react-router-dom';
 import'../styles/Navbar.css';
 
 
-const Navbar = () => {
+class Navbar extends Component {
+  constructor(props){
+    super(props);
 
+    this.state = { showMenu: false }
 
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this); 
+  }
 
-  return (
-    <header>
-      <div className="dropdown-menu">
-        <h2><Link to="/">Brian Falasz</Link></h2>
-        <i className="bars icon"></i>
-      </div>
-      <nav className="nav">
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/music">Music</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/pictures">Pictures</Link></li>
-      </nav>
-    </header>
-  );
+  showMenu(event){
+    event.preventDefault();
+
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
+  }
+
+  closeMenu(){
+    
+    this.setState({ showMenu: false }, () => {
+      document.removeEventListener('click', this.closeMenu);
+    });
+  }
+
+  render(){
+    return (
+      <header>
+        <div className="dropdown-menu">
+          <h2><Link to="/">Brian Falasz</Link></h2>
+          <i onClick={this.showMenu} className="bars icon"></i>
+        </div>
+        { this.state.showMenu
+           ? (
+            
+            <nav 
+              className="nav"
+              ref={(element) => {
+                this.dropdownMenu = element;
+              }}
+            >
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/music">Music</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/pictures">Pictures</Link></li>
+            </nav>
+           ) : (
+             null
+           )
+        }
+      </header>
+    );
+  }
 }
 
 export default Navbar;
