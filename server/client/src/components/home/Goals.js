@@ -7,12 +7,8 @@ class Goals extends Component {
     goals: ['Get a development gig', 'Move to Austin, TX', 'Buy a gun or two', 'Get a dog', 'Eat Some Food'] 
   };
 
-
-
   goalInput = (event) => {
-
     this.setState({ goal: event.target.value});
-
   }
  
   handleSubmit = (event) => {
@@ -22,8 +18,6 @@ class Goals extends Component {
       goal: '',
       goals: [...this.state.goals, this.state.goal]
     });
-
-    
   }
 
   handleNewGoal = (event) => {
@@ -46,6 +40,7 @@ class Goals extends Component {
         <p>Below is a list of goals I would like to accomplish with not just this website, but with my
         web development career in general:
         </p>
+        <div className="goal-list">
         <div className="goal-input">
           <form onSubmit={this.handleSubmit}>
             <div className="ui form">
@@ -57,6 +52,7 @@ class Goals extends Component {
         <ol> 
           {goalList} 
         </ol>
+        </div>
       </div>
     );
   }

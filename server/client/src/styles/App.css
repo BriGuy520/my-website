@@ -5,11 +5,10 @@ body {
 /* Goals Section */
 
 .goals {
-  padding: 12px;
-  background-color: #fafd5a;
-  margin-bottom: 20px;
-  height: 80%;
-  margin: 0;
+  background: linear-gradient(#cccccc, #9198e5), 
+  url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg')!important;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
 }
 
 .goals h1 {
@@ -23,7 +22,6 @@ body {
 
 .goals p {
   padding: 20px 0 0 20px;
-  color: #2196F3;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
 }
@@ -46,6 +44,10 @@ body {
 .goal-section {
   padding: 5px;
   align-content: center;
+}
+
+.goal-list {
+  width: 40%;
 }
 
 .goal-input {
@@ -99,90 +101,28 @@ button:focus, input:focus {
   font-weight: 800;
 }
 
-.tweets {
-  background: #b78cdf;
-}
-
 .tweets p {
-  color: #fafd5a;
+  color: #5afdac;
 }
 
-.timeline-Body {
-  padding: 0 50px;
+.timeline-body {
+ width: 50%;
 }
 
 /* Skills */
 
-.skills {
+.technologies {
+
+}
+
+.technologies h2 {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #60c2f0;
-  margin-bottom: 20px;
-  height: 80%;
-  margin: 0;
-}
-
-.skill-section {
-  width: 70%;
-  padding: 20px;
-  font-size: 1.4em;
-  margin: 0 auto;
-}
-
-.section-border {
-  border-bottom: 2px solid #fafd5a;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.skill-list {
-  margin: 0 auto;
-}
-
-.skill-section ul li {
-  line-height: 2em;
-}
-
-.skill-section ol li {
-  line-height: 2em;
-}
-
-.section-icon {
-  padding: 10px;
-  margin: 0 auto;
-}
-
-.skills i {
-  color: #33ffad;
+  justify-content: center;
+  padding: 10%;
   font-size: 2em;
+  background: #f0f0f5;
 }
 
-.top-section {
-  width: 100%;
-  padding: 20px;
-}
-
-.top-section p {
-  font-size: 1.4em;
-
-}
-
-.section-headers {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 15px;
-}
-
-.skills h1 {
-  margin: 0;
-  color: #fafd5a;
-  padding: 8px 10px;
-  font-size: 4em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-}
 
 .tweets p {
   padding-left: 20px;

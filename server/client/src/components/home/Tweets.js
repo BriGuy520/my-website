@@ -21,7 +21,6 @@ class Tweets extends Component {
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="briTheDevGuy"
-              theme="dark"
               noHeader
               options={{height: 500 }}
               autoWidth
