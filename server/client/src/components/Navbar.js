@@ -7,10 +7,25 @@ class Navbar extends Component {
   constructor(props){
     super(props);
 
-    this.state = { showMenu: false }
+    this.state = { showMenu: false, width: 0, height: 0 };
 
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this); 
+  }
+
+  componentDidMount(){
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount(){
+    this.updateWindowDimensions();
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions(){
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   showMenu(event){
@@ -68,9 +83,7 @@ class Navbar extends Component {
               </nav>
 
             ) : (
-
               null
-
             )
           }
         </header>
