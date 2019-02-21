@@ -35,24 +35,26 @@ class Goals extends Component {
     });
 
     return (
-      <div className='goals'>
-        <h1>My Goals</h1>
-        <p>Below is a list of goals I would like to accomplish with not just this website, but with my
-        web development career in general:
-        </p>
-        <div className="goal-list">
-        <div className="goal-input">
-          <form onSubmit={this.handleSubmit}>
-            <div className="ui form">
-              <input className="field" type="text" value={this.state.goal} onChange={this.goalInput} autoComplete="off" />
-              <button type='button' onClick={this.handleNewGoal.bind(this)} className="buttons info">Add Goal</button>
+      <div className="goals-background">
+        <div className='goals'>
+          <h1>My Goals</h1>
+          <p>Below is a list of goals I would like to accomplish with not just this website, but with my
+          web development career in general:
+          </p>
+          <div className="goal-list">
+            <div className="goal-input">
+              <form onSubmit={this.handleSubmit}>
+                <div className="ui form">
+                  <input className="field" type="text" value={this.state.goal} onChange={this.goalInput} autoComplete="off" />
+                  <button type='button' onClick={this.handleNewGoal.bind(this)} className="buttons info">Add Goal</button>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-        <ol> 
-          {goalList} 
-        </ol>
-        </div>
+              <ol> 
+                {goalList} 
+              </ol>
+            </div>
+          </div>
       </div>
     );
   }

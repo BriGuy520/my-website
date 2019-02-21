@@ -4,10 +4,14 @@ body {
 
 /* Goals Section */
 
+.goals-background {
+  background: linear-gradient(to right, #cccccc, #9198e5);
+  background-size: cover;
+}
+
 .goals {
-  background: linear-gradient(#cccccc, #9198e5), 
-  url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg')!important;
-  background-size: cover, cover;
+  background: url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -112,15 +116,124 @@ button:focus, input:focus {
 /* Skills */
 
 .technologies {
-
+  background: #f0f0f5;
+  padding: 5%;
 }
 
-.technologies h2 {
+.tech-header h2 {
   display: flex;
   justify-content: center;
-  padding: 10%;
+  font-size: 2em; 
+}
+
+.tech-header p {
+  padding-bottom: 3%;
+  align-content: center;
+}
+
+.tech-header-border {
+  border-bottom: 3px solid black;
+  width: 80%;
+}
+
+.skill-section {
+  width: 100%;
+}
+
+.collages {
+  width: 50%;
+}
+
+.frontend-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  width: 100%
+}
+
+.frontend-copy {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 40%;
+}
+
+.frontend-copy ul li {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+
+.backend-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  padding: 40px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.backend-copy {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  width: 40%;
+}
+
+.backend-copy ul li {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+
+.future-section {
+  padding-top: 30px;
+}
+
+.future-copy h1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.near-future-section h2 {
+  padding-top: 30px;
+}
+
+.near-future-list {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0;
+}
+
+.near-future-list ol {
+  width: 40%;
+}
+
+.near-future-list ol li {
   font-size: 2em;
-  background: #f0f0f5;
+  line-height: 2em;
+}
+
+.distant-future-section {
+  padding: 50px 0;
+}
+
+.long-term-list {
+  display: flex;
+  flex-direction: row; 
+}
+
+.long-term-list ol {
+  width: 40%;
+  padding: 20px;
+  margin: 50px;
+}
+
+.long-term-list ol li {
+  font-size: 2em;
+  line-height: 2em;
 }
 
 
@@ -129,12 +242,6 @@ button:focus, input:focus {
   padding-top: 20px;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
-}
-
-.twitter-timeline {
-  width: 100% !important;
-  margin: 50px auto;
-  display: block;
 }
 
 .follow-button {
@@ -254,3 +361,58 @@ button:focus, input:focus {
   padding: 0;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 420px){
+
+  .frontend-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 100%;
+  }
+
+  .frontend-copy {
+    width: 95%;
+  }
+
+  .backend-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 100%;
+  }
+
+  .backend-copy {
+    width: 95%;
+  }
+
+  .distant-future-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .near-future-list {
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+
+  .long-term-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .long-term-list ol {
+    padding: 0;
+  }
+
+  .collages img {
+    width: 325px;
+  }
+}
+
