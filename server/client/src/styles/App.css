@@ -369,6 +369,22 @@ button:focus, input:focus {
     width: 100%;
   }
 
+  .tweets {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+
+  .twitter-section, .tweets-copy {
+    padding: 2%;
+    margin: 0;
+    width: 100%;
+  }
+
+  .tweets p {
+    padding: 0;
+  }
+
 
   .frontend-section {
     display: flex;
