@@ -7,25 +7,34 @@ class Tweets extends Component {
   render(){
     return (
       <div className="tweets">
-        <h1>Tweets</h1>
-        <p>Yes, it is true. I am a member of the virtue signaling cess pool that is twitter. Follow me! Please, no politics.</p>
-        
-        <div className="follow-button">
-          <TwitterFollowButton
-              screenName={'briTheDevGuy'}
-              options={{ size: 'large'}}
-          />
-        </div>
-        <div className="centerContent">
-          <div className="selfCenter standardWidth">
+        <div className="twitter-section">
+          <div className="follow-button">
+            <TwitterFollowButton
+                screenName={'briTheDevGuy'}
+                options={{ size: 'large'}}
+            />
+          </div>
+          <div className="twitter-timeline">
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="briTheDevGuy"
               noHeader
               options={{height: 500 }}
               autoWidth
+              noScrollbar
             />
           </div>
+        </div>
+        <div className="tweets-copy">
+          <h1>Tweets</h1>
+          <p>
+            The rumors are true, I am on Twitter. While I'm not the biggest fan of Twitter and feel it is not the best way to have public discourse, it does have some benefits. </p>
+          <p>
+            It is a great way to keep up to date with the latest trends in the tech community as well as posting some of my own projects and content.
+          </p>
+          <p>
+            If you like what you see and think that I have anything interesting to say or share, hit that like button at the top. Thanks in advance.
+          </p>
         </div>
       </div>
     )

@@ -96,21 +96,22 @@ button:focus, input:focus {
 
 /* Tweets */
 
-.tweets h1 {
-  margin: 0;
-  color: #5ab4fd;
-  padding: 8px 10px;
-  font-size: 4em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+.tweets {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  padding: 50px 0;
 }
 
-.tweets p {
-  color: #5afdac;
+.tweets-copy {
+  width: 40%;
+  margin: 0 5%;
 }
 
-.timeline-body {
- width: 50%;
+.twitter-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 /* Skills */
