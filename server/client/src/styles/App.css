@@ -5,12 +5,12 @@ body {
 /* Goals Section */
 
 .goals-background {
-  background: linear-gradient(to right, #cccccc, #9198e5);
+  background: linear-gradient(to right, #e48d8d, rgba(0, 0, 0, 0));
   background-size: cover;
 }
 
 .goals {
-  background: url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg');
+  background: linear-gradient(to right, #bbc5ee, transparent), url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
