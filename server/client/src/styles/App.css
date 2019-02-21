@@ -362,7 +362,12 @@ button:focus, input:focus {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 420px){
+@media only screen and (max-width: 475px){
+
+  .goal-list {
+    width: 100%;
+  }
+
 
   .frontend-section {
     display: flex;
@@ -412,7 +417,7 @@ button:focus, input:focus {
   }
 
   .collages img {
-    width: 325px;
+    width: 350px;
   }
 }
 

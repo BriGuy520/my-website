@@ -32,10 +32,11 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: 20px;
 }
 
 .lists ol { 
-  margin: 10px;
+  line-height: 2.4em;
 }
 
 .lists li {
@@ -48,6 +49,10 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .box h3 {
+    width: 80%;
   }
 
 }
