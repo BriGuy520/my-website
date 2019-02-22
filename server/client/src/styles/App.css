@@ -221,7 +221,7 @@ button:focus, input:focus {
 
 .long-term-list ol {
   width: 40%;
-  padding: 20px;
+  padding:  0 100px;
   margin: 50px;
 }
 
@@ -429,5 +429,14 @@ button:focus, input:focus {
   .collages img {
     width: 350px;
   }
+}
+
+@media only screen and (min-width: 1020px){
+
+  .collages img {
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
