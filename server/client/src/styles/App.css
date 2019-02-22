@@ -230,6 +230,7 @@ button:focus, input:focus {
   line-height: 2em;
 }
 
+/* Tweets */
 
 .tweets p {
   padding-left: 20px;
@@ -240,6 +241,43 @@ button:focus, input:focus {
 
 .follow-button {
   padding: 20px;
+}
+
+/* Projects */
+
+.projects {
+  padding: 3%;
+}
+
+.project {
+  padding-top: 5%;
+}
+
+.content {
+  padding: 2%;
+  margin-top: 3%;
+}
+
+.site-pic {
+  height: 100%;
+  width: 100%;
+}
+
+.content ul li {
+  padding: 8px;
+}
+
+.extra.content p {
+  padding-top: 14px;
+}
+
+.extra.content {
+  display: flex;
+  justify-content: center;
+}
+
+.extra.content img {
+  padding-left: 8px;
 }
 
 /* comment form */
