@@ -1,5 +1,6 @@
 import React from 'react';
 import built_with_collage from '../images/built-with-collage.png';
+import html_css from '../images/html-css.png';
 import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
 
@@ -46,13 +47,13 @@ const Projects = () => {
                 <p>This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes. </p>
                 <h3>Pros</h3>
                 <ul>
-                  <li>Helped me with design.</li>
-                  <li>Got a great understanding of how works flexbox, which is awesome.</li>
+                  <li>Helped me get really comfortable with CSS and HTML.</li>
+                  <li>This page uses the latest CSS tools such as Flexbox and Animations</li>
                   <li>Gave me more confidence.</li>
                 </ul>
                 <h3>Cons</h3>
                 <ul>
-                  <li>I could do a little better making sure the spacing. </li>
+                  <li>I could make a few more tweeks to make the content more aesthetcally pleasing.</li>
                   <li>It has no functionality</li>
                   <li></li>
                 </ul>
@@ -64,7 +65,7 @@ const Projects = () => {
           </div>
           <div className="extra content" style={{ display: 'flex', 'flex-direction': 'row' }}>
             <p>Built With:</p>
-            <img src={built_with_collage} style={{'justify-content': 'center'}} />
+            <img src={html_css} style={{'justify-content': 'center'}} />
           </div>
         </div>
       </div>
