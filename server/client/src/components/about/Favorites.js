@@ -11,6 +11,10 @@ import heat from '../../images/heat.jpg';
 import south_park from '../../images/south_park.jpg';
 import wire from '../../images/wire.jpeg';
 import simpsons from '../../images/the_simpsons.jpg';
+import lateralus from '../../images/lateralus.jpeg';
+import mezzanine from '../../images/mezzanine.jpg';
+import cross from '../../images/cross.jpg';
+import black_on_both_sides from '../../images/black_on_both_sides.jpg';
 
 
 const Favorites = () => {
@@ -87,9 +91,13 @@ const Favorites = () => {
         <h2>Music</h2>
         <div className="list-sections">
           <ol>
+            <img className="album-img" src={lateralus} />
             <li><strong>Lateralus</strong> by Tool</li>
+            <img className="album-img" src={cross} />
             <li><strong>Cross</strong> by Justice</li>
-            <li><strong>Mezanine</strong> by Massive Attack</li>
+            <img className="album-img" src={mezzanine} />
+            <li><strong>Mezzanine</strong> by Massive Attack</li>
+            <img className="album-img" src={black_on_both_sides} />
             <li><strong>Black on Both Sides</strong> by Mos Def</li>
           </ol>
         </div>

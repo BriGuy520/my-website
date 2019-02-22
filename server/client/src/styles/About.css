@@ -35,6 +35,11 @@ body {
   width: 200px;
 }
 
+.album-img {
+  height: 400px;
+  width: 400px;
+}
+
 /* favorites */
 
 .list-sections {
@@ -76,6 +81,11 @@ body {
 
   .box h3 {
     width: 80%;
+  }
+
+  .album-img {
+    height: 200px;
+    width: 200px;
   }
 }
 

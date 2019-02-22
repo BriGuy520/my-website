@@ -417,6 +417,10 @@ button:focus, input:focus {
 
   }
 
+  .near-future-list ol {
+    width: 100%;
+  }
+
   .long-term-list {
     display: flex;
     flex-direction: column;
