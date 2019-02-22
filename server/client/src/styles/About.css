@@ -2,6 +2,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.favorites {
+  display: flex;
+  flex-direction: column;
+}
+
 .box {
   margin: auto;
   width: 80%;
@@ -25,14 +30,32 @@ body {
   margin: auto;
 }
 
+.book-img {
+  height: 300px;
+  width: 200px;
+}
+
 /* favorites */
+
+.list-sections {
+  padding: 20px;
+}
 
 .lists {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   padding-top: 20px;
+  margin: 0 5%;
+}
+
+.lists i {
+  font-size: 3.4em;
+  margin: 0 auto;
+}
+
+.lists h2 {
+  margin: 0 auto;
 }
 
 .lists ol { 
@@ -54,6 +77,30 @@ body {
   .box h3 {
     width: 80%;
   }
+}
 
+@media only screen and (min-width: 1180px){
+
+
+  .list-sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px;
+    width: 50%;
+  }
+
+  .lists-sections ol {
+    margin: 0;
+  }
+
+  .lists-sections ol li {
+    padding: 0;
+  }
+
+  .favorites-lists {
+    display: flex;
+    flex-direction: row;
+  }
 }
 

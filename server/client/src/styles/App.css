@@ -4,28 +4,21 @@ body {
 
 /* Goals Section */
 
-.goals-background {
-  background: linear-gradient(to right, #e48d8d, rgba(0, 0, 0, 0));
-  background-size: cover;
-}
-
 .goals {
-  background: linear-gradient(to right, #bbc5ee, transparent), url('http://www.dronestagr.am/wp-content/uploads/2018/08/Mtn-Final-1200x800.jpg');
+  background: linear-gradient(80deg, #ccdbce 20%, rgb(154, 196, 243) 50%, transparent), url('https://hillschurch.files.wordpress.com/2017/02/mountaintop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .goals h1 {
   margin: 0;
-  color: #33ffad;
-  padding: 15px 10px;
+  padding: 25px;
   font-size: 4em;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
 }
 
 .goals p {
-  padding: 20px 0 0 20px;
+  padding: 20px 0 0 10px;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
 }
@@ -68,11 +61,11 @@ body {
   border: 2px solid black;
   background-color: white;
   margin: 20px 0 0 0;
-  font-size: 12px;
+  font-size: 2px;
   color: black;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -363,7 +356,7 @@ button:focus, input:focus {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 475px){
+@media only screen and (max-width: 780px){
 
   .goal-list {
     width: 100%;
