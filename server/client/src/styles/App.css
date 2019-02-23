@@ -254,6 +254,8 @@ button:focus, input:focus {
 }
 
 .website {
+  display: flex;
+  display: row;
   padding: 2%;
   margin-top: 3%;
 }
@@ -395,6 +397,24 @@ button:focus, input:focus {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1030px){
+
+  .website {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .projects {
+    padding-top: 5px;
+  }
+
+  .site-pic {
+    width: 100%;
+    padding-bottom: 20px;
+    height: 60vh;
+  }
+}
+
 @media only screen and (max-width: 780px){
 
   .goal-list {
@@ -474,12 +494,35 @@ button:focus, input:focus {
   }
 }
 
+@media only screen and (max-width: 420px){
+  .built-with {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .built-with img {
+    padding: 0;
+  }
+
+  .projects {
+    padding: 10px 0;
+  }
+}
+
 @media only screen and (min-width: 1020px){
 
   .collages img {
     width: 100%;
     height: 100%;
   }
+}
 
+@media only screen and (min-width: 310px){
+
+  .collages img {
+    width: 90vw;
+    height: 50vh;
+  }
 }
 

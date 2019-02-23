@@ -9,7 +9,7 @@ const Projects = () => {
     <div className="projects">
       <div className="project">
         <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
-          <div className="content website" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="content website">
             <div className="card-copy" style={{ display: 'flex', 'flex-direction': 'column' }}>
               <h2 className="header">My Personal Website</h2>
               <div className="description" style={{ width: '90%'}}>
@@ -32,7 +32,7 @@ const Projects = () => {
               <img className="site-pic" src={site_snapshot} />
             </div>
           </div>
-          <div className="extra content built-with" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="extra content built-with">
             <p>Built With:</p>
             <img src={built_with_collage} style={{'justify-content': 'center'}} />
           </div>
@@ -40,7 +40,7 @@ const Projects = () => {
       </div>
       <div className="project">
         <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
-          <div className="content website" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="content website">
             <div className="card-copy" style={{ display: 'flex', 'flex-direction': 'column' }}>
               <h2 className="header">Flexbox Site</h2>
               <div className="description" style={{ width: '90%'}}>
