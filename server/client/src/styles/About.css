@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 40px;
+    padding: 40px 0 40px 120px;
     width: 50%;
   }
 

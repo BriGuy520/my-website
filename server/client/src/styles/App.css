@@ -508,6 +508,10 @@ button:focus, input:focus {
   .projects {
     padding: 10px 0;
   }
+
+  .blog-image {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 1020px){
@@ -518,11 +522,15 @@ button:focus, input:focus {
   }
 }
 
-@media only screen and (min-width: 310px){
+@media only screen and (max-width: 330px){
 
   .collages img {
     width: 90vw;
     height: 50vh;
+  }
+
+  .list-sections {
+    padding: 0;
   }
 }
 

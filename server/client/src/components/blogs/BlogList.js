@@ -17,18 +17,18 @@ class BlogList extends Component {
             <div className="header">
               <h1>{blog.title}</h1>
               <h4>By {blog.author}</h4>
+              <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
             </div>
             <div className="image">
               <img className="blog-image" alt={blog.title} src={blog.image} />
             </div>
               <p>{blog.body}</p>
             <div className="post-details">
-              <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
+              <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
               <span>
                 <i className="thumbs up outline icon"></i>{blog.likes}
               </span>
             </div>
-              <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
           </div>
         </div>
       )
