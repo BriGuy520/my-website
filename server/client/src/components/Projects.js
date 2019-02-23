@@ -9,20 +9,20 @@ const Projects = () => {
     <div className="projects">
       <div className="project">
         <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
-          <div className="content" style={{ display: 'flex', 'flex-direction': 'row' }}>
-            <div style={{ display: 'flex', 'flex-direction': 'column' }}>
+          <div className="content website" style={{ display: 'flex', 'flex-direction': 'row' }}>
+            <div className="card-copy" style={{ display: 'flex', 'flex-direction': 'column' }}>
               <h2 className="header">My Personal Website</h2>
               <div className="description" style={{ width: '90%'}}>
                 <p>This is the first fullstack website. Building it was a long and frustrating, but it was also one the most rewarding experiences of my life.</p>
                 <h3>Pros</h3>
                 <ul>
-                  <li>It has a lot of functionality.</li>
+                  <li>It has a lot of functionality. This site features user authentication and a fully functional blog. Authenticated users can leave comments and leave likes to blogs and other user comments.</li>
                   <li>The design is not half bad for someone who has zero background in design.</li>
-                  <li>Wasn't made using a template.</li>
+                  <li>Wasn't made using a template. To build this site, I had to read a lot of Stack Overflow posts and solve a lot of the logical issues on my own.</li>
                 </ul>
                 <h3>Cons</h3>
                 <ul>
-                  <li>The CSS could be a lot better, a lot more efficient.</li>
+                  <li>The CSS could be a lot better, a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate.</li>
                   <li>Need to get better at working with APIs.</li>
                   <li>Some of the React code is redundant and inefficient.</li>
                 </ul>
@@ -32,7 +32,7 @@ const Projects = () => {
               <img className="site-pic" src={site_snapshot} />
             </div>
           </div>
-          <div className="extra content" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="extra content built-with" style={{ display: 'flex', 'flex-direction': 'row' }}>
             <p>Built With:</p>
             <img src={built_with_collage} style={{'justify-content': 'center'}} />
           </div>
@@ -40,8 +40,8 @@ const Projects = () => {
       </div>
       <div className="project">
         <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
-          <div className="content" style={{ display: 'flex', 'flex-direction': 'row' }}>
-            <div style={{ display: 'flex', 'flex-direction': 'column' }}>
+          <div className="content website" style={{ display: 'flex', 'flex-direction': 'row' }}>
+            <div className="card-copy" style={{ display: 'flex', 'flex-direction': 'column' }}>
               <h2 className="header">Flexbox Site</h2>
               <div className="description" style={{ width: '90%'}}>
                 <p>This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes. </p>
@@ -55,7 +55,6 @@ const Projects = () => {
                 <ul>
                   <li>I could make a few more tweeks to make the content more aesthetcally pleasing.</li>
                   <li>It has no functionality</li>
-                  <li></li>
                 </ul>
               </div>
             </div>
@@ -63,7 +62,7 @@ const Projects = () => {
               <img className="site-pic" src={flexbox_snapshot} />
             </div>
           </div>
-          <div className="extra content" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="extra content built-with" style={{ display: 'flex', 'flex-direction': 'row' }}>
             <p>Built With:</p>
             <img src={html_css} style={{'justify-content': 'center'}} />
           </div>
