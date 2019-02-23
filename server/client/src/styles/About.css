@@ -33,11 +33,13 @@ body {
 .book-img {
   height: 300px;
   width: 200px;
+  box-shadow: 8px 8px 18px rgb(71, 71, 71);
 }
 
 .album-img {
   height: 400px;
   width: 400px;
+  box-shadow: 8px 8px 18px rgb(71, 71, 71);
 }
 
 /* favorites */
