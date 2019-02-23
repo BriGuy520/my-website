@@ -89,7 +89,7 @@ const Favorites = () => {
       <div className="lists">
         <i class="music icon"></i>
         <h2>Music</h2>
-        <div className="list-sections">
+        <div className="list-sections music">
           <ol>
             <img className="album-img" src={lateralus} />
             <li><strong>Lateralus</strong> by Tool</li>
