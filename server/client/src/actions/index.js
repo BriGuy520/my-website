@@ -9,8 +9,8 @@ import {
 } from './types';
 
 export const fetchPhotos = () => async dispatch => {
-  const response = await unsplash.get('/photos/search', {
-    params: { query: 'cars', per_page: 30 }
+  const response = await unsplash.get('/users/briguy520/photos', {
+    params: { "username": "briguy520"}
   });
 
   dispatch({ type: FETCH_PHOTOS, payload: response.data });
