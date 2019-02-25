@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-import { EditorState, convertFromRaw, convertToRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import ReactQuill from 'react-quill';
 
+const MyEditor = ({ input }) => {
 
-class MyEditor extends Component {
-  constructor(props){
-    super(props);
+  return (
+    <ReactQuill 
+      {...input}
+      onChange={(newValue, delta, source) => {
+        if(source === 'user'){
+          input.onChange(newValue);
+        }
+      }}
 
-    this.state = { editorState: EditorState.createEmpty()};
-    this.onChange = (editorState) => this.setState({ editorState });
-  }
-
-  render(){
-    return (
-      <Editor 
-        editorState={this.state.editorState}
-        wrapperClassName="demo-wrapper"
-        editorClassName="editor-content"
-        onEditorStateChange={this.onChange.bind(this)}
-      />
-    );
-  }
+      onBlur={(range, source, quill) => {
+        input.onBlur(quill.getHTML());
+      }}
+    />
+  )
 }
 
-
-export default MyEditor
+export default MyEditor;

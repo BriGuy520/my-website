@@ -16,7 +16,7 @@ module.exports = (app) => {
   });
 
   app.post('/api/blog', requireLogin, (req, res) => {
-    const { title, body, image, likes } = req.body;
+    const { title, body, description, image, likes } = req.body;
    
      User.findOne({ _id: req.user})
       .then(data => {
@@ -25,6 +25,7 @@ module.exports = (app) => {
         const blog = new Blog({
           title,
           image,
+          description,
           body,
           author: username,
           likes,

@@ -6,6 +6,7 @@ const userSchema = require('./User');
 const blogSchema = new Schema({
   title: String,
   image: String,
+  description: String,
   body: String,
   author: [userSchema],
   datePosted: { type: Date, default: Date.now },

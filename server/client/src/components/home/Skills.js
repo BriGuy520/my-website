@@ -28,13 +28,13 @@ const Skills = () => {
             </ul>
           </div>
           <div className="collages">
-            <img src={frontend} />
+            <img alt="frontend-collage" src={frontend} />
           </div>
         </div>
         <div className="tech-header-border"></div>
         <div className="backend-section">
           <div className="collages">
-            <img src={backend} />
+            <img alt="backend-collage" src={backend} />
           </div>
           <div className="backend-copy">
             <h1>Backend</h1>
@@ -70,7 +70,7 @@ const Skills = () => {
               <li>Java</li>
             </ol>
             <div className="collages">
-              <img src={nearFuture} />
+              <img alt="near-future-collage"src={nearFuture} />
             </div>
           </div>
           <div className="tech-header-border"></div>
@@ -85,7 +85,7 @@ const Skills = () => {
         
         <div className="long-term-list">
           <div className="collages">
-            <img src={longtermFuture} />
+            <img alt="distant-future-collage" src={longtermFuture} />
           </div>
           <ol>
             <li>Python</li>

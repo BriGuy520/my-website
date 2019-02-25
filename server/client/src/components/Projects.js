@@ -29,12 +29,12 @@ const Projects = () => {
               </div>
             </div>
             <div className="image">
-              <img className="site-pic" src={site_snapshot} />
+              <img  alt="personal-website" className="site-pic" src={site_snapshot} />
             </div>
           </div>
           <div className="extra content built-with">
             <p>Built With:</p>
-            <img src={built_with_collage} style={{'justify-content': 'center'}} />
+            <img alt="personal-site-built-with-collage"src={built_with_collage} style={{'justify-content': 'center'}} />
           </div>
         </div>
       </div>
@@ -59,12 +59,12 @@ const Projects = () => {
               </div>
             </div>
             <div className="image">
-              <img className="site-pic" src={flexbox_snapshot} />
+              <img alt="flexbox-site" className="site-pic" src={flexbox_snapshot} />
             </div>
           </div>
           <div className="extra content built-with" style={{ display: 'flex', 'flex-direction': 'row' }}>
             <p>Built With:</p>
-            <img src={html_css} style={{'justify-content': 'center'}} />
+            <img alt="built-with-collage"src={html_css} style={{'justify-content': 'center'}} />
           </div>
         </div>
       </div>

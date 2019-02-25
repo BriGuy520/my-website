@@ -7,10 +7,15 @@ import BlogField from './BlogField';
 import formFields from './formFields';
 
 class BlogForm extends Component {
-  
+
   renderFields(){
     return _.map(formFields, ({ label, name }) => {
-      return <Field key={name} component={BlogField} type="text" label={label} name={name} />
+      if(label !== "Body"){
+        return <Field key={name} component={BlogField} type="text" label={label} name={name} />
+      }
+
+      return <Field key={name} component={MyEditor} type="text" label={label} name={name} />
+     
     })
   }
   
@@ -19,7 +24,6 @@ class BlogForm extends Component {
       <div className="ui form">
         <form onSubmit={this.props.handleSubmit(this.props.onBlogSubmit)}>
           {this.renderFields()}
-          <MyEditor />
           <div className="form-buttons">
             <Link className="ui button red" to="/blog">Cancel</Link>
             <button className="ui primary button" type="submit">Submit</button>
