@@ -2,6 +2,7 @@ import _ from 'lodash'
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
+import MyEditor from './MyEditor';
 import BlogField from './BlogField';
 import formFields from './formFields';
 
@@ -18,6 +19,7 @@ class BlogForm extends Component {
       <div className="ui form">
         <form onSubmit={this.props.handleSubmit(this.props.onBlogSubmit)}>
           {this.renderFields()}
+          <MyEditor />
           <div className="form-buttons">
             <Link className="ui button red" to="/blog">Cancel</Link>
             <button className="ui primary button" type="submit">Submit</button>

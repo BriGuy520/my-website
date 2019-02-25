@@ -82,7 +82,7 @@ class CommentForm extends Component {
         </div>
       </div>
       
-    )
+    );
   }
 }
 
