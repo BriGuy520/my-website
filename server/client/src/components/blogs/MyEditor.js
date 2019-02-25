@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactQuill from 'react-quill';
 
 const MyEditor = ({ input }) => {

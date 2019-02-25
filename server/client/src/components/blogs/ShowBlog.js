@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
+import Parser from 'html-react-parser';
 import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
 
@@ -12,8 +13,9 @@ class ShowBlog extends Component {
   }
   
   renderBlog(){
-    let { title, image, body, author, datePosted } = this.props.blog;
+    let { title, image, body, author, datePosted, description } = this.props.blog;
 
+    console.log(body);
     return (
       <div className="ui raised segment container">
         <h1>{title}</h1>
@@ -21,7 +23,8 @@ class ShowBlog extends Component {
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
         <div>
           <img className="blog-image" src={image} alt={title} />
-          <p>{body}</p>
+          <p>{description}</p>
+          <p>{Parser(body)}</p>
         </div>
         <div>
           <BlogLikes blog={this.props.blog} />

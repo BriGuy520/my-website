@@ -22,7 +22,7 @@ class BlogList extends Component {
             <div className="image">
               <img className="blog-image" alt={blog.title} src={blog.image} />
             </div>
-              <p>{blog.body}</p>
+              <p>{blog.description}</p>
             <div className="post-details">
               <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
               <span>
