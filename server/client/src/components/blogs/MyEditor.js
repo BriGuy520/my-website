@@ -7,9 +7,9 @@ const MyEditor = ({ input }) => {
   const modules = {
     toolbar: [
       [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
+      ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
       [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image'],
+      ['link', 'image', 'video'],
       [{'color': [] }, { 'background': [] }],
       [{'font': [] }],
       [{'align': [] }],
@@ -19,13 +19,14 @@ const MyEditor = ({ input }) => {
 
   formats = [
     'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
+    'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block', 'align',
+    'list', 'bullet', 'indent', 'color', 'background',
     'link', 'image'
   ]
 
   return (
-    <ReactQuill 
+    <ReactQuill
+      theme="snow" 
       modules={modules}
       formats={formats}
       {...input}
