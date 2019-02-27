@@ -8,5 +8,6 @@ module.exports = {
   facebookClientID: process.env.FACEBOOK_CLIENT_ID,
   facebookClientSecret: process.env.FACEBOOK_CLIENT_SECRET,
   githubClientID: process.env.GITHUB_CLIENT_ID,
-  githubClientSecret: process.env.GITHUB_CLIENT_SECRET
+  githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
+  jwtSecret: process.env.JWT_SECRET
 }

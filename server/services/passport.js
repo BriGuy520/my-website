@@ -4,6 +4,8 @@ const TwitterStrategy = require('passport-twitter');
 const GoogleStrategy = require('passport-google-oauth20');
 const GitHubStrategy = require('passport-github');
 const LocalStrategy = require('passport-local').Strategy;
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
@@ -35,14 +37,14 @@ passport.use(new LocalStrategy(
       return done(null, user);
     });
   }
-))
+));
 
-function signup({ email, username, password, req}){
+function signup({ username, password, req}){
   const user = new User({email, username, password});
   
-  if(!email || !username || !password){ throw new Error('You did not provide the correct credentials'); }
+  if(!username || !password){ throw new Error('You did not provide the correct credentials'); }
 
-  return User.findOne({ email })
+  return User.findOne({ username })
     .then(existingUser => {
       if(existingUser) { throw new Error('That user already exists'); }
       return user.save();
@@ -66,6 +68,28 @@ function login({ email, username, password, req}){
     })({ body: email, username, password});
   });
 }
+
+
+const jwtOptions = { 
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  secretOrKey: keys.jwtStrategy
+}
+
+const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+
+  User.findById(payload.sub, function(err, user){
+    if(err){ return done(err, false); }
+
+    if(user){
+      done(null, user);
+    } else {
+      done(null, false);
+    }
+  });
+});
+
+passport.use(localLogin);
+passport.use(jwtLogin);
 
 passport.use(
   new FacebookStrategy({
