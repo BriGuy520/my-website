@@ -7,6 +7,7 @@ const strategy = {
 }
 
 let userSchema = new Schema({
+  admin: Boolean,
   twitter: strategy,
   facebook: strategy,
   google: strategy,
