@@ -3,7 +3,7 @@ const FacebookStrategy = require('passport-facebook');
 const TwitterStrategy = require('passport-twitter');
 const GoogleStrategy = require('passport-google-oauth20');
 const GitHubStrategy = require('passport-github');
-const LocalStrategy = require('passport-local');
+const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
@@ -25,11 +25,47 @@ passport.use(new LocalStrategy(
   function(username, password, done){
     User.findOne({ username: username },  function(err, user){
       if(err) { return done(err) }
-      if(!user.verifyPassword(password)){ return done(null, false); }
+      if(!user.verifyPassword(password)){ return done(null, false, 'Invalid Credentials'); }
+      user.comparePassword(password, (err, isMatch) => {
+        if(err) { return done(err); }
+        if(isMatch){
+          return done(null, user);
+        }
+      })
       return done(null, user);
-    })
+    });
   }
 ))
+
+function signup({ email, username, password, req}){
+  const user = new User({email, username, password});
+  
+  if(!email || !username || !password){ throw new Error('You did not provide the correct credentials'); }
+
+  return User.findOne({ email })
+    .then(existingUser => {
+      if(existingUser) { throw new Error('That user already exists'); }
+      return user.save();
+    })
+    .then(user => {
+      return new Promise((resolve, reject) => {
+        req.logIn(user, (err) => {
+          if(err) { reject(err); }
+          resolve(user); 
+        });
+      });
+    });
+}
+
+function login({ email, username, password, req}){
+  return new Promise((resolve, reject) => {
+    passport.authenticate('local', ( err, user) => {
+      if(!user) { reject('Invalid credentials') }
+
+      req.login(user, () => resolve(user));
+    })({ body: email, username, password});
+  });
+}
 
 passport.use(
   new FacebookStrategy({
@@ -114,3 +150,5 @@ passport.use(
     done(null, user);
   })
 );
+
+module.exports = { signup, login };

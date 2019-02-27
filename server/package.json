@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cookie-session": "^2.0.0-beta.3",
@@ -23,6 +24,7 @@
     "passport-facebook": "^2.1.1",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^1.0.0",
+    "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "path-parser": "^4.2.0"
