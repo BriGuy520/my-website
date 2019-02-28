@@ -20,7 +20,7 @@ const LoginModal = (props) => {
                   <div className="field">
                     <label>Password</label>
                     <div className="ui left icon input">
-                      <input type="password" />
+                      <input type="password" placeholder="Password" />
                       <i className="lock icon"></i>
                     </div>
                   </div>

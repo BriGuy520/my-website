@@ -4,6 +4,9 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys')
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const cors = require('cors');
+
 require('./models/Blog');
 require('./models/User');
 require('./models/Comment');
@@ -26,6 +29,8 @@ app.use(
   })
 )
 
+app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

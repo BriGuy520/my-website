@@ -3,7 +3,7 @@ const FacebookStrategy = require('passport-facebook');
 const TwitterStrategy = require('passport-twitter');
 const GoogleStrategy = require('passport-google-oauth20');
 const GitHubStrategy = require('passport-github');
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
@@ -22,57 +22,24 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-
-passport.use(new LocalStrategy(
-  function(username, password, done){
-    User.findOne({ username: username },  function(err, user){
-      if(err) { return done(err) }
-      if(!user.verifyPassword(password)){ return done(null, false, 'Invalid Credentials'); }
-      user.comparePassword(password, (err, isMatch) => {
-        if(err) { return done(err); }
-        if(isMatch){
-          return done(null, user);
-        }
-      })
-      return done(null, user);
-    });
-  }
-));
-
-function signup({ username, password, req}){
-  const user = new User({email, username, password});
+const localLogin = new LocalStrategy(function(username, password, done){
+  User.findOne({ local: { username: username } },  function(err, user){
+    console.log(user);
+    
+    if(err) { return done(err) }
   
-  if(!username || !password){ throw new Error('You did not provide the correct credentials'); }
+    user.comparePassword(password, (err, isMatch) => {
+      if(err) { return done(err); }
+      if(!isMatch){ return done(null, false); }
 
-  return User.findOne({ username })
-    .then(existingUser => {
-      if(existingUser) { throw new Error('That user already exists'); }
-      return user.save();
-    })
-    .then(user => {
-      return new Promise((resolve, reject) => {
-        req.logIn(user, (err) => {
-          if(err) { reject(err); }
-          resolve(user); 
-        });
-      });
-    });
-}
-
-function login({ email, username, password, req}){
-  return new Promise((resolve, reject) => {
-    passport.authenticate('local', ( err, user) => {
-      if(!user) { reject('Invalid credentials') }
-
-      req.login(user, () => resolve(user));
-    })({ body: email, username, password});
+      return done(null, user);
+    }); 
   });
-}
-
+});
 
 const jwtOptions = { 
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: keys.jwtStrategy
+  secretOrKey: keys.jwtSecret
 }
 
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
@@ -174,5 +141,3 @@ passport.use(
     done(null, user);
   })
 );
-
-module.exports = { signup, login };
