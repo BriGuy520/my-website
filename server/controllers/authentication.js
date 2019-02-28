@@ -11,6 +11,7 @@ function tokenForUser(user){
 
 exports.signin = function(req, res, next){
 
+  console.log(req.user);
   res.send({ token: tokenForUser(req.user)});
 }
 
@@ -23,11 +24,11 @@ exports.signup = function(req, res, next){
     return res.status(422).send({ error: 'You need a username and password to continue'});
   }
 
-  User.findOne({ local: { username: username } }, function(err, existingUser){
+  User.findOne({ "local.username": username }, function(err, existingUser){
     if(err) { return next(err); }
 
     if(existingUser){
-      return res.status(422).send({ error: 'Email is in use' });
+      return res.status(422).send({ error: 'Username is in use' });
     }
 
     const user = new User({
