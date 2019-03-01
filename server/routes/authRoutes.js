@@ -10,8 +10,8 @@ module.exports = (app) => {
     res.send({ hi: 'everybody' });
   });
 
-  app.post('/signin', requireSignIn, Authentication.signin);
-  app.post('/signup', Authentication.signup);
+  app.post('/api/signin', requireSignIn, Authentication.signin);
+  app.post('/api/signup', Authentication.signup);
 
   app.get('/auth/google', passport.authenticate('google', {
       scope: ['profile', 'email']

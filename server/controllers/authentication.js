@@ -11,14 +11,12 @@ function tokenForUser(user){
 
 exports.signin = function(req, res, next){
 
-  console.log(req.user);
-  res.send({ token: tokenForUser(req.user)});
+  res.send({ token: tokenForUser(req.user) });
 }
-
 
 exports.signup = function(req, res, next){
 
-  const { username, password } = req.body.local;
+  const { username, password } = req.body;
 
   if(!username || !password){
     return res.status(422).send({ error: 'You need a username and password to continue'});
