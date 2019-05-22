@@ -1,7 +1,7 @@
 /* Home Page Cover Image */
 
 .cover {
-  background-image: url('https://spooniom.com/wp-content/uploads/all-your-base-are-belong-to-us-825x510.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://spooniom.com/wp-content/uploads/all-your-base-are-belong-to-us-825x510.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

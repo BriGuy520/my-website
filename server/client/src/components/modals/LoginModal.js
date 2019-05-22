@@ -102,4 +102,8 @@ class LoginModal extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  
+}
+
 export default compose(connect(mapStateToProps, { signin }), reduxForm({ form: 'signin' }))(LoginModal);
