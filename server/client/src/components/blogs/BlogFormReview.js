@@ -18,10 +18,6 @@ const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
     );
   });
 
-  
-  console.log(formValues);
-  
-
   return (
     <div>
       <h5>Please confirm your entries</h5>

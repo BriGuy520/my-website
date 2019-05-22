@@ -8,7 +8,6 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
-
 const User = mongoose.model('User');
 
 passport.serializeUser((user, done) => {
@@ -86,7 +85,8 @@ passport.use(
   new TwitterStrategy({
     consumerKey: keys.twitterConsumerKey,
     consumerSecret: keys.twitterConsumerSecret,
-    callbackURL: '/auth/twitter/callback'
+    callbackURL: '/auth/twitter/callback',
+    proxy: true
   }, 
   async (token, tokenSecret, profile, done) => {
     const existingUser = await User.findOne({ "twitter.id": profile.id });

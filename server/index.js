@@ -10,6 +10,7 @@ const cors = require('cors');
 require('./models/Blog');
 require('./models/User');
 require('./models/Comment');
+
 require('./services/passport');
 
 const app = express();
@@ -54,4 +55,6 @@ if(process.env.NODE_ENV === 'production'){
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log('listening on port ' + PORT);
+});
