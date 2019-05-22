@@ -22,7 +22,7 @@ class LoginModal extends Component {
           <div className="ui placeholder segment">
               <div className="ui two column very relaxed stackable grid">
                 <div className="column" >
-                  <form onSubmit={this.handleSubmit(this.onSubmit)}>
+                  <form /*onSubmit={this.handleSubmit(this.onSubmit)} */>
                     <div className="ui form">
                       <div className="field">
                         <label>Username</label>
