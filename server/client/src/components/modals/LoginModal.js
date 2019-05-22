@@ -22,13 +22,14 @@ class LoginModal extends Component {
           <div className="ui placeholder segment">
               <div className="ui two column very relaxed stackable grid">
                 <div className="column" >
-                  <form /*onSubmit={this.handleSubmit(this.onSubmit)} */>
+                  <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
                     <div className="ui form">
                       <div className="field">
                         <label>Username</label>
                         <div className="ui left icon input">
                           <Field 
                             type="text" 
+                            name="username"
                             component="input"
                             autoComplete="none"
                             placeholder="Username" 
@@ -41,6 +42,7 @@ class LoginModal extends Component {
                         <div className="ui left icon input">
                           <Field
                             type="password" 
+                            name="password"
                             placeholder="Password" 
                             autoComplete="none"
                             component="input"
@@ -103,6 +105,7 @@ class LoginModal extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return { login: state.login }
 }
 
