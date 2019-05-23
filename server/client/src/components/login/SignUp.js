@@ -8,6 +8,7 @@ import { signup } from '../../actions';
 class SignUp extends Component {
 
   onSubmit = (formProps) => {
+    console.log(formProps);
     this.props.signup(formProps, () => {
       this.props.history.push('/blog');
     });
@@ -51,6 +52,7 @@ class SignUp extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state.form.signup);
   return { errorMessage: state.login.errorMessage }
 }
 

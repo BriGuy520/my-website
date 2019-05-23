@@ -498,6 +498,10 @@ button:focus, input:focus {
   visibility: hidden;
 }
 
+.ui.standard.modal.visible.active {
+  width: 33%;
+}
+
 @media only screen and (min-width: 1020px){
 
   .collages img {
