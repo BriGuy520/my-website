@@ -9,7 +9,7 @@ const Skills = () => {
     <div className="technologies"> 
       <div className="tech-header">
         <h2>Building Beautiful, Responsive Websites with These Technologies.</h2>
-        <p>Web Development is constantly evolving. New technologies and languages are constantly coming the forefront. Here is what I know and a few things I want to learn in the future </p>
+        <p>Web Development is constantly evolving. New technologies and languages are constantly coming to the forefront. Here is what I know and a few things I want to learn in the future </p>
       </div>
       <div className="tech-header-border"></div>
       <div className="skill-section">
@@ -39,7 +39,7 @@ const Skills = () => {
           <div className="backend-copy">
             <h1>Backend</h1>
             <p>
-              While I am not a backend expert by any stretch of the imagination, I really enjoy building out the backend. When building this site, I really came to apprectiate and enjoy solving the challenges that arise when trying to build a fullstack web application. Going forward, I really want to focus more on how to build scalable web applications using design principals that produce efficient algorithms. 
+              While I am not a backend expert by any stretch of the imagination, I really enjoy building out the backend. When building this site, I really came to apprectiate and enjoy solving the challenges that arise when trying to build a fullstack web application. Going forward, I really want to focus more on how to build scalable web applications using certain design principals and algorithms. 
             </p>
             <ul>
               <li>MongoDB</li>
@@ -52,7 +52,7 @@ const Skills = () => {
         <div className="future-section">
           <div className="future-copy">
             <h1>The Future is Bright.</h1>
-            <p>My motto is never settle and never stop learning. While I continue to get better at the languages and  listed above, I would really like to branch out and learn some of the other exciting technologies out in the world of programming.</p> 
+            <p>My motto is never settle and never stop learning. While I continue to get better at the languages listed above, I would really like to branch out and learn some of the other exciting technologies out in the world of programming.</p> 
           </div>
           <div className="near-future-section">
             <h2>Near Future</h2>

@@ -3,6 +3,8 @@ import built_with_collage from '../images/built-with-collage.png';
 import html_css from '../images/html-css.png';
 import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
+import meditation_snapshot from '../images/meditation-snapshot.PNG';
+import gainz_snapshot from '../images/gainz-snapshot.PNG';
 
 const Projects = () => {
 
@@ -12,17 +14,29 @@ const Projects = () => {
     pros: ['Helped me get really comfortable with CSS and HTML.', 'This page uses the latest CSS tools such as Flexbox and Animations', 'Gave me more confidence.'],
     cons: ['I could make a few more tweeks to make the content more aesthetcally pleasing.', 'It has no functionality'],
     gifs: flexbox_snapshot,
-    built: built_with_collage
+    built: html_css
   },
   {
     title: "My Personal Website",
-    description: "This is the first fullstack website. Building it was a long and frustrating, but it was also one the most rewarding experiences of my life.",
+    description: "This is my first fullstack website. Building it was a long and frustrating, but it was also one the most rewarding experiences of my life.",
     pros: ['It has a lot of functionality. This site features user authentication and a fully functional blog. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
-    cons: ['The CSS could be a lot better, a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate.', 'Need to get better at working with APIs.','Some of the React code is redundant and inefficient.'],
+    cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate.', 'Need to get better at working with APIs.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
-    built: html_css
-
-  }]
+    built: built_with_collage
+  }, {
+    title: "Meditation App",
+    description: "This is a small meditation app I made. It's fairly simple. You can choose between and a rain and beach background with respective audio.",
+    pros: ['Learned how to use new HTML elements such as video, audio, svg, and circle', 'Sharpened up on my DOM manipulation skills', 'Built entirely with native JavaScript'],
+    cons: ['Need to work on edge cases such as a bell when the timer runs out or adding time to the clock'],
+    gifs: meditation_snapshot
+  },{
+    title: "Gainz by Gaines Website",
+    description: 'This is a website that I am making for my friend Johnathan Gaines for his personal training business Gainz by Gaines. The site is a single page. I used smooth scrolling on the navbar to navigate through the site.I want to impleent an ecommerce portion of the site on a seperate page. Still researching and planning the best way to build out an ecommerce store.',
+    pros: ['Really like the slider/carousal that functions as the cover of the homepage', 'Simple and easy to use'],
+    cons: ['Need to focus a little more on the styling. I think it can look a little more professional', 'Need to finish all of the functionality and replace the lorem ipsum with real information'],
+    gifs: gainz_snapshot
+  }
+]
 
   const renderProject = () => {
     return projects.map(project => {
