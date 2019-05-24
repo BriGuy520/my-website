@@ -7,7 +7,7 @@ h1 {
 }
 
 .photos {
-  margin: 60px;
+  margin: 3%;
   align-content: center;
   display: flex;
   flex-wrap: wrap;
