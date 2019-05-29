@@ -305,6 +305,10 @@ button:focus, input:focus {
 
 /* blog */
 
+.blog-body {
+  padding: 80px;
+}
+
 .image-sizing {
   width: 80%;
 }
