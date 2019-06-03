@@ -15,6 +15,7 @@ import lateralus from '../../images/lateralus.jpeg';
 import mezzanine from '../../images/mezzanine.jpg';
 import cross from '../../images/cross.jpg';
 import black_on_both_sides from '../../images/black_on_both_sides.jpg';
+import leviathan from '../../images/leviathan-artwork.jpg';
 
 
 const Favorites = () => {
@@ -95,6 +96,8 @@ const Favorites = () => {
             <li><strong>Lateralus</strong> by Tool</li>
             <img alt="Cross" className="album-img" src={cross} />
             <li><strong>Cross</strong> by Justice</li>
+            <img alt="leviathan" className="album-img" src={leviathan} />
+            <li><strong>Leviathan</strong> by Mastodon</li>
             <img alt="Mezzanine" className="album-img" src={mezzanine} />
             <li><strong>Mezzanine</strong> by Massive Attack</li>
             <img alt="Black on Both Sides" className="album-img" src={black_on_both_sides} />
