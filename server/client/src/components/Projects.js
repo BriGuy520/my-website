@@ -1,6 +1,8 @@
 import React from 'react';
 import built_with_collage from '../images/built-with-collage.png';
 import html_css from '../images/html-css.png';
+import html_css_js from '../images/html-css-js-collage.png';
+import html_css_js_react from '../images/html-css-js-react.png';
 import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
 import meditation_snapshot from '../images/meditation-snapshot.PNG';
@@ -28,13 +30,17 @@ const Projects = () => {
     description: "This is a small meditation app I made. It's fairly simple. You can choose between and a rain and beach background with respective audio.",
     pros: ['Learned how to use new HTML elements such as video, audio, svg, and circle', 'Sharpened up on my DOM manipulation skills', 'Built entirely with native JavaScript'],
     cons: ['Need to work on edge cases such as a bell when the timer runs out or adding time to the clock'],
-    gifs: meditation_snapshot
+    gifs: meditation_snapshot,
+    built: html_css_js
   },{
     title: "Gainz by Gaines Website",
     description: 'This is a website that I am making for my friend Johnathan Gaines for his personal training business Gainz by Gaines. The site is a single page. I used smooth scrolling on the navbar to navigate through the site.I want to impleent an ecommerce portion of the site on a seperate page. Still researching and planning the best way to build out an ecommerce store.',
     pros: ['Really like the slider/carousal that functions as the cover of the homepage', 'Simple and easy to use'],
     cons: ['Need to focus a little more on the styling. I think it can look a little more professional', 'Need to finish all of the functionality and replace the lorem ipsum with real information'],
-    gifs: gainz_snapshot
+    gifs: gainz_snapshot,
+    built: html_css_js_react,
+    code: 'https://github.com/BriGuy520/gainz-website',
+    web: 'https://briguy520.github.io/gainz-website/'
   }
 ]
 
@@ -60,9 +66,19 @@ const Projects = () => {
             </div>
             <div className="image">
               <img alt="flexbox-site" className="site-pic" src={project.gifs} />
+              <div className="links">
+                <div className="link">
+                  <i class="globe icon"></i>
+                  <a href={project.web}>View The Site</a>
+                </div>
+                <div className="link">
+                  <i class="code icon"></i>
+                  <a href={project.code}>View The Code</a>
+                </div>  
+              </div>
             </div>
           </div>
-          <div className="extra content built-with" style={{ display: 'flex', 'flex-direction': 'row' }}>
+          <div className="extra content built-with">
             <p>Built With:</p>
             <img alt="built-with-collage"src={project.built} style={{'justify-content': 'center'}} />
           </div>

@@ -21,6 +21,7 @@ body {
   padding: 20px 0 0 10px;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
+  width: 60%;
 }
 
 .goals ol {
@@ -136,6 +137,7 @@ button:focus, input:focus {
 
 .collages {
   width: 50%;
+  align-content: center;
 }
 
 .frontend-section {
@@ -270,6 +272,28 @@ button:focus, input:focus {
   padding: 8px;
 }
 
+.links {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.links i {
+  font-size: 1.4em;
+}
+
+.link {
+  display: inline-block;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+.link a {
+  padding-left: 4px;
+}
+
 .built-with p {
   padding-top: 14px;
 }
@@ -281,6 +305,7 @@ button:focus, input:focus {
 
 .built-with img {
   padding-left: 8px;
+  height: 48px;
 }
 
 /* comment form */
@@ -494,7 +519,8 @@ button:focus, input:focus {
   }
 
   .collages img {
-    width: 350px;
+    width: 450px;
+    margin: 0 auto;
   }
 }
 
@@ -527,10 +553,6 @@ button:focus, input:focus {
     padding: 0;
   }
 
-  .built-with img {
-    padding: 0;
-  }
-
   .projects {
     padding: 10px 0;
   }
@@ -538,16 +560,15 @@ button:focus, input:focus {
   .blog-image {
     padding: 0;
   }
+
+  .collages img {
+    width: 90vw;
+  }
 }
 
 
 
 @media only screen and (max-width: 330px){
-
-  .collages img {
-    width: 90vw;
-    height: 50vh;
-  }
 
   .list-sections {
     padding: 0;

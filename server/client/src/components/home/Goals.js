@@ -4,7 +4,7 @@ class Goals extends Component {
  
   state = { 
     goal: '',
-    goals: ['Get a development gig', 'Move to Austin, TX', 'Buy a gun or two', 'Get a dog', 'Eat Some Food'] 
+    goals: ['Move to Austin, TX','Get a Development Gig', 'Work on Problem Solving', 'Get Better at Backend Development', 'Eat Some Food'] 
   };
 
   goalInput = (event) => {
