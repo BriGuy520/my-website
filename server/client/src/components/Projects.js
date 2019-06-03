@@ -7,6 +7,7 @@ import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
 import meditation_snapshot from '../images/meditation-snapshot.PNG';
 import gainz_snapshot from '../images/gainz-snapshot.PNG';
+import hangman_site from '../images/hangman-site.PNG';
 
 const Projects = () => {
 
@@ -41,6 +42,15 @@ const Projects = () => {
     built: html_css_js_react,
     code: 'https://github.com/BriGuy520/gainz-website',
     web: 'https://briguy520.github.io/gainz-website/'
+  },{
+    title: "Hangman",
+    description: 'This is a small little hangman game I made. It\'s pretty standard, nothing too crazy.',
+    pros: ['I made this entirely by myself with no help from StackOverflow or google.', 'Got really comfortable making API calls with fetch.',  'Code is pretty DRY'],
+    cons: ['Need to focus a little more on the styling. This is very basic. Was more focused on the functionality', 'Could add some more features to make the game easier'],
+    gifs: hangman_site,
+    built: html_css_js,
+    code: 'https://github.com/BriGuy520/hangman',
+    web: 'https://briguy520.github.io/hangman/'
   }
 ]
 
