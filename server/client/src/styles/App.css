@@ -311,6 +311,10 @@ button:focus, input:focus {
 
 /* comment form */
 
+#comments {
+  padding: 5% 15%; 
+}
+
 #comment-form {
   padding: 20px;
 }
@@ -338,7 +342,18 @@ button:focus, input:focus {
 .blog-body {
   padding: 60px;
   margin: 40px 20px;
+  font-size: 1.3em;
+  line-height: 1.4em;
   background: rgb(245, 245, 243);
+}
+
+.blog-body p {
+  padding: 0 10px;
+}
+
+.blog-body pre {
+  background: black;
+  color: white;
 }
 
 .image-sizing {
