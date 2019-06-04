@@ -31,7 +31,7 @@ body {
 
 .goals ol li {
   font-family: 'Montserrat', sans-serif;
-  color: rgb(174, 114, 231);
+  color: rgb(167, 87, 241);
   font-size: 1.8rem;
   line-height: 1.4em;
   padding: 10px 8px;
@@ -141,6 +141,11 @@ button:focus, input:focus {
   align-content: center;
 }
 
+.copy p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
 .frontend-section {
   display: flex;
   justify-content: space-between;
@@ -157,9 +162,9 @@ button:focus, input:focus {
   width: 40%;
 }
 
-.frontend-copy ul li {
-  font-size: 1.4em;
-  line-height: 1.6em;
+.frontend-copy ul li, .backend-copy ul li {
+  font-size: 2em;
+  line-height: 2em;
 }
 
 .backend-section {
@@ -179,13 +184,12 @@ button:focus, input:focus {
   width: 40%;
 }
 
-.backend-copy ul li {
-  font-size: 1.4em;
-  line-height: 1.6em;
-}
-
 .future-section {
   padding-top: 30px;
+}
+
+.future-copy {
+  padding-bottom: 3%;
 }
 
 .future-copy h1 {
@@ -195,7 +199,7 @@ button:focus, input:focus {
 }
 
 .near-future-section h2 {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .near-future-list {
@@ -545,8 +549,7 @@ button:focus, input:focus {
   }
 
   .collages img {
-    width: 450px;
-    margin: 0 auto;
+    width: 90vw;
   }
 }
 
@@ -583,12 +586,18 @@ button:focus, input:focus {
     padding: 0;
   }
 
-  .collages img {
-    width: 90vw;
+  .goals {
+    padding: 2%;
+  }
+
+  .goals p {
+    width: 100%;
+  }
+
+  .blog-body {
+    padding: 10px;
   }
 }
-
-
 
 @media only screen and (max-width: 330px){
 

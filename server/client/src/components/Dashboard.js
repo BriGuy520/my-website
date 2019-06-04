@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchUser } from '../actions';
 import BlogList from './blogs/BlogList';
 
-const Dashboard = () => {
-  return (
-    <div>
-      <BlogList />
-      <div className="add-blog">
-        <Link to="/blog/new" className="circular ui icon button large blue">
-          <i className="plus icon"></i>
-        </Link>
+class Dashboard extends Component {
+
+  componentDidMount(){
+    this.props.fetchUser();
+  }
+
+  render(){
+    return (
+      <div>
+        <BlogList />
+        <div className="add-blog">
+          <Link to="/blog/new" className="circular ui icon button large blue">
+            <i className="plus icon"></i>
+          </Link>
+        </div>
       </div>
-    </div>
-  )
+    )
+  } 
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  console.log(state);
+}
+
+export default connect(mapStateToProps, { fetchUser })(Dashboard);
