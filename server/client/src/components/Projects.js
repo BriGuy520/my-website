@@ -19,7 +19,7 @@ const Projects = () => {
     gifs: flexbox_snapshot,
     built: html_css,
     code: 'https://github.com/BriGuy520/Flexbox-Site',
-    web: '#'
+    web: 'https://briguy520.github.io/Flexbox-Site/'
   },
   {
     title: "My Personal Website",
@@ -38,7 +38,7 @@ const Projects = () => {
     gifs: meditation_snapshot,
     built: html_css_js,
     code: 'https://github.com/BriGuy520/meditation',
-    web: '#'
+    web: 'https://briguy520.github.io/meditation/'
   },{
     title: "Gainz by Gaines Website",
     description: 'This is a website that I am making for my friend Johnathan Gaines for his personal training business Gainz by Gaines. The site is a single page. I used smooth scrolling on the navbar to navigate through the site.I want to impleent an ecommerce portion of the site on a seperate page. Still researching and planning the best way to build out an ecommerce store.',
@@ -61,22 +61,22 @@ const Projects = () => {
 ]
 
   const renderProject = () => {
-    return projects.map(project => {
+    return projects.map((project, idx) => {
       return (
-        <div className="project">
+        <div key={idx} className="project">
         <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
           <div className="content website">
-            <div className="card-copy" style={{ display: 'flex', 'flex-direction': 'column' }}>
+            <div className="card-copy" style={{ display: 'flex', 'flexDirection': 'column' }}>
               <h2 className="header">{project.title}</h2>
               <div className="description" style={{ width: '90%'}}>
                 <p>{project.description}</p>
                 <h3>Pros</h3>
                 <ul>
-                  {project.pros.map((pro, idx) => <li>{pro}</li>)}
+                  {project.pros.map((pro, idx) => <li key={idx}>{pro}</li>)}
                 </ul>
                 <h3>Cons</h3>
                 <ul>
-                 {project.cons.map((con, idx) => <li>{con}</li>)}
+                 {project.cons.map((con, idx) => <li key={idx}>{con}</li>)}
                 </ul>
               </div>
             </div>
@@ -84,11 +84,11 @@ const Projects = () => {
               <img alt="flexbox-site" className="site-pic" src={project.gifs} />
               <div className="links">
                 <div className="link">
-                  <i class="globe icon"></i>
+                  <i className="globe icon"></i>
                   <a href={project.web}>View The Site</a>
                 </div>
                 <div className="link">
-                  <i class="code icon"></i>
+                  <i className="code icon"></i>
                   <a href={project.code}>View The Code</a>
                 </div>  
               </div>
@@ -96,7 +96,7 @@ const Projects = () => {
           </div>
           <div className="extra content built-with">
             <p>Built With:</p>
-            <img alt="built-with-collage"src={project.built} style={{'justify-content': 'center'}} />
+            <img alt="built-with-collage"src={project.built} style={{'justifyContent': 'center'}} />
           </div>
         </div>
       </div>

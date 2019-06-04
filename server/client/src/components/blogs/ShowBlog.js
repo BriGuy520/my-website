@@ -22,10 +22,10 @@ class ShowBlog extends Component {
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
         <div>
           <img className="blog-image" src={image} alt={title} style={{"width": "100%", "height": "100%"}} />
-          <p><i>{description}</i></p>
+          <h3 className="blog-description"><i>{description}</i></h3>
           <p className="blog-body">{Parser(body)}</p>
         </div>
-        <div>
+        <div className="likes">
           <BlogLikes blog={this.props.blog} />
         </div>
       </div>

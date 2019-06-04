@@ -8,11 +8,11 @@ body {
   background: linear-gradient(80deg, #ccdbce 20%, rgb(154, 196, 243) 50%, transparent), url('https://hillschurch.files.wordpress.com/2017/02/mountaintop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 5%;
 }
 
 .goals h1 {
   margin: 0;
-  padding: 25px;
   font-size: 4em;
   font-weight: 800;
 }
@@ -21,7 +21,7 @@ body {
   padding: 20px 0 0 10px;
   font-size: 1.4em;
   font-family: 'Montserrat', sans-serif;
-  width: 60%;
+  width: 50%;
 }
 
 .goals ol {
@@ -31,7 +31,7 @@ body {
 
 .goals ol li {
   font-family: 'Montserrat', sans-serif;
-  color: #2196F3;
+  color: rgb(174, 114, 231);
   font-size: 1.8rem;
   line-height: 1.4em;
   padding: 10px 8px;
@@ -100,6 +100,7 @@ button:focus, input:focus {
 .tweets-copy {
   width: 40%;
   margin: 0 5%;
+  margin-left: 0;
 }
 
 .twitter-section {
@@ -305,7 +306,7 @@ button:focus, input:focus {
 
 .built-with img {
   padding-left: 8px;
-  height: 48px;
+  height: 10vh;
 }
 
 /* comment form */
@@ -330,8 +331,14 @@ button:focus, input:focus {
 
 /* blog */
 
+.blog-description {
+  padding-left: 20px;
+}
+
 .blog-body {
-  padding: 80px;
+  padding: 60px;
+  margin: 40px 20px;
+  background: rgb(245, 245, 243);
 }
 
 .image-sizing {
@@ -424,6 +431,10 @@ button:focus, input:focus {
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.likes {
+  padding: 20px;
 }
 
 @media only screen and (max-width: 1030px){
@@ -547,11 +558,7 @@ button:focus, input:focus {
 }
 
 @media only screen and (max-width: 680px){
-  .built-with {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
+
 
   .projects {
     padding: 10px 0;

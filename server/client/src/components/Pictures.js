@@ -17,7 +17,6 @@ class Pictures extends Component {
     
     return (
       <div className="container">
-         <h1>Photos</h1>
          <div className='photos'>
           {photoList}
          </div>
