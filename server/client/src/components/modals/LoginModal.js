@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { signin } from '../../actions';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class LoginModal extends Component {
 

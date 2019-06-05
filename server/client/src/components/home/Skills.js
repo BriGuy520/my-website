@@ -81,7 +81,7 @@ const Skills = () => {
         <h2>Distant Future</h2>
         <p>In the long term, I would like to branch out of the web based technologies and get more involved with machine learning and lower level languages.</p>
         <p>
-          These technologies are going to take a while to learn since being proficient in these languages involves having a deep understanding of computer science and mathematics. To improve in these areas, I have started using <a href="https://brilliant.org">brilliant.org</a>; an excellent resource to touch up on these skills. 
+          These technologies are going to take a while to learn since being proficient in these languages involves having a deep understanding of computer science and mathematics. To improve in these areas, I have started using <a href="https://brilliant.org">brilliant.org</a>; an excellent resource to help touch up on these skills. 
         </p>
         
         <div className="long-term-list">
