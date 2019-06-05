@@ -12,10 +12,10 @@ class BlogList extends Component {
   renderBlogs(){
     return this.props.blogs.reverse().map(blog => {
       return (
-        <div className="ui raised segment" key={blog._id}>
+        <div className="ui raised segment blog-card" key={blog._id}>
           <div className="content">
             <div className="header">
-              <h1>{blog.title}</h1>
+              <h2>{blog.title}</h2>
               <h4>By {blog.author}</h4>
               <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
             </div>
@@ -37,7 +37,7 @@ class BlogList extends Component {
 
   render(){
     return (
-      <div className="container">
+      <div className="container blog-cards">
         {this.renderBlogs()}
       </div>
     );

@@ -14,18 +14,18 @@ class Dashboard extends Component {
     return (
       <div>
         <BlogList />
-        <div className="add-blog">
+        {/* <div className="add-blog">
           <Link to="/blog/new" className="circular ui icon button large blue">
             <i className="plus icon"></i>
           </Link>
-        </div>
+        </div> */}
       </div>
     )
   } 
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  return { auth: state.auth }
 }
 
 export default connect(mapStateToProps, { fetchUser })(Dashboard);

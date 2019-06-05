@@ -419,8 +419,29 @@ button:focus, input:focus {
 
 /* Blog Posts */
 
+.blog-card {
+  width: 30%;
+}
+
+.blog-card p {
+  height: 80px;
+}
+
+.ui.raised.segment {
+  margin: 0 20px 20px 20px;
+}
+
+.blog-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+
 .blog-image {
   width: 100%;
+  height: 50vh;
   padding: 20px;
 }
 
@@ -550,6 +571,22 @@ button:focus, input:focus {
 
   .collages img {
     width: 90vw;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+
+  .blog-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+
+  .container.blog-cards {
+
   }
 }
 

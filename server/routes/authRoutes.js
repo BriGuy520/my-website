@@ -4,6 +4,7 @@ const Authentication = require('../controllers/authentication');
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignIn = passport.authenticate('local', { session: false });
 
+
 module.exports = (app) => {
 
   app.get('/', requireAuth, function(req, res){
@@ -24,25 +25,25 @@ module.exports = (app) => {
     });
 
   app.get('/auth/twitter', passport.authenticate('twitter'), (req, res) => {
-    res.redirect('/blog')
+    res.redirect('/blog');
   });
 
   app.get('/auth/twitter/callback', 
     passport.authenticate('twitter'), (req, res) => {
-      res.redirect('/blog')
+      res.redirect('/blog');
     });
 
   app.get('/auth/facebook', passport.authenticate('facebook'));
 
   app.get('/auth/facebook/callback', 
     passport.authenticate('facebook'), (req, res) => {
-      res.redirect('/blog')
+      res.redirect('/blog');
     });
 
   app.get('/auth/github', passport.authenticate('github'));
 
   app.get('/auth/github/callback', passport.authenticate('github'), (req, res) => {
-    res.redirect('/blog')
+    res.redirect('/blog');
   });
 
   app.get('/api/logout', (req, res) => {
@@ -52,7 +53,7 @@ module.exports = (app) => {
 
 
   app.get('/api/current_user', (req, res) => {
-    
+
     res.send(req.user);
   });
   
