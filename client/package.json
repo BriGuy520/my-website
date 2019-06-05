@@ -1,8 +1,12 @@
 {
-  "name": "my-website",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://briguy520.github.io/my-website/",
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
+    }
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
