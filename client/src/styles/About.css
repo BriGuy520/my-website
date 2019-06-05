@@ -1,0 +1,137 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  margin: auto;
+  width: 80%;
+  padding: 30px;
+
+}
+
+.box h1 {
+  padding: 16px;
+}
+
+.box p {
+  padding: 0 28px;
+  line-height: 25px;
+}
+
+.section {
+  border-bottom: 3px solid black;
+  width: 80%;
+  padding-top: 20px;
+  margin: auto;
+}
+
+.book-img {
+  height: 300px;
+  width: 200px;
+  box-shadow: 8px 8px 18px rgb(71, 71, 71);
+}
+
+.album-img {
+  height: 400px;
+  width: 400px;
+  box-shadow: 8px 8px 18px rgb(71, 71, 71);
+}
+
+/* favorites */
+
+.list-sections {
+  padding: 20px;
+}
+
+.list-item {
+  height: 100px
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+  margin: 0 5%;
+}
+
+.lists i {
+  font-size: 3.4em;
+  margin: 0 auto;
+}
+
+.lists h2 {
+  margin: 0 auto;
+}
+
+.lists ol { 
+  line-height: 2.4em;
+}
+
+.lists li {
+  margin: 16px;
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 670px){
+  .box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .box h3 {
+    width: 80%;
+  }
+
+  .album-img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1100px){
+
+
+  .list-sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px 0 40px 60px;
+    width: 50%;
+  }
+
+  .list-sections.music {
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .list-sections.music ol {
+    padding: 0;
+  }
+
+  .album-img {
+    width: 600px;
+    height: 600px;
+  }
+
+
+  .lists-sections ol {
+    margin: 0;
+  }
+
+  .lists-sections ol li {
+    padding: 0;
+  }
+
+  .favorites-lists {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
