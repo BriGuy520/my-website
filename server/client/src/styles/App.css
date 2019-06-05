@@ -141,7 +141,7 @@ button:focus, input:focus {
   align-content: center;
 }
 
-.copy p {
+.copy p, .bio p, .favorites p {
   font-size: 1.2em;
   line-height: 1.6em;
 }
@@ -425,6 +425,7 @@ button:focus, input:focus {
 
 .blog-card p {
   height: 80px;
+  padding: 0 20px;
 }
 
 .ui.raised.segment {
@@ -434,7 +435,6 @@ button:focus, input:focus {
 .blog-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin: 30px;
 }

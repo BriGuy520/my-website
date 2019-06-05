@@ -48,6 +48,10 @@ body {
   padding: 20px;
 }
 
+.list-item {
+  height: 100px
+}
+
 .lists {
   display: flex;
   flex-direction: column;

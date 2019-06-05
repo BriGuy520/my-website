@@ -24,32 +24,31 @@ const Favorites = () => {
       <div className="favorites">
         <h1>Favorites Lists</h1>
         <p>Believe it or not, I actually enjoy other things outside of coding. Here are a few other things I like.</p>
-        <div className="section"></div>
         <br />
         <div className="lists">
-          <i class="book icon"></i>
+          <i className="book icon"></i>
           <h2>Books</h2>
           <div className="favorites-lists">
             <div className="list-sections">
               <h3>Non-Fiction</h3>
               <ol>
                 <img  alt="conflict of visions - Sowell" className="book-img" src={conflict} />
-                <li><strong>Conflict of Visions</strong> by Thomas Sowell</li>
+                <li className="list-item"><strong>Conflict of Visions</strong> by Thomas Sowell</li>
                 <img alt="righteous mind - Haidt" className="book-img" src={righteous} />
-                <li><strong>The Righteous Mind</strong> by Jonathon Haidt</li>
+                <li className="list-item"><strong>The Righteous Mind</strong> by Jonathon Haidt</li>
                 <img alt="When Work Disappears" className="book-img" src={work} />
-                <li><strong>When Work Disappears</strong> by William Julius Wilson</li>
+                <li className="list-item"><strong>When Work Disappears</strong> by William Julius Wilson</li>
               </ol>
             </div>
             <div className="list-sections">
               <h3>Fiction</h3>
               <ol>
                 <img alt="Confederacy of Dunces" className="book-img" src={confederacy} />
-                <li><strong>Confederacy of Dunces</strong> by John Kennedy O'Toole</li>
+                <li className="list-item"><strong>Confederacy of Dunces</strong> by John Kennedy O'Toole</li>
                 <img alt="The Electric Kool-Aid Acid Test" className="book-img" src={kool_aid} />
-                <li><strong>The Electric Kool-Aid Acid Test</strong> by Tom Wolfe</li>
+                <li className="list-item"><strong>The Electric Kool-Aid Acid Test</strong> by Tom Wolfe</li>
                 <img alt="Ubik" className="book-img" src={ubik} />
-                <li><strong>Ubik</strong> by Philip K. Dick</li>
+                <li className="list-item"><strong>Ubik</strong> by Philip K. Dick</li>
               </ol>
             </div>
           </div>
@@ -57,29 +56,29 @@ const Favorites = () => {
           <br />
         </div>
         <div className="lists">
-          <i class="film icon"></i>
+          <i className="film icon"></i>
           <h2>Film</h2>
           <div className="favorites-lists">
             <div className="list-sections">
               <h3>Movies</h3>
               <ol>
               <img alt="Heat" className="book-img" src={heat} />
-                <li><strong>Heat</strong> <br/>Written and Directed by Michael Mann</li>
+                <li className="list-item"><strong>Heat</strong> <br/>Written and Directed by Michael Mann</li>
                 <img alt="Adaptation." className="book-img" src={adaptation} />
-                <li><strong>Adaptation.</strong> <br/>Written by Charlie Kaufman and Directed by Spike Jonze</li>
+                <li className="list-item"><strong>Adaptation.</strong> <br/>Written by Charlie Kaufman and Directed by Spike Jonze</li>
                 <img alt="Boogie Nights" className="book-img" src={boogie_nights} />
-                <li><strong>Boogie Nights</strong> <br/>Written and Directed by Paul Thomas Anderson</li>
+                <li className="list-item"><strong>Boogie Nights</strong> <br/>Written and Directed by Paul Thomas Anderson</li>
               </ol>
             </div>
             <div className="list-sections">
               <h3>TV Shows</h3>
               <ol>
                 <img alt="The Simpsons" className="book-img" src={simpsons} />
-                <li><strong>The Simpsons</strong> <br/>Created by Matt Groening, Sam Simon and James L. Brooks</li>
+                <li className="list-item"><strong>The Simpsons</strong> <br/>Created by Matt Groening, Sam Simon and James L. Brooks</li>
                 <img alt="The Wire" className="book-img" src={wire} />
-                <li><strong>The Wire</strong> <br/>Created by David Simon</li>
+                <li className="list-item"><strong>The Wire</strong> <br/>Created by David Simon</li>
                 <img alt="South Park" className="book-img" src={south_park} />
-                <li><strong>South Park</strong> <br/>Created by Trey Parker and Matt Stone</li>
+                <li className="list-item"><strong>South Park</strong> <br/>Created by Trey Parker and Matt Stone</li>
               </ol>
             </div>
           </div>
@@ -88,7 +87,7 @@ const Favorites = () => {
         </div>
       </div>
       <div className="lists">
-        <i class="music icon"></i>
+        <i className="music icon"></i>
         <h2>Music</h2>
         <div className="list-sections music">
           <ol>
