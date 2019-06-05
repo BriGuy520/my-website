@@ -25,8 +25,8 @@ body {
 }
 
 .goals ol {
-  margin: 20px 40px;
-  padding: 10px;
+  margin: 20px 10px 0 40px;
+  padding: 0;
 }
 
 .goals ol li {
@@ -74,6 +74,7 @@ body {
 
 .info {
   border-color: #2196F3;
+  font-size: .7em;
   color: dodgerblue
 }
 
@@ -210,6 +211,8 @@ button:focus, input:focus {
 
 .near-future-list ol {
   width: 40%;
+  padding-right: 5%;
+  margin-right: 10%;
 }
 
 .near-future-list ol li {

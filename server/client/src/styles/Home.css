@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .cover h1 {
@@ -16,6 +16,11 @@
   font-size: 18vw;
   font-weight: 800;
   padding-top: 0;
+}
+
+.sub-head {
+  text-align: center;
+  margin: 0 10%;
 }
 
 @media only screen and (max-width: 1340px){

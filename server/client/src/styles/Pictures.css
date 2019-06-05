@@ -22,14 +22,15 @@ h1 {
 }
 
 
-@media only screen and (max-width: 1070px){
+@media only screen and (max-width: 1020px){
   .photos {
     width: 100%;
     margin: 0 auto;
   }
 
   .photos img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
   }
 }

@@ -23,7 +23,7 @@ const Favorites = () => {
     <div>
       <div className="favorites">
         <h1>Favorites Lists</h1>
-        <p>Believe it or not, I actually enjoy other things outside of coding. Here are a few other things I like.</p>
+        <p>Believe it or not, I actually enjoy doing other things outside of programming. Here are a few other of my favorite things.</p>
         <br />
         <div className="lists">
           <i className="book icon"></i>

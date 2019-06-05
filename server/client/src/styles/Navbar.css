@@ -15,7 +15,7 @@ header {
 header h2 {
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  padding: 15px;
+  padding: 15px 15px 15px 30px;
   margin: 0;
 }
 
@@ -103,7 +103,7 @@ a:hover:before {
   }
 
   .dropdown-menu h2 {
-    padding-right: 30%;
+    padding-right: 25%;
   }
 
   header {
