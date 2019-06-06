@@ -39,7 +39,7 @@ const Skills = () => {
           <div className="backend-copy copy">
             <h1>Backend</h1>
             <p>
-              While I am not a backend expert by any stretch of the imagination, I really enjoy building out the backend. When building this site, I really came to apprectiate and enjoy solving the challenges that arise when trying to build a fullstack web applications. Going forward, I really want to focus more on how to build scalable web applications using certain design principles and algorithms. 
+              While I am not a backend expert by any stretch of the imagination, I really enjoy building out the backend. When building this site, I really came to apprectiate and enjoy solving the challenges that arise when trying to build fullstack web applications. Going forward, I really want to focus more on how to build scalable web applications using certain design principles and algorithms. 
             </p>
             <ul>
               <li>MongoDB</li>

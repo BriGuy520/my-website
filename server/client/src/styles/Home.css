@@ -27,9 +27,13 @@
   .cover h1 {
     padding-top: 10vh;
   }
+
+  .cover {
+    height: 70vh;
+  }
 }
 
-@media only screen and (max-width: 780px){
+@media only screen and (max-width: 680px){
   .cover {
     height: 400px;
     padding-top: 0;
@@ -37,6 +41,11 @@
 
   h2 {
     padding-bottom: 0;
+  }
+
+  .sub-head, .tweets-copy p {
+    margin: 0 2%;
+    text-align: left;
   }
 }
 
