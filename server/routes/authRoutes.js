@@ -21,7 +21,7 @@ module.exports = (app) => {
 
   app.get('/auth/google/callback', 
     passport.authenticate('google'), (req, res) => {
-      res.redirect('/blog')
+      res.redirect('/blog');
     });
 
   app.get('/auth/twitter', passport.authenticate('twitter'), (req, res) => {
