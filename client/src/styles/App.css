@@ -319,7 +319,7 @@ button:focus, input:focus {
 /* comment form */
 
 #comments {
-  padding: 5% 15%; 
+  padding: 5% 12%; 
 }
 
 #comment-form {
@@ -343,15 +343,14 @@ button:focus, input:focus {
 /* blog */
 
 .blog-description {
-  padding-left: 20px;
+  padding: 0 10px;
 }
 
 .blog-body {
-  padding: 60px;
+  padding: 20px;
   margin: 40px 20px;
   font-size: 1.3em;
   line-height: 1.4em;
-  background: rgb(245, 245, 243);
 }
 
 .blog-body p {
@@ -442,6 +441,10 @@ button:focus, input:focus {
   margin: 30px;
 }
 
+pre {
+  padding: 10px;
+}
+
 .blog-image {
   width: 100%;
   height: 50vh;
@@ -496,6 +499,10 @@ button:focus, input:focus {
     padding-bottom: 20px;
     height: 60vh;
   }
+
+  .ui.raised.segment {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 780px){
@@ -519,7 +526,6 @@ button:focus, input:focus {
   .tweets p {
     padding: 0;
   }
-
 
   .frontend-section {
     display: flex;
@@ -588,8 +594,12 @@ button:focus, input:focus {
     margin: 15px;
   }
 
-  .container.blog-cards {
+  .ui.raised.segment {
+    width: 90%;
+  }
 
+  #comments {
+    padding: 5%; 
   }
 }
 
@@ -626,6 +636,10 @@ button:focus, input:focus {
     padding: 0;
   }
 
+  .tweets-copy p {
+    padding: 20px 0 0 10px;
+  }
+
   .goals {
     padding: 2%;
   }
@@ -636,6 +650,28 @@ button:focus, input:focus {
 
   .blog-body {
     padding: 10px;
+    background: white;
+    margin: 0;
+  }
+
+  .ui.standard.modal.visible.active {
+    width: 90%;
+  }
+
+  pre {
+    font-size: .6em;
+  }
+  
+  .ui.raised.segment {
+    padding: 5px;
+  }
+
+  .container {
+    margin: 20px 0;
+  }
+
+  .blog-image {
+    padding-top: 10px;
   }
 }
 
