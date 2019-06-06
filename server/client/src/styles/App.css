@@ -319,7 +319,7 @@ button:focus, input:focus {
 /* comment form */
 
 #comments {
-  padding: 5% 15%; 
+  padding: 5% 12%; 
 }
 
 #comment-form {
@@ -343,15 +343,14 @@ button:focus, input:focus {
 /* blog */
 
 .blog-description {
-  padding-left: 20px;
+  padding: 0 10px;
 }
 
 .blog-body {
-  padding: 60px;
+  padding: 20px;
   margin: 40px 20px;
   font-size: 1.3em;
   line-height: 1.4em;
-  background: rgb(245, 245, 243);
 }
 
 .blog-body p {
@@ -500,6 +499,10 @@ pre {
     padding-bottom: 20px;
     height: 60vh;
   }
+
+  .ui.raised.segment {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 780px){
@@ -523,7 +526,6 @@ pre {
   .tweets p {
     padding: 0;
   }
-
 
   .frontend-section {
     display: flex;
@@ -591,6 +593,14 @@ pre {
     flex-wrap: wrap;
     margin: 15px;
   }
+
+  .ui.raised.segment {
+    width: 90%;
+  }
+
+  #comments {
+    padding: 5%; 
+  }
 }
 
 .ui.vertical.divider {
@@ -644,13 +654,16 @@ pre {
     margin: 0;
   }
 
+  .ui.standard.modal.visible.active {
+    width: 90%;
+  }
+
   pre {
     font-size: .6em;
   }
   
   .ui.raised.segment {
-    padding: 0;
-    width: 100%;
+    padding: 5px;
   }
 
   .container {
@@ -658,7 +671,7 @@ pre {
   }
 
   .blog-image {
-    padding-top: 5px;
+    padding-top: 10px;
   }
 }
 
