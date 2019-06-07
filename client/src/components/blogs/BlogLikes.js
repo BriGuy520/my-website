@@ -17,11 +17,10 @@ class BlogLikes extends Component {
       return window.location.assign('http://www.brithedevguy.com/login');
     }
 
-
     if(blog.userLikes.indexOf(this.props.auth) === -1){
       axios.post(`/api/blog/${blog._id}/like`)
       .then(res => {
-        this.setState({ likes: this.props.blog.likes + 1, isDisabled: true });
+        this.setState({ likes: blog.likes + 1, isDisabled: true });
       })
       .catch(err => {
         console.log(err);

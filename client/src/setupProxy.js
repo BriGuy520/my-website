@@ -49,8 +49,4 @@ module.exports = function(app){
   app.use(proxy('/auth/github', {
     target: 'http://localhost:5000'
   }));
-
-  app.use(proxy('**', {
-    target: 'http://www.brithedevguy.com'
-  }));
 }
