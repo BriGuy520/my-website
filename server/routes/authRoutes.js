@@ -1,14 +1,14 @@
 const passport = require('passport');
 const Authentication = require('../controllers/authentication');
 
-// const requireAuth = passport.authenticate('jwt', { session: false });
+const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignIn = passport.authenticate('local', { session: false });
 
 
 module.exports = (app) => {
 
-  // app.get('/', function(req, res){
-  //   res.send({ hi: 'everybody' });
+  // app.get('/login', function(req, res){
+  //   res.redirect('localhost:5000/login');
   // });
 
   app.post('/api/signin', requireSignIn, Authentication.signin);
