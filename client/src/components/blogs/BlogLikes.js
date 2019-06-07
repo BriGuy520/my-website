@@ -13,17 +13,16 @@ class BlogLikes extends Component {
 
   handleClick(blog){
     
-    if(blog.userLikes.indexOf(this.props.auth) === -1 || this.props.auth !== false){
+    if(blog.userLikes.indexOf(this.props.auth) === -1 && this.props.auth !== false){
       axios.post(`/api/blog/${blog._id}/like`)
         .then(res => {
           this.setState({ likes: this.props.blog.likes + 1, isDisabled: true });
         })
         .catch(err => {
           console.log(err);
-          return window.location.assign('http://www.brithedevguy.com/login');
         });
     } else {
-      this.setState({ likes: this.props.blog.likes });
+      return window.location.assign('http://www.brithedevguy.com/login');
     }
 
     

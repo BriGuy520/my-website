@@ -13,17 +13,16 @@ class CommentLikes extends Component {
   }
 
   handleClick(comment){ 
-    if(comment.userLikes.indexOf(this.props.auth) === -1 || this.props.auth !== false){
+    if(comment.userLikes.indexOf(this.props.auth) === -1 && this.props.auth !== false){
       axios.post(`/api/comment/${comment._id}/like`)
       .then(res => {
         this.setState({ likes: this.props.comment.likes + 1, isDisabled: true });
       })
       .catch(err => {
         console.log(err);
-        return window.location.assign('http://www.brithedevguy.com/login');
       });
     } else {
-      this.setState({ likes: this.props.comment.likes });
+      return window.location.assign('http://www.brithedevguy.com/login');
     }
 
     

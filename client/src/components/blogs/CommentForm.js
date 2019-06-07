@@ -18,10 +18,17 @@ class CommentForm extends Component {
       const { content } = this.state;
 
       if(content !== ''){
+        console.log('hit submit comment');
         axios.post(`/api/blog/${comment._id}/comment`, { content })
           .then(res => {
+
             const response = res.data;
-            this.setState({ posts: [response, ...this.state.posts] });
+
+            if(res.data === 'please sign in'){
+              return window.location.replace('/login');
+            } else {
+              this.setState({ posts: [response, ...this.state.posts] });
+            } 
           })
           .catch(err => {
             console.log(err);
