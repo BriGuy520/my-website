@@ -13,14 +13,14 @@ class CommentLikes extends Component {
   }
 
   handleClick(comment){ 
-    if(comment.userLikes.indexOf(this.props.auth) === -1){
+    if(comment.userLikes.indexOf(this.props.auth) === -1 || this.props.auth !== false){
       axios.post(`/api/comment/${comment._id}/like`)
       .then(res => {
         this.setState({ likes: this.props.comment.likes + 1, isDisabled: true });
       })
       .catch(err => {
         console.log(err);
-        return window.location.replace('http://localhost:3000/login');
+        return window.location.replace('/login');
       });
     } else {
       this.setState({ likes: this.props.comment.likes });
@@ -32,6 +32,7 @@ class CommentLikes extends Component {
   render(){
     const { comment } = this.props;
     const { likes, isDisabled } = this.state;
+    
     return (
       <div>
         <button disabled={isDisabled} onClick={() => this.handleClick(comment)} className="like-buttons">

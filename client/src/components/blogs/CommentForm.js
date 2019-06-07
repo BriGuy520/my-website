@@ -25,12 +25,10 @@ class CommentForm extends Component {
           })
           .catch(err => {
             console.log(err);
-            return window.location.replace('/login');
           });
       } else {
         console.log("You didn't put in anything");
       }
-      
 
       this.setState({ content: '' });
     }

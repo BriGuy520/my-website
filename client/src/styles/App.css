@@ -395,6 +395,16 @@ button:focus, input:focus {
 
 /* Model Login Buttons */
 
+.section-column {
+  display: flex;
+  flex-direction: row;
+}
+
+#or {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
 .login-buttons {
   padding: 10px;
 }
@@ -603,12 +613,8 @@ pre {
   }
 }
 
-.ui.vertical.divider {
-  visibility: hidden;
-}
-
-.ui.standard.modal.visible.active {
-  width: 33%;
+.ui.standard.modal {
+  width: 50%;
 }
 
 @media only screen and (min-width: 1020px){
@@ -619,14 +625,7 @@ pre {
   }
 }
 
-@media only screen and (min-width: 770px){
-  .ui.vertical.divider {
-    visibility: visible;
-  }
-}
-
 @media only screen and (max-width: 680px){
-
 
   .projects {
     padding: 10px 0;
