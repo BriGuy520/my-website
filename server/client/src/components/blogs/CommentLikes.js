@@ -14,7 +14,6 @@ class CommentLikes extends Component {
 
   handleClick(comment){ 
   
-    
     if(this.props.auth === false){
       return window.location.assign('http://www.brithedevguy.com/login');
     }
