@@ -52,11 +52,9 @@ class LoginModal extends Component {
                         </div>
                       </div>
                       <div className="login-buttons">
-                        <div className="ui blue submit button">
-                          <Link to="/signin">
-                            Login
-                          </Link> 
-                        </div>
+                        <button className="ui blue submit button">
+                          Login
+                        </button>
                         {this.props.errorMessage}
                       </div>
                       <div className="login-buttons">

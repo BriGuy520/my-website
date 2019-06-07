@@ -12,14 +12,15 @@ class BlogLikes extends Component {
   }
 
   handleClick(blog){
-    if(blog.userLikes.indexOf(this.props.auth) === -1){
+    
+    if(blog.userLikes.indexOf(this.props.auth) === -1 || this.props.auth !== false){
       axios.post(`/api/blog/${blog._id}/like`)
         .then(res => {
           this.setState({ likes: this.props.blog.likes + 1, isDisabled: true });
         })
         .catch(err => {
           console.log(err);
-          return window.location.replace('http://localhost:3000/login');
+          return window.location.assign('http://www.brithedevguy.com/login');
         });
     } else {
       this.setState({ likes: this.props.blog.likes });
@@ -44,8 +45,7 @@ class BlogLikes extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  
+const mapStateToProps = ({ auth }) => { 
   return { auth };
 }
 
