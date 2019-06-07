@@ -18,6 +18,7 @@ class CommentForm extends Component {
       const { content } = this.state;
 
       if(content !== ''){
+        console.log('hit submit comment');
         axios.post(`/api/blog/${comment._id}/comment`, { content })
           .then(res => {
             const response = res.data;
