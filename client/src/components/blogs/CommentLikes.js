@@ -20,7 +20,7 @@ class CommentLikes extends Component {
       })
       .catch(err => {
         console.log(err);
-        return window.location.replace('/login');
+        return window.location.assign('http://www.brithedevguy.com/login');
       });
     } else {
       this.setState({ likes: this.props.comment.likes });
