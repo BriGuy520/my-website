@@ -35,7 +35,7 @@ app.use(
   })
 )
 
-// app.use(morgan('combined'));
+app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.json({ limit: '50mb'}));

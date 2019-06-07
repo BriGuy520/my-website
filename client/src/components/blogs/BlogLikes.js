@@ -12,18 +12,22 @@ class BlogLikes extends Component {
   }
 
   handleClick(blog){
-    
-    if(blog.userLikes.indexOf(this.props.auth) === -1 && this.props.auth !== false){
-      axios.post(`/api/blog/${blog._id}/like`)
-        .then(res => {
-          this.setState({ likes: this.props.blog.likes + 1, isDisabled: true });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    } else {
+
+    if(this.props.auth === false){
       return window.location.assign('http://www.brithedevguy.com/login');
     }
+
+
+    if(blog.userLikes.indexOf(this.props.auth) === -1){
+      axios.post(`/api/blog/${blog._id}/like`)
+      .then(res => {
+        this.setState({ likes: this.props.blog.likes + 1, isDisabled: true });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
+
 
     
   }
