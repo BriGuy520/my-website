@@ -395,6 +395,10 @@ button:focus, input:focus {
 
 /* Model Login Buttons */
 
+.section-column {
+  display: flex;
+  flex-direction: row;
+}
 
 #or {
   margin: 0 auto;
