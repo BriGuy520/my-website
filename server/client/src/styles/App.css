@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
 }
 
 /* Goals Section */
@@ -427,6 +428,33 @@ button:focus, input:focus {
 
 .button {
   padding: 10px;
+}
+
+/* Sign Up Form */
+
+.signup-form {
+  padding: 40px;
+  margin: 20% 40px;
+  background: rgb(243, 243, 243);
+  border-radius: 4px;
+  box-shadow: -2px 3px 20px 4px #acadab ;
+}
+
+.signup-form fieldset {
+  margin: 10px 0;
+  padding: 20px 0;
+}
+
+.signup-btns {
+  margin: 10px 10px 10px 0;
+}
+
+.signup-btn {
+  padding-right: 10px;
+}
+
+.signup-btn a {
+  color: white;
 }
 
 /* Blog Posts */
