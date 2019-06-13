@@ -17,7 +17,7 @@ import '../styles/App.css';
 const App = () => {
     return (
       <div>
-        <HashRouter>
+        <BrowserRouter>
           <div>
             <Navbar />
             <Switch>
@@ -34,7 +34,7 @@ const App = () => {
             </Switch>
             <Footer />
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </div>
 
     );

@@ -8,7 +8,7 @@ import App from './components/App';
 import reducers from './reducers';
 
 
-const store = createStore(reducers, { auth: { authenticated: localStorage.getItem('token') }}, applyMiddleware(reduxThunk));
+const store = createStore(reducers, { login: { authenticated: localStorage.getItem('token') }}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <HttpsRedirect>

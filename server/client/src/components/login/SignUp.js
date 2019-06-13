@@ -38,7 +38,7 @@ class SignUp extends Component {
               />
                  <label>Confirm Password</label>
               <Field 
-                name="password"
+                name="confirm-password"
                 type="password"
                 component="input"
                 autoComplete="none"

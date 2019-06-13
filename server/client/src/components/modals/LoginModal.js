@@ -17,7 +17,7 @@ class LoginModal extends Component {
 
   render(){
     return ReactDOM.createPortal(
-      <div className="ui dimmer modals visible active">
+      <div onClick={() => this.props.history.push('/blog')} className="ui dimmer modals visible active">
         <div onClick={(event) => event.stopPropagation()} className="ui standard modal visible active">
         <div className="modal">
           <div className="ui placeholder segment">

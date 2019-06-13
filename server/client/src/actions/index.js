@@ -69,6 +69,7 @@ export const signin = (formProps, callback) => async (dispatch) => {
     const response = await axios.post('http://localhost:3000/api/signin', formProps);
 
     dispatch({ type: AUTH_USER, payload: response.data.token });
+
     localStorage.setItem('token', response.data.token);
     callback();
   } catch(err){

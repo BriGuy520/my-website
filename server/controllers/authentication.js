@@ -19,6 +19,8 @@ exports.signup = function(req, res, next){
 
   const { username, password } = req.body;
 
+  console.log(req.body);
+
   if(!username || !password){
     return res.status(422).send({ error: 'You need a username and password to continue'});
   }

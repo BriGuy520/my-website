@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../../actions/index';
+import { fetchUser, signin } from '../../actions/index';
 import axios from 'axios';
 
 class BlogLikes extends Component {
@@ -9,15 +9,20 @@ class BlogLikes extends Component {
 
   componentDidMount(){
     this.props.fetchUser();
+    this.props.signin();
   }
 
   handleClick(blog){
 
-    if(this.props.auth === false){
+    const { auth, login } = this.props;
+
+  
+
+    if(auth === false || !login.authenticated){
       return window.location.assign('http://www.brithedevguy.com/login');
     }
 
-    if(blog.userLikes.indexOf(this.props.auth) === -1){
+    if(blog.userLikes.indexOf(auth) === -1){
       axios.post(`/api/blog/${blog._id}/like`)
       .then(res => {
         this.setState({ likes: blog.likes + 1, isDisabled: true });
@@ -47,8 +52,8 @@ class BlogLikes extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => { 
-  return { auth };
+const mapStateToProps = ({ auth, login }) => { 
+  return { auth, login };
 }
 
-export default connect(mapStateToProps, { fetchUser })(BlogLikes);
+export default connect(mapStateToProps, { fetchUser, signin })(BlogLikes);
