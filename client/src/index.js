@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+import HttpsRedirect from 'react-https-redirect';
 import App from './components/App';
 import reducers from './reducers';
 
 
-const store = createStore(reducers, { auth: { authenticated: localStorage.getItem('token') }}, applyMiddleware(reduxThunk));
+const store = createStore(reducers, { login: { authenticated: localStorage.getItem('token') }}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>, 
+  <HttpsRedirect>
+    <Provider store={store}>
+        <App />
+    </Provider>
+  </HttpsRedirect>, 
   document.getElementById('root'));
 

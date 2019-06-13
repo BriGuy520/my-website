@@ -20,9 +20,8 @@ class SignUp extends Component {
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
-        <div className="ui form">
+        <div className="ui form signup-form">
           <div className="field">
-            <fieldset>
               <label>Username</label>
               <Field
                 name="username"
@@ -30,8 +29,6 @@ class SignUp extends Component {
                 component="input"
                 autoComplete="none"
               />
-            </fieldset>
-            <fieldset>
               <label>Password</label>
               <Field 
                 name="password"
@@ -39,20 +36,30 @@ class SignUp extends Component {
                 component="input"
                 autoComplete="none"
               />
-            </fieldset>
+                 <label>Confirm Password</label>
+              <Field 
+                name="confirm-password"
+                type="password"
+                component="input"
+                autoComplete="none"
+              />
+              <div className="signup-btns">
+                <button className="ui button green signup-btn">Sign Up</button>
+                <button className="ui button blue signup-btn"><a href="/signin">Cancel</a></button>
+              </div>
             <div>
               {this.props.errorMessage}
             </div>
           </div>
         </div>
-        <button className="ui button green">Sign Up</button>
+       
       </form>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.form.signup);
+ 
   return { errorMessage: state.login.errorMessage }
 }
 
