@@ -44,7 +44,7 @@ const Favorites = () => {
               <h3>Fiction</h3>
               <ol>
                 <img alt="Confederacy of Dunces" className="book-img" src={confederacy} />
-                <li className="list-item"><strong>Confederacy of Dunces</strong> by John Kennedy O'Toole</li>
+                <li className="list-item"><strong>Confederacy of Dunces</strong> by John Kennedy Toole</li>
                 <img alt="The Electric Kool-Aid Acid Test" className="book-img" src={kool_aid} />
                 <li className="list-item"><strong>The Electric Kool-Aid Acid Test</strong> by Tom Wolfe</li>
                 <img alt="Ubik" className="book-img" src={ubik} />
