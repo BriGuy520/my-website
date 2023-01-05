@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../actions';
-import '../styles/Pictures.css';
+import '../styles/App.css';
 
 class Pictures extends Component {
 
