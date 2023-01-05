@@ -16,17 +16,19 @@ header {
   align-items: center;
   padding: 0 15px;
   box-shadow: 2px 2px 30px 10px rgb(136, 132, 132);
+  position: fixed;
+  width: 100%;
 }
 
 header h2 {
   text-align: center;
-  font-family: 'Dosis', sans-serif;
   padding: 15px 15px 15px 30px;
   margin: 0;
+  font-weight: 700;
 }
 
 header h2 a:hover {
-  color: #58edb1;
+  color: rgb(154, 152, 152);
 }
 
 header h2 a, nav li a {
@@ -36,10 +38,6 @@ header h2 a, nav li a {
 
 nav li a {
   font-weight: 400;
-}
-
-header h2 a {
-  font-weight: 700;
 }
 
 nav li {
@@ -1080,9 +1078,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: right; 
-  height: 80%;
-  padding: 20px;
+  background-position: center; 
+  padding: 80px 20px;
+  max-width: 1280px;
 }
 
 .cover h1 {
