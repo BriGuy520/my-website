@@ -8,7 +8,7 @@ const Skills = () => {
   return (
     <div className="technologies"> 
       <div className="tech-header copy">
-        <h2>Building Beautiful, Responsive Websites with These Technologies.</h2>
+        <h1>Building Beautiful, Responsive Web Apps with These Technologies.</h1>
         <p className="sub-head">Web Development is constantly evolving. New technologies and languages are constantly coming to the forefront. Here is what I know and a few things I want to learn in the future.</p>
       </div>
       <div className="tech-header-border"></div>
@@ -54,7 +54,7 @@ const Skills = () => {
             <h1>The Future is Bright.</h1>
             <p className="sub-head">My motto is never settle and never stop learning. While I continue to get better at the languages and frameworks listed above, I would really like to branch out and learn some of the other exciting technologies out there in the world of programming.</p> 
           </div>
-          <div className="tech-header-border"></div>
+          <div className="tech-header-border-right"></div>
           <div className="near-future-section copy">
             <h2>Near Future</h2>
             <p>In the near future, I would like to focus on web based technologies. There are a lot great tools out there that can help me expand my palate and give me a the ability to choose the proper technology for a given projects needs and features.</p>
@@ -74,7 +74,7 @@ const Skills = () => {
               <img alt="near-future-collage"src={nearFuture} />
             </div>
           </div>
-          <div className="tech-header-border"></div>
+          <div className="tech-header-border-right"></div>
         </div>
       </div>
       <div className="distant-future-section copy">

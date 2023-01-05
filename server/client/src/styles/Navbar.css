@@ -1,31 +1,39 @@
 header {
   overflow: hidden;
   position: fixed;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   position: relative;
   z-index: 100;
-  background-color: #747773;
+  background-color: #e8e8e8;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  box-shadow: 1px 2px 2px 2px rgb(170, 168, 168);
 }
 
 header h2 {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Dosis', sans-serif;
   padding: 15px 15px 15px 30px;
   margin: 0;
 }
 
 header h2 a:hover {
-  color: #15ffa1;
+  color: #58edb1;
+}
+
+header h2 a, nav li a {
+  text-decoration: none;
+  color: #02b8ef;
+}
+
+nav li a {
+  font-weight: 400;
 }
 
 header h2 a {
-  text-decoration: none;
-  color: #15ffa1;
+  font-weight: 700;
 }
 
 nav li {
@@ -36,10 +44,8 @@ nav li {
 }
 
 nav li a {
-  text-decoration: none;
   position: relative;
   padding: 4px 0;
-  color: #33ffad;
 }
 
 nav li a:hover {
@@ -62,7 +68,7 @@ nav li a:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fafd5a;
+  background-color: #f4f825;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);

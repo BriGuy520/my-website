@@ -35,7 +35,7 @@ const Favorites = () => {
                 <img  alt="conflict of visions - Sowell" className="book-img" src={conflict} />
                 <li className="list-item"><strong>Conflict of Visions</strong> by Thomas Sowell</li>
                 <img alt="righteous mind - Haidt" className="book-img" src={righteous} />
-                <li className="list-item"><strong>The Righteous Mind</strong> by Jonathon Haidt</li>
+                <li className="list-item"><strong>The Righteous Mind</strong> by Jonathan Haidt</li>
                 <img alt="When Work Disappears" className="book-img" src={work} />
                 <li className="list-item"><strong>When Work Disappears</strong> by William Julius Wilson</li>
               </ol>
