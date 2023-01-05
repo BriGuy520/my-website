@@ -17,7 +17,7 @@ header {
   padding: 0 15px;
   box-shadow: 2px 2px 30px 10px rgb(136, 132, 132);
   position: fixed;
-  width: 100%;
+  width: 100%; 
 }
 
 header h2 {
@@ -594,22 +594,20 @@ button:focus, input:focus {
 
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background-color: #747773;
+  justify-content: space-between;
+  background-color: #fff;
   padding: 10px;
   
 }
 
 .footer p {
   font-size: 1.2em;
-  margin: 0 auto;
-  font-weight: 800;
+  font-weight: 700;
+
 }
 
 .icons {
   font-size: 1.8em;
-  margin: 0 auto;
 }
 
 .icons i {
@@ -1078,8 +1076,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center; 
-  padding: 80px 20px;
+  background-position: top; 
+  padding: 140px 20px 80px 20px;
   max-width: 1280px;
 }
 
