@@ -104,7 +104,7 @@ const Projects = () => {
     });
   }
   return (
-    <div className="projects">
+    <div className="projects container">
           {renderProject()}
     </div>
   )

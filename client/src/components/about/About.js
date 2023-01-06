@@ -5,7 +5,7 @@ import Favorites from './Favorites'
 
 const About = () => {
   return (
-    <div className="box">
+    <div className="box container">
       <Bio />
       <Favorites />
 
