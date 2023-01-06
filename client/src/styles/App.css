@@ -17,6 +17,7 @@ header {
   padding: 0 15px;
   box-shadow: 2px 2px 30px 10px rgb(136, 132, 132);
   position: fixed;
+  top: 0;
   width: 100%; 
 }
 
