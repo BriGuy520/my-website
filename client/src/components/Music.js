@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Music.css';
+import '../styles/App.css';
 
 
 

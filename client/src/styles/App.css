@@ -1,10 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Dosis', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
-<<<<<<< HEAD
 header {
   overflow: hidden;
   position: fixed;
@@ -230,8 +229,6 @@ a:hover:before {
 }
 
 
-=======
->>>>>>> parent of 1bc07ae... more styling changes
 /* Goals Section */
 
 .goals {
@@ -424,10 +421,8 @@ button:focus, input:focus {
   padding-bottom: 3%;
 }
 
-.future-copy h1 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.future-copy.right {
+  text-align: right;
 }
 
 .near-future-section h2 {
@@ -935,7 +930,6 @@ pre {
   }
 }
 
-<<<<<<< HEAD
 /* About */
 
 body {
@@ -1177,5 +1171,3 @@ h1 {
 
 
 
-=======
->>>>>>> parent of 1bc07ae... more styling changes

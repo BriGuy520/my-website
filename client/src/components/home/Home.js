@@ -3,7 +3,7 @@ import Cover from './Cover';
 import Goals from './Goals';
 import Skills from './Skills';
 import Tweets from './Tweets';
-import '../../styles/Home.css';
+import '../../styles/App.css';
 
 
 class Home extends Component {
