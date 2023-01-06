@@ -8,14 +8,14 @@ const Skills = () => {
   return (
     <div className="technologies"> 
       <div className="tech-header copy">
-        <h2>Building Beautiful, Responsive Websites with These Technologies.</h2>
+        <h1>Building Beautiful, Responsive Web Apps with These Technologies.</h1>
         <p className="sub-head">Web Development is constantly evolving. New technologies and languages are constantly coming to the forefront. Here is what I know and a few things I want to learn in the future.</p>
       </div>
       <div className="tech-header-border"></div>
       <div className="skill-section">
         <div className="frontend-section">
           <div className="frontend-copy copy">
-            <h1>Frontend</h1>
+            <h2>Frontend</h2>
             <p>
               This is where I am the most confident. The main technologies that I use in my projects are HTML, CSS, Javascript with React and Redux as my "framework" of choice. While I have dabbled with other frameworks such as Angular and Vue.js, I am not as confident with those as much as I am with React.
             </p>
@@ -37,7 +37,7 @@ const Skills = () => {
             <img alt="backend-collage" src={backend} />
           </div>
           <div className="backend-copy copy">
-            <h1>Backend</h1>
+            <h2>Backend</h2>
             <p>
               While I am not a backend expert by any stretch of the imagination, I really enjoy building out the backend. When building this site, I really came to apprectiate and enjoy solving the challenges that arise when trying to build fullstack web applications. Going forward, I really want to focus more on how to build scalable web applications using certain design principles and algorithms. 
             </p>
@@ -50,11 +50,11 @@ const Skills = () => {
           </div>
         </div>
         <div className="future-section">
-          <div className="future-copy copy">
+          <div className="future-copy right copy">
             <h1>The Future is Bright.</h1>
             <p className="sub-head">My motto is never settle and never stop learning. While I continue to get better at the languages and frameworks listed above, I would really like to branch out and learn some of the other exciting technologies out there in the world of programming.</p> 
           </div>
-          <div className="tech-header-border"></div>
+          <div className="tech-header-border-right"></div>
           <div className="near-future-section copy">
             <h2>Near Future</h2>
             <p>In the near future, I would like to focus on web based technologies. There are a lot great tools out there that can help me expand my palate and give me a the ability to choose the proper technology for a given projects needs and features.</p>
@@ -74,7 +74,7 @@ const Skills = () => {
               <img alt="near-future-collage"src={nearFuture} />
             </div>
           </div>
-          <div className="tech-header-border"></div>
+          <div className="tech-header-border-right"></div>
         </div>
       </div>
       <div className="distant-future-section copy">
