@@ -1,0 +1,51 @@
+/* Home Page Cover Image */
+
+.cover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://spooniom.com/wp-content/uploads/all-your-base-are-belong-to-us-825x510.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+}
+
+.cover h1 {
+  color: #93ecb5;
+  margin: 0;
+  padding: 0;
+  font-size: 18vw;
+  font-weight: 800;
+  padding-top: 0;
+}
+
+.sub-head {
+  text-align: center;
+  margin: 0 10%;
+}
+
+@media only screen and (max-width: 1340px){
+  .cover h1 {
+    padding-top: 10vh;
+  }
+
+  .cover {
+    height: 70%;
+  }
+}
+
+@media only screen and (max-width: 680px){
+  .cover {
+    height: 400px;
+    padding-top: 0;
+  }
+
+  h2 {
+    padding-bottom: 0;
+  }
+
+  .sub-head, .tweets-copy p {
+    margin: 0 2%;
+    text-align: left;
+  }
+}
+
