@@ -38,6 +38,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
-    "path-parser": "^4.2.0"
+    "path-parser": "^4.2.0",
+    "text-encoding": "^0.7.0"
   }
 }
