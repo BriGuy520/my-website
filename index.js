@@ -20,7 +20,9 @@ mongoose.Promise = global.Promise;
 if(process.env.NODE_ENV === 'production'){
   mongoose.connect(keys.mongoURI);
 } else {
-  mongoose.connect('mongodb://localhost:27017/myblog');
+  mongoose.connect(keys.mongoURI, {
+    useNewUrlParser: true
+  });
 }
 
 mongoose.connection
