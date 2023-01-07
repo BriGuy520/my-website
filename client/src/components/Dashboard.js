@@ -14,7 +14,7 @@ class Dashboard extends Component {
     return (
       <div className="container">
         <h1>Coming Soon...</h1>
-        {/* <BlogList /> */}
+        <BlogList />
         {/* <div className="add-blog">
           <Link to="/blog/new" className="circular ui icon button large blue">
             <i className="plus icon"></i>
