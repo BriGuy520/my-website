@@ -6,7 +6,6 @@ const keys = require('./config/keys')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-const proxy = require("./client/src/setupProxy");
 
 require('./models/Blog');
 require('./models/User');
@@ -60,8 +59,6 @@ if(process.env.NODE_ENV === 'production'){
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-// proxy(app);
 
 const PORT = process.env.PORT || 5000;
 
