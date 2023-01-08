@@ -40,5 +40,8 @@
     "passport-twitter": "^1.0.4",
     "path-parser": "^4.2.0",
     "text-encoding": "^0.7.0"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }

@@ -15,12 +15,12 @@ require('./services/passport');
 
 const app = express();
 
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise; 
 
 if(process.env.NODE_ENV === 'production'){
   mongoose.connect(keys.mongoURI);
 } else {
-  mongoose.connect(keys.mongoURI, {
+  mongoose.connect("mongodb://localhost:27017/myblog", {
     useNewUrlParser: true
   });
 }
