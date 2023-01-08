@@ -591,12 +591,19 @@ button:focus, input:focus {
   width: 80%;
 }
 
+
+/* Blog WYSIWGI */
+
+.ql-editor {
+  min-height: 400px;
+}
+
 /* Footer */
 
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #7f6;
   padding: 10px;
   
 }
@@ -1132,7 +1139,8 @@ body {
 /* Picture */
 
 .container {
-  margin: 8% 2%;
+  margin: 8% auto;
+  max-width: 1280px;
 }
 
 h1 {
@@ -1149,8 +1157,9 @@ h1 {
 
 .photos img {
   border: 1px solid rgb(221, 218, 218);
-  padding: 14px 14px 40px 14px;
+  padding: 14px 14px 60px 14px;
   margin: 10px;
+  width: 31%;
   box-shadow: 8px 8px 18px rgb(71, 71, 71);
 }
 

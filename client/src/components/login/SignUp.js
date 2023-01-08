@@ -45,7 +45,7 @@ class SignUp extends Component {
               />
               <div className="signup-btns">
                 <button className="ui button green signup-btn">Sign Up</button>
-                <button className="ui button blue signup-btn"><a href="/signin">Cancel</a></button>
+                <button className="ui button blue signup-btn"><a href="/">Cancel</a></button>
               </div>
             <div>
               {this.props.errorMessage}

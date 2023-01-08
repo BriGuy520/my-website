@@ -16,7 +16,7 @@ class ShowBlog extends Component {
     let { title, image, body, author, datePosted, description } = this.props.blog;
 
     return (
-      <div className="ui raised segment container">
+      <div className="ui segment container">
         <h1>{title}</h1>
         <h4>By {author}</h4>
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
