@@ -8,8 +8,8 @@ const Bio = () => {
             Hey, 
           </p>
           <p>
-            My name is Brian and I'm a web developer based out of Austin, TX. I'm entirely self taught and have been doing web development for a little over year now. 
-            My main focus has been on frontend development with React and Redux being my go to "framework". However, I've dabbled with other popular frameworks such
+            My name is Brian and I'm a web developer based out of Austin, TX. I'm entirely self taught and have been doing web development for a little over three years now. 
+            My main focus has been on frontend development with React. However, I've dabbled with other popular frameworks such
             as Angular and Vue.js. 
           </p>
           <p>
