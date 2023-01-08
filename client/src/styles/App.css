@@ -177,10 +177,6 @@ a:hover:before {
   color: white;
 }
 
-.footer p {
-  color: #e8e8e8;
-}
-
 .foot {
   display: flex;
   flex-direction: row;
@@ -603,7 +599,7 @@ button:focus, input:focus {
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: #7f6;
+  background-color: #e8e8e8;
   padding: 10px;
   
 }
@@ -1141,7 +1137,7 @@ body {
 .container {
   margin: 8% auto;
   max-width: 1280px;
-  min-width: 80vh;
+  min-height: 80vh;
 }
 
 h1 {
