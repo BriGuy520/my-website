@@ -178,7 +178,7 @@ a:hover:before {
 }
 
 .footer p {
-  color: #fff;
+  color: #e8e8e8;
 }
 
 .foot {
@@ -1141,6 +1141,7 @@ body {
 .container {
   margin: 8% auto;
   max-width: 1280px;
+  min-width: 80vh;
 }
 
 h1 {
