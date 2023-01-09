@@ -33,12 +33,17 @@ class Goals extends Component {
     this.setState({goals: newList})
   }
 
+  handleCompletion = (e) => {
+
+    return e.target.classList.add("complete");
+  }
+
   render(){
 
     const goalList = this.state.goals.map((goal, idx) => {
       return (
         <> 
-          <li key={idx}>{goal}</li>
+          <li key={idx} onClick={(e) => this.handleCompletion(e)}>{goal}</li>
           <button onClick={() => this.handleDelete(goal)}>Delete</button>
         </>
       );

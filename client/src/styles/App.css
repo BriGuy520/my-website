@@ -259,6 +259,10 @@ a:hover:before {
   padding: 10px 8px;
 }
 
+.complete {
+  text-decoration: line-through;
+}
+
 /* goal input */
 
 .goal-section {
