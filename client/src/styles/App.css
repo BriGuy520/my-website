@@ -182,10 +182,6 @@ a:hover:before {
   flex-direction: row;
 }
 
-.copy {
-  padding-left: 100px;
-}
-
 .foot a {
   padding: 10px;
   font-size: 1.4em;
@@ -259,8 +255,22 @@ a:hover:before {
   padding: 10px 8px;
 }
 
+.goals ol li:hover {
+  cursor: pointer;
+}
+
 .complete {
   text-decoration: line-through;
+}
+
+.trash.icon {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.trash.icon:hover {
+  color: rgb(178,31,31) !important;
+  cursor: pointer;
 }
 
 /* goal input */
@@ -353,13 +363,11 @@ button:focus, input:focus {
 .tech-header-border {
   border-bottom: 1px solid black;
   margin: 0 0 0 -120px;
-  width: 80%;
 }
 
 .tech-header-border-right {
   border-bottom: 1px solid black;
-  margin: 0 -50% 0 0;
-  width: 80%;
+  margin: 0 -120px 0 0;
 }
 
 .skill-section {

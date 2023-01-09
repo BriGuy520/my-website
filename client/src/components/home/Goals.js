@@ -35,16 +35,21 @@ class Goals extends Component {
 
   handleCompletion = (e) => {
 
-    return e.target.classList.add("complete");
+    const {classList} = e.target;
+
+    return classList.value === "complete" ? classList.remove("complete") : classList.add("complete");
   }
 
   render(){
 
     const goalList = this.state.goals.map((goal, idx) => {
+
+      const completed = [0,1,3];
+
       return (
         <> 
-          <li key={idx} onClick={(e) => this.handleCompletion(e)}>{goal}</li>
-          <button onClick={() => this.handleDelete(goal)}>Delete</button>
+          <li className={completed.includes(idx) ? "complete" : ''} key={idx} onClick={(e) => this.handleCompletion(e)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal)}></i></li>
+         
         </>
       );
     });
