@@ -26,11 +26,21 @@ class Goals extends Component {
     this.setState({goals: [...goals, goal]});
   }
 
+  handleDelete = (item) => {
+
+    const newList = this.state.goals.filter(goal => item !== goal);
+
+    this.setState({goals: newList})
+  }
+
   render(){
 
     const goalList = this.state.goals.map((goal, idx) => {
       return (
-        <li key={idx}>{goal}</li>
+        <> 
+          <li key={idx}>{goal}</li>
+          <button onClick={() => this.handleDelete(goal)}>Delete</button>
+        </>
       );
     });
 
