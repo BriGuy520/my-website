@@ -504,9 +504,8 @@ button:focus, input:focus {
 }
 
 .site-pic {
-  height: 80vh;
-  width: 50vw;
-  margin: auto 0;
+  width: 45vw;
+  border: 1px solid #ccc;
 }
 
 .website ul li {

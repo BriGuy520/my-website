@@ -14,9 +14,9 @@ const Projects = () => {
   const projects = [
   {
     title: "My Personal Website",
-    description: "This is my first fullstack \"app\". Building it has a long and frustrating process, but it was also one the most rewarding experiences of my life.",
-    pros: ['This site features user authentication. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
-    cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy. Really wanted to have a site visitor to have the ability to create a username and password. Was having trouble getting the user token and session to persist when they did things like make a comment or leave a like. This is something I will be working really hard to get right.', 'Need to get better at working with APIs.','Some of the React code is redundant and inefficient.'],
+    description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. But it has taught me more than a tutorial ever has.",
+      pros: ['Has some cool interactive features on the homepage', 'In the process of recreating my blog. It will have search, filter, comment, and like features','This site features user authentication. Will be used for blog features', 'The design is not half bad.'],
+      cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
     code: 'https://github.com/BriGuy520/my-website',
@@ -59,7 +59,7 @@ const Projects = () => {
           <div className="content website">
             <div className="card-copy" style={{ display: 'flex', 'flexDirection': 'column' }}>
               <h2 className="header">{project.title}</h2>
-              <div className="description" style={{ width: '90%'}}>
+              <div className="description" style={{ width: '95%'}}>
                 <p>{project.description}</p>
                 <h3>Pros</h3>
                 <ul>
@@ -76,11 +76,11 @@ const Projects = () => {
               <div className="links">
                 <div className="link">
                   <i className="globe icon"></i>
-                  <a href={project.web}>View The Site</a>
+                  <a href={project.web}>View the App</a>
                 </div>
                 <div className="link">
                   <i className="code icon"></i>
-                  <a href={project.code}>View The Code</a>
+                  <a href={project.code}>View the Code</a>
                 </div>  
               </div>
             </div>
