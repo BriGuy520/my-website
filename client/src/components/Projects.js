@@ -11,20 +11,11 @@ import hangman_site from '../images/hangman-site.PNG';
 
 const Projects = () => {
 
-  const projects = [{
-    title: "Flexbox Site",
-    description: "This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes.",
-    pros: ['Helped me get really comfortable with CSS and HTML.', 'This page uses the latest CSS tools such as Flexbox and Animations', 'Gave me more confidence.'],
-    cons: ['I could make a few more tweeks to make the content more aesthetically pleasing.', 'It has no functionality'],
-    gifs: flexbox_snapshot,
-    built: html_css,
-    code: 'https://github.com/BriGuy520/Flexbox-Site',
-    web: 'https://briguy520.github.io/Flexbox-Site/'
-  },
+  const projects = [
   {
     title: "My Personal Website",
     description: "This is my first fullstack \"app\". Building it has a long and frustrating process, but it was also one the most rewarding experiences of my life.",
-    pros: ['It has a lot of functionality. This site features user authentication. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
+    pros: ['This site features user authentication. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
     cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy. Really wanted to have a site visitor to have the ability to create a username and password. Was having trouble getting the user token and session to persist when they did things like make a comment or leave a like. This is something I will be working really hard to get right.', 'Need to get better at working with APIs.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
@@ -48,7 +39,16 @@ const Projects = () => {
     built: html_css_js,
     code: 'https://github.com/BriGuy520/hangman',
     web: 'https://briguy520.github.io/hangman/'
-  }
+  },{
+    title: "Flexbox Site",
+    description: "This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes.",
+    pros: ['Helped me get really comfortable with CSS and HTML.', 'This page uses the latest CSS tools such as Flexbox and Animations', 'Gave me more confidence.'],
+    cons: ['I could make a few more tweeks to make the content more aesthetically pleasing.', 'It has no functionality'],
+    gifs: flexbox_snapshot,
+    built: html_css,
+    code: 'https://github.com/BriGuy520/Flexbox-Site',
+    web: 'https://briguy520.github.io/Flexbox-Site/'
+  },
 ]
 
   const renderProject = () => {
