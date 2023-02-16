@@ -58,7 +58,7 @@ const Skills = () => {
           <div className="near-future-section copy">
             <h2>Near Future</h2>
             <p>In the near future, I would like to focus on web based technologies. There are a lot great tools out there that can help me expand my palate and give me a the ability to choose the proper technology for a given projects needs and features.</p>
-            <p>I don't want to box myself. Flexibility is the key to being a well rounded and respected developer. Now I'm not going to be an expert at all of these tomorrow, but it's not out of the realm of possibility to be proficient in all of these technologies in a few years.</p>
+            <p>I don't want to box myself. I truly want to be a well rounded and respected developer. The learning never stops.</p>
           </div>
           <div className="near-future-list">
             <ol>

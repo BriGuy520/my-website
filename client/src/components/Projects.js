@@ -23,8 +23,8 @@ const Projects = () => {
   },
   {
     title: "My Personal Website",
-    description: "This is my first fullstack website. Building it was a long and frustrating process, but it was also one the most rewarding experiences of my life.",
-    pros: ['It has a lot of functionality. This site features user authentication and a fully functional blog. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
+    description: "This is my first fullstack \"app\". Building it has a long and frustrating process, but it was also one the most rewarding experiences of my life.",
+    pros: ['It has a lot of functionality. This site features user authentication. Authenticated users can leave comments and leave likes to blogs and other user comments.', 'The design is not half bad for someone who has zero background in design.', 'Wasn\'t made using a template. To build this site, I had to read a lot of Stack Overflow posts and solved a lot of the logical issues on my own.'],
     cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy. Really wanted to have a site visitor to have the ability to create a username and password. Was having trouble getting the user token and session to persist when they did things like make a comment or leave a like. This is something I will be working really hard to get right.', 'Need to get better at working with APIs.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
@@ -39,15 +39,6 @@ const Projects = () => {
     built: html_css_js,
     code: 'https://github.com/BriGuy520/meditation',
     web: 'https://briguy520.github.io/meditation/'
-  },{
-    title: "Gainz by Gaines Website",
-    description: 'This is a website that I am making for my friend Johnathan Gaines for his personal training business Gainz by Gaines. The site is a single page. I used smooth scrolling on the navbar to navigate through the site. I want to implement an ecommerce portion of the site on a seperate page. Still researching and planning the best way to build out an ecommerce store.',
-    pros: ['Really like the slider/carousal that functions as the cover of the homepage', 'Simple and easy to use'],
-    cons: ['Need to focus a little more on the styling. I think it can look a little more professional', 'Need to finish all of the functionality and replace the lorem ipsum with real information'],
-    gifs: gainz_snapshot,
-    built: html_css_js_react,
-    code: 'https://github.com/BriGuy520/gainz-website',
-    web: 'https://briguy520.github.io/gainz-website/'
   },{
     title: "Hangman",
     description: 'This is a small little hangman game I made. It\'s pretty standard, nothing too crazy.',
@@ -64,7 +55,7 @@ const Projects = () => {
     return projects.map((project, idx) => {
       return (
         <div key={idx} className="project">
-        <div className="ui raised card" style={{ width: '90%', margin: '0 auto' }}>
+        <div className="ui raised card" style={{ width: '100%', margin: '0 auto' }}>
           <div className="content website">
             <div className="card-copy" style={{ display: 'flex', 'flexDirection': 'column' }}>
               <h2 className="header">{project.title}</h2>
@@ -111,3 +102,17 @@ const Projects = () => {
 }
 
 export default Projects;
+
+
+// Removing the Gains by Gainz website
+
+// {
+//   title: "Gainz by Gaines Website",
+//   description: 'This is a website that I am making for my friend Johnathan Gaines for his personal training business Gainz by Gaines. The site is a single page. I used smooth scrolling on the navbar to navigate through the site. I want to implement an ecommerce portion of the site on a seperate page. Still researching and planning the best way to build out an ecommerce store.',
+//   pros: ['Really like the slider/carousal that functions as the cover of the homepage', 'Simple and easy to use'],
+//   cons: ['Need to focus a little more on the styling. I think it can look a little more professional', 'Need to finish all of the functionality and replace the lorem ipsum with real information'],
+//   gifs: gainz_snapshot,
+//   built: html_css_js_react,
+//   code: 'https://github.com/BriGuy520/gainz-website',
+//   web: 'https://briguy520.github.io/gainz-website/'
+// }

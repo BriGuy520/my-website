@@ -30,6 +30,9 @@ class Tweets extends Component {
           <p>
             Check out my barely used Twitter! 
           </p>
+          <p>
+            Mostly have it to keep up with tech news.
+          </p>
           
         </div>
       </div>

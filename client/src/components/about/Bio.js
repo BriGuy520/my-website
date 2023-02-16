@@ -13,12 +13,13 @@ const Bio = () => {
             as Angular and Vue.js. 
           </p>
           <p>
-            I also do some backend and database work with Node.js being my go to server-side langauge and MongoDB as my go to database solution. Backend work is something I really enjoy doing and
+            I also do some backend and database work with Node.js and MongoDB. Backend work is something I really enjoy doing and
             is something I want to focus more on in the future.
           </p>
           <p>
             I've also worked with other langauges such as PHP and relational databases such as MySQL.
           </p>
+          <p>Outside of programming, I enjoy making music which you can check out on this site. Also, enjoy doing photography which you can view on this site as well.</p>
         <div className="section"></div>
         <br />
       </div>
