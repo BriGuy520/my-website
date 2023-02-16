@@ -4,7 +4,8 @@ class Goals extends Component {
  
   state = { 
     goal: '',
-    goals: ['Move to Austin, TX','Get a Development Gig', 'Work on Problem Solving', 'Get Better at Backend Development', 'Eat Some Food'] 
+    completed: [0,1,3],
+    goals: ['Move to Austin, TX','Get a development gig', 'Work on problem solving', 'Get Better at backend development', 'Have a functioning Blog'] 
   };
 
   goalInput = (event) => {
@@ -26,16 +27,20 @@ class Goals extends Component {
     this.setState({goals: [...goals, goal]});
   }
 
-  handleDelete = (item) => {
+  handleDelete = (item, i) => {
 
     const newList = this.state.goals.filter(goal => item !== goal);
+    const removeFromCompletedList = this.state.completed.filter(value => value !== i);
+    console.log(removeFromCompletedList);
 
-    this.setState({goals: newList})
+    this.setState({goals: newList, completed: removeFromCompletedList})
   }
 
-  handleCompletion = (e) => {
+  handleCompletion = (e, i) => {
 
     const {classList} = e.target;
+
+    this.setState({completed: !this.state.completed.includes(i) ? [...this.state.completed, i] : this.state.completed})
 
     return classList.value === "complete" ? classList.remove("complete") : classList.add("complete");
   }
@@ -44,11 +49,11 @@ class Goals extends Component {
 
     const goalList = this.state.goals.map((goal, idx) => {
 
-      const completed = [0,1,3];
+      console.log(this.state.completed);
 
       return (
         <> 
-          <li className={completed.includes(idx) ? "complete" : ''} key={idx} onClick={(e) => this.handleCompletion(e)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal)}></i></li>
+          <li className={this.state.completed.includes(idx) ? "complete" : ''} key={`item-${idx}`} onClick={(e) => this.handleCompletion(e, idx)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal, idx)}></i></li>
          
         </>
       );
@@ -57,7 +62,7 @@ class Goals extends Component {
     return (
       <div className="goals-background">
         <div className='goals'>
-          <h1>My Goals</h1>
+          <h1>Goals</h1>
           <p>Below is a list of goals I would like to accomplish with not just this website, but with my
           web development career in general:
           </p>
