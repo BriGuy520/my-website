@@ -15,8 +15,8 @@ const Projects = () => {
   {
     title: "My Personal Website",
     description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. But it has taught me more than a tutorial ever has.",
-      pros: ['Has some cool interactive features on the homepage', 'In the process of recreating my blog. It will have search, filter, comment, and like features','This site features user authentication. Will be used for blog features', 'The design is not half bad.'],
-      cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy','Some of the React code is redundant and inefficient.'],
+      pros: ['Has some cool interactive features on the homepage.', 'In the process of recreating my blog. It will have search, filter, comment, and like features.','This site features user authentication. Will be used for blog features.', 'The design is not half bad.'],
+      cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
     code: 'https://github.com/BriGuy520/my-website',
@@ -24,8 +24,8 @@ const Projects = () => {
   }, {
     title: "Meditation App",
     description: "This is a small meditation app I made. It's fairly simple. You can choose between and a rain and beach background with respective audio.",
-    pros: ['Learned how to use new HTML elements such as video, audio, svg, and circle', 'Sharpened up on my DOM manipulation skills', 'Built entirely with native JavaScript'],
-    cons: ['Need to work on edge cases such as a bell when the timer runs out or adding time to the clock'],
+    pros: ['Learned how to use new HTML elements such as video, audio, svg, and circle.', 'Sharpened up on my DOM manipulation skills.', 'Built entirely with native JavaScript.'],
+    cons: ['Need to work on edge cases such as a bell when the timer runs out or adding time to the clock.'],
     gifs: meditation_snapshot,
     built: html_css_js,
     code: 'https://github.com/BriGuy520/meditation',
@@ -33,8 +33,8 @@ const Projects = () => {
   },{
     title: "Hangman",
     description: 'This is a small little hangman game I made. It\'s pretty standard, nothing too crazy.',
-    pros: ['I made this entirely by myself with no help from StackOverflow or google.', 'Got really comfortable making API calls with fetch.',  'Code is pretty DRY'],
-    cons: ['Need to focus a little more on the styling. This is very basic. Was more focused on the functionality', 'Could add some more features to make the game a little more interesting'],
+    pros: ['I made this entirely by myself with no help from StackOverflow or google.', 'Got really comfortable making API calls with fetch.',  'Code is pretty DRY.'],
+    cons: ['Need to focus a little more on the styling. This is very basic. Was more focused on the functionality.', 'Could add some more features to make the game a little more interesting.'],
     gifs: hangman_site,
     built: html_css_js,
     code: 'https://github.com/BriGuy520/hangman',
@@ -43,7 +43,7 @@ const Projects = () => {
     title: "Flexbox Site",
     description: "This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes.",
     pros: ['Helped me get really comfortable with CSS and HTML.', 'This page uses the latest CSS tools such as Flexbox and Animations', 'Gave me more confidence.'],
-    cons: ['I could make a few more tweeks to make the content more aesthetically pleasing.', 'It has no functionality'],
+    cons: ['I could make a few more tweeks to make the content more aesthetically pleasing.', 'It has no functionality.'],
     gifs: flexbox_snapshot,
     built: html_css,
     code: 'https://github.com/BriGuy520/Flexbox-Site',
@@ -80,7 +80,7 @@ const Projects = () => {
                 </div>
                 <div className="link">
                   <i className="code icon"></i>
-                  <a href={project.code}>View the Code</a>
+                  <a href={project.code}>Read the Code</a>
                 </div>  
               </div>
             </div>
