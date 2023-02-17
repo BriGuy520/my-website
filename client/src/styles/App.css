@@ -233,7 +233,7 @@ a:hover:before {
 
 .goals h1 {
   margin: 0;
-  font-size: 4em;
+  font-size: 3.4rem;
   font-weight: 800;
 }
 
@@ -370,6 +370,18 @@ button:focus, input:focus {
   margin: 0 -120px 0 0;
 }
 
+@media(max-width: 600px){
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .tech-header-border-right {
+    border-bottom: 1px solid black;
+    margin: 0 -15px 0 0;
+  }
+}
+
 .skill-section {
   width: 100%;
 }
@@ -428,10 +440,6 @@ button:focus, input:focus {
 
 .future-copy {
   padding-bottom: 3%;
-}
-
-.future-copy.right {
-  text-align: right;
 }
 
 .near-future-section h2 {
@@ -779,7 +787,7 @@ pre {
   }
 }
 
-@media only screen and (max-width: 780px){
+@media only screen and (max-width: 600px){
 
   .goal-list {
     width: 100%;
@@ -788,7 +796,7 @@ pre {
   .tweets {
     display: flex;
     flex-direction: column-reverse;
-    padding: 0;
+    padding: 20px;
   }
 
   .twitter-section, .tweets-copy {
@@ -889,7 +897,7 @@ pre {
   }
 }
 
-@media only screen and (max-width: 680px){
+@media only screen and (max-width: 600px){
 
   .projects {
     padding: 10px 0;
@@ -904,7 +912,7 @@ pre {
   }
 
   .goals {
-    padding: 2%;
+    padding: 20px;
   }
 
   .goals p {
