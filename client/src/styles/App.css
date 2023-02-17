@@ -969,9 +969,6 @@ body {
 
 
 @media only screen and (max-width: 1340px){
-  .cover h1 {
-    padding-top: 10vh;
-  }
 
   .cover {
     height: 70%;
@@ -1046,6 +1043,10 @@ h1 {
 
   h1, .goals h1 {
     font-size: 2.4rem;
+  }
+
+  .cover h1 {
+    padding-top: 16vh;
   }
 
   .tech-header-border-right {
