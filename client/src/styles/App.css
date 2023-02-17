@@ -555,7 +555,7 @@ button:focus, input:focus {
 
 .built-with img {
   padding-left: 8px;
-  height: 10vh;
+  width: 180px;
 }
 
 /* comment form */
@@ -774,8 +774,8 @@ pre {
     flex-direction: column-reverse;
   }
 
-  .projects {
-    padding-top: 5px;
+  .container.projects {
+    margin: 12% auto;
   }
 
   .site-pic {
@@ -1022,7 +1022,7 @@ h1 {
   padding: 14px 14px 60px 14px;
   margin: 10px;
   width: 31%;
-  box-shadow: 8px 8px 18px rgb(71, 71, 71);
+  box-shadow: 2px 8px 18px #ccc;
 }
 
 
@@ -1153,8 +1153,12 @@ h1 {
     padding: 5%; 
   }
 
-  .projects {
-    padding: 10px 0;
+  .project {
+    padding: 10px;
+  }
+
+  .container.projects, .container {
+    margin: 25% auto;
   }
 
   .blog-image {
@@ -1187,16 +1191,18 @@ h1 {
     padding: 5px;
   }
 
-  .container {
-    margin: 20px 0;
-  }
-
   .blog-image {
     padding-top: 10px;
   }
 
   .list-sections {
     padding: 0;
+  }
+
+  .photos img {
+    display: block;
+    margin: 10px auto;
+    max-width: 90%;
   }
 
 }
