@@ -370,7 +370,7 @@ button:focus, input:focus {
   margin: 0 -120px 0 0;
 }
 
-@media(max-width: 820px){
+@media only screen and (max-width: 820px){
   .tech-header-border-right {
     margin: 0 -35px 0 0;
   }
@@ -382,164 +382,6 @@ button:focus, input:focus {
   .collages img {
     width: 100%;
   }
-}
-
-@media(max-width: 600px){
-
-  h1 {
-    font-size: 2.4rem !important;
-  }
-
-  .tech-header-border-right {
-    border-bottom: 1px solid black;
-    margin: 0 -15px 0 0;
-  }
-  
-  .collages img {
-    width: 300px;
-  }
-
-  .goal-list {
-    width: 100%;
-  }
-
-  .tweets {
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 20px;
-  }
-
-  .twitter-section, .tweets-copy {
-    padding: 2%;
-    margin: 0;
-    width: 100%;
-  }
-
-  .tweets p {
-    padding: 0;
-  }
-
-  .frontend-section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 40px 0;
-    width: 100%;
-  }
-
-  .frontend-copy {
-    width: 95%;
-  }
-
-  .backend-section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column-reverse;
-    flex-wrap: wrap-reverse;
-    flex-wrap: wrap;
-    padding: 40px 0;
-    width: 100%;
-  }
-
-  .backend-copy {
-    width: 95%;
-  }
-
-  .distant-future-section {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .near-future-list {
-    display: flex;
-    flex-direction: column-reverse;
-
-  }
-
-  .near-future-list ol {
-    width: 100%;
-  }
-
-  .long-term-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .long-term-list ol {
-    padding: 0;
-  }
-
-  .collages img {
-    width: 90vw;
-  }
-
-  .blog-card {
-    width: 90%;
-  }
-
-  .blog-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 15px;
-  }
-
-  .ui.raised.segment {
-    width: 90%;
-  }
-
-  #comments {
-    padding: 5%; 
-  }
-
-  .projects {
-    padding: 10px 0;
-  }
-
-  .blog-image {
-    padding: 0;
-  }
-
-  .goals {
-    padding: 20px;
-  }
-
-  .goals p {
-    width: 100%;
-  }
-
-  .blog-body {
-    padding: 10px;
-    background: white;
-    margin: 0;
-  }
-
-  .ui.standard.modal.visible.active {
-    width: 90%;
-  }
-
-  pre {
-    font-size: .6em;
-  }
-  
-  .ui.raised.segment {
-    padding: 5px;
-  }
-
-  .container {
-    margin: 20px 0;
-  }
-
-  .blog-image {
-    padding-top: 10px;
-  }
-
-  .list-sections {
-    padding: 0;
-  }
-
 }
 
 .skill-section {
@@ -959,11 +801,6 @@ pre {
   }
 }
 
-@media only screen and (max-width: 600px){
-
-
-}
-
 
 /* About */
 
@@ -1203,6 +1040,164 @@ h1 {
     height: 400px;
     margin: 10px auto;
   }
+}
+
+@media only screen and (max-width: 600px){
+
+  h1, .goals h1 {
+    font-size: 2.4rem;
+  }
+
+  .tech-header-border-right {
+    border-bottom: 1px solid black;
+    margin: 0 -15px 0 0;
+  }
+  
+  .collages img {
+    width: 300px;
+  }
+
+  .goal-list {
+    width: 100%;
+  }
+
+  .tweets {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 10px;
+  }
+
+  .twitter-section, .tweets-copy {
+    padding: 2%;
+    margin: 0;
+    width: 100%;
+  }
+
+  .tweets p {
+    padding: 0;
+  }
+
+  .frontend-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 100%;
+  }
+
+  .frontend-copy {
+    width: 95%;
+  }
+
+  .backend-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 100%;
+  }
+
+  .backend-copy {
+    width: 95%;
+  }
+
+  .distant-future-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .near-future-list {
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+
+  .near-future-list ol {
+    width: 100%;
+  }
+
+  .long-term-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .long-term-list ol {
+    padding: 0;
+  }
+
+  .collages img {
+    width: 90vw;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+
+  .blog-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+
+  .ui.raised.segment {
+    width: 90%;
+  }
+
+  #comments {
+    padding: 5%; 
+  }
+
+  .projects {
+    padding: 10px 0;
+  }
+
+  .blog-image {
+    padding: 0;
+  }
+
+  .goals {
+    padding: 20px;
+  }
+
+  .goals p {
+    width: 100%;
+  }
+
+  .blog-body {
+    padding: 10px;
+    background: white;
+    margin: 0;
+  }
+
+  .ui.standard.modal.visible.active {
+    width: 90%;
+  }
+
+  pre {
+    font-size: .6em;
+  }
+  
+  .ui.raised.segment {
+    padding: 5px;
+  }
+
+  .container {
+    margin: 20px 0;
+  }
+
+  .blog-image {
+    padding-top: 10px;
+  }
+
+  .list-sections {
+    padding: 0;
+  }
+
 }
 
 
