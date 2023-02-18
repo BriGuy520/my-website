@@ -79,7 +79,7 @@ class LoginModal extends Component {
                       </button>
                     </div>
                     <div className="login-buttons">
-                      <button className="ui google button">
+                      <button className="ui google red button">
                         <i className="google icon"></i>
                         <a href="/auth/google">Login with Google</a>
                       </button>
