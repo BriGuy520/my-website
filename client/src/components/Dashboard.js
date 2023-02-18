@@ -13,13 +13,13 @@ class Dashboard extends Component {
   render(){
     return (
       <div className="container">
-        <h1>Coming Soon...</h1>
-        {/* <BlogList />
+        {/* <h1>Coming Soon...</h1> */}
+        <BlogList />
         <div className="add-blog">
           <Link to="/blog/new" className="circular ui icon button large blue">
             <i className="plus icon"></i>
           </Link>
-        </div> */}
+        </div>
       </div>
     )
   } 

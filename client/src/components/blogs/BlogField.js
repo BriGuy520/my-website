@@ -4,9 +4,11 @@ import React from 'react';
 const BlogField = ({ input, label, meta: { error, touched } }) => {
 
   const inputType = () => {
-    if(label === "Title" || label === "Image" || label === "Description"){
-      return <input {...input}  />
-    } 
+    if(label === "Title" || label === "Description"){
+      return <input {...input} type="text" />
+    } else if(label === "Image"){
+      return <input {...input} type="file" />
+    }
 
   }
   

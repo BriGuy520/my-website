@@ -11,7 +11,7 @@ class BlogForm extends Component {
   renderFields(){
     return _.map(formFields, ({ label, name }) => {
       if(label !== "Body"){
-        return <Field key={name} component={BlogField} type="text" label={label} name={name} />
+        return <Field key={name} component={BlogField} label={label} name={name} />
       }
 
       return <Field key={name} component={MyEditor} type="text" label={label} name={name} />

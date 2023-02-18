@@ -16,10 +16,8 @@ class BlogLikes extends Component {
 
     const { auth, login } = this.props;
 
-  
-
     if(auth === false || !login.authenticated){
-      return window.location.assign('http://www.brithedevguy.com/login');
+      return window.location.assign('/login');
     }
 
     if(blog.userLikes.indexOf(auth) === -1){

@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 
 export default(state = INITIAL_STATE, action) => {
-  console.log(action);
+  
   switch(action.type){
     case AUTH_USER:
       return { ...state, authenticated: action.payload };

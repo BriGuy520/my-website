@@ -15,7 +15,7 @@ class CommentLikes extends Component {
   handleClick(comment){ 
   
     if(this.props.auth === false){
-      return window.location.assign('http://www.brithedevguy.com/login');
+      return window.location.assign('/login');
     }
 
     if(comment.userLikes.indexOf(this.props.auth) === -1){
