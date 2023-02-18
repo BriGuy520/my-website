@@ -79,8 +79,8 @@ class LoginModal extends Component {
                       </button>
                     </div>
                     <div className="login-buttons">
-                      <button className="ui google plus button">
-                        <i className="google plus icon"></i>
+                      <button className="ui google button">
+                        <i className="google icon"></i>
                         <a href="/auth/google">Login with Google</a>
                       </button>
                     </div>
