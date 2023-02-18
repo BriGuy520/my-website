@@ -664,10 +664,6 @@ button:focus, input:focus {
   width: 58vw;
 }
 
-.column {
-  padding: 20px;
-}
-
 .form {
   padding-top: 30px;
 }
@@ -788,7 +784,13 @@ pre {
 }
 
 .ui.standard.modal {
-  width: 50%;
+  width: 25%;
+}
+
+button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
 }
 
 @media only screen and (min-width: 1020px){

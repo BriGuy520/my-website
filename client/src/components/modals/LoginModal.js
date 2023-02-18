@@ -73,25 +73,25 @@ class LoginModal extends Component {
                 <div className="middle aligned column">
                   <div className="column">
                     <div className="login-buttons">
-                      <button className="ui twitter button">
+                      <button className="ui twitter button signin">
                         <i className="twitter icon"></i>
                         <a href="/auth/twitter">Login with Twitter</a>
                       </button>
                     </div>
                     <div className="login-buttons">
-                      <button className="ui google red button">
+                      <button className="ui google red button signin">
                         <i className="google icon"></i>
                         <a href="/auth/google">Login with Google</a>
                       </button>
                     </div>
                     <div className="login-buttons">
-                      <button className="ui facebook button">
+                      <button className="ui facebook button signin">
                         <i className="facebook icon"></i>
                         <a href="/auth/facebook">Login with Facebook</a> 
                       </button>    
                     </div>
                     <div className="login-buttons github">
-                      <button className="ui github button green">
+                      <button className="ui github button green signin">
                         <i className="github icon"></i>
                         <a href="/auth/github">Login with Github</a> 
                       </button>    
