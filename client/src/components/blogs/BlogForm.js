@@ -2,9 +2,9 @@ import _ from 'lodash'
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import MyEditor from './MyEditor';
-import BlogField from './BlogField';
-import formFields from './formFields';
+// import MyEditor from './MyEditor';
+import BlogField from './FileInput';
+import {formFields} from './formFields';
 
 class BlogForm extends Component {
 
@@ -14,7 +14,7 @@ class BlogForm extends Component {
         return <Field key={name} component={BlogField} label={label} name={name} />
       }
 
-      return <Field key={name} component={MyEditor} type="text" label={label} name={name} />
+      // return <Field key={name} component={MyEditor} type="text" label={label} name={name} />
      
     })
   }

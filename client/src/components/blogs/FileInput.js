@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const BlogField = ({ input, label, meta: { error, touched } }) => {
+const FileInput = ({ input, label, meta: { error, touched } }) => {
 
   function handleFileInputChange(event) {
     event.preventDefault();
@@ -10,11 +10,8 @@ const BlogField = ({ input, label, meta: { error, touched } }) => {
   }
 
   const inputType = () => {
-    if(label === "Title" || label === "Description"){
-      return <input {...input} type="text" />
-    } else if(label === "Image"){
-      return <input {...input} type="file" onChange={handleFileInputChange} />
-    }
+  
+    return <input {...input} type="file" onChange={handleFileInputChange} />
 
   }
   
@@ -31,4 +28,4 @@ const BlogField = ({ input, label, meta: { error, touched } }) => {
   )
 }
 
-export default BlogField;
+export default FileInput;

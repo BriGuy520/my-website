@@ -1,6 +1,4 @@
-export default [
-  { label: "Title", name: "title" },
+export const formFields = [
+  { label: "Blog File", name: "blog"},
   { label: "Image", name: "image"},
-  { label: "Description", name: "description"},
-  { label: "Body", name: "body" }
 ];
