@@ -3,8 +3,6 @@ import React from 'react';
 
 const BlogField = ({ input, label, meta: { error, touched } }) => {
 
-
-  console.log(input);
   function handleFileInputChange(event) {
     event.preventDefault();
     const file = event.target.files[0];
