@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 // import MyEditor from './MyEditor';
-import BlogField from './FileInput';
+import FileInput from './FileInput';
 import {formFields} from './formFields';
 
 class BlogForm extends Component {
@@ -11,7 +11,7 @@ class BlogForm extends Component {
   renderFields(){
     return _.map(formFields, ({ label, name }) => {
       if(label !== "Body"){
-        return <Field key={name} component={BlogField} label={label} name={name} />
+        return <Field key={name} component={FileInput} label={label} name={name} />
       }
 
       // return <Field key={name} component={MyEditor} type="text" label={label} name={name} />
