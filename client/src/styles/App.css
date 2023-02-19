@@ -1006,7 +1006,7 @@ body {
 }
 
 h1 {
-  font-size: 3.4rem;
+  font-size: 3.2rem;
 }
 
 .photos {
@@ -1042,7 +1042,7 @@ h1 {
 @media only screen and (max-width: 600px){
 
   h1, .goals h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .cover h1 {

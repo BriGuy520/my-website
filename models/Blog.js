@@ -4,10 +4,8 @@ const userSchema = require('./User');
 
 
 const blogSchema = new Schema({
-  title: String,
+  post: String,
   image: String,
-  description: String,
-  body: String,
   author: [userSchema],
   datePosted: { type: Date, default: Date.now },
   likes: { type: Number, default: 0 },
