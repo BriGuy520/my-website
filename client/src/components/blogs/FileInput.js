@@ -6,7 +6,7 @@ class FileInput extends Component {
   constructor(props){
     super(props);
 
-    this.state = {fileName: ''}
+    this.state = {fileContent: ''}
 
     this.handleFileInputChange = this.handleFileInputChange.bind(this);
   }
@@ -15,7 +15,24 @@ class FileInput extends Component {
   handleFileInputChange(event){
     event.preventDefault();
     const file = event.target.files[0];
-    console.log(file.name);
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      this.setState({ fileContent: reader.result });
+    };
+    reader.readAsText(file);
+  }
+
+  saveFile() {
+    const fileName = 'myfile.txt'; // file name
+    const filePath = '/path/to/folder/' + fileName; // file path
+    const blob = new Blob([this.state.fileContent], { type: 'text/plain' });
+    const anchor = document.createElement('a');
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.download = fileName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
   }
   
   
@@ -25,8 +42,13 @@ class FileInput extends Component {
     const { input, label, meta: {error, touched} } = this.props;
 
     const inputType = () => {
+
+      if(label === "Image"){
+        return <input {...input} type="file" onChange={this.handleFileInputChange} value={this.state.fileContent.name} accept='.jpg, .png, .jpeg' />
+      } else {
+        return <input {...input} type="file" onChange={this.handleFileInputChange} value={this.state.fileContent.name} accept='.docx, .md, .pdf' />
+      }
     
-      return <input {...input} type="file" onChange={this.handleFileInputChange} value={this.state.fileName} />
     }
 
     return (
