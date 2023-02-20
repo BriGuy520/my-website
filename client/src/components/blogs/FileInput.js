@@ -1,31 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-const FileInput = ({ input, label, meta: { error, touched } }) => {
+class FileInput extends Component {
 
-  function handleFileInputChange(event) {
+  constructor(props){
+    super(props);
+
+    this.state = {fileName: ''}
+
+    this.handleFileInputChange = this.handleFileInputChange.bind(this);
+  }
+
+  
+  handleFileInputChange(event){
     event.preventDefault();
     const file = event.target.files[0];
-    console.log(file);
-  }
-
-  const inputType = () => {
-  
-    return <input {...input} type="file" onChange={handleFileInputChange} />
-
+    console.log(file.name);
   }
   
-  return (
-    <div className="blog-inputs">
-      <label>{label}</label>
-      <div>
-        {inputType()}
+  
+  render(){
+    console.log(this.state);
+
+    const { input, label, meta: {error, touched} } = this.props;
+
+    const inputType = () => {
+    
+      return <input {...input} type="file" onChange={this.handleFileInputChange} value={this.state.fileName} />
+    }
+
+    return (
+      <div className="blog-inputs">
+        <label>{label}</label>
+        <div>
+          {inputType()}
+        </div>
+        <div>
+          {touched && error}
+        </div>
       </div>
-      <div>
-        {touched && error}
-      </div>
-    </div>
-  )
+    )
+  }
+  
 }
 
 export default FileInput;
