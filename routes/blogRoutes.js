@@ -24,10 +24,8 @@ module.exports = (app) => {
         const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
         const blog = new Blog({
-          title,
+          post,
           image,
-          description,
-          body,
           author: username,
           likes,
           datePosted: Date.now()

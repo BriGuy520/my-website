@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import formFields from './formFields';
+import {formFields} from './formFields';
 import { submitBlog } from '../../actions';
 import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
