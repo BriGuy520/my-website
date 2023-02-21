@@ -2,6 +2,7 @@ const Path = require('path-parser').default;
 const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
+const fs = require('fs');
 
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
@@ -17,7 +18,7 @@ module.exports = (app) => {
 
   app.post('/api/blog', requireLogin, (req, res) => {
 
-    const { title, body, description, image, likes } = req.body;
+    const { post, image, likes } = req.body;
    
      User.findOne({ _id: req.user})
       .then(data => {
@@ -30,6 +31,13 @@ module.exports = (app) => {
           likes,
           datePosted: Date.now()
         });
+
+        function saveFile(filePath, fileContent) {
+          fs.writeFile(filePath, fileContent, function(err) {
+            if (err) throw err;
+            console.log(`File saved to ${filePath}`);
+          });
+        }
     
         blog.save();
         res.send(blog);

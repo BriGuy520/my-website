@@ -1,4 +1,4 @@
 export const formFields = [
-  { label: "Blog File", name: "blog"},
+  { label: "Post", name: "post"},
   { label: "Image", name: "image"},
 ];

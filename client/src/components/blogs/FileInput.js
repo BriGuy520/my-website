@@ -24,8 +24,8 @@ class FileInput extends Component {
   }
 
   saveFile() {
-    const fileName = 'myfile.txt'; // file name
-    const filePath = '/path/to/folder/' + fileName; // file path
+    const fileName = this.state.fileContent.name // file name
+    const filePath = '/content/blogs/' + fileName; // file path
     const blob = new Blob([this.state.fileContent], { type: 'text/plain' });
     const anchor = document.createElement('a');
     anchor.href = window.URL.createObjectURL(blob);
@@ -37,10 +37,9 @@ class FileInput extends Component {
   
   
   render(){
-    console.log(this.state);
-
+    
     const { input, label, meta: {error, touched} } = this.props;
-
+    
     const inputType = () => {
 
       if(label === "Image"){
