@@ -25,8 +25,11 @@ export const fetchUser = () => async dispatch => {
 }
 
 export const submitBlog = (values, history) => async dispatch => {
+
+  console.log(values);
   
   const response = await axios.post('/api/blog', values);
+  console.log(response.data);
 
   history.push('/blog');
   dispatch({ type: FETCH_USER, payload: response.data });

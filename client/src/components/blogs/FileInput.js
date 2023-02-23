@@ -10,7 +10,6 @@ class FileInput extends Component {
 
     this.handleFileInputChange = this.handleFileInputChange.bind(this);
   }
-
   
   handleFileInputChange(event){
     event.preventDefault();
@@ -37,7 +36,7 @@ class FileInput extends Component {
   
   
   render(){
-    
+
     const { input, label, meta: {error, touched} } = this.props;
     
     const inputType = () => {

@@ -18,6 +18,7 @@ module.exports = (app) => {
 
   app.post('/api/blog', requireLogin, (req, res) => {
 
+
     const { post, image, likes } = req.body;
    
      User.findOne({ _id: req.user})
@@ -25,8 +26,8 @@ module.exports = (app) => {
         const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
         const blog = new Blog({
-          post,
-          image,
+          post: post[0].name,
+          image: image[0].name,
           author: username,
           likes,
           datePosted: Date.now()

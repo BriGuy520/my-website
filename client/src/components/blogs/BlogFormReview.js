@@ -6,16 +6,19 @@ import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 
 const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
+ 
+  const reviewFields = _.map(formFields, ({label, name}) => {
 
-  const reviewFields = _.map(formFields, ({ name, label }) => {
-    return (
-      <div className="ui form" key={name}>
-        <label>{label}</label>
-        <div>
-          {formValues[name]}
-        </div>
-      </div>
-    );
+    console.log(formValues[name]);
+
+    // return (
+    //   <div className="ui form" key={name}>
+    //     <label>{label}</label>
+    //     <div>
+    //       {formValues.values[name][0].name}
+    //     </div>
+    //   </div>
+    // );
   });
 
   return (
@@ -31,6 +34,9 @@ const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
 }
 
 const mapStateToProps = (state) => {
+
+  console.log(state.form.blogForm.values);
+
   return { formValues: state.form.blogForm.values }
 }
 
