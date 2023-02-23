@@ -3,9 +3,27 @@ const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 const fs = require('fs');
+const multer = require('multer');
 
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: function (req, file, cb) {
+      // Set the destination folder where uploaded files will be stored
+      if (file.fieldname === 'image') {
+        cb(null, 'content/images/');
+      } else if (file.fieldname === 'post') {
+        cb(null, 'content/posts/');
+      }
+    },
+    filename: function (req, file, cb) {
+      // Set the filename for the uploaded file
+      cb(null, file.originalname);
+    }
+  })
+});
 
 module.exports = (app) => {
 
@@ -16,9 +34,16 @@ module.exports = (app) => {
     res.send(blogs);
   });
 
-  app.post('/api/blog', requireLogin, (req, res) => {
+  app.post('/api/blog', requireLogin, upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'post', maxCount: 1 }
+  ]), (req, res) => {
 
-    console.log(req.body);
+    const imageFile = req.files['image'][0];
+    const postFile = req.files['post'][0];
+
+    console.log(imageFile);
+    console.log(postFile);
 
     const { post, image, likes } = req.body;
 
