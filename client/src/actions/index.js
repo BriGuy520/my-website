@@ -26,9 +26,25 @@ export const fetchUser = () => async dispatch => {
 
 export const submitBlog = (values, history) => async dispatch => {
 
-  console.log(values);
+  const postFile = Object.values(values['post']);
+  const imgFile = Object.values(values['image']);
+
+  console.log(postFile[0]);
+  console.log(imgFile[0]);
+
+  const formData = new FormData();
+
+  formData.append('post', postFile[0]);
+  formData.append('image', imgFile[0]);
+
+  console.log(formData.get('post'));
+  console.log(formData.get('image'));
   
-  const response = await axios.post('/api/blog', values);
+  const response = await axios.post('/api/blog', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
   console.log(response.data);
 
   history.push('/blog');

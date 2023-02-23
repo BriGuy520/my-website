@@ -18,30 +18,34 @@ module.exports = (app) => {
 
   app.post('/api/blog', requireLogin, (req, res) => {
 
+    console.log(req.body);
 
     const { post, image, likes } = req.body;
+
    
      User.findOne({ _id: req.user})
       .then(data => {
         const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
-        const blog = new Blog({
-          post: post[0].name,
-          image: image[0].name,
-          author: username,
-          likes,
-          datePosted: Date.now()
-        });
+        // const blog = new Blog({
+        //   post: post[0].name,
+        //   image: image[0].name,
+        //   author: username,
+        //   likes,
+        //   datePosted: Date.now()
+        // });
 
-        function saveFile(filePath, fileContent) {
-          fs.writeFile(filePath, fileContent, function(err) {
-            if (err) throw err;
-            console.log(`File saved to ${filePath}`);
-          });
-        }
+        // console.log(blog);
+
+        // function saveFile(filePath, fileContent) {
+        //   fs.writeFile(filePath, fileContent, function(err) {
+        //     if (err) throw err;
+        //     console.log(`File saved to ${filePath}`);
+        //   });
+        // }
     
-        blog.save();
-        res.send(blog);
+        // blog.save();
+        // res.send(blog);
       })
       .catch(err => {
         console.log(err);

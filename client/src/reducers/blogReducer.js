@@ -5,7 +5,7 @@ export default (state = {}, action) => {
     case FETCH_BLOGS:
       return action.payload;
     case FETCH_BLOG:
-      console.log(action);
+      console.log(state);
       return { ...state, [action.payload._id]: action.payload};
     default:
       return state;
