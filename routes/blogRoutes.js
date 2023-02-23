@@ -1,4 +1,4 @@
-const Path = require('path-parser').default;
+const path = require('path');
 const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
@@ -42,35 +42,29 @@ module.exports = (app) => {
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
 
-    console.log(imageFile);
-    console.log(postFile);
+    const imagesDir = path.join(process.cwd(), '/content/images');
 
-    const { post, image, likes } = req.body;
+    console.log(imagesDir);
+
+    const { likes } = req.body;
 
    
      User.findOne({ _id: req.user})
       .then(data => {
         const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
 
-        // const blog = new Blog({
-        //   post: post[0].name,
-        //   image: image[0].name,
-        //   author: username,
-        //   likes,
-        //   datePosted: Date.now()
-        // });
+        const blog = new Blog({
+          post: postFile.originalname,
+          image: path.join(imagesDir, imageFile.originalname),
+          author: username,
+          likes,
+          datePosted: Date.now()
+        });
 
-        // console.log(blog);
-
-        // function saveFile(filePath, fileContent) {
-        //   fs.writeFile(filePath, fileContent, function(err) {
-        //     if (err) throw err;
-        //     console.log(`File saved to ${filePath}`);
-        //   });
-        // }
+        console.log(blog);
     
-        // blog.save();
-        // res.send(blog);
+        blog.save();
+        res.send(blog);
       })
       .catch(err => {
         console.log(err);

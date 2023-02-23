@@ -5,11 +5,15 @@ import { fetchBlogs } from '../../actions';
 
 class BlogList extends Component {
 
+
+  
   componentDidMount(){
     this.props.fetchBlogs();
   }
-
+  
   renderBlogs(){
+    const rootDir = process.env.PUBLIC_URL;
+
     return this.props.blogs.reverse().map(blog => {
       return (
         <div className="ui raised segment blog-card" key={blog._id}>
