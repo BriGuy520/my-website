@@ -13,17 +13,17 @@ class ShowBlog extends Component {
   }
   
   renderBlog(){
-    let { title, image, body, author, datePosted, description } = this.props.blog;
+    let {image, post, author, datePosted, description } = this.props.blog;
 
     return (
       <div className="ui segment container">
-        <h1>{title}</h1>
+        <h1>Blog</h1>
         <h4>By {author}</h4>
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
         <div>
-          <img className="blog-image" src={image} alt={title} style={{"width": "100%", "height": "100%"}} />
+          <img className="blog-image" src={`http://localhost:5000/images/${image}`} alt={image} style={{"width": "100%", "height": "100%"}} />
           <h3 className="blog-description"><i>{description}</i></h3>
-          <p className="blog-body">{Parser(body)}</p>
+          <p className="blog-body">{post}</p>
         </div>
         <div className="likes">
           <BlogLikes blog={this.props.blog} />
