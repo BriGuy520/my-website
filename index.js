@@ -6,6 +6,7 @@ const keys = require('./config/keys')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 
 require('./models/Blog');
 require('./models/User');
@@ -50,15 +51,17 @@ require('./routes/blogRoutes')(app);
 require('./routes/commentRoutes')(app);
 require('./routes/likeRoutes')(app);
 
-if(process.env.NODE_ENV === 'production'){
 
+if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));
 
-  const path = require('path');
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+app.use('/images', express.static(path.join(__dirname, 'content', 'images')));
+app.use('/posts', express.static(path.join(__dirname, 'content', 'posts')));
 
 const PORT = process.env.PORT || 5000;
 

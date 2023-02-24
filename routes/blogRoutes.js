@@ -1,4 +1,3 @@
-const path = require('path');
 const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
@@ -13,9 +12,9 @@ const upload = multer({
     destination: function (req, file, cb) {
       // Set the destination folder where uploaded files will be stored
       if (file.fieldname === 'image') {
-        cb(null, 'content/images/');
+        cb(null, 'content/images');
       } else if (file.fieldname === 'post') {
-        cb(null, 'content/posts/');
+        cb(null, 'content/posts');
       }
     },
     filename: function (req, file, cb) {
@@ -42,10 +41,6 @@ module.exports = (app) => {
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
 
-    const imagesDir = path.join(process.cwd(), '/content/images');
-
-    console.log(imagesDir);
-
     const { likes } = req.body;
 
    
@@ -55,7 +50,7 @@ module.exports = (app) => {
 
         const blog = new Blog({
           post: postFile.originalname,
-          image: path.join(imagesDir, imageFile.originalname),
+          image: imageFile.originalname,
           author: username,
           likes,
           datePosted: Date.now()
