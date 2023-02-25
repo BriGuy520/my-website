@@ -728,6 +728,7 @@ pre {
 .blog-image {
   margin-top: 20px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .post-details {

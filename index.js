@@ -63,6 +63,10 @@ if(process.env.NODE_ENV === 'production'){
 app.use('/images', express.static(path.join(__dirname, 'content', 'images')));
 app.use('/posts', express.static(path.join(__dirname, 'content', 'posts')));
 
+app.get('/content/*', (req, res) => {
+  res.sendFile(path.join(__dirname, req.url));
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 const fs = require('fs');
 const multer = require('multer');
+const path = require('path');
 
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
@@ -12,9 +13,9 @@ const upload = multer({
     destination: function (req, file, cb) {
       // Set the destination folder where uploaded files will be stored
       if (file.fieldname === 'image') {
-        cb(null, 'content/images');
+        cb(null, path.join(process.cwd(), 'client', 'public', 'content', 'images'));
       } else if (file.fieldname === 'post') {
-        cb(null, 'content/posts');
+        cb(null, path.join(process.cwd(), 'client', 'public', 'content', 'posts'));
       }
     },
     filename: function (req, file, cb) {

@@ -9,8 +9,6 @@ const BlogFormReview = ({ onCancel, formValues, submitBlog, history }) => {
  
   const reviewFields = _.map(formFields, ({label, name}) => {
 
-    console.log(formValues[name]);
-
     // return (
     //   <div className="ui form" key={name}>
     //     <label>{label}</label>

@@ -21,18 +21,6 @@ class FileInput extends Component {
     };
     reader.readAsText(file);
   }
-
-  saveFile() {
-    const fileName = this.state.fileContent.name // file name
-    const filePath = '/content/blogs/' + fileName; // file path
-    const blob = new Blob([this.state.fileContent], { type: 'text/plain' });
-    const anchor = document.createElement('a');
-    anchor.href = window.URL.createObjectURL(blob);
-    anchor.download = fileName;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }
   
   
   render(){

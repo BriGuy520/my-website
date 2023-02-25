@@ -23,7 +23,7 @@ class BlogList extends Component {
               <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
             </div>
             <div className="image">
-              <img className="blog-image" alt={blog.title} src={`http://localhost:5000/images/${blog.image}`} />
+              <img className="blog-image" alt={blog.title} src={`/content/images/${blog.image}`} />
             </div>
               <p>{blog.description}</p>
             <div className="post-details">
