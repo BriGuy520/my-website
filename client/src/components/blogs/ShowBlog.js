@@ -18,7 +18,7 @@ class ShowBlog extends Component {
   renderBlog(){
     let {image, post, author, datePosted, description } = this.props.blog;
     
-    const html = marked.parse(post);
+    const html = marked.parse(`/content/posts/${post}`);
 
     console.log(html);
     

@@ -45,7 +45,6 @@ export const submitBlog = (values, history) => async dispatch => {
       'Content-Type': 'multipart/form-data'
     }
   });
-  console.log(response.data);
 
   history.push('/blog');
   dispatch({ type: FETCH_USER, payload: response.data });
