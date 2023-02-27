@@ -15,28 +15,35 @@ class ShowBlog extends Component {
     content: '',
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     
-    this.props.fetchBlog(this.props.match.params.id);
+    await this.props.fetchBlog(this.props.match.params.id);
 
+
+    try {
+      const response = await axios.get(`/content/posts/${this.props.blog.post}`);
+      const content = response.data;
+      const htmlContent = marked.parse(content);
+      const sanitizedHTML = DOMPurify.sanitize(htmlContent);
+      this.setState({ content: sanitizedHTML });
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+      // await axios.get(`/content/posts/${this.blog.post}`)
+    // .then((res) => res.data)
+    // .then(content => {
+
+    //   const htmlContent = marked.parse(content);
+    //   const sanitizedHTML = DOMPurify.sanitize(htmlContent);
+
+    //   this.setState({ content: sanitizedHTML });
+    // })
   
   renderBlog(){
 
-    console.log(this.props.blog);
-
     let {image, post, author, datePosted, description } = this.props.blog;
-
-    axios.get(`/content/posts/${post}`)
-    .then((res) => res.data)
-    .then(content => {
-
-      console.log(typeof content);
-      const htmlContent = marked.parse(content);
-      const sanitizedHTML = DOMPurify.sanitize(htmlContent);
-
-      this.setState({ content: sanitizedHTML });
-    })
       
     return (
       <div className="ui container blog">
@@ -57,7 +64,6 @@ class ShowBlog extends Component {
   }
 
   render(){  
-    
     
     if(!this.props.blog){
       return (
