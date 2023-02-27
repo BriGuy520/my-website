@@ -5,9 +5,15 @@ import { fetchBlog } from '../../actions';
 import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
 import marked from 'marked';
+import axios from 'axios';
+import DOMPurify from 'dompurify';
 
 
 class ShowBlog extends Component {
+
+  state = {
+    content: '',
+  }
 
   componentDidMount(){
     
@@ -16,12 +22,22 @@ class ShowBlog extends Component {
   }
   
   renderBlog(){
-    let {image, post, author, datePosted, description } = this.props.blog;
-    
-    const html = marked.parse(`/content/posts/${post}`);
 
-    console.log(html);
-    
+    console.log(this.props.blog);
+
+    let {image, post, author, datePosted, description } = this.props.blog;
+
+    axios.get(`/content/posts/${post}`)
+    .then((res) => res.data)
+    .then(content => {
+
+      console.log(typeof content);
+      const htmlContent = marked(content);
+      const sanitizedHTML = DOMPurify.sanitize(htmlContent);
+
+      this.setState({ content: sanitizedHTML });
+    })
+      
     return (
       <div className="ui container blog">
         <h1>Blog</h1>
@@ -32,6 +48,7 @@ class ShowBlog extends Component {
           <h3 className="blog-description"><i>{description}</i></h3>
           <p className="blog-body">{post}</p>
         </div>
+        <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         <div className="likes">
           <BlogLikes blog={this.props.blog} />
         </div>
