@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
-import Parser from 'html-react-parser';
+// import Parser from 'html-react-parser';
 import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
+import marked from 'marked';
 
 
 class ShowBlog extends Component {
 
   componentDidMount(){
+    
     this.props.fetchBlog(this.props.match.params.id);
+
   }
   
   renderBlog(){
     let {image, post, author, datePosted, description } = this.props.blog;
+    
+    const html = marked.parse(post);
 
+    console.log(html);
+    
     return (
       <div className="ui container">
         <h1>Blog</h1>

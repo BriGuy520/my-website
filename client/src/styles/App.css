@@ -560,12 +560,8 @@ button:focus, input:focus {
 
 /* comment form */
 
-#comments {
-  padding: 5% 12%; 
-}
-
 #comment-form {
-  padding-top: 20px;
+  padding: 20px 0 40px 0;
 }
 
 #comment-form textarea {
@@ -1000,7 +996,7 @@ body {
 /* Picture */
 
 .container {
-  margin: 15% auto 8% auto;
+  margin: 10% auto 8% auto;
   max-width: 1280px;
   min-height: 80vh;
 }
