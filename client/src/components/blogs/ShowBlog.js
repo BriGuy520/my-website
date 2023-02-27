@@ -32,7 +32,7 @@ class ShowBlog extends Component {
     .then(content => {
 
       console.log(typeof content);
-      const htmlContent = marked(content);
+      const htmlContent = marked.parse(content);
       const sanitizedHTML = DOMPurify.sanitize(htmlContent);
 
       this.setState({ content: sanitizedHTML });
