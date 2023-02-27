@@ -21,6 +21,10 @@ header {
   width: 100%; 
 }
 
+h1 {
+  font-size: 3.2rem;
+}
+
 header h2 {
   text-align: center;
   padding: 15px 15px 15px 30px;
@@ -580,6 +584,11 @@ button:focus, input:focus {
 
 /* blog */
 
+.container.blog {
+  margin: 10% auto 2% auto;
+
+}
+
 .blog-description {
   padding: 0 10px;
 }
@@ -602,6 +611,10 @@ button:focus, input:focus {
 
 .image-sizing {
   width: 80%;
+}
+
+#comments.container {
+  margin: 2% auto;
 }
 
 
@@ -993,17 +1006,13 @@ body {
   height: 100vh;
 }
 
-/* Picture */
-
 .container {
   margin: 10% auto 8% auto;
   max-width: 1280px;
   min-height: 80vh;
 }
 
-h1 {
-  font-size: 3.2rem;
-}
+/* Picture */
 
 .photos {
   margin: 3%;

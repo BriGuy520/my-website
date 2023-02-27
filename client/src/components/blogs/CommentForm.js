@@ -66,7 +66,7 @@ class CommentForm extends Component {
     const { comment } = this.props;
     
     return (
-      <div className="ui form container" id="comments">
+      <div className="ui form comment-section container" id="comments">
         <label>Leave a Comment:</label>
         <form onSubmit={this.handleSubmit(comment)} id="comment-form">
           <textarea rows="3" onChange={this.newComment.bind(this)} 
