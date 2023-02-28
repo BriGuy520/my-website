@@ -14,6 +14,8 @@ let userSchema = new Schema({
   google: strategy,
   github: strategy,
   local: {
+    firstName: String,
+    lastName: String,
     username: String, 
     password: String
   }, 

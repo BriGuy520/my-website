@@ -589,6 +589,11 @@ button:focus, input:focus {
 
 }
 
+.blog-description {
+  font-size: 24px;
+  font-weight: 400;
+}
+
 .blog-body {
   margin: 40px 0;
   font-size: 1.3em;
