@@ -5,6 +5,7 @@ import { fetchBlog } from '../../actions';
 import BlogLikes from './BlogLikes';
 import CommentForm from './CommentForm';
 import marked from 'marked';
+import matter from 'gray-matter';
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 
@@ -13,6 +14,8 @@ class ShowBlog extends Component {
 
   state = {
     content: '',
+    postTitle: '',
+    postDescription: '',
   }
 
   async componentDidMount(){
@@ -22,7 +25,13 @@ class ShowBlog extends Component {
 
     try {
       const response = await axios.get(`/content/posts/${this.props.blog.post}`);
-      const content = response.data;
+      const mdContent = response.data;
+
+      const { data, content } = matter(mdContent);
+      const { title, description } = data;
+
+      this.setState({ postTitle: title, postDescription: description })
+
       const htmlContent = marked.parse(content);
       const sanitizedHTML = DOMPurify.sanitize(htmlContent);
       this.setState({ content: sanitizedHTML });
@@ -30,16 +39,6 @@ class ShowBlog extends Component {
       console.log(error);
     }
   }
-
-      // await axios.get(`/content/posts/${this.blog.post}`)
-    // .then((res) => res.data)
-    // .then(content => {
-
-    //   const htmlContent = marked.parse(content);
-    //   const sanitizedHTML = DOMPurify.sanitize(htmlContent);
-
-    //   this.setState({ content: sanitizedHTML });
-    // })
   
   renderBlog(){
 
@@ -47,7 +46,7 @@ class ShowBlog extends Component {
       
     return (
       <div className="ui container blog">
-        <h1>Blog</h1>
+        <h1>{this.state.postTitle}</h1>
         <h4>By {author}</h4>
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
         <div>
