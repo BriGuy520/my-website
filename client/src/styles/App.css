@@ -589,19 +589,19 @@ button:focus, input:focus {
 
 }
 
-.blog-description {
-  padding: 0 10px;
-}
-
 .blog-body {
-  padding: 20px;
-  margin: 40px 20px;
+  margin: 40px 0;
   font-size: 1.3em;
   line-height: 1.4em;
 }
 
-.blog-body p {
-  padding: 0 10px;
+.blog-body .author {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.blog-body .post-date {
+  margin-bottom: 1rem;
 }
 
 .blog-body pre {
