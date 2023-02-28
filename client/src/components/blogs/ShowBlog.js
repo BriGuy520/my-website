@@ -47,13 +47,13 @@ class ShowBlog extends Component {
     return (
       <div className="ui container blog">
         <h1>{this.state.postTitle}</h1>
-        <h4>By {author}</h4>
-        <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
+        <h3 className="blog-description"><i>{this.state.postDescription}</i></h3>
         <div>
           <img className="blog-image" src={`/content/images/${image}`} alt={image} style={{"width": "100%", "height": "100%"}} />
-          <h3 className="blog-description"><i>{this.state.postDescription}</i></h3>
+          <h4>By {author}</h4>
+          <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
+          <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         <div className="likes">
           <BlogLikes blog={this.props.blog} />
         </div>
