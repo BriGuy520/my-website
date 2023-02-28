@@ -42,7 +42,7 @@ class ShowBlog extends Component {
   
   renderBlog(){
 
-    let {image, post, author, datePosted, description } = this.props.blog;
+    let {image, author, datePosted } = this.props.blog;
       
     return (
       <div className="ui container blog">
@@ -51,8 +51,7 @@ class ShowBlog extends Component {
         <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
         <div>
           <img className="blog-image" src={`/content/images/${image}`} alt={image} style={{"width": "100%", "height": "100%"}} />
-          <h3 className="blog-description"><i>{description}</i></h3>
-          <p className="blog-body">{post}</p>
+          <h3 className="blog-description"><i>{this.state.postDescription}</i></h3>
         </div>
         <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         <div className="likes">
