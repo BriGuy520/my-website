@@ -22,6 +22,20 @@ class SignUp extends Component {
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <div className="ui form signup-form">
           <div className="field">
+              <label>First Name</label>
+              <Field
+                name="firstName"
+                type="text"
+                component="input"
+                autoComplete="none"
+              />
+              <label>Last Name</label>
+              <Field
+                name="lastName"
+                type="text"
+                component="input"
+                autoComplete="none"
+              />
               <label>Username</label>
               <Field
                 name="username"

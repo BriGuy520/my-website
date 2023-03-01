@@ -28,17 +28,11 @@ export const submitBlog = (values, history) => async dispatch => {
 
   const postFile = Object.values(values['post']);
   const imgFile = Object.values(values['image']);
-
-  console.log(postFile[0]);
-  console.log(imgFile[0]);
-
+  
   const formData = new FormData();
 
   formData.append('post', postFile[0]);
   formData.append('image', imgFile[0]);
-
-  console.log(formData.get('post'));
-  console.log(formData.get('image'));
   
   const response = await axios.post('/api/blog', formData, {
     headers: {

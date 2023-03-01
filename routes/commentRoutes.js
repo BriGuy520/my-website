@@ -12,11 +12,13 @@ module.exports = (app) => {
 
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
+
+    console.log(req.user);
   
     await User.findOne({ _id: req.user })
       .then(data => {
 
-        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
+        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username || data.local.username;
 
         const comment = new Comment({ 
           content,

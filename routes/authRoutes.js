@@ -1,9 +1,7 @@
 const passport = require('passport');
 const Authentication = require('../controllers/authentication');
 
-
 const requireSignIn = passport.authenticate('local', { session: false });
-
 
 module.exports = (app) => {
 

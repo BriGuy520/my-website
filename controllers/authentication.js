@@ -12,16 +12,12 @@ function tokenForUser(user){
 exports.signin = function(req, res, next){
   console.log(req.user);
   res.send({ token: tokenForUser(req.user) });
-  res.redirect('/blog');
 }
 
 exports.signup = function(req, res, next){
 
-  const { username, password } = req.body;
+  const { username, password, firstName, lastName } = req.body;
 
-  console.log(password);
-
-  console.log("working");
   if(!username || !password){
     return res.status(422).send({ error: 'You need a username and password to continue'});
   }
@@ -34,7 +30,7 @@ exports.signup = function(req, res, next){
     }
 
     const user = new User({
-      local: { username: username, password: password } 
+      local: { username: username, password: password, firstName: firstName, lastName: lastName } 
     });
 
     user.save(function(err){
