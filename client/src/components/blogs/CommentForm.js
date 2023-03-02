@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
 import CommentLikes from './CommentLikes';
+import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 
 class CommentForm extends Component {
@@ -19,9 +20,19 @@ class CommentForm extends Component {
 
       if(content !== ''){
 
+        const token = localStorage.getItem('token');
+        const decodedToken = jwtDecode(token);
+        const expirationTime = decodedToken.exp * 1000; // convert to milliseconds
         const headers = {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          Authorization: `Bearer ${token}`
         }
+
+        if(expirationTime < Date.now()){
+          console.log("expired")
+        } else {
+          console.log("all good");
+        }
+
 
         axios.post(`/api/blog/${comment._id}/comment`, { content }, { headers: headers })
           .then(res => {
