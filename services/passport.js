@@ -3,7 +3,7 @@ const FacebookStrategy = require('passport-facebook');
 const TwitterStrategy = require('passport-twitter');
 const GoogleStrategy = require('passport-google-oauth20');
 const GitHubStrategy = require('passport-github');
-const LocalStrategy = require('passport-local');
+const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
@@ -23,6 +23,7 @@ passport.deserializeUser((id, done) => {
 });
 
 const localLogin = new LocalStrategy(function(username, password, done){
+  
   User.findOne({ "local.username": username },  function(err, user){
     
     if(err) { return done(err) }
@@ -45,6 +46,9 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
 
   User.findById(payload.sub, function(err, user){
     if(err){ return done(err, false); }
+
+    console.log("JWT Strategy: ");
+    console.log(user);
 
     if(user){
       done(null, user);
