@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jwt-simple');
 const keys = require('../config/keys');
 const mongoose = require('mongoose');
 
@@ -10,6 +10,7 @@ function tokenForUser(user){
 }
 
 exports.signin = function(req, res, next){
+
   res.send({ token: tokenForUser(req.user) });
 }
 

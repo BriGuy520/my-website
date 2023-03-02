@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const keys = require('../config/keys');
 const requireLogin = require('../middleware/requireLogin');
 
 const Comment = mongoose.model('Comment');
@@ -13,7 +15,20 @@ module.exports = (app) => {
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
 
-    console.log(req.user);
+    console.log(req.header.authorization);
+
+    if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+      return res.status(401).send({ error: 'Unauthorized' });
+    }
+  
+    const token = req.headers.authorization.split(' ')[1];
+
+    const decoded = jwt.verify(token, keys.jwtSecret);
+    const user = await User.findById(decoded.sub);
+    if (!user) {
+      return res.status(401).send({ error: 'Unauthorized' });
+    }
+  
   
     await User.findOne({ _id: req.user })
       .then(data => {
