@@ -45,8 +45,6 @@ module.exports = (app) => {
   });
 
   app.get('/api/logout', (req, res) => {
-
-    window.localStorage.removeItem('token');
     req.logout();
     res.redirect('/');
   });

@@ -14,7 +14,7 @@ module.exports = (app) => {
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
 
-    console.log(req.user);
+    console.log(req);
   
   
     await User.findOne({ _id: req.user })

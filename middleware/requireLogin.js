@@ -15,12 +15,17 @@ module.exports = (req, res, next) => {
     const decoded = jwt.decode(token, keys.jwtSecret);
     const userId = decoded.sub;
 
+    console.log("HELLO!!!");
+    console.log(userId);
+
     User.findById(userId, (err, user) => {
       if (err || !user) {
         return res.status(401).send({ error: 'Unauthorized' });
       }
 
-      req.user = user._id;
+
+
+      req.user = userId;
 
       requireAuth;
 
@@ -32,6 +37,6 @@ module.exports = (req, res, next) => {
       return res.send('please sign in');
     }
   
-   next();
   }
+  next();
 }

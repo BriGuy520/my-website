@@ -8,11 +8,12 @@ class Navbar extends Component {
   constructor(props){
     super(props);
 
-    this.state = { showMenu: false, width: 0, height: 0, loggedIn: false };
+    this.state = { showMenu: false, width: 0, height: 0, loggedIn: true };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this); 
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   componentDidMount(){
@@ -44,9 +45,9 @@ class Navbar extends Component {
     });
   }
 
-  handleLogout(){
+  async handleLogout(){
 
-    axios.get("api/logout");
+    await axios.get("api/logout");
     localStorage.removeItem('token');
     this.setState({loggedIn: false})
   }
