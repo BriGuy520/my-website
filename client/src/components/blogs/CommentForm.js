@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
 import CommentLikes from './CommentLikes';
-import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 
 class CommentForm extends Component {
@@ -21,7 +20,7 @@ class CommentForm extends Component {
       if(content !== ''){
 
         const token = localStorage.getItem('token');
-        
+
         const headers = {
           Authorization: `Bearer ${token}`
         }

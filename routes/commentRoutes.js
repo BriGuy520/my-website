@@ -9,6 +9,8 @@ module.exports = (app) => {
 
 
   app.post('/api/blog/:id/comment', requireLogin, async (req, res) => {
+    console.log("MAKING REQUEST:");
+    console.log(req.user);
 
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
