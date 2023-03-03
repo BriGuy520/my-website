@@ -21,17 +21,12 @@ class CommentForm extends Component {
       if(content !== ''){
 
         const token = localStorage.getItem('token');
-        const decodedToken = jwtDecode(token);
-        const expirationTime = decodedToken.exp * 1000; // convert to milliseconds
+        
         const headers = {
           Authorization: `Bearer ${token}`
         }
 
-        if(expirationTime < Date.now()){
-          console.log("expired")
-        } else {
-          console.log("all good");
-        }
+        console.log(headers);
 
 
         axios.post(`/api/blog/${comment._id}/comment`, { content }, { headers: headers })

@@ -1,19 +1,27 @@
 const passport = require('passport');
+const jwt = require('jwt-simple');
+const keys = require('../config/keys');
 
 
-module.exports = async (req, res, next) => {
+module.exports = (req, res, next) => {
 
-  await passport.authenticate('jwt', { session: false }, (err, user, info) => {
+  console.log(req.headers.authenticate);
 
-    console.log(user);
+  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+    return res.status(401).send({ error: 'Unauthorized' });
+  }
+  
+  const token = req.headers.authorization.split(' ')[1];
+  
+  const decoded = jwt.decode(token, keys.jwtSecret);
 
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return res.send('please sign in');
-    }
-    req.user = user;
-    next();
-  });
+    passport.authenticate('jwt', { session: false }, (err, user, info) => {
+      if (err || !user) {
+        console.log(err);
+        console.log(user);
+        return res.status(401).send({ error: 'Unauthorized' });
+      }
+      req.user = user;
+      next();
+    })(req, res, next);
 }
