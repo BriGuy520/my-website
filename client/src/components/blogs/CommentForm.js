@@ -25,13 +25,11 @@ class CommentForm extends Component {
           Authorization: `Bearer ${token}`
         }
 
-        console.log(headers);
-
-
         axios.post(`/api/blog/${comment._id}/comment`, { content }, { headers: headers })
           .then(res => {
             let response = res.data;
             console.log(response);
+            console.log(typeof response);
             if(response !== 'please sign in'){
               this.setState({ posts: [response, ...this.state.posts] });  
             } else {

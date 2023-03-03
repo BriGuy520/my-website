@@ -1,6 +1,8 @@
 const passport = require('passport');
 const Authentication = require('../controllers/authentication');
 
+const requireLogin = require('../middleware/requireLogin');
+
 const requireSignIn = passport.authenticate('local', { session: false });
 
 module.exports = (app) => {
@@ -50,7 +52,8 @@ module.exports = (app) => {
   });
 
 
-  app.get('/api/current_user', (req, res) => {
+  app.get('/api/current_user', async(req, res) => {
+
 
     res.send(req.user);
   });

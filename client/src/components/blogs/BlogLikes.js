@@ -9,7 +9,7 @@ class BlogLikes extends Component {
 
   componentDidMount(){
     this.props.fetchUser();
-    this.props.signin();
+    // this.props.signin();
   }
 
   handleClick(blog){

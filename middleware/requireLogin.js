@@ -15,8 +15,6 @@ module.exports = (req, res, next) => {
     const decoded = jwt.decode(token, keys.jwtSecret);
     const userId = decoded.sub;
 
-    console.log("HELLO!!!");
-    console.log(userId);
 
     User.findById(userId, (err, user) => {
       if (err || !user) {
