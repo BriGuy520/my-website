@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import'../styles/App.css';
 
 
@@ -7,7 +8,7 @@ class Navbar extends Component {
   constructor(props){
     super(props);
 
-    this.state = { showMenu: false, width: 0, height: 0 };
+    this.state = { showMenu: false, width: 0, height: 0, loggedIn: false };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.showMenu = this.showMenu.bind(this);
@@ -43,6 +44,13 @@ class Navbar extends Component {
     });
   }
 
+  handleLogout(){
+
+    axios.get("api/logout");
+    localStorage.removeItem('token');
+    this.setState({loggedIn: false})
+  }
+
   renderNavbar(){
     if(window.innerWidth > 800){
       return (
@@ -56,7 +64,8 @@ class Navbar extends Component {
             <li><Link to="/music">Music</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/pictures">Pictures</Link></li>
-            <button><Link to="/logout">Logout</Link></button>
+            {this.state.loggedIn ? <button onClick={this.handleLogout}>Logout</button> : <button><Link to="/login">Login</Link></button>}
+            
           </nav>
         </header>
       )
@@ -81,7 +90,7 @@ class Navbar extends Component {
                 <li><Link to="/music">Music</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/pictures">Pictures</Link></li>
-                <button><Link to="/logout">Logout</Link></button>
+                <button onClick={this.handleLogout}><Link to="/logout">Logout</Link></button>
               </nav>
 
             ) : (
