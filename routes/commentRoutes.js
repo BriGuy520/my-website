@@ -9,16 +9,12 @@ module.exports = (app) => {
 
 
   app.post('/api/blog/:id/comment', requireLogin, async (req, res) => {
-    console.log("MAKING REQUEST:");
-    console.log(req.user);
+    
 
     const { content, likes } = req.body;
     const blogId = await Blog.findById(req.params.id);
 
-    const user = await User.findById(decoded.sub);
-    if (!user) {
-      return res.status(401).send({ error: 'Unauthorized' });
-    }
+    console.log(req.user);
   
   
     await User.findOne({ _id: req.user })

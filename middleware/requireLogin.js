@@ -5,20 +5,33 @@ const mongoose = require('mongoose');
 
 const User = mongoose.model('User');
 
+const requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = (req, res, next) => {
 
-  const token = req.headers.authorization.split(' ')[1];
-  const decoded = jwt.decode(token, keys.jwtSecret);
-  const userId = decoded.sub;
+  if(req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
 
-  User.findById(userId, (err, user) => {
-    if (err || !user) {
-      return res.status(401).send({ error: 'Unauthorized' });
+    const token = req.headers.authorization.split(' ')[1];
+    const decoded = jwt.decode(token, keys.jwtSecret);
+    const userId = decoded.sub;
+
+    User.findById(userId, (err, user) => {
+      if (err || !user) {
+        return res.status(401).send({ error: 'Unauthorized' });
+      }
+
+      req.user = user._id;
+
+      requireAuth;
+
+    });
+
+  } else {
+
+    if(!req.user || !requireAuth){
+      return res.send('please sign in');
     }
-
-    req.user = user;
-
-    passport.authenticate('jwt', { session: false })(req, res, next);
-  });
+  
+   next();
+  }
 }
