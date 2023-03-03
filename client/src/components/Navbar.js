@@ -56,6 +56,7 @@ class Navbar extends Component {
             <li><Link to="/music">Music</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/pictures">Pictures</Link></li>
+            <button><Link to="/logout">Logout</Link></button>
           </nav>
         </header>
       )
@@ -80,6 +81,7 @@ class Navbar extends Component {
                 <li><Link to="/music">Music</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/pictures">Pictures</Link></li>
+                <button><Link to="/logout">Logout</Link></button>
               </nav>
 
             ) : (
