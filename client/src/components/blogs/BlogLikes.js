@@ -21,7 +21,14 @@ class BlogLikes extends Component {
     }
 
     if(blog.userLikes.indexOf(auth) === -1){
-      axios.post(`/api/blog/${blog._id}/like`)
+
+      const token = localStorage.getItem('token');
+
+      const headers = {
+        Authorization: `Bearer ${token}`
+      }
+
+      axios.post(`/api/blog/${blog._id}/like`, {}, {headers: headers})
       .then(res => {
         this.setState({ likes: blog.likes + 1, isDisabled: true });
       })

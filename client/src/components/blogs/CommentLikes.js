@@ -18,8 +18,6 @@ class CommentLikes extends Component {
       return window.location.assign('/login');
     }
 
-    console.log(comment.userLikes)
-
     if(comment.userLikes.indexOf(this.props.auth) === -1){
 
       const token = localStorage.getItem('token');
