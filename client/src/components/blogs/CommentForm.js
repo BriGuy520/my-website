@@ -28,8 +28,7 @@ class CommentForm extends Component {
         axios.post(`/api/blog/${comment._id}/comment`, { content }, { headers: headers })
           .then(res => {
             let response = res.data;
-            console.log(response);
-            console.log(typeof response);
+
             if(response !== 'please sign in'){
               this.setState({ posts: [response, ...this.state.posts] });  
             } else {

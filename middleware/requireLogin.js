@@ -9,6 +9,8 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = (req, res, next) => {
 
+  console.log("CALLED");
+
   if(req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
 
     const token = req.headers.authorization.split(' ')[1];
@@ -21,11 +23,13 @@ module.exports = (req, res, next) => {
         return res.status(401).send({ error: 'Unauthorized' });
       }
 
-
-
       req.user = userId;
 
+      console.log(req.user);
+
       requireAuth;
+
+      next();
 
     });
 
@@ -35,6 +39,6 @@ module.exports = (req, res, next) => {
       return res.send('please sign in');
     }
   
+    next();
   }
-  next();
 }

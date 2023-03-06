@@ -19,7 +19,15 @@ export const fetchPhotos = () => async dispatch => {
 }
 
 export const fetchUser = () => async dispatch => {
-  const response = await axios.get('/api/current_user');
+
+  const token = localStorage.getItem('token');
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+
+  }
+
+  const response = await axios.get('/api/current_user', {headers: headers});
   
   dispatch({ type: FETCH_USER, payload: response.data });
 }

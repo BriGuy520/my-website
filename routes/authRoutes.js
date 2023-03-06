@@ -52,7 +52,7 @@ module.exports = (app) => {
   });
 
 
-  app.get('/api/current_user', async(req, res) => {
+  app.get('/api/current_user', requireLogin, async(req, res) => {
 
 
     res.send(req.user);

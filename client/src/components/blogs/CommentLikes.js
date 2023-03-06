@@ -16,7 +16,7 @@ class CommentLikes extends Component {
 
     console.log(this.props.auth);
   
-    if(this.props.auth === false){
+    if(!this.props.auth){
       return window.location.assign('/login');
     }
 
