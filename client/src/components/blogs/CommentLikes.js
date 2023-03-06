@@ -13,12 +13,12 @@ class CommentLikes extends Component {
   }
 
   handleClick(comment){ 
-
-    console.log(this.props.auth);
   
     if(!this.props.auth){
       return window.location.assign('/login');
     }
+
+    console.log(comment.userLikes)
 
     if(comment.userLikes.indexOf(this.props.auth) === -1){
 
@@ -28,7 +28,7 @@ class CommentLikes extends Component {
         Authorization: `Bearer ${token}`
       }
 
-      axios.post(`/api/comment/${comment._id}/like`, {headers: headers})
+      axios.post(`/api/comment/${comment._id}/like`,{}, {headers: headers})
       .then(res => {
         this.setState({ likes: comment.likes + 1, isDisabled: true });
       })

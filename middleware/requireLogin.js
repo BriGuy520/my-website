@@ -10,6 +10,7 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 module.exports = (req, res, next) => {
 
   console.log("CALLED");
+  console.log(req.headers.authorization); 
 
   if(req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
 
