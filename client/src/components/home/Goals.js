@@ -4,7 +4,7 @@ class Goals extends Component {
  
   state = { 
     goal: '',
-    completed: [0,1,3],
+    completed: [0,1],
     goals: ['Move to Austin, TX','Get a development gig', 'Work on problem solving', 'Get Better at backend development', 'Have a functioning Blog'] 
   };
 
@@ -17,7 +17,7 @@ class Goals extends Component {
 
     this.setState({
       goal: '',
-      goals: [...this.state.goals, this.state.goal]
+      goals: [...this.state.goals, this.state.goal],
     });
   }
 
@@ -53,8 +53,7 @@ class Goals extends Component {
 
       return (
         <> 
-          <li className={this.state.completed.includes(idx) ? "complete" : ''} key={`item-${idx}`} onClick={(e) => this.handleCompletion(e, idx)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal, idx)}></i></li>
-         
+          <li className={this.state.completed.includes(idx) ? "complete" : ''} key={`item-${idx}`} onClick={(e) => this.handleCompletion(e, idx)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal, idx)}></i></li>    
         </>
       );
     });
