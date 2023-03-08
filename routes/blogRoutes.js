@@ -42,20 +42,24 @@ module.exports = (app) => {
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
 
-    const { likes } = req.body;
+    const { title, description, likes } = req.body;
 
    
      User.findOne({ _id: req.user})
       .then(data => {
-        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username;
+        const username = data.google.username || data.twitter.username || data.facebook.username || data.github.username || data.local.username;
 
         const blog = new Blog({
+          title,
+          description,
           post: postFile.originalname,
           image: imageFile.originalname,
           author: username,
           likes,
           datePosted: Date.now()
         });
+
+        console.log("BLOG CREATED");
 
         console.log(blog);
     

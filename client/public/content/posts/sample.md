@@ -28,7 +28,6 @@ Now we are going to use Jest to test the asynchronous data fetching function. Je
 
 ```javascript
 import { fetchData } from './';
-
 describe('fetchData', () => {
   it('fetches successfully data from an API', async () => {
   });
@@ -42,9 +41,7 @@ First, we will mock Axios with Jest. And second, we will give Axios' get method 
 ```javascript{1,5,9-22,24,28,30-32}
 import axios from 'axios';
 import { fetchData } from './';
-
 jest.mock('axios');
-
 describe('fetchData', () => {
   it('fetches successfully data from an API', async () => {
     const data = {
@@ -63,7 +60,6 @@ describe('fetchData', () => {
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
   });
-  
   it('fetches erroneously data from an API', async () => {
     const errorMessage = 'Network Error';
     axios.get.mockImplementationOnce(() =>

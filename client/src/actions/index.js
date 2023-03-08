@@ -34,6 +34,7 @@ export const fetchUser = () => async dispatch => {
 
 export const submitBlog = (values, history) => async dispatch => {
 
+
   const postFile = Object.values(values['post']);
   const imgFile = Object.values(values['image']);
   
@@ -41,6 +42,10 @@ export const submitBlog = (values, history) => async dispatch => {
 
   formData.append('post', postFile[0]);
   formData.append('image', imgFile[0]);
+  formData.append('title', values['blog-title']);
+  formData.append('description', values['blog-description']);
+
+  console.log(formData);
   
   const response = await axios.post('/api/blog', formData, {
     headers: {

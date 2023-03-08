@@ -4,6 +4,8 @@ const userSchema = require('./User');
 
 
 const blogSchema = new Schema({
+  title: String,
+  description: String,
   post: String,
   image: String,
   author: [userSchema],

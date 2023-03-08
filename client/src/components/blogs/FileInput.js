@@ -8,6 +8,8 @@ class FileInput extends Component {
     this.state = {fileContent: '', text: ''}
 
     this.handleFileInputChange = this.handleFileInputChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+
   }
   
   handleFileInputChange(event){
