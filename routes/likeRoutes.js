@@ -9,8 +9,6 @@ module.exports = (app) => {
 
   app.post('/api/comment/:id/like', requireLogin, async (req, res) => {
 
-    console.log("LIKE CALLED");
-    console.log(req.user);
     await User.findOneAndUpdate({ _id: req.user }, {
       $push: { commentLikes: [req.params.id] }
     });

@@ -14,6 +14,8 @@ class BlogList extends Component {
   renderBlogs(){
 
     return this.props.blogs.reverse().map(blog => {
+
+      console.log(blog);
       return (
         <div className="ui raised segment blog-card" key={blog._id}>
           <div className="content">

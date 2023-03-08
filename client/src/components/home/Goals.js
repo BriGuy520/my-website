@@ -44,13 +44,10 @@ class Goals extends Component {
 
       return classList.value === "complete" ? classList.remove("complete") : classList.add("complete");
     }
-
-
   }
 
   render(){
 
-    console.log(this.state);
     const goalList = this.state.goals.map((goal, idx) => {
       
       return (

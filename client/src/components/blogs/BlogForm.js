@@ -10,10 +10,9 @@ class BlogForm extends Component {
 
   renderFields(){
     return _.map(formFields, ({ label, name }) => {
-     
-      return <Field key={name} component={FileInput} label={label} name={name} />
-     
-    })
+
+      return <Field key={name} component={FileInput} label={label} name={name} /> 
+    });
   }
   
   render(){
