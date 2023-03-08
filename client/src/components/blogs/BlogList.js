@@ -19,7 +19,7 @@ class BlogList extends Component {
       return (
         <div className="ui raised segment blog-card" key={blog._id}>
           <div className="content">
-            <div className="header">
+            <div className="card-header">
               <h2>{blog.title}</h2>
               <h4>By {blog.author}</h4>
               <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>

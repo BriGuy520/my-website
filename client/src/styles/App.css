@@ -715,13 +715,20 @@ button:focus, input:focus {
 
 /* Blog Posts */
 
+.card-header {
+  margin: 4px 0;
+}
+
+.card-header h4 {
+  margin: 4px 0;
+}
+
 .blog-card {
   width: 30%;
 }
 
 .blog-card p {
-  height: 80px;
-  padding: 0 20px;
+  margin: 20px 5px;
 }
 
 .ui.raised.segment {
@@ -749,7 +756,7 @@ pre {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 5px;
 }
 
 .blog-inputs {
