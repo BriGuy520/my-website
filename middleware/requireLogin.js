@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
   console.log(req.headers.authorization);
 
   if(req.headers.authorization !== "Bearer null" && req.headers.authorization.startsWith('Bearer ')) {
-    console.log("IN LOCAL AUTH");
     const token = req.headers.authorization.split(' ')[1];
     const decoded = jwt.decode(token, keys.jwtSecret);
     const userId = decoded.sub;
@@ -32,8 +31,6 @@ module.exports = (req, res, next) => {
     });
 
   } else {
-
-    console.log("IN OTHER STRATEGY");
 
     if(!req.user){
       return res.send('please sign in');

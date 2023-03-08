@@ -45,13 +45,18 @@ export const submitBlog = (values, history) => async dispatch => {
   formData.append('title', values['blog-title']);
   formData.append('description', values['blog-description']);
 
-  console.log(formData);
-  
+  const token = localStorage.getItem('token');
+
   const response = await axios.post('/api/blog', formData, {
     headers: {
-      'Content-Type': 'multipart/form-data'
+      'Content-Type': 'multipart/form-data',
+      'Authorization': `Bearer ${token}`, 
     }
-  });
+  })
+  .catch(err => {
+    console.log(err);
+    return window.location.assign('/login');
+  })
 
   history.push('/blog');
   dispatch({ type: FETCH_USER, payload: response.data });
