@@ -29,32 +29,32 @@ class Goals extends Component {
 
   handleDelete = (item, i) => {
 
-    const newList = this.state.goals.filter(goal => item !== goal);
-    const removeFromCompletedList = this.state.completed.filter(value => value !== i);
-    console.log(removeFromCompletedList);
-
-    this.setState({goals: newList, completed: removeFromCompletedList})
+    const newList = this.state.goals.filter(goal => item !== goal); 
+    const removeFromCompletedList = [...this.state.completed].filter(index => index !== i);
+    
+    this.setState({completed: removeFromCompletedList, goals: newList});
   }
 
-  handleCompletion = (e, i) => {
+  handleCompletion = (e, i) => { 
 
     const {classList} = e.target;
 
-    this.setState({completed: !this.state.completed.includes(i) ? [...this.state.completed, i] : this.state.completed})
+    if(classList.value !== 'trash icon'){
+      this.setState({completed: !this.state.completed.includes(i) ? [...this.state.completed, i] : this.state.completed})
 
-    return classList.value === "complete" ? classList.remove("complete") : classList.add("complete");
+      return classList.value === "complete" ? classList.remove("complete") : classList.add("complete");
+    }
+
+
   }
 
   render(){
 
+    console.log(this.state);
     const goalList = this.state.goals.map((goal, idx) => {
-
-      console.log(this.state.completed);
-
+      
       return (
-        <> 
-          <li className={this.state.completed.includes(idx) ? "complete" : ''} key={`item-${idx}`} onClick={(e) => this.handleCompletion(e, idx)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal, idx)}></i></li>    
-        </>
+          <li className={this.state.completed.includes(idx) ? "complete" : ''} key={`goal-${idx}`} onClick={(e) => this.handleCompletion(e, idx)}>{goal}  <i style={{color: 'rgb(9,59,109)', textDecoration: 'none'}} className="trash icon" onClick={() => this.handleDelete(goal, idx)}></i></li>    
       );
     });
 
