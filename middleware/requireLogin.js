@@ -9,8 +9,10 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = (req, res, next) => {
 
-  if(req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
+  console.log(req.headers.authorization);
 
+  if(req.headers.authorization !== "Bearer null" && req.headers.authorization.startsWith('Bearer ')) {
+    console.log("IN LOCAL AUTH");
     const token = req.headers.authorization.split(' ')[1];
     const decoded = jwt.decode(token, keys.jwtSecret);
     const userId = decoded.sub;
@@ -31,7 +33,9 @@ module.exports = (req, res, next) => {
 
   } else {
 
-    if(!req.user || !requireAuth){
+    console.log("IN OTHER STRATEGY");
+
+    if(!req.user){
       return res.send('please sign in');
     }
   
