@@ -18,11 +18,18 @@ import '../styles/App.css';
 
 
 const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
+
+  if(authenticated === null){
+    return <div>Loading...</div>;
+  }
+
+  console.log(authenticated);
+
   return (
     <Route
       {...rest}
       render={(props) =>
-        authenticated ? (
+        authenticated !== "please sign in" ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
@@ -34,17 +41,16 @@ const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
 
 class App extends Component {
   
-  state = { authenticated: null }
-  
   async componentDidMount(){
 
     await this.props.fetchUser();
 
-    this.setState({ authenticated: this.props.fetchUser() });
   }
 
 
   render(){
+
+    console.log(this.props.auth);
 
     return (
       <div>
@@ -57,7 +63,7 @@ class App extends Component {
               <Route path="/projects" exact component={Projects} />
               <Route path="/music" exact component={Music} />
               <Route path="/blog" exact component={Dashboard} />
-              <PrivateRoute path="/blog/new" exact component={NewBlog} authenticated={this.state.authenticated} />
+              <PrivateRoute path="/blog/new" exact component={NewBlog} authenticated={this.props.auth} />
               <Route path="/blog/:id" exact component={ShowBlog} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/signup" exact component={SignUp} />
@@ -74,6 +80,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+
   return { auth: state.auth }
 }
 
