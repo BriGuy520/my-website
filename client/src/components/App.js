@@ -23,8 +23,6 @@ const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
     return <div>Loading...</div>;
   }
 
-  console.log(authenticated);
-
   return (
     <Route
       {...rest}

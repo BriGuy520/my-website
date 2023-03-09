@@ -10,15 +10,31 @@ class Dashboard extends Component {
     this.props.fetchUser();
   }
 
+  isAuthenticated(){
+
+    if(this.props.auth === null){
+      return <div>Loading...</div>
+    } 
+
+    console.log("AUTH: ");
+    console.log(this.props.auth);
+
+    if(this.props.auth !== "please sign in"){
+      return (
+        <Link to="/blog/new" className="circular ui icon button large blue">
+          <i className="plus icon"></i>
+        </Link> 
+      );
+    } 
+  }
+
   render(){
     return (
       <div className="container">
         {/* <h1>Coming Soon...</h1> */}
         <BlogList />
         <div className="add-blog">
-          <Link to="/blog/new" className="circular ui icon button large blue">
-            <i className="plus icon"></i>
-          </Link>
+          {this.isAuthenticated()}
         </div>
       </div>
     )
