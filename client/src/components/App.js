@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchUser } from '../actions';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './home/Home';
@@ -15,16 +16,13 @@ import SignUp from './login/SignUp';
 import Pictures from './Pictures';
 import '../styles/App.css';
 
-const isAuthenticated = () => {
- 
-}
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuthenticated() ? (
+        authenticated ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
@@ -34,8 +32,16 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 }
 
-
 class App extends Component {
+  
+  state = { authenticated: null }
+  
+  async componentDidMount(){
+
+    await this.props.fetchUser();
+
+    this.setState({ authenticated: this.props.fetchUser() });
+  }
 
 
   render(){
@@ -51,7 +57,7 @@ class App extends Component {
               <Route path="/projects" exact component={Projects} />
               <Route path="/music" exact component={Music} />
               <Route path="/blog" exact component={Dashboard} />
-              <PrivateRoute path="/blog/new" exact component={NewBlog} />
+              <PrivateRoute path="/blog/new" exact component={NewBlog} authenticated={this.state.authenticated} />
               <Route path="/blog/:id" exact component={ShowBlog} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/signup" exact component={SignUp} />
