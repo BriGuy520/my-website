@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './home/Home';
 import Footer from './Footer';
@@ -14,7 +15,31 @@ import SignUp from './login/SignUp';
 import Pictures from './Pictures';
 import '../styles/App.css';
 
-const App = () => {
+const isAuthenticated = () => {
+ 
+}
+
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        isAuthenticated() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/login" />
+        )
+      }
+    />
+  );
+}
+
+
+class App extends Component {
+
+
+  render(){
+
     return (
       <div>
         <BrowserRouter>
@@ -26,7 +51,7 @@ const App = () => {
               <Route path="/projects" exact component={Projects} />
               <Route path="/music" exact component={Music} />
               <Route path="/blog" exact component={Dashboard} />
-              <Route path="/blog/new" exact component={NewBlog} />
+              <PrivateRoute path="/blog/new" exact component={NewBlog} />
               <Route path="/blog/:id" exact component={ShowBlog} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/signup" exact component={SignUp} />
@@ -38,7 +63,12 @@ const App = () => {
       </div>
 
     );
+  }
 
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { auth: state.auth }
+}
+
+export default connect(mapStateToProps, { fetchUser })(App);
