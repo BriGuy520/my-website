@@ -19,6 +19,8 @@ class ShowBlog extends Component {
   }
 
   async componentDidMount(){
+
+    console.log(this.props.blog);
     
     await this.props.fetchBlog(this.props.match.params.id);
 
@@ -81,6 +83,7 @@ class ShowBlog extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+
  return { blog: state.blogs[ownProps.match.params.id] };
 }
 
