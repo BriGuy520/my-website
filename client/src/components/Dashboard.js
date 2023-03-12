@@ -19,7 +19,7 @@ class Dashboard extends Component {
     console.log("AUTH: ");
     console.log(this.props.auth);
 
-    if(this.props.auth !== "please sign in"){
+    if(this.props.auth.admin){
       return (
         <Link to="/blog/new" className="circular ui icon button large blue">
           <i className="plus icon"></i>
