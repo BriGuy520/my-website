@@ -1,9 +1,12 @@
 const passport = require('passport');
+const mongoose = require('mongoose');
 const Authentication = require('../controllers/authentication');
 
 const requireLogin = require('../middleware/requireLogin');
 
 const requireSignIn = passport.authenticate('local', { session: false });
+
+const User = mongoose.model('User');
 
 module.exports = (app) => {
 
@@ -54,6 +57,8 @@ module.exports = (app) => {
 
   app.get('/api/current_user', requireLogin, async(req, res) => {
 
+
+    console.log(req.user);
 
     res.send(req.user);
   });

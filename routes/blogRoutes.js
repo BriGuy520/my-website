@@ -58,10 +58,6 @@ module.exports = (app) => {
           likes,
           datePosted: Date.now()
         });
-
-        console.log("BLOG CREATED");
-
-        console.log(blog);
     
         blog.save();
         res.send(blog);
