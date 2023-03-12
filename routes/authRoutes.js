@@ -60,7 +60,16 @@ module.exports = (app) => {
 
     console.log(req.user);
 
-    res.send(req.user);
+    User.findOne({ _id: req.user})
+    .then(data => {
+      
+      res.send(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+      
+      
   });
   
 }
