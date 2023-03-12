@@ -57,12 +57,9 @@ module.exports = (app) => {
 
   app.get('/api/current_user', requireLogin, async(req, res) => {
 
-
-    console.log(req.user);
-
     User.findOne({ _id: req.user})
     .then(data => {
-      
+
       res.send(data);
     })
     .catch(err => {

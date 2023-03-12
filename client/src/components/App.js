@@ -19,6 +19,8 @@ import '../styles/App.css';
 
 const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
 
+  console.log(authenticated);
+
   if(authenticated === null){
     return <div>Loading...</div>;
   }
@@ -27,7 +29,7 @@ const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        authenticated !== "please sign in" ? (
+        authenticated.admin ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
@@ -78,8 +80,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-  console.log(state);
 
   return { auth: state.auth }
 }
