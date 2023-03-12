@@ -41,6 +41,16 @@ header h2 a, nav li a {
   color: #000;
 }
 
+.nav button {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin-left: 5px;
+  border: 3px solid #fff;
+}
+
 nav li a {
   font-weight: 400;
 }
