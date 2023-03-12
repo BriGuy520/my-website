@@ -8,11 +8,12 @@ class Navbar extends Component {
   constructor(props){
     super(props);
 
-    this.state = { showMenu: false, width: 0, height: 0, loggedIn: true };
+    this.state = { showMenu: false, width: 0, height: 0, loggedIn: this.props.user };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this); 
+    this.isLoggedIn = this.isLoggedIn.bind(this); 
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -45,12 +46,22 @@ class Navbar extends Component {
     });
   }
 
+  isLoggedIn(){
+
+    console.log(this.state.loggedIn._id);
+    
+
+    return this.state.loggedIn._id ? <button onClick={this.handleLogout}>Logout</button> : <button><Link to="/login">Login</Link></button>;
+
+  }
+
   async handleLogout(){
 
     await axios.get("api/logout");
     localStorage.removeItem('token');
-    this.setState({loggedIn: false})
   }
+
+
 
   renderNavbar(){
     if(window.innerWidth > 800){
@@ -65,8 +76,7 @@ class Navbar extends Component {
             <li><Link to="/music">Music</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/pictures">Pictures</Link></li>
-            {this.state.loggedIn ? <button onClick={this.handleLogout}>Logout</button> : <button><Link to="/login">Login</Link></button>}
-            
+            {this.isLoggedIn()}       
           </nav>
         </header>
       )
@@ -91,7 +101,7 @@ class Navbar extends Component {
                 <li><Link to="/music">Music</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/pictures">Pictures</Link></li>
-                <button onClick={this.handleLogout}><Link to="/logout">Logout</Link></button>
+                {this.isLoggedIn()}
               </nav>
 
             ) : (
@@ -104,6 +114,7 @@ class Navbar extends Component {
   }
 
   render(){
+
     return (
       <div>
         {this.renderNavbar()}

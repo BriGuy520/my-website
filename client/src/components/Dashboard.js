@@ -14,10 +14,7 @@ class Dashboard extends Component {
 
     if(this.props.auth === null){
       return <div>Loading...</div>
-    } 
-
-    console.log("AUTH: ");
-    console.log(this.props.auth);
+    }
 
     if(this.props.auth.admin){
       return (

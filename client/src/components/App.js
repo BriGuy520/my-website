@@ -48,15 +48,20 @@ class App extends Component {
   }
 
 
+
+
+
   render(){
 
-    console.log(this.props.auth);
+    if(this.props.auth === null){
+      return <div>Loading...</div>;
+    }
 
     return (
       <div>
         <BrowserRouter>
           <div>
-            <Navbar />
+            <Navbar user={this.props.auth} />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />
