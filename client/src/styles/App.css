@@ -54,6 +54,10 @@ header h2 a, nav li a {
 .nav button:hover {
   cursor: pointer;
   background: #313131;
+} 
+
+.nav button a {
+  color: #fff;
 }
 
 nav li a {
