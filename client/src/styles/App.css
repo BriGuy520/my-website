@@ -51,6 +51,11 @@ header h2 a, nav li a {
   border: 3px solid #fff;
 }
 
+.nav button:hover {
+  cursor: pointer;
+  background: #313131;
+}
+
 nav li a {
   font-weight: 400;
 }
