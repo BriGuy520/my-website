@@ -53,7 +53,7 @@ class Navbar extends Component {
 
   async handleLogout(){
 
-    await axios.get("api/logout");
+    await axios.get("/api/logout");
     localStorage.removeItem('token');
     window.location.reload();
   }

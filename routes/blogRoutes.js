@@ -73,7 +73,7 @@ module.exports = (app) => {
     Blog.findById(req.params.id)
       .exec()
       .then(data => {
-        console.log(data);
+
         res.status(200).json(data);
       }).catch(err => {
         res.status(400).json({ error: err });
