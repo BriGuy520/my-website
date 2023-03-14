@@ -12,7 +12,9 @@ class LoginModal extends Component {
     this.props.signin(formProps, () => {
 
       this.props.history.push('/blog');
+      window.location.reload();
     });
+
   }
 
   render(){
