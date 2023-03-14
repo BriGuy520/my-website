@@ -19,6 +19,8 @@ class ShowBlog extends Component {
   }
 
   async componentDidMount(){
+
+    console.log(this.props.match.params);
     
     await this.props.fetchBlog(this.props.match.params.id);
 

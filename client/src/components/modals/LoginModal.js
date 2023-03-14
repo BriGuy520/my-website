@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { signin } from '../../actions';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class LoginModal extends Component {
 
@@ -19,7 +19,7 @@ class LoginModal extends Component {
 
   render(){
     return ReactDOM.createPortal(
-      <div onClick={() => this.props.history.push('/blog')} className="ui dimmer modals visible active">
+      <div onClick={() => this.props.history.goBack()} className="ui dimmer modals visible active">
         <div onClick={(event) => event.stopPropagation()} className="ui standard modal visible active">
         <div className="modal">
           <div className="ui placeholder segment">
@@ -115,4 +115,4 @@ const mapStateToProps = (state) => {
   return { signin: state.form }
 }
 
-export default compose(connect(mapStateToProps, { signin }), reduxForm({ form: 'signin' }))(LoginModal);
+export default compose(connect(mapStateToProps, { signin }), reduxForm({ form: 'signin' }))(withRouter(LoginModal));

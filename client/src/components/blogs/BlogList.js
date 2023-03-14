@@ -5,7 +5,6 @@ import { fetchBlogs } from '../../actions';
 
 class BlogList extends Component {
 
-
   
   componentDidMount(){
     this.props.fetchBlogs();
@@ -14,6 +13,14 @@ class BlogList extends Component {
   renderBlogs(){
 
     return this.props.blogs.reverse().map(blog => {
+
+      let blogTitle;
+
+      if(blog.title){
+        blogTitle = blog.title.toLowerCase().replace(/ /g, "-");
+      }
+
+      
       return (
         <div className="ui raised segment blog-card" key={blog._id}>
           <div className="content">
@@ -27,7 +34,7 @@ class BlogList extends Component {
             </div>
               <p>{blog.description}</p>
             <div className="post-details">
-              <button className="ui button"><Link to={`/blog/${blog._id}`}>Read More</Link></button>
+              <button className="ui button"><Link to={`/blog/${blog._id}/${blogTitle}`}>Read More</Link></button>
               <span>
                 <i className="thumbs up outline icon"></i>{blog.likes}
               </span>
