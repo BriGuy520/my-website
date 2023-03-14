@@ -19,8 +19,6 @@ import '../styles/App.css';
 
 const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
 
-  console.log(authenticated);
-
   if(authenticated === null){
     return <div>Loading...</div>;
   }
@@ -40,16 +38,15 @@ const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
 }
 
 class App extends Component {
+
+  state = { user: '' };
   
   async componentDidMount(){
 
     await this.props.fetchUser();
 
+    this.setState({user: this.props.auth });
   }
-
-
-
-
 
   render(){
 
@@ -61,7 +58,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Navbar user={this.props.auth} />
+            <Navbar user={this.state.user} />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />

@@ -27,9 +27,11 @@ const upload = multer({
 
 module.exports = (app) => {
 
+  // SAVE IN CASE THIS DOESN'T WORK: { id: req.params.id }
+
   // Show all blogs
   app.get('/api/blog', async (req, res) => {
-    const blogs = await Blog.find({ id: req.params.id });
+    const blogs = await Blog.find({});
 
     res.send(blogs);
   });

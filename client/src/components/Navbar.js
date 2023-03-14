@@ -8,7 +8,7 @@ class Navbar extends Component {
   constructor(props){
     super(props);
 
-    this.state = { showMenu: false, width: 0, height: 0, loggedIn: this.props.user };
+    this.state = { showMenu: false, width: 0, height: 0 };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.showMenu = this.showMenu.bind(this);
@@ -48,17 +48,14 @@ class Navbar extends Component {
 
   isLoggedIn(){
 
-    console.log(this.state.loggedIn._id);
-    
-
-    return this.state.loggedIn._id ? <button onClick={this.handleLogout}>Logout</button> : <button><Link to="/login">Login</Link></button>;
-
+    return this.props.user._id ? <button onClick={this.handleLogout}>Logout</button> : <button><Link to="/login">Login</Link></button>;
   }
 
   async handleLogout(){
 
     await axios.get("api/logout");
     localStorage.removeItem('token');
+    window.location.reload();
   }
 
 
