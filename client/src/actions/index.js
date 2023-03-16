@@ -110,7 +110,7 @@ export const signin = (formProps, callback) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
 
-  const response = await axios.get('http://localhost:3000/api/logout');
+  const response = await axios.get('api/logout');
 
   dispatch({ type: AUTH_USER, payload: response.data });
 
