@@ -1077,6 +1077,14 @@ body {
 
 @media only screen and (max-width: 600px){
 
+  .nav button {
+    margin-bottom: 10px;
+  }
+
+  .login-buttons button.ui {
+    width: 100%;
+  }
+
   h1, .goals h1 {
     font-size: 2.2rem;
   }

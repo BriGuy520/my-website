@@ -84,7 +84,7 @@ export const fetchComments = (id) => async dispatch => {
 export const signup = (formProps, callback) => async (dispatch) => {
   
   try {
-    const response = await axios.post('http://localhost:3000/api/signup', formProps);
+    const response = await axios.post('api/signup', formProps);
 
     dispatch({ type: AUTH_USER, payload: response.data.token });
     localStorage.setItem('token', response.data.token);
@@ -97,7 +97,7 @@ export const signup = (formProps, callback) => async (dispatch) => {
 export const signin = (formProps, callback) => async (dispatch) => {
 
   try {
-    const response = await axios.post('http://localhost:3000/api/signin', formProps);
+    const response = await axios.post('api/signin', formProps);
 
     dispatch({ type: AUTH_USER, payload: response.data.token });
 

@@ -65,8 +65,8 @@ class App extends Component {
               <Route path="/projects" exact component={Projects} />
               <Route path="/music" exact component={Music} />
               <Route path="/blog" exact component={Dashboard} />
-              <PrivateRoute path="/blog/new" exact component={NewBlog} authenticated={this.props.auth} />
               <Route path="/blog/:id/:title" exact component={ShowBlog} />
+              <PrivateRoute path="/blog/new" exact component={NewBlog} authenticated={this.props.auth} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/signup" exact component={SignUp} />
               <Route path="/pictures" exact component={Pictures} />

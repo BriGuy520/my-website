@@ -20,7 +20,7 @@ const Projects = () => {
     gifs: site_snapshot,
     built: built_with_collage,
     code: 'https://github.com/BriGuy520/my-website',
-    web: 'http://localhost:3000/'
+    web: 'https://www.brithedevguy.com/'
   }, {
     title: "Meditation App",
     description: "This is a small meditation app I made. It's fairly simple. You can choose between and a rain and beach background with respective audio.",

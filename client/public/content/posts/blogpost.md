@@ -10,7 +10,7 @@ contribute: ""
 author: ""
 ---
 
-<Sponsorship />
+
 
 <LinkCollection label="This tutorial is part 2 of 2 in the series." links={[{ prefix: "Part 1:", label: "How to set up Babel Module Resolver", url: "/babel-module-resolver/" }]} />
 
