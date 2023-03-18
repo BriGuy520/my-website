@@ -41,9 +41,7 @@ First, we will mock Axios with Jest. And second, we will give Axios' get method 
 ```javascript{1,5,9-22,24,28,30-32}
 import axios from 'axios';
 import { fetchData } from './';
-
 jest.mock('axios');
-
 describe('fetchData', () => {
   it('fetches successfully data from an API', async () => {
     const data = {
@@ -76,7 +74,6 @@ Last but not least, we will make our assertion with Jest in the cases of resolvi
 ```javascript{13,23}
 import axios from 'axios';
 import { fetchData } from './';
-
 jest.mock('axios');
 describe('fetchData', () => {
   it('fetches successfully data from an API', async () => {

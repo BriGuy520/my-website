@@ -57,10 +57,12 @@ export const submitBlog = (values, history) => async dispatch => {
   .catch(err => {
     console.log(err);
     return window.location.assign('/login');
-  })
+  });
+  
+  history.push("/blog");
 
-  history.push('/blog');
   dispatch({ type: FETCH_USER, payload: response.data });
+
 }
 
 export const fetchBlogs = () => async dispatch => {
