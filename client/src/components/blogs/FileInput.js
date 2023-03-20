@@ -9,13 +9,56 @@ class FileInput extends Component {
 
     this.handleFileInputChange = this.handleFileInputChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.uploadFile = this.uploadFile.bind(this);
+    this.getSignedRequest = this.getSignedRequest.bind(this);
 
+  }
+
+  uploadFile(file, signedRequest, url){
+    const xhr = new XMLHttpRequest();
+    xhr.open('PUT', signedRequest);
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === 4){
+        if(xhr.status === 200){
+          console.log(url);
+        }
+        else{
+          alert('Could not upload file.');
+        }
+      }
+    };
+    xhr.send(file);
+  }
+
+  getSignedRequest(file){
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === 4){
+        if(xhr.status === 200){
+          const response = JSON.parse(xhr.responseText);
+
+          console.log(response);
+          // this.uploadFile(file, response.signedRequest, response.url);
+        }
+        else{
+          alert('Could not get signed URL.');
+        }
+      }
+    };
+    xhr.send();
   }
   
   handleFileInputChange(event){
     event.preventDefault();
     const file = event.target.files[0];
     const reader = new FileReader();
+
+    if(file == null){
+      return alert("No file uploaded!");
+    }
+
+    this.getSignedRequest(file);
 
     reader.onload = () => {
       this.setState({ fileContent: reader.result });
