@@ -36,9 +36,9 @@ class FileInput extends Component {
     xhr.onreadystatechange = () => {
       if(xhr.readyState === 4){
         if(xhr.status === 200){
-          const response = JSON.parse(xhr.responseText);
+          const response = JSON.parse(xhr);
 
-          console.log(response);
+          // console.log(response);
           // this.uploadFile(file, response.signedRequest, response.url);
         }
         else{
@@ -57,6 +57,8 @@ class FileInput extends Component {
     if(file == null){
       return alert("No file uploaded!");
     }
+
+    console.log(file);
 
     this.getSignedRequest(file);
 
