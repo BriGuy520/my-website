@@ -34,6 +34,11 @@ module.exports = (app) => {
   app.get('/api/blog', async (req, res) => {
     const blogs = await Blog.find({});
 
+    const {filename, path} = req.query;
+    const urls = await filesService.generateUrl(filename, path);
+
+    res.send({urls});
+
     res.send(blogs);
   });
 
@@ -41,6 +46,8 @@ module.exports = (app) => {
     { name: 'image', maxCount: 1 },
     { name: 'post', maxCount: 1 }
   ]), (req, res) => {
+
+   
 
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
