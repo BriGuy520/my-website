@@ -4,7 +4,8 @@ const requireLogin = require('../middleware/requireLogin');
 const fs = require('fs');
 const multer = require('multer');
 const path = require('path');
-const files = require('../services/files');
+const AWS = require('aws-sdk');
+const keys = require('../config/keys');
 
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
@@ -34,11 +35,6 @@ module.exports = (app) => {
   app.get('/api/blog', async (req, res) => {
     const blogs = await Blog.find({});
 
-    const {filename, path} = req.query;
-    const urls = await filesService.generateUrl(filename, path);
-
-    res.send({urls});
-
     res.send(blogs);
   });
 
@@ -47,7 +43,10 @@ module.exports = (app) => {
     { name: 'post', maxCount: 1 }
   ]), (req, res) => {
 
-   
+    AWS.config.update({
+      accessKeyId: keys.awsAccessKey,
+      secretAccessKey: keys.awsSecretAccessKey,
+    });
 
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
