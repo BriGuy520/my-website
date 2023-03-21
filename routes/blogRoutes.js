@@ -11,6 +11,10 @@ const keys = require('../config/keys');
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
 
+
+let finalFilenamePost;
+let finalFilenameImage;
+
 const upload = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
@@ -46,9 +50,14 @@ const uploadToS3 = multer({
     bucket: keys.s3BucketName,
     key: function (req, file, cb) {
       if (file.fieldname === 'image') {
-        cb(null,'content/images/' + Date.now().toString() + '-' + file.originalname);
+        finalFilenameImage = Date.now().toString() + '-' + file.originalname;
+
+        cb(null,'content/images/' + finalFilenameImage);
       } else if(file.fieldname === 'post'){
-        cb(null,'content/posts/' + Date.now().toString() + '-' + file.originalname);
+
+        finalFilenamePost = Date.now().toString() + '-' + file.originalname
+
+        cb(null,'content/posts/' + finalFilenamePost);
       }
     }
   })
@@ -63,10 +72,7 @@ module.exports = (app) => {
     res.send(blogs);
   });
 
-  app.post('/api/blog', requireLogin, upload.fields([
-    { name: 'image', maxCount: 1 },
-    { name: 'post', maxCount: 1 }
-  ]), uploadToS3.fields([
+  app.post('/api/blog', requireLogin, uploadToS3.fields([
     { name: 'image', maxCount: 1 },
     { name: 'post', maxCount: 1 }
   ]), (req, res) => {
@@ -84,8 +90,8 @@ module.exports = (app) => {
         const blog = new Blog({
           title,
           description,
-          post: postFile.originalname,
-          image: imageFile.originalname,
+          post: finalFilenamePost,
+          image: finalFilenameImage,
           author: username,
           likes,
           datePosted: Date.now()
