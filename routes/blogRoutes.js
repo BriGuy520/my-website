@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middleware/requireLogin');
 const fs = require('fs');
 const multer = require('multer');
+const multerS3 = require('multer-s3');
 const path = require('path');
 const AWS = require('aws-sdk');
 const keys = require('../config/keys');
@@ -27,10 +28,29 @@ const upload = multer({
   })
 });
 
+// create S3 instance
+const s3 = new AWS.S3({
+  region: 'us-east-2',
+
+});
+
+AWS.config.update({
+  accessKeyId: keys.awsAccessKeyID,
+  secretAccessKey: keys.awsSecretAccessKey
+});
+
+const uploadToS3 = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: keys.s3BucketName,
+    key: function (req, file, cb) {
+      cb(null,'content/images/' + Date.now().toString() + '-' + file.originalname);
+    }
+  })
+});
+
+
 module.exports = (app) => {
-
-  // SAVE IN CASE THIS DOESN'T WORK: { id: req.params.id }
-
   // Show all blogs
   app.get('/api/blog', async (req, res) => {
     const blogs = await Blog.find({});
@@ -42,11 +62,6 @@ module.exports = (app) => {
     { name: 'image', maxCount: 1 },
     { name: 'post', maxCount: 1 }
   ]), (req, res) => {
-
-    AWS.config.update({
-      accessKeyId: keys.awsAccessKey,
-      secretAccessKey: keys.awsSecretAccessKey,
-    });
 
     const imageFile = req.files['image'][0];
     const postFile = req.files['post'][0];
@@ -74,6 +89,13 @@ module.exports = (app) => {
       .catch(err => {
         console.log(err);
       });
+  }, uploadToS3.single('image'), (req, res) => {
+    // handle file upload to S3
+
+    console.log("FILE UPLOADED TO S3");
+    res.json({
+      message: 'File uploaded successfully!'
+    });
   });
 
   app.get('/api/blog/:id', (req, res) => {
