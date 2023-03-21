@@ -1,6 +1,7 @@
 const AWS = require('aws-sdk');
 const BUCKET_NAME = process.env.BUCKET_NAME;
 const s3 = new AWS.S3({signatureVersion: 'v4'});
+const keys = require('../config/keys');
 
 /**
  * @description Generated a signed and a public urls for a given file name
@@ -12,7 +13,7 @@ const generateUrl = async (filename, bucketPath) => {
     let signedUrl;
     const publicUrl = getPublicUrl(filename, bucketPath);
     const params = {
-        Bucket: BUCKET_NAME,
+        Bucket: keys.s3BucketName,
         Key: `${bucketPath}/${filename}`,
         Expires: 60,
         ACL: 'public-read'
@@ -35,7 +36,7 @@ const generateUrl = async (filename, bucketPath) => {
  * @returns {string}
  */
 const getPublicUrl = (filename, bucketPath) => {
-    const publicUrl = `https://s3.amazonaws.com/${BUCKET_NAME}/${bucketPath}/${filename}`
+    const publicUrl = `https://s3.amazonaws.com/${keys.s3BucketName}/${bucketPath}/${filename}`
 
     return publicUrl;
 }

@@ -4,6 +4,7 @@ const requireLogin = require('../middleware/requireLogin');
 const fs = require('fs');
 const multer = require('multer');
 const path = require('path');
+const files = require('../services/files');
 
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
