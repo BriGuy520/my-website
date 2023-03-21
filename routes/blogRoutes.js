@@ -28,23 +28,28 @@ const upload = multer({
   })
 });
 
+AWS.config.update({
+  accessKeyId: keys.awsAccessKeyID,
+  secretAccessKey: keys.awsSecretAccessKey
+});
+
 // create S3 instance
 const s3 = new AWS.S3({
   region: 'us-east-2',
 
 });
 
-AWS.config.update({
-  accessKeyId: keys.awsAccessKeyID,
-  secretAccessKey: keys.awsSecretAccessKey
-});
 
 const uploadToS3 = multer({
   storage: multerS3({
     s3: s3,
     bucket: keys.s3BucketName,
     key: function (req, file, cb) {
-      cb(null,'content/images/' + Date.now().toString() + '-' + file.originalname);
+      if (file.fieldname === 'image') {
+        cb(null,'content/images/' + Date.now().toString() + '-' + file.originalname);
+      } else if(file.fieldname === 'post'){
+        cb(null,'content/posts/' + Date.now().toString() + '-' + file.originalname);
+      }
     }
   })
 });
@@ -59,6 +64,9 @@ module.exports = (app) => {
   });
 
   app.post('/api/blog', requireLogin, upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'post', maxCount: 1 }
+  ]), uploadToS3.fields([
     { name: 'image', maxCount: 1 },
     { name: 'post', maxCount: 1 }
   ]), (req, res) => {
@@ -89,13 +97,6 @@ module.exports = (app) => {
       .catch(err => {
         console.log(err);
       });
-  }, uploadToS3.single('image'), (req, res) => {
-    // handle file upload to S3
-
-    console.log("FILE UPLOADED TO S3");
-    res.json({
-      message: 'File uploaded successfully!'
-    });
   });
 
   app.get('/api/blog/:id', (req, res) => {
