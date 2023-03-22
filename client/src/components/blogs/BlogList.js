@@ -20,10 +20,17 @@ class BlogList extends Component {
       const { image } = blog;
 
       let blogTitle;
+      let dataURI;
 
       if(title){
         blogTitle = title.toLowerCase().replace(/ /g, "-");
         console.log(image);
+      }
+
+      if (blog._doc.image.includes('.jpeg') || blog._doc.image.includes('.jpg')) {
+        dataURI = `data:image/jpeg;`;
+      } else if (blog._doc.image.includes(".png") === 'png') {
+        dataURI = `data:image/png;`;
       }
 
       
@@ -36,7 +43,7 @@ class BlogList extends Component {
               <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
             </div>
             <div className="image">
-              <img className="blog-image" alt={title} src={`data:image/jpeg;base64,${Buffer.from(image).toString('base64')}`} />
+              <img className="blog-image" alt={title} src={`${dataURI}base64,${Buffer.from(image).toString('base64')}`} />
             </div>
               <p>{description}</p>
             <div className="post-details">
