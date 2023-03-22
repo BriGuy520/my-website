@@ -29,7 +29,7 @@ class ShowBlog extends Component {
 
     try {
 
-      const mdContent = this.props.blog.postFile;
+      const mdContent = this.props.blog.postFile.data;
 
       const { data, content } = matter(`data:text/markdown;base64,${Buffer.from(mdContent).toString('base64')}`);
       const { title, description } = data;
@@ -61,7 +61,7 @@ class ShowBlog extends Component {
         <div className='blog-head'>
           <h1>{this.state.postTitle}</h1>
           <h3 className="blog-description"><i>{this.state.postDescription}</i></h3>
-          <img className="blog-image" src={`${dataURI}base64,${Buffer.from(this.props.blog.imageFile).toString('base64')}`} alt={image} style={{"width": "100%", "height": "100%"}} />
+          <img className="blog-image" src={`${dataURI}base64,${Buffer.from(this.props.blog.imageFile.data).toString('base64')}`} alt={image} style={{"width": "100%", "height": "100%"}} />
         </div>
         <div className="blog-body">
           <p className="author">By {author}</p>
