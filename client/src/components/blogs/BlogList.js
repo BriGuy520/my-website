@@ -6,37 +6,43 @@ import { fetchBlogs } from '../../actions';
 class BlogList extends Component {
 
   
-  componentDidMount(){
-    this.props.fetchBlogs();
+  async componentDidMount(){
+    await this.props.fetchBlogs();
+
+    console.log(this.props.blogs);
   }
   
   renderBlogs(){
 
     return this.props.blogs.reverse().map(blog => {
 
+      const {_id, datePosted, title, description, author, likes } = blog._doc;
+      const { image } = blog;
+
       let blogTitle;
 
-      if(blog.title){
-        blogTitle = blog.title.toLowerCase().replace(/ /g, "-");
+      if(title){
+        blogTitle = title.toLowerCase().replace(/ /g, "-");
+        console.log(image);
       }
 
       
       return (
-        <div className="ui raised segment blog-card" key={blog._id}>
+        <div className="ui raised segment blog-card" key={_id}>
           <div className="content">
             <div className="header">
-              <h2>{blog.title}</h2>
-              <h4>By {blog.author}</h4>
-              <span>{new Date(blog.datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
+              <h2>{title}</h2>
+              <h4>By {author}</h4>
+              <span>{new Date(datePosted).toLocaleDateString('en-US', {day: 'numeric', year: 'numeric', month: 'short'})}</span>
             </div>
             <div className="image">
-              <img className="blog-image" alt={blog.title} src={`content/images/${blog.image}`} />
+              <img className="blog-image" alt={title} src={`data:image/jpeg;base64,${Buffer.from(image).toString('base64')}`} />
             </div>
-              <p>{blog.description}</p>
+              <p>{description}</p>
             <div className="post-details">
-              <button className="ui button"><Link to={`blog/${blog._id}/${blogTitle}`}>Read More</Link></button>
+              <button className="ui button"><Link to={`blog/${_id}/${blogTitle}`}>Read More</Link></button>
               <span>
-                <i className="thumbs up outline icon"></i>{blog.likes}
+                <i className="thumbs up outline icon"></i>{likes}
               </span>
             </div>
           </div>

@@ -95,6 +95,8 @@ module.exports = (app) => {
           };
         })
       );
+
+      console.log(blogsWithFiles);
   
       res.send(blogsWithFiles);
     } catch (error) {
