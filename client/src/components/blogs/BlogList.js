@@ -24,7 +24,6 @@ class BlogList extends Component {
 
       if(title){
         blogTitle = title.toLowerCase().replace(/ /g, "-");
-        console.log(image);
       }
 
       if (blog._doc.image.includes('.jpeg') || blog._doc.image.includes('.jpg')) {

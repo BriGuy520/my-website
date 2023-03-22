@@ -20,10 +20,12 @@ class ShowBlog extends Component {
 
   async componentDidMount(){
 
-    console.log(this.props.match.params);
     
     await this.props.fetchBlog(this.props.match.params.id);
+    
+    await this.props.blog;
 
+    console.log(this.props.blog);
 
     try {
       const response = await axios.get(`/content/posts/${this.props.blog.post}`);

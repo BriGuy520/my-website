@@ -76,8 +76,6 @@ module.exports = (app) => {
 
           const { post, image, ...rest } = blog;
 
-          console.log(post);
-
           const postFile = await s3.getObject({
             Bucket: keys.s3BucketName,
             Key: "content/posts/" + post,
@@ -95,8 +93,6 @@ module.exports = (app) => {
           };
         })
       );
-
-      console.log(blogsWithFiles);
   
       res.send(blogsWithFiles);
     } catch (error) {
@@ -139,13 +135,53 @@ module.exports = (app) => {
       });
   });
 
-  app.get('/api/blog/:id', (req, res) => {
+  app.get('/api/blog/:id', async (req, res) => {
     Blog.findById(req.params.id)
       .exec()
-      .then(data => {
+      .then(async data => {
 
-        res.status(200).json(data);
+        const { post, image, ...rest } = data;
+  
+        const dataWithFiles = await Promise.all([
+          s3.getObject({
+            Bucket: keys.s3BucketName,
+            Key: "content/posts/" + post,
+          }).promise().then(data => data.Body),
+        
+          s3.getObject({
+            Bucket: keys.s3BucketName,
+            Key: "content/images/" + image,
+          }).promise().then(data => data.Body),
+        ]).then(([postFile, imageFile]) => {
+
+          return {
+              _id: data._id,
+              title: data.title,
+              description: data.description,
+              post: data.post,
+              image: data.image,
+              author: data.author,
+              datePosted: data.datePosted,
+              likes: data.likes,
+              userLikes: data.userLikes,
+              __v: data.__v,
+              imageFile: {
+                type: 'Buffer',
+                data: imageFile.Body,
+              },
+              postFile: {
+                type: 'Buffer',
+                data: postFile.Body,
+              }
+          };
+        });
+
+        console.log(dataWithFiles)
+
+        res.status(200).json(dataWithFiles);
+
       }).catch(err => {
+
         res.status(400).json({ error: err });
       });
   });
