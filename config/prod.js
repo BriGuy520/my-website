@@ -10,5 +10,8 @@ module.exports = {
   githubClientID: process.env.GITHUB_CLIENT_ID,
   githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
   jwtSecret: process.env.JWT_SECRET,
+  s3BucketName: process.env.S3_BUCKET_NAME,
+  awsAccessKeyID: process.env.AWS_ACCESS_KEY_ID,
+  awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   redirectDomain: process.env.REDIRECT_DOMAIN
 }
