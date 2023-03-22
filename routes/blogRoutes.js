@@ -167,11 +167,11 @@ module.exports = (app) => {
               __v: data.__v,
               imageFile: {
                 type: 'Buffer',
-                data: imageFile.Body,
+                data: imageFile,
               },
               postFile: {
                 type: 'Buffer',
-                data: postFile.Body,
+                data: postFile,
               }
           };
         });
