@@ -29,7 +29,7 @@ class BlogList extends Component {
 
       if (blog._doc.image.includes('.jpeg') || blog._doc.image.includes('.jpg')) {
         dataURI = `data:image/jpeg;`;
-      } else if (blog._doc.image.includes(".png") === 'png') {
+      } else if (blog._doc.image.includes(".png")) {
         dataURI = `data:image/png;`;
       }
 
