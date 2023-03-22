@@ -67,9 +67,41 @@ const uploadToS3 = multer({
 module.exports = (app) => {
   // Show all blogs
   app.get('/api/blog', async (req, res) => {
-    const blogs = await Blog.find({});
 
-    res.send(blogs);
+    try {
+      const blogs = await Blog.find({});
+  
+      const blogsWithFiles = await Promise.all(
+        blogs.map(async (blog) => {
+
+          const { post, image, ...rest } = blog;
+
+          console.log(post);
+
+          const postFile = await s3.getObject({
+            Bucket: keys.s3BucketName,
+            Key: "content/posts/" + post,
+          }).promise();
+
+          const imageFile = await s3.getObject({
+            Bucket: keys.s3BucketName,
+            Key: "content/images/" + image,
+          }).promise();
+
+          return {
+            ...rest,
+            post: postFile.Body,
+            image: imageFile.Body,
+          };
+        })
+      );
+  
+      res.send(blogsWithFiles);
+    } catch (error) {
+
+      console.log(error);
+      res.status(500).send('Internal server error');
+    }
   });
 
   app.post('/api/blog', requireLogin, uploadToS3.fields([
