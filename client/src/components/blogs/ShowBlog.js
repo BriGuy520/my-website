@@ -31,8 +31,12 @@ class ShowBlog extends Component {
 
       const mdContent = this.props.blog.postFile.data;
 
-      const { data, content } = matter(`data:text/markdown;base64,${Buffer.from(mdContent).toString('base64')}`);
+      const { data, content } = matter(Buffer.from(mdContent));
+
+      console.log(data);
       const { title, description } = data;
+
+      console.log(title);
 
       this.setState({ postTitle: title, postDescription: description })
 

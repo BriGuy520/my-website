@@ -165,14 +165,8 @@ module.exports = (app) => {
               likes: data.likes,
               userLikes: data.userLikes,
               __v: data.__v,
-              imageFile: {
-                type: 'Buffer',
-                data: imageFile,
-              },
-              postFile: {
-                type: 'Buffer',
-                data: postFile,
-              }
+              imageFile: imageFile,
+              postFile: postFile
           };
         });
 
