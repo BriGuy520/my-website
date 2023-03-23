@@ -8,14 +8,17 @@ class BlogList extends Component {
   
   async componentDidMount(){
     await this.props.fetchBlogs();
-
-    await this.props.blogs;
   }
   
   renderBlogs(){
 
+    
     return this.props.blogs.reverse().map(blog => {
 
+      if(!blog._doc){
+        return <div></div>;
+      }
+      
       const {_id, datePosted, title, description, author, likes } = blog._doc;
       const { image } = blog;
 
@@ -31,8 +34,6 @@ class BlogList extends Component {
       } else if (blog._doc.image.includes(".png")) {
         dataURI = `data:image/png;`;
       }
-
-      console.log(image);
 
       
       return (

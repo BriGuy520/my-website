@@ -23,20 +23,13 @@ class ShowBlog extends Component {
     
     await this.props.fetchBlog(this.props.match.params.id);
     
-    await this.props.blog;
-
-    console.log(this.props.blog);
-
     try {
 
       const mdContent = this.props.blog.postFile.data;
 
       const { data, content } = matter(Buffer.from(mdContent));
 
-      console.log(data);
       const { title, description } = data;
-
-      console.log(title);
 
       this.setState({ postTitle: title, postDescription: description })
 
