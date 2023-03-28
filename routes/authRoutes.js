@@ -16,6 +16,7 @@ module.exports = (app) => {
 
   app.post('/api/signin', requireSignIn, Authentication.signin);
   app.post('/api/signup', Authentication.signup);
+  console.log("Reset");
 
   app.get('/auth/google', passport.authenticate('google', {
       scope: ['profile', 'email']

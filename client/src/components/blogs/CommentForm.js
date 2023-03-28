@@ -75,6 +75,7 @@ class CommentForm extends Component {
     
     return (
       <div className="ui form comment-section container" id="comments">
+        <h2>Did you like the blog or disagree?</h2>
         <label>Leave a Comment:</label>
         <form onSubmit={this.handleSubmit(comment)} id="comment-form">
           <textarea rows="3" onChange={this.newComment.bind(this)} 
