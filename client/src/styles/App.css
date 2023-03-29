@@ -1043,7 +1043,7 @@ body {
 }
 
 .container {
-  margin: 10% auto 8% auto;
+  margin: 8% auto;
   max-width: 1280px;
   min-height: 80vh;
 }

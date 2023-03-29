@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="box container">
       <Bio />
-      {/* <Favorites /> */}
+      <Favorites />
 
     </div>
     
