@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  height: 90% !important;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -15,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
-  box-shadow: 0px 0px 20px 5px rgb(136 132 132);
+  box-shadow: 2px 8px 18px #ccc;
   position: fixed;
   top: 0;
   width: 100%; 
@@ -709,10 +710,12 @@ button:focus, input:focus {
 
 .signup-form {
   padding: 40px;
-  margin: 10% 40px;
+  margin: 10% auto;
+  max-width: 600px !important;
   background: rgb(243, 243, 243);
   border-radius: 4px;
-  box-shadow: -2px 3px 20px 4px #acadab ;
+  border: 1px solid #f1f1f1;
+  box-shadow: 2px 8px 18px #ccc;
 }
 
 .signup-form fieldset {
@@ -884,13 +887,13 @@ body {
 .book-img {
   height: 300px;
   width: 200px;
-  box-shadow: 8px 8px 18px rgb(71, 71, 71);
+  box-shadow: 2px 8px 18px #ccc;
 }
 
 .album-img {
   height: 400px;
   width: 400px;
-  box-shadow: 8px 3px 15px rgb(63, 58, 58);
+  box-shadow: 2px 8px 18px #ccc;
 }
 
 /* favorites */
@@ -1243,6 +1246,14 @@ body {
     display: block;
     margin: 10px auto;
     max-width: 90%;
+  }
+
+  .signup-form {
+    padding: 20px 30px;
+  }
+
+  .form-container {
+    padding: 15px;
   }
 
 }
