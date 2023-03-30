@@ -19,8 +19,10 @@ class BlogList extends Component {
         return <div></div>;
       }
       
-      const {_id, datePosted, title, description, author, likes } = blog._doc;
+      const {_id, datePosted, title, description, author, likes, comments } = blog._doc;
       const { image } = blog;
+
+      console.log(blog._doc);
 
       let blogTitle;
       let dataURI;
@@ -50,9 +52,14 @@ class BlogList extends Component {
               <p>{description}</p>
             <div className="post-details">
               <button className="ui button"><Link to={`blog/${_id}/${blogTitle}`}>Read More</Link></button>
-              <span>
-                <i className="thumbs up outline icon"></i>{likes}
-              </span>
+              <div className="blog-icons">
+                <span>
+                  <i className="comments outline icon"></i>{comments}
+                </span>
+                <span>
+                  <i className="thumbs up outline icon"></i>{likes}
+                </span>
+              </div>
             </div>
           </div>
         </div>
