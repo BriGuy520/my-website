@@ -15,8 +15,8 @@ const Projects = () => {
   {
     title: "My Personal Website",
     description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. But it has taught me more than a tutorial ever has.",
-      pros: ['Has some cool interactive features on the homepage.', 'In the process of recreating my blog. It will have search, filter, comment, and like features.','This site features user authentication. Will be used for blog features.', 'The design is not half bad.'],
-      cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.', 'Doesn\'t have a local passport strategy.','Some of the React code is redundant and inefficient.'],
+      pros: ['Has some cool interactive features on the homepage.', 'recreating my blog. It will have search, filter, comment, and like features.','This site features user authentication. Can use a local, Twitter, Facebook, Google, or Github strategy to login.', 'The design is not half bad.'],
+      cons: ['The CSS could be written better, could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
     code: 'https://github.com/BriGuy520/my-website',
