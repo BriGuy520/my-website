@@ -781,6 +781,10 @@ pre {
   padding: 10px 5px;
 }
 
+.blog-icons span {
+  margin: 0 0 0 10px;
+}
+
 .blog-inputs {
   padding: 8px;
 }
