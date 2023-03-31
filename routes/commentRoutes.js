@@ -35,6 +35,10 @@ module.exports = (app) => {
       .catch(err => {
         console.log(err);
       });
+
+      await Blog.findOneAndUpdate({_id: blogId}, {
+        $inc:{ 'comments': 1 }
+      }).exec();
   });
 
   app.get('/api/blog/:id/comment', async (req, res, next) => {
