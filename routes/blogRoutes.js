@@ -170,8 +170,6 @@ module.exports = (app) => {
           };
         });
 
-        console.log(dataWithFiles)
-
         res.status(200).json(dataWithFiles);
 
       }).catch(err => {

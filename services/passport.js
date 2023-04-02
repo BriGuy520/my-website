@@ -47,9 +47,6 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   User.findById(payload.sub, function(err, user){
     if(err){ return done(err, false); }
 
-    console.log("JWT Strategy: ");
-    console.log(user);
-
     if(user){
       done(null, user);
     } else {

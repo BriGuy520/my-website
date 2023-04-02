@@ -5,8 +5,8 @@ import CommentLikes from './CommentLikes';
 
 class CommentList extends Component {
 
-  componentDidMount(){
-    this.props.fetchComments();
+  async componentDidMount(){
+    await this.props.fetchComments();
   }
 
   renderComments(){
@@ -44,6 +44,7 @@ class CommentList extends Component {
 }
 
 const mapStateToProps = ({ comments }) => {
+
   return { 
     comments: Object.values(comments)
   };
