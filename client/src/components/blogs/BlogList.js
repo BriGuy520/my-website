@@ -54,7 +54,7 @@ class BlogList extends Component {
               <button className="ui button"><Link to={`blog/${_id}/${blogTitle}`}>Read More</Link></button>
               <div className="blog-icons">
                 <span>
-                  <i className="comments outline icon"></i>0
+                  <i className="comments outline icon"></i>{comments}
                 </span>
                 <span>
                   <i className="thumbs up outline icon"></i>{likes}
