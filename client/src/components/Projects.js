@@ -14,13 +14,14 @@ const Projects = () => {
   const projects = [
   {
     title: "My Personal Website",
-    description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. But it has taught me more than a tutorial ever has.",
+    description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. It has taught me more than a tutorial ever could.",
       pros: ['Have a cool Todo list on the homepage as well as embedded timeline of my Twitter account.', 'Have a fully functional blog that can be uploaded to the site as a Markdown file. Only authorized users can visit the route that handles the file uploads. You can add a comment and like to each blog.','This site features user authentication. Can use a local, Twitter, Facebook, Google, or Github strategy to login.', 'The design is not half bad.'],
       cons: ['The CSS could be written better. Could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.','Some of the React code is redundant and inefficient.'],
     gifs: site_snapshot,
     built: built_with_collage,
     code: 'https://github.com/BriGuy520/my-website',
-    web: 'https://www.briguy.dev/'
+    web: 'https://www.briguy.dev/',
+    otherStyles: {'maxWidth': '200px'}
   }, {
     title: "Meditation App",
     description: "This is a small meditation app I made. It's fairly simple. You can choose between and a rain and beach background with respective audio.",
@@ -29,7 +30,8 @@ const Projects = () => {
     gifs: meditation_snapshot,
     built: html_css_js,
     code: 'https://github.com/BriGuy520/meditation',
-    web: 'https://briguy520.github.io/meditation/'
+    web: 'https://briguy520.github.io/meditation/',
+    otherStyles: {'maxWidth': '120px'},
   },{
     title: "Hangman",
     description: 'This is a small little hangman game I made. It\'s pretty standard, nothing too crazy.',
@@ -38,7 +40,8 @@ const Projects = () => {
     gifs: hangman_site,
     built: html_css_js,
     code: 'https://github.com/BriGuy520/hangman',
-    web: 'https://briguy520.github.io/hangman/'
+    web: 'https://briguy520.github.io/hangman/',
+    otherStyles: {'maxWidth': '120px'},
   },{
     title: "Flexbox Site",
     description: "This was the first project that I undertook. It is really simple. It has no functionality and is purely for design purposes.",
@@ -47,7 +50,8 @@ const Projects = () => {
     gifs: flexbox_snapshot,
     built: html_css,
     code: 'https://github.com/BriGuy520/Flexbox-Site',
-    web: 'https://briguy520.github.io/Flexbox-Site/'
+    web: 'https://briguy520.github.io/Flexbox-Site/',
+    otherStyles: {'maxWidth': '80px'}
   },
 ]
 
@@ -87,7 +91,7 @@ const Projects = () => {
           </div>
           <div className="extra content built-with">
             <p>Built With:</p>
-            <img alt="built-with-collage"src={project.built} style={{'justifyContent': 'center'}} />
+            <img alt="built-with-collage"src={project.built} style={{'justifyContent': 'center', ...project.otherStyles}} />
           </div>
         </div>
       </div>
