@@ -538,12 +538,17 @@ button:focus, input:focus {
 }
 
 .site-pic {
-  width: 45vw;
+  width: 40vw;
   border: 1px solid #ccc;
 }
 
 .website ul li {
   padding: 8px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
 }
 
 .links {
