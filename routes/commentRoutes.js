@@ -45,11 +45,6 @@ module.exports = (app) => {
     // fetch comments from a blog
     
     const comments = await Comment.find({ id: req.params._id });
-    const blog = await Blog.find({ id: req.params._id });
-
-   await Blog.findOneAndUpdate({_id: blog}, {
-    $set:{ 'comments': comments.length }
-  }).exec();
 
    res.send(comments);
    next();

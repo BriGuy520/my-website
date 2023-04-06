@@ -10,7 +10,7 @@ import gainz_snapshot from '../images/gainz-snapshot.PNG';
 import hangman_site from '../images/hangman-site.PNG';
 
 const Projects = () => {
-
+  
   const projects = [
   {
     title: "Flash Card App",
