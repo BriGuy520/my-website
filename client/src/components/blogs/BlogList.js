@@ -11,7 +11,6 @@ class BlogList extends Component {
   }
   
   renderBlogs(){
-
     
     return this.props.blogs.reverse().map(blog => {
 
@@ -21,8 +20,6 @@ class BlogList extends Component {
       
       const {_id, datePosted, title, description, author, likes, comments } = blog._doc;
       const { image } = blog;
-
-      console.log(blog._doc);
 
       let blogTitle;
       let dataURI;
@@ -36,7 +33,6 @@ class BlogList extends Component {
       } else if (blog._doc.image.includes(".png")) {
         dataURI = `data:image/png;`;
       }
-
       
       return (
         <div className="ui raised segment blog-card" key={_id}>

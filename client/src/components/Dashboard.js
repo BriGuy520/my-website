@@ -22,7 +22,9 @@ class Dashboard extends Component {
           <i className="plus icon"></i>
         </Link> 
       );
-    } 
+    } else {
+      return null;
+    }
   }
 
   render(){
