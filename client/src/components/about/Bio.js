@@ -12,7 +12,7 @@ const Bio = () => {
             Hey, 
           </p>
           <p>
-            My name is Brian and I'm a web developer based out of Austin, TX and have been doing so for a little over four years now. Never went to school for Computer Science or received any formal training. Everything I've learned over the years has been through individual online classes, reading a ton of documentation and building my own programs.
+            My name is Brian and I'm a web developer based out of Austin, TX. I have been doing web development for a little over four years now. Never went to school for Computer Science or received any formal training. Everything I've learned over the years has been through individual online classes, reading a ton of documentation and building my own programs.
           </p>
           <p>
           I've been employed over the years doing primarily Wordpress development full time. During this time, I've really honed my skills in HTML, CSS, JavaScript, and PHP. However, Wordpress development is not what I want to do long term.
