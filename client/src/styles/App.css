@@ -935,6 +935,19 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
 
   .bio-photo {
     float: none;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .section-right, .section {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .bio-photo {
+    width: 300px;
   }
 }
 

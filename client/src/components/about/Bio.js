@@ -30,7 +30,7 @@ const Bio = () => {
             I also do some backend and database work with Node.js and MongoDB. In fact, this website uses those two technologies to power the blog and user authentication system that I've built in. Backend work is something I really enjoy doing and
             is something I want to focus more on in the future.
           </p>
-          <p>Outside of programming, I enjoy making music which you can check out on this site. Also, enjoy doing photography which you can view on this site as well.</p>
+          <p>Outside of programming, I enjoy making music which you can check out on this site <a href="/music/">here</a>. Also, enjoy doing photography and you can view some of my photos <a href="/pictures/">here</a> as well.</p>
       <div className="section-right"></div>
       </div>
     </div>
