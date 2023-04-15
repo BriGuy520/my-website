@@ -82,7 +82,7 @@ const Favorites = () => {
               </ol>
             </div>
           </div>
-          <div className="section"></div>
+          <div className="section-right"></div>
           <br />
         </div>
       </div>
