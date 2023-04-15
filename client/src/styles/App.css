@@ -876,6 +876,7 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
 
 .about {
   padding: 10px 24px 10px 0;
+  margin-bottom: 40px;
 }
 
 .bio-photo {
@@ -888,6 +889,7 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
 .favorites {
   display: flex;
   flex-direction: column;
+  padding-top: 40px;
 }
 
 .box {
@@ -923,6 +925,13 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
   height: 400px;
   width: 400px;
   box-shadow: 2px 8px 18px #ccc;
+}
+
+@media only screen and (max-width: 1024px){
+
+  .bio-photo {
+    float: none;
+  }
 }
 
 /* favorites */

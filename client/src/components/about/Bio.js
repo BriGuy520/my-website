@@ -18,17 +18,17 @@ const Bio = () => {
           I've been employed over the years doing primarily Wordpress development. During this time, I've really honed my skills in HTML, CSS, JavaScript, and PHP. However, Wordpress development is not what I want to do long term.
           </p>
           <p>
-            Outside of work, in my free time, I've been learning as much as I can about all things computers. Spent the last couple of years learning data structures and algorithms to sharpen my problem solving skills as well as a wide variety of languages and frameworks. Some languages include Python, Java, C, C++, TypeScript, SQL, and Go.
+            In my free time, I've been learning as much as I can about all things computers, not just programming. It's important to me to learn not only how to be a good programmer but to know about things such as how things like the internet, networks, operating systems, hardware, etc. work as well so I can better understand how what I'm doing with code is working with all of these other components that ultimately lead to the end result the user sees and interacts with.
           </p>
           <p>
-            More recently, I've really focused on frontend development with a primary focus on React. This website is built with the class based version of React and I've spent the last few months learning the hooks based version of React. Really excited about my progress. In fact I've already built a <a href="https://github.com/BriGuy520/ReactCalculator" target='_blank' rel="noreferrer">pretty cool calculator</a> and a <a href="https://github.com/BriGuy520/flash-cards" target="_blank" rel="noreferrer">flash card app</a> with React hooks. The latter is my first app built entirely in TypeScript!   
+             As it relates to code, I've spent the last couple of years learning data structures and algorithms to sharpen my problem solving skills as well as a wide variety of languages and frameworks. Some languages include Python, Java, C, C++, TypeScript, SQL, and Go.
           </p>
           <p>
-            I also do some backend and database work with Node.js and MongoDB. Backend work is something I really enjoy doing and
+            More recently, I've really focused on frontend development with a primary focus of learning modern React. This website is built with the class based version of React and I've spent the last few months learning the hooks based version. Really excited about my progress. In fact I've already built a <a href="https://github.com/BriGuy520/ReactCalculator" target='_blank' rel="noreferrer">pretty cool calculator</a> and a <a href="https://github.com/BriGuy520/flash-cards" target="_blank" rel="noreferrer">flash card app</a> with React hooks. The latter is my first app built entirely in TypeScript!   
+          </p>
+          <p>
+            I also do some backend and database work with Node.js and MongoDB. In fact, this website uses those two technologies to power the blog and user authentication system that I've built in. Backend work is something I really enjoy doing and
             is something I want to focus more on in the future.
-          </p>
-          <p>
-            I've also worked with other langauges such as PHP and relational databases such as MySQL.
           </p>
           <p>Outside of programming, I enjoy making music which you can check out on this site. Also, enjoy doing photography which you can view on this site as well.</p>
       </div>
