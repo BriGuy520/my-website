@@ -879,12 +879,10 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
 }
 
 .bio-photo {
-  padding: 60px 0 10px 24px;
-}
-
-.bio-photo img {
+  margin: 60px 0 10px 24px;
   width: 400px;
   border-radius: 50%;
+  float: right; 
 }
 
 .favorites {
