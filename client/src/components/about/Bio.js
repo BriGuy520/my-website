@@ -27,7 +27,6 @@ const Bio = () => {
       <div className="bio-photo">
         <img src={me} alt="me with a fish I caught" />
       </div> 
-      <div className="section"></div>
     </div>
   );
 }
