@@ -1,8 +1,11 @@
 import React from 'react';
+import me from '../../images/me-fishing-600x600.jpeg';
+
 
 const Bio = () => {
   return (
     <div className="bio">
+      <div className="about">
         <h1>A Little About Myself...</h1>
           <p>
             Hey, 
@@ -20,9 +23,12 @@ const Bio = () => {
             I've also worked with other langauges such as PHP and relational databases such as MySQL.
           </p>
           <p>Outside of programming, I enjoy making music which you can check out on this site. Also, enjoy doing photography which you can view on this site as well.</p>
-        <div className="section"></div>
-        <br />
       </div>
+      <div className="bio-photo">
+        <img src={me} alt="me with a fish I caught" />
+      </div> 
+      <div className="section"></div>
+    </div>
   );
 }
 
