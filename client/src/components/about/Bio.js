@@ -11,9 +11,13 @@ const Bio = () => {
             Hey, 
           </p>
           <p>
-            My name is Brian and I'm a web developer based out of Austin, TX. I'm an entirely self directed and have been doing web development for a little over four years now. 
-            My main focus has been on frontend development with React. However, I've dabbled with other popular frameworks such
-            as Angular and Vue.js. 
+            My name is Brian and I'm a web developer based out of Austin, TX and have been doing so for a little over four years now. Never went to school for Computer Science or received any formal training of any sort. Everything I've learned over the years have been through some online classes, reading a ton of documentation and building my own programs.
+          </p>
+          <p>
+          I've been employed over the years doing primarily Wordpress development. During this time, I've really honed my skills in HTML, CSS, JavaScript, and PHP. However, Wordpress development is not what I want to do long term.
+          </p>
+          <p>
+            Outside of work, in my free time, I've been learning as much as I can about all things computers. Spent the last couple of years learning data structures and algorithms to sharpen my problem solving skills as well as a wide variety of languages and frameworks. Some languages include Python, Java, C, C++, TypeScript, SQL, and Go.
           </p>
           <p>
             I also do some backend and database work with Node.js and MongoDB. Backend work is something I really enjoy doing and
@@ -26,7 +30,7 @@ const Bio = () => {
       </div>
       <div className="bio-photo">
         <img src={me} alt="me with a fish I caught" />
-      </div> 
+      </div>
     </div>
   );
 }

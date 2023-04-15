@@ -869,8 +869,22 @@ button.ui.button.signin, .ui.placeholder.segment .column .field, .submit.button 
 
 /* About */
 
-body {
-  font-family: 'Montserrat', sans-serif;
+.bio {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+.about {
+  padding: 10px 24px 10px 0;
+}
+
+.bio-photo {
+  padding: 60px 0 10px 24px;
+}
+
+.bio-photo img {
+  width: 400px;
+  border-radius: 50%;
 }
 
 .favorites {
