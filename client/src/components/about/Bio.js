@@ -18,7 +18,7 @@ const Bio = () => {
           I've been employed over the years doing primarily Wordpress development full time. During this time, I've really honed my skills in HTML, CSS, JavaScript, and PHP. However, Wordpress development is not what I want to do long term.
           </p>
           <p>
-            In my free time, I've been learning as much as I can about all things computers, not just programming. It's important to me to not only know how to be a good programmer but to have a good understanding of how things like the internet, networks, operating systems, hardware, etc. work as well. Learning these subjects has given me a better idea of how what I'm doing with code is working with all of these other components that ultimately lead to the end result the user sees and interacts with.
+            In my free time, I've been learning as much as I can about all things computers, not just programming. It's important to me to not only know how to be a good programmer but to have a good understanding of how things like the web browsers, networks, operating systems, hardware, etc. work as well. Learning these subjects has given me a better idea of how what I'm doing with code is working with all of these other components that ultimately lead to the end result the user sees and interacts with.
           </p>
           <p>
              As it relates to code, I've spent the last couple of years learning data structures and algorithms to sharpen my problem solving skills as well as a wide variety of languages and frameworks. Some languages include Python, Java, C, C++, TypeScript, SQL, and Go.
