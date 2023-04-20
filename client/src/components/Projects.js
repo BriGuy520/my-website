@@ -1,7 +1,9 @@
 import React from 'react';
 import built_with_collage from '../images/built-with-collage.png';
+import flash_card_app from '../images/flash-cards-app.png';
 import html_css from '../images/html-css.png';
 import html_css_js from '../images/html-css-js-collage.png';
+import built_with_ts_react from '../images/built-with-ts-react.png';
 import html_css_js_react from '../images/html-css-js-react.png';
 import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
@@ -12,17 +14,17 @@ import hangman_site from '../images/hangman-site.PNG';
 const Projects = () => {
 
   const projects = [
-  // {
-  //   title: "Flash Card App",
-  //   description: "This is a small little flash card app to help me learn new subjects. Flash cards have always been",
-  //     pros: ['Helped me learn the new React ', 'Have a fully functional blog that can be uploaded to the site as a Markdown file. Only authorized users can visit the route that handles the file uploads. You can add a comment and like to each blog.','This site features user authentication. Can use a local, Twitter, Facebook, Google, or Github strategy to login.', 'The design is not half bad.'],
-  //     cons: ['The CSS could be written better. Could be a lot more efficient. In retrospect, I wish I would have learned SASS/LESS to help make the CSS a little more easier to read and navigate and also implemented a mobile first design approach.','Some of the React code is redundant and inefficient.'],
-  //   gifs: site_snapshot,
-  //   built: built_with_collage,
-  //   code: 'https://github.com/BriGuy520/flash-cards',
-  //   web: '#',
-  //   otherStyles: {'width': '240px'}
-  // },
+  {
+    title: "Flash Card App",
+    description: "This is a small little flash card app to help me learn new subjects. This app has a list mode where you can view, edit and delete cards. It also has a practice mode that allows you to keep track of your correct and incorrect answers so you know what you need to practice and which questions you have already mastered.",
+      pros: ['First app built entirely with TypeScript!', 'Uses modern React hooks.', 'Has a lot of cool features.', 'Really nice layout and very intuitive.'],
+      cons: ["I'm sure the TypeScript could be written better.", "Lots of prop drilling.", 'No backend or local storage to save your results.'],
+    gifs: flash_card_app,
+    built: built_with_ts_react,
+    code: 'https://github.com/BriGuy520/flash-cards',
+    web: 'https://briguy520.github.io/flash-cards/',
+    otherStyles: {'width': '240px'}
+  },
   {
     title: "My Personal Website",
     description: "This is my first fullstack \"app\". Building it has been a long and frustrating process. It has taught me more than a tutorial ever could.",
@@ -91,11 +93,11 @@ const Projects = () => {
               <div className="links">
                 <div className="link">
                   <i className="globe icon"></i>
-                  <a href={project.web}>View the App</a>
+                  <a href={project.web} target="_blank" rel="noreferrer">View the App</a>
                 </div>
                 <div className="link">
                   <i className="code icon"></i>
-                  <a href={project.code}>Read the Code</a>
+                  <a href={project.code}  target="_blank" rel="noreferrer">Read the Code</a>
                 </div>  
               </div>
             </div>
