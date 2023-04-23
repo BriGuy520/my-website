@@ -8,7 +8,6 @@ import html_css_js_react from '../images/html-css-js-react.png';
 import site_snapshot from '../images/site-snapshot.PNG';
 import flexbox_snapshot from '../images/flexbox-snapshot.PNG';
 import meditation_snapshot from '../images/meditation-snapshot.PNG';
-import gainz_snapshot from '../images/gainz-snapshot.PNG';
 import hangman_site from '../images/hangman-site.PNG';
 
 const Projects = () => {

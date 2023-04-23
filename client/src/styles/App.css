@@ -777,6 +777,10 @@ button:focus, input:focus {
   margin: 30px;
 }
 
+.ui.button a {
+  color: #000;
+}
+
 pre {
   padding: 10px;
 }
