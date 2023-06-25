@@ -11,7 +11,9 @@ class BlogLikes extends Component {
     this.props.fetchUser();
     // this.props.signin();
 
-    if(this.props.auth.blogLikes.indexOf(this.props.blog._id) !== -1){
+    const { auth, blog } = this.props;
+
+    if(auth.blogLikes.indexOf(blog._id) !== -1){
   
       this.setState({isDisabled: true});
     }
