@@ -10,11 +10,22 @@ class CommentLikes extends Component {
 
   componentDidMount(){
     this.props.fetchUser();
+
+    const { auth, comment } = this.props;
+
+    if(auth !== "please sign in"){
+
+      if(comment.userLikes.indexOf(auth._id) !== -1){
+    
+        this.setState({isDisabled: true});
+      }
+    }
+
   }
 
   handleClick(comment){ 
   
-    if(!this.props.auth){
+    if(this.props.auth === "please sign in"){
       return window.location.assign('/login');
     }
 
@@ -37,8 +48,9 @@ class CommentLikes extends Component {
   }
   
   render(){
-    const { comment } = this.props;
+    const { auth, comment } = this.props;
     const { likes, isDisabled } = this.state;
+    
     
     return (
       <div>

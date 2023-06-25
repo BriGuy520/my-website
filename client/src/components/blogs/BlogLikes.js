@@ -13,10 +13,15 @@ class BlogLikes extends Component {
 
     const { auth, blog } = this.props;
 
-    if(auth.blogLikes.indexOf(blog._id) !== -1){
-  
-      this.setState({isDisabled: true});
+
+    if(auth !== "please sign in"){
+
+      if(blog.userLikes.includes(auth._id)){
+    
+        this.setState({isDisabled: true});
+      }
     }
+
   }
 
 
@@ -27,7 +32,7 @@ class BlogLikes extends Component {
     const { auth, login } = this.props;
 
 
-    if(!auth && !login.authenticated){
+    if(auth === "please sign in" && !login.authenticated){
 
       return window.location.assign('/login');
     }
@@ -55,7 +60,7 @@ class BlogLikes extends Component {
   
   render(){
 
-    const { blog } = this.props;
+    const { auth, blog } = this.props;
     const { likes, isDisabled } = this.state;
     
     return (
@@ -71,7 +76,6 @@ class BlogLikes extends Component {
 
 const mapStateToProps = ({ auth, login }) => { 
 
-  console.log(auth);
 
   return { auth, login };
 }
