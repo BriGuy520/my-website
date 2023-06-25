@@ -10,13 +10,23 @@ class BlogLikes extends Component {
   componentDidMount(){
     this.props.fetchUser();
     // this.props.signin();
+
+    if(this.props.auth.blogLikes.indexOf(this.props.blog._id) !== -1){
+  
+      this.setState({isDisabled: true});
+    }
   }
+
+
+
 
   handleClick(blog){
 
     const { auth, login } = this.props;
 
-    if(auth === false || !login.authenticated){
+
+    if(!auth && !login.authenticated){
+
       return window.location.assign('/login');
     }
 
@@ -58,6 +68,9 @@ class BlogLikes extends Component {
 }
 
 const mapStateToProps = ({ auth, login }) => { 
+
+  console.log(auth);
+
   return { auth, login };
 }
 
